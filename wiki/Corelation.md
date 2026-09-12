@@ -9,20 +9,26 @@ $\mathbf{Corel}$ is a [[Symmetric Monoidal Category]] under $(\varnothing, \sqcu
 ````tabs
 tab: Julia
 ```julia
-# corelations as partitions (equivalence relations) of A ⊔ B, composed by union-find on A ⊔ B ⊔ C
+# corelations A → B as equivalence relations on A ⊔ B (elements 1..nA are A, nA+1..nA+nB are B),
+# composed by union-find on A ⊔ B ⊔ C and restriction to A ⊔ C
 using DataStructures
-struct Corel; nA::Int; nB::Int; classes::Vector{Vector{Int}}; end   # elements 1..nA are A, nA+1..nA+nB are B
+struct Corel
+  nA::Int; nB::Int
+  pairs::Vector{Tuple{Int,Int}}       # generating pairs of the equivalence relation
+end
 function compose(α::Corel, β::Corel)
   n = α.nA + α.nB + β.nB
   uf = IntDisjointSets(n)
-  for cl in α.classes, (x, y) in zip(cl, cl[2:end]); union!(uf, x, y); end
-  for cl in β.classes, (x, y) in zip(cl .+ α.nA, cl[2:end] .+ α.nA); union!(uf, x, y); end
-  keep = [1:α.nA; α.nA + α.nB + 1 : n]                               # restrict to A ⊔ C
-  roots = Dict(); for x in keep; push!(get!(roots, find_root!(uf, x), Int[]), x); end
+  for (x, y) in α.pairs; union!(uf, x, y); end
+  for (x, y) in β.pairs; union!(uf, x + α.nA, y + α.nA); end       # B ⊔ C sits after A
+  keep = vcat(1:α.nA, α.nA + α.nB + 1 : n)                          # restrict to A ⊔ C
   relabel = Dict(x => i for (i, x) in enumerate(keep))
-  Corel(α.nA, β.nB, [relabel[x] |> (i -> i) for cl in values(roots) for x in [cl]] |> identity)  # sketch
+  pairs = [(relabel[x], relabel[y]) for x in keep for y in keep if x < y && in_same_set(uf, x, y)]
+  Corel(α.nA, β.nB, pairs)
 end
-# Catlab: `Catlab.CategoricalAlgebra.FinRelations` and hypergraph-category machinery cover corelations via cospans
+# the unit/counit corelation on A = 3: pair (a,1) with (a,2)
+η3 = Corel(0, 6, [(1, 4), (2, 5), (3, 6)])       # ∅ → 3 ⊔ 3
+ε3 = Corel(6, 0, [(1, 4), (2, 5), (3, 6)])       # 3 ⊔ 3 → ∅
 ```
 tab: Haskell
 ```haskell

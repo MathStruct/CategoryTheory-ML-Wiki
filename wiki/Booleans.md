@@ -14,7 +14,7 @@ The **booleans** $\mathbb{B} = \{\mathsf{false}, \mathsf{true}\}$ form a [[Preor
 > Sources: 7 Sketches Example 1.34, 1.54, 1.88, Exercise 1.7, Proposition 1.78; Kittenlab Lecture 14; DaoFP §4.1 ("Bool").
 
 - [[Meet]] is AND, [[Join]] is OR (Example 1.88). Its [[Upper Set|upper sets]] are $\varnothing \subset \{\mathsf{true}\} \subset \{\mathsf{true},\mathsf{false}\}$.
-- [[Monotone Map|Monotone maps]] $P \to \mathbb{B}$ classify [[Upper Set|upper sets]] of $P$ ([[Upper Sets Classified by Maps to Bool]]); functions $X \to \mathbb{B}$ classify [[Subset|subsets]] (Kittenlab Lecture 14). In a [[Topos]] the role of $\mathbb{B}$ is played by the [[Subobject Classifier]] $\Omega$.
+- [[Monotone Map|Monotone maps]] $P \to \mathbb{B}$ classify [[Upper Set|upper sets]] of $P$ ([[Upper Sets Classified by Maps to Bool]]); functions $X \to \mathbb{B}$ classify [[Subset|subsets]] (Kittenlab Lecture 14). In a [[Topos]] the role of $\mathbb{B}$ is played by the [[Subobject Classifier]] $\Omega$: $\mathbb{B}$ *is* the subobject classifier of $\mathbf{Set}$ (7 Sketches Eq. 7.14), with $\mathsf{true} : 1 \to \mathbb{B}$, and $\wedge, \vee, \neg, \Rightarrow$ are characteristic maps of subsets of $\mathbb{B} \times \mathbb{B}$ and $\mathbb{B}$ ([[Internal Logic of a Topos]]).
 - With $\wedge$ as monoidal product, $(\mathbb{B}, \leq, \mathsf{true}, \wedge)$ is the [[Symmetric Monoidal Preorder|symmetric monoidal preorder]] $\mathbf{Bool}$, the base of enrichment for preorders ([[Enriched Category]]); it is a [[Quantale]].
 - DaoFP: `Bool` is the [[Sum Type]] `1 + 1` — the [[Coproduct]] of two [[Terminal Object|terminal objects]]; its two [[Global Element|global elements]] are `True` and `False`, and a function `Bool -> A` is a pair of elements of `A`.
 

@@ -12,6 +12,7 @@ Equivalently, pre-composition $(- \circ f) : \mathcal{C}(b, c) \to \mathcal{C}(a
 - Epi is dual to [[Monomorphism]]: an epi in $\mathcal{C}$ is a mono in $\mathcal{C}^{\mathrm{op}}$. A [[Section and Retraction|retraction]] is always epi.
 - Surjections out of $A$ = [[Partition|partitions]] of $A$; the [[Epi-Mono Factorization]] $A \twoheadrightarrow \mathrm{im}(f) \hookrightarrow B$ underlies [[Pushforward and Pullback of Partitions]].
 - Epi + mono need not be iso (DaoFP; e.g. dense inclusions in $\mathbf{Top}$).
+- **Via pushouts** (7 Sketches Definition 7.5): $f : A \to B$ is epi iff the square with $f$ twice and $\mathrm{id}_B$ twice is a [[Pushout]] (the cokernel pair of $f$ is trivial) — the exact dual of the pullback characterization of [[Monomorphism|monos]]. In a [[Topos]] "$f$ is epi" is expressed by the internal formula $\forall(t : T).\, \exists(s : S).\, f(s) = t$ ([[Internal Language of a Topos]], Example 7.74).
 
 ````tabs
 tab: Julia

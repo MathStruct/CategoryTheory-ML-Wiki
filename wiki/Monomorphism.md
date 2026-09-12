@@ -12,6 +12,7 @@ Equivalently, post-composition $(f \circ -) : \mathcal{C}(c, a) \to \mathcal{C}(
 - "In category theory objects are indivisible, so we can only talk about sub-objects using arrows": a mono $a \hookrightarrow b$ picks a [[Subobject]] of $b$ in the shape of $a$; in a [[Topos]] subobjects are classified by the [[Subobject Classifier]].
 - Mono + [[Epimorphism|epi]] does *not* imply [[Isomorphism]] in general (e.g. $\mathbb{Z} \hookrightarrow \mathbb{Q}$ in rings); it does in $\mathbf{Set}$ ([[Bijection]]). A [[Section and Retraction|section]] is always mono.
 - Every function factors as an epi followed by a mono ([[Epi-Mono Factorization]]).
+- **Via pullbacks** (7 Sketches Definition 7.5): $f : A \to B$ is mono iff the square with $\mathrm{id}_A$ twice on top/left and $f$ twice on right/bottom is a [[Pullback]] — i.e. the kernel pair of $f$ is trivial. From this, $\mathbf{Set}$-monos are the injections ([[7S Exercise 7.6]]), and monos are stable under pullback ([[7S Exercise 7.8]], via the [[Pasting Lemma for Pullbacks]]). In a [[Topos]] every mono is the pullback of $\mathsf{true} : 1 \to \Omega$ along its characteristic map ([[Subobject Classifier]]).
 
 ````tabs
 tab: Julia

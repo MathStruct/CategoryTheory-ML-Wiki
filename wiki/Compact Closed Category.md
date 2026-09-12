@@ -57,8 +57,7 @@ A, B, f = CC[:A], CC[:B], CC[:f]
 dual(A)                                    # A*
 dunit(A)                                   # η_A : I → A* ⊗ A
 dcounit(A)                                 # ε_A : A ⊗ A* → I
-# the transpose of f : A → B is a morphism B* → A* built from η and ε:
-(dunit(A) ⊗ id(dual(B))) ⋅ (id(dual(A)) ⊗ f ⊗ id(dual(B))) ⋅ (id(dual(A)) ⊗ dcounit(B))  # hmm: up to braiding; see mate(f)
+mate(f)                                    # the transpose B* → A*, built from η_A and ε_B
 ```
 tab: Lean
 ```lean
