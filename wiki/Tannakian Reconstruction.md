@@ -1,7 +1,11 @@
 #theorem #proof #example #program
 
 **Tannakian reconstruction** recovers a category from its category of $\mathbf{Set}$-valued representations. For a small category $\mathcal{C}$ and objects $a, b$,
-$$\int_{F : [\mathcal{C}, \mathbf{Set}]} \mathbf{Set}(F a, F b) \cong \mathcal{C}(a, b).$$
+
+$$
+\int_{F : [\mathcal{C}, \mathbf{Set}]} \mathbf{Set}(F a, F b) \cong \mathcal{C}(a, b).
+$$
+
 For a one-object category (a [[Monoid]] $\mathcal{M}$) this says $\int_F \mathbf{Set}(F *, F *) \cong \mathcal{M}(*, *)$: a monoid is determined by all its representations (functors $\mathcal{M} \to \mathbf{Set}$, i.e. $M$-sets) together with the equivariant maps between them — even though a single representation may be very lossy.
 
 > Sources: DaoFP §18.1 ("Tannakian Reconstruction": "Monoids and their Representations", "Cayley's theorem", "Tannakian reconstruction of a monoid", "Proof of Tannakian reconstruction", "Tannakian reconstruction in Haskell", "Tannakian reconstruction with adjunction"), Exercise 18.1.1; §17.3 ([[End|ends]]), §17.6.

@@ -16,7 +16,11 @@ Let $X$ and $Y$ be [[Set|sets]]. A **relation** between $X$ and $Y$ is a subset 
 ## Relations as a joint constraint (Kittenlab)
 
 A relation $R \subseteq X \times Y$ is a "joint constraint": knowing $x$ tells you something about $y$ and vice versa. Relations compose: for $R \subseteq X \times Y$ and $S \subseteq Y \times Z$,
-$$\chi_{S \circ R}(x, z) = [\exists y \in Y,\ \chi_R(x,y) \wedge \chi_S(y,z)],$$
+
+$$
+\chi_{S \circ R}(x, z) = [\exists y \in Y,\ \chi_R(x,y) \wedge \chi_S(y,z)],
+$$
+
 which is matrix multiplication with $(\vee, \wedge)$ in place of $(+, \cdot)$. This makes sets and relations into the [[Category of Relations|category $\mathbf{Rel}$]]. A relation is also a [[Span]] $X \leftarrow R \to Y$, and a $\mathbb{B}$-valued [[Profunctor]] ($\mathbf{Bool}$-profunctor / [[Feasibility Relation]]) once $X$, $Y$ are preorders.
 
 ````tabs

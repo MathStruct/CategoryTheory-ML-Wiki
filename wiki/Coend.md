@@ -1,7 +1,11 @@
 #definition #theorem #example #program
 
 The **coend** of a functor $P : \mathcal{C}^{\mathrm{op}} \times \mathcal{C} \to \mathcal{D}$ (a [[Profunctor]] when $\mathcal{D} = \mathbf{Set}$) is the "sum of its diagonal entries" $P\langle x, x\rangle$, corrected for double counting. A **cowedge** is an object $d$ with injections $i_x : P\langle x, x \rangle \to d$ such that for every $f : x \to y$
-$$i_x \circ P\langle f, \mathrm{id}_y \rangle = i_y \circ P\langle \mathrm{id}_x, f \rangle : P\langle y, x \rangle \to d$$
+
+$$
+i_x \circ P\langle f, \mathrm{id}_y \rangle = i_y \circ P\langle \mathrm{id}_x, f \rangle : P\langle y, x \rangle \to d
+$$
+
 (the two ways of "extending" a common ancestor $P\langle y, x \rangle$ agree). The coend $\int^{x : \mathcal{C}} P\langle x, x \rangle$ is the universal cowedge: every cowedge $(d, g_x)$ factors uniquely as $g_x = h \circ i_x$.
 
 ```tikz

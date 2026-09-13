@@ -1,7 +1,11 @@
 #theorem #definition
 
 In $\mathbf{Set}$ (and in any [[Topos]] or regular category) every morphism $f : A \to B$ factors as an [[Epimorphism]] followed by a [[Monomorphism]]:
-$$A \twoheadrightarrow \mathrm{im}(f) \hookrightarrow B, \qquad \mathrm{im}(f) := \{f(a) \mid a \in A\},$$
+
+$$
+A \twoheadrightarrow \mathrm{im}(f) \hookrightarrow B, \qquad \mathrm{im}(f) := \{f(a) \mid a \in A\},
+$$
+
 and this factorization is unique up to unique isomorphism. The **image** $\mathrm{im}(f)$ is a [[Subobject]] of $B$ and a [[Quotient Set|quotient]] of $A$.
 
 > Sources: 7 Sketches §1.4.2 (pulling back partitions "by taking the epi-mono factorization"); Kittenlab Lecture 14 (direct image); DaoFP §2.4–2.5.

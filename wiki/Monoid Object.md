@@ -1,7 +1,11 @@
 #definition #example
 
 A **monoid** in a [[Monoidal Category]] $(\mathcal{C}, \otimes, I)$ (a **monoid object**) is an object $m$ with morphisms
-$$\mu : m \otimes m \to m \quad (\text{multiplication}), \qquad \eta : I \to m \quad (\text{unit})$$
+
+$$
+\mu : m \otimes m \to m \quad (\text{multiplication}), \qquad \eta : I \to m \quad (\text{unit})
+$$
+
 such that the unit laws $\mu \circ (\eta \otimes \mathrm{id}_m) = \lambda_m$, $\mu \circ (\mathrm{id}_m \otimes \eta) = \rho_m$ and the associativity law $\mu \circ (\mu \otimes \mathrm{id}) = \mu \circ (\mathrm{id} \otimes \mu) \circ \alpha$ hold — the monoid laws "formulated in bulk, without recourse to elements", using only functoriality of $\otimes$, the unit and associativity isomorphisms; "we never had to use projections", so the definition works for any tensor product, even non-symmetric. A **comonoid** is the dual: $\delta : m \to m \otimes m$, $\varepsilon : m \to I$.
 
 ```tikz

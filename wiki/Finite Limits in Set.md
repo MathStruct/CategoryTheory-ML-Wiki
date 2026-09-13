@@ -1,7 +1,11 @@
 #theorem #proof #example #program
 
 **Theorem 3.95.** Let $\mathcal{J}$ be a category presented by a finite graph $(V, A, s, t)$ with equations, $V = \{v_1, \dots, v_n\}$, and $D : \mathcal{J} \to \mathbf{Set}$. Then
-$$\lim_{\mathcal{J}} D := \{(d_1, \dots, d_n) \mid d_i \in D(v_i) \text{ and } D(a)(d_i) = d_j \text{ for all } a : v_i \to v_j \in A\}$$
+
+$$
+\lim_{\mathcal{J}} D := \{(d_1, \dots, d_n) \mid d_i \in D(v_i) \text{ and } D(a)(d_i) = d_j \text{ for all } a : v_i \to v_j \in A\}
+$$
+
 with projections $p_i(d_1, \dots, d_n) = d_i$ is a [[Limit]] of $D$. "As far as limits are concerned, the equations in $\mathcal{J}$ don't matter."
 
 > Sources: 7 Sketches §3.5.3 (Theorem 3.95, Examples 3.96, 3.99, Exercises 3.97, 3.98); DaoFP §9.5 (limits in $\mathbf{Set}$ are cones with apex $1$); Kittenlab Lecture 13–14.

@@ -7,7 +7,11 @@ A **database schema** is the reference structure drawn as a "Hasse diagram for a
 > Sources: 7 Sketches §3.1 (Eqs. 3.1–3.5), Remark 3.20, §3.4, §3.6; Kittenlab Lecture 6 ("you can think of $\mathsf{C} = \mathrm{Path}(G)$ as a database schema"; graphs as two-table databases); FQL, the functorial query language.
 
 **Example (mySchema).** Tables `Employee` (FName, WorksIn, Mngr) and `Department` (DName, Secr), with rules
-$$\mathsf{Department.Secr.WorksIn} = \mathsf{Department}, \qquad \mathsf{Employee.Mngr.WorksIn} = \mathsf{Employee.WorksIn}$$
+
+$$
+\mathsf{Department.Secr.WorksIn} = \mathsf{Department}, \qquad \mathsf{Employee.Mngr.WorksIn} = \mathsf{Employee.WorksIn}
+$$
+
 ("every department's secretary works in that department; every employee's manager works in the employee's department"): `easySchema` + constraints = `mySchema`.
 
 ```tikz

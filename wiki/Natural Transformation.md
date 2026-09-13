@@ -1,7 +1,10 @@
 #definition #example #theorem #proof #program
 
 Let $F, G : \mathcal{C} \to \mathcal{D}$ be [[Functor|functors]]. A **natural transformation** $\alpha : F \Rightarrow G$ consists of, for each object $c \in \mathcal{C}$, a morphism $\alpha_c : F(c) \to G(c)$ in $\mathcal{D}$ (the **$c$-component**), such that for every $f : c \to d$ in $\mathcal{C}$ the **naturality square** commutes:
-$$F(f) \mathbin{;} \alpha_d = \alpha_c \mathbin{;} G(f), \qquad\text{i.e.}\qquad G(f) \circ \alpha_c = \alpha_d \circ F(f).$$
+
+$$
+F(f) \mathbin{;} \alpha_d = \alpha_c \mathbin{;} G(f), \qquad\text{i.e.}\qquad G(f) \circ \alpha_c = \alpha_d \circ F(f).
+$$
 
 ```tikz
 \usepackage{tikz-cd}

@@ -1,7 +1,11 @@
 #definition #theorem #example #program
 
 A **comonad** on $\mathcal{C}$ is a [[Monad]] in $\mathcal{C}^{\mathrm{op}}$: an [[Endofunctor]] $W$ with natural transformations
-$$\varepsilon : W \to \mathrm{Id} \ (\texttt{extract}), \qquad \delta : W \to W \circ W \ (\texttt{duplicate}),$$
+
+$$
+\varepsilon : W \to \mathrm{Id} \ (\texttt{extract}), \qquad \delta : W \to W \circ W \ (\texttt{duplicate}),
+$$
+
 satisfying the counit laws $(\varepsilon \circ W) \cdot \delta = \mathrm{id}_W = (W \circ \varepsilon) \cdot \delta$ and coassociativity $(\delta \circ W) \cdot \delta = (W \circ \delta) \cdot \delta$ — a *comonoid* in the monoidal category of endofunctors. Where monads handle **side effects** via Kleisli arrows $a \to m\, b$, comonads handle **context** ("ntext") via **co-Kleisli arrows** $w\, a \to b$: arrows *out of* a contextualized argument.
 
 ```haskell

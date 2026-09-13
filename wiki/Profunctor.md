@@ -1,9 +1,17 @@
 #definition #example #theorem
 
 Let $\mathcal{V}$ be a (unital commutative, skeletal) [[Quantale]] and $\mathcal{X}, \mathcal{Y}$ be $\mathcal{V}$-[[Enriched Category|categories]]. A **$\mathcal{V}$-profunctor** from $\mathcal{X}$ to $\mathcal{Y}$, written $\Phi : \mathcal{X} \nrightarrow \mathcal{Y}$, is a $\mathcal{V}$-[[Enriched Functor|functor]]
-$$\Phi : \mathcal{X}^{\mathrm{op}} \times \mathcal{Y} \to \mathcal{V},$$
+
+$$
+\Phi : \mathcal{X}^{\mathrm{op}} \times \mathcal{Y} \to \mathcal{V},
+$$
+
 where $\mathcal{V}$ is regarded as [[Monoidal Closed Preorder|enriched in itself]]. Concretely ([[7S Exercise 4.9]]): a function $\Phi : \mathrm{Ob}(\mathcal{X}) \times \mathrm{Ob}(\mathcal{Y}) \to V$ such that
-$$\mathcal{X}(x', x) \otimes \Phi(x, y) \otimes \mathcal{Y}(y, y') \leq \Phi(x', y').$$
+
+$$
+\mathcal{X}(x', x) \otimes \Phi(x, y) \otimes \mathcal{Y}(y, y') \leq \Phi(x', y').
+$$
+
 In ordinary category theory (DaoFP §8.3, §17.1), a profunctor is a [[Functor]] $P : \mathcal{C}^{\mathrm{op}} \times \mathcal{D} \to \mathbf{Set}$: it maps a pair of objects to a set $P\langle a, b\rangle$ and a pair of arrows $\langle f : s \to a, g : b \to t \rangle$ to a function $P\langle a, b \rangle \to P\langle s, t \rangle$ — "simultaneously a producer and a consumer".
 
 > Sources: 7 Sketches §4.2 (Definition 4.8, Examples 4.11, 4.13, Remark 4.16, Exercises 4.9, 4.10, 4.12, 4.15, 4.17), §4.3, §4.5; DaoFP §8.3 ("Profunctors"), §8.4 (the [[Hom Functor]] is a profunctor), §17.1 ("Profunctors", "Collages", "Profunctors as relations", "Profunctor composition in Haskell"), §17.2, §17.8 ([[Bicategory of Profunctors]]), §18 ([[Tambara Module|Tambara modules]], profunctor optics), §20.2 (enriched profunctors); Kittenlab Lecture 14 ($\mathbb{B}$-relations).
@@ -19,7 +27,11 @@ In ordinary category theory (DaoFP §8.3, §17.1), a profunctor is a [[Functor]]
 ## Composition
 
 Profunctors compose by a *sum over a middle object* — "in general, we say two objects are related by the composite relation if there exists an object in the middle related to both": for a quantale,
-$$(\Phi \mathbin{;} \Psi)(p, r) = \bigvee_{q \in \mathcal{Q}} \Phi(p, q) \otimes \Psi(q, r)$$
+
+$$
+(\Phi \mathbin{;} \Psi)(p, r) = \bigvee_{q \in \mathcal{Q}} \Phi(p, q) \otimes \Psi(q, r)
+$$
+
 (Definition 4.21, matrix multiplication), giving the [[Category of Profunctors]] $\mathbf{Prof}_{\mathcal{V}}$. For $\mathbf{Set}$-profunctors the naive sum $\sum_x P\langle a, x\rangle \times Q\langle x, b\rangle$ over-counts when middle objects are connected by morphisms; the correct composite is the [[Coend]] $\int^x P\langle a, x\rangle \times Q\langle x, b \rangle$ (DaoFP §17.2). In Haskell, `data Procompose p q a b where Procompose :: q a x -> p x b -> Procompose p q a b` works thanks to parametricity: "the two arguments are a pair of proofs, one that $x$ is related to $a$, and one that $b$ is related to $x$" — like charging your phone through a friend who owns a charger. Composition is associative only up to isomorphism in general, making $\mathbf{Prof}$ a [[Bicategory of Profunctors|bicategory]] whose monads are [[Prearrow|prearrows]]; for skeletal quantales one gets an honest category.
 
 ## Collages

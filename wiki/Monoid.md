@@ -1,7 +1,11 @@
 #definition #example #theorem #proof
 
 A **monoid** $(M, \ast, e)$ consists of a [[Set]] $M$, a function $\ast : M \times M \to M$ (**multiplication**), and an element $e \in M$ (**unit** / **identity element**) such that, in infix notation,
-$$m \ast e = m, \qquad e \ast m = m, \qquad (m \ast n) \ast p = m \ast (n \ast p)$$
+
+$$
+m \ast e = m, \qquad e \ast m = m, \qquad (m \ast n) \ast p = m \ast (n \ast p)
+$$
+
 for all $m, n, p \in M$. It is **commutative** if also $m \ast n = n \ast m$.
 
 > Sources: 7 Sketches Example 2.6, §5.4.2 (monoid objects), Exercise 2.8; Kittenlab Lecture 5, 7; DaoFP §5.3 ("Monoids"), §10.9 ("The category of monoids", "Free monoid"), §14.7 ("Monad as a monoid"), §18.1 (Cayley's theorem, Tannakian reconstruction).

@@ -1,6 +1,9 @@
 #definition #example
 
-$$\mathbf{Bool} := (\mathbb{B}, \leq, \mathsf{true}, \wedge)$$
+$$
+\mathbf{Bool} := (\mathbb{B}, \leq, \mathsf{true}, \wedge)
+$$
+
 is the [[Symmetric Monoidal Preorder]] on the [[Booleans]] with monoidal unit $\mathsf{true}$ and monoidal product AND. Identifying $\mathsf{false} = 0$, $\mathsf{true} = 1$, $\wedge$ is multiplication:
 
 | $\wedge$ | $\mathsf{false}$ | $\mathsf{true}$ |

@@ -1,7 +1,11 @@
 #definition #example #program
 
 An **algebra** for an [[Endofunctor]] $F : \mathcal{C} \to \mathcal{C}$ is a pair $(c, \alpha)$ of a **carrier** object $c$ and a **structure map** (evaluator) $\alpha : F c \to c$. Given algebras $(a, \alpha)$, $(b, \beta)$, an **algebra morphism** is an arrow $f : a \to b$ with
-$$f \circ \alpha = \beta \circ F f,$$
+
+$$
+f \circ \alpha = \beta \circ F f,
+$$
+
 i.e. the square below commutes. Algebras and their morphisms form the category $\mathbf{Alg}(F)$ (composition and identities are algebra morphisms because $F$ preserves composition and identities). Its [[Initial Object]] is the [[Initial Algebra]].
 
 ```tikz

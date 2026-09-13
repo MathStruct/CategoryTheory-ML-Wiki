@@ -1,7 +1,11 @@
 #definition #theorem #proof
 
 **Theorem 4.23.** For any skeletal [[Quantale]] $\mathcal{V}$ there is a category $\mathbf{Prof}_{\mathcal{V}}$ whose objects are $\mathcal{V}$-[[Enriched Category|categories]], whose morphisms $\mathcal{X} \nrightarrow \mathcal{Y}$ are $\mathcal{V}$-[[Profunctor|profunctors]], with composition
-$$(\Phi \mathbin{;} \Psi)(p, r) := \bigvee_{q \in \mathcal{Q}} \Phi(p, q) \otimes \Psi(q, r)$$
+
+$$
+(\Phi \mathbin{;} \Psi)(p, r) := \bigvee_{q \in \mathcal{Q}} \Phi(p, q) \otimes \Psi(q, r)
+$$
+
 (Definition 4.21 — [[Matrix Multiplication in a Quantale]]) and identities the **unit profunctors** $U_{\mathcal{X}}(x, y) := \mathcal{X}(x, y)$ (Eq. 4.25). **$\mathbf{Feas} := \mathbf{Prof}_{\mathbf{Bool}}$** is the category of preorders and [[Feasibility Relation|feasibility relations]] (Definition 4.24).
 
 > Sources: 7 Sketches §4.3 (Definitions 4.21, 4.24, Theorem 4.23, Eq. 4.25, Lemmas 4.27, 4.31, Remark 4.33, Exercises 4.22, 4.26, 4.30, 4.32), §4.5.2 (Theorem 4.63); DaoFP §17.2, §17.8 ("The Bicategory of Profunctors").

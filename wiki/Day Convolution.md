@@ -1,7 +1,11 @@
 #definition #theorem #example #program
 
 **Day convolution** transports a monoidal structure $(\mathcal{C}, \otimes, I)$ to the category of co-presheaves $[\mathcal{C}, \mathbf{Set}]$, in analogy with the convolution $(f \star g)(x) = \int f(y)\, g(x - y)\, dy$ — the [[Coend]] replaces the integral and the hom-functor $\mathcal{C}(a \otimes b, x)$ plays the Dirac delta enforcing "$a \otimes b = x$":
-$$(F \star G)\, x = \int^{a, b} \mathcal{C}(a \otimes b, x) \times F a \times G b .$$
+
+$$
+(F \star G)\, x = \int^{a, b} \mathcal{C}(a \otimes b, x) \times F a \times G b .
+$$
+
 It is associative up to isomorphism and its unit is $\mathcal{C}(I, -)$ (by the [[Ninja Yoneda Lemma|co-Yoneda lemma]]: "ONE of DAY is the YONEDA of ONE"); it is symmetric if $\otimes$ is. In a [[Cartesian Closed Category]] currying simplifies it to $\int^b F(x^b) \times G b$, and in Haskell
 ```haskell
 data Day f g x where

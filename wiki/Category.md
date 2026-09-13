@@ -37,7 +37,9 @@ subject to the following axioms:
 
 A category may be encoded as a [[Dependent Type|dependent type]] with the following signature:
 
-$$ \begin{align*} &\mathcal{C} : \mathrm{Type} \\ &\mathrm{Hom} : \mathcal{C} \to \mathcal{C} \to \mathrm{Type} \\ &\mathrm{id} : \prod_{X : \mathcal{C}} \mathrm{Hom}(X, X) \\ &\circ : \prod_{X, Y, Z : \mathcal{C}} \mathrm{Hom}(Y, Z) \to \mathrm{Hom}(X, Y) \to \mathrm{Hom}(X, Z) \\ &\mathrm{assoc} : \prod_{X, Y, Z, W : \mathcal{C}} \prod_{f, g, h} (h \circ g) \circ f =_{\mathrm{Hom}(X,W)} h \circ (g \circ f) \\ &\mathrm{id_left} : \prod_{X, Y : \mathcal{C}} \prod_{f : \mathrm{Hom}(X, Y)} \mathrm{id}_Y \circ f =_{\mathrm{Hom}(X,Y)} f \\ &\mathrm{id_right} : \prod_{X, Y : \mathcal{C}} \prod_{f : \mathrm{Hom}(X, Y)} f \circ \mathrm{id}_X =_{\mathrm{Hom}(X,Y)} f \end{align*} $$
+$$
+\begin{align*} &\mathcal{C} : \mathrm{Type} \\ &\mathrm{Hom} : \mathcal{C} \to \mathcal{C} \to \mathrm{Type} \\ &\mathrm{id} : \prod_{X : \mathcal{C}} \mathrm{Hom}(X, X) \\ &\circ : \prod_{X, Y, Z : \mathcal{C}} \mathrm{Hom}(Y, Z) \to \mathrm{Hom}(X, Y) \to \mathrm{Hom}(X, Z) \\ &\mathrm{assoc} : \prod_{X, Y, Z, W : \mathcal{C}} \prod_{f, g, h} (h \circ g) \circ f =_{\mathrm{Hom}(X,W)} h \circ (g \circ f) \\ &\mathrm{id_left} : \prod_{X, Y : \mathcal{C}} \prod_{f : \mathrm{Hom}(X, Y)} \mathrm{id}_Y \circ f =_{\mathrm{Hom}(X,Y)} f \\ &\mathrm{id_right} : \prod_{X, Y : \mathcal{C}} \prod_{f : \mathrm{Hom}(X, Y)} f \circ \mathrm{id}_X =_{\mathrm{Hom}(X,Y)} f \end{align*}
+$$
 
 ---
 

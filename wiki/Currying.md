@@ -1,7 +1,11 @@
 #definition #theorem #example
 
 **Currying** (after Haskell Curry) is the bijection between functions of two variables and functions returning functions:
-$$\mathbf{Set}(A \times B, C) \cong \mathbf{Set}(A, C^B), \qquad f \mapsto (a \mapsto (b \mapsto f(a, b))).$$
+
+$$
+\mathbf{Set}(A \times B, C) \cong \mathbf{Set}(A, C^B), \qquad f \mapsto (a \mapsto (b \mapsto f(a, b))).
+$$
+
 "If I have a function $f$ of two variables $a, b$, I can put off entering the second variable: if you give me just $a$, I'll return a function $B \to C$ that's waiting for the $B$ input." Categorically it is the [[Adjunction]] $(- \times B) \dashv (-)^B$ defining the [[Exponential Object]]; in general categories it is the defining property of a [[Cartesian Closed Category]], and $\mathbf{Cat}$ is one: $\mathbf{Cat}(\mathcal{C} \times \mathcal{D}, \mathcal{E}) \cong \mathbf{Cat}(\mathcal{C}, [\mathcal{D}, \mathcal{E}])$ (functors can be curried, DaoFP §9.7).
 
 > Sources: 7 Sketches Example 3.72, Exercise 3.73; DaoFP Chapter 6 ("Currying", "Relation to lambda calculus"), §10.1 ("The Currying Adjunction"), §10.5; Kittenlab (implicit: Julia closures).

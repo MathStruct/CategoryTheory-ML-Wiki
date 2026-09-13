@@ -3,7 +3,11 @@
 Let $\mathcal{C}$ have finite [[Colimit|colimits]] and $(F, \varphi) : (\mathcal{C}, +) \to (\mathbf{Set}, \times)$ be a [[Monoidal Functor|symmetric monoidal functor]], the **decoration functor**. An **$F$-decorated cospan** is a [[Cospan]] $A \xrightarrow{i} N \xleftarrow{o} B$ in $\mathcal{C}$ together with an element $s \in F(N)$, the **decoration**. Intuition ($\mathcal{C} = \mathbf{FinSet}$): $F(N)$ is the set of *legal decorations* on a set $N$ of nodes — e.g. all circuit diagrams with vertex set $N$ — and $A, B$ are the left and right external **ports** (terminals) mapping into the nodes.
 
 **Composition.** Given $(A \xrightarrow{f} N \xleftarrow{g} B, s)$ and $(B \xrightarrow{h} P \xleftarrow{k} C, t)$, compose the cospans by [[Pushout]] and decorate the new apex $N +_B P$ with
-$$F([\iota_N, \iota_P])\big(\varphi_{N,P}(s, t)\big) \in F(N +_B P): \qquad (6.76)$$
+
+$$
+F([\iota_N, \iota_P])\big(\varphi_{N,P}(s, t)\big) \in F(N +_B P): \qquad (6.76)
+$$
+
 first put the two decorations side by side with $\varphi_{N,P}$, then glue along the identifications specified by $B$ using the copairing of the pushout maps. Monoidal product: coproduct cospans decorated by $\varphi_{M,N}(s, t)$ — "stacking".
 
 **Theorem 6.77.** There is a [[Hypergraph Category]] $\mathbf{Cospan}_F$ with the objects of $\mathcal{C}$ and morphisms (equivalence classes of) $F$-decorated cospans; its symmetric monoidal and hypergraph structures come from $\mathbf{Cospan}_{\mathcal{C}}$. With the constant functor $F(c) = \{\ast\}$ one recovers $\mathbf{Cospan}_{\mathcal{C}}$ ([[7S Exercise 6.78]]).

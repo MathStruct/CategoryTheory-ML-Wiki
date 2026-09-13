@@ -1,7 +1,11 @@
 #definition #example
 
 **Lawvere's monoidal preorder** is
-$$\mathbf{Cost} := ([0, \infty], \geq, 0, +),$$
+
+$$
+\mathbf{Cost} := ([0, \infty], \geq, 0, +),
+$$
+
 the non-negative reals together with $\infty$, ordered by $\geq$ (so $\infty \geq x$ for all $x$; the order is the *opposite* of the usual one), with monoidal unit $0$ and product $+$ ($x + \infty = \infty$).
 
 > Sources: 7 Sketches Example 2.37, 2.54, 2.83, 2.91, Exercises 2.40, 2.55, 2.92, 2.103; Definition 2.53.

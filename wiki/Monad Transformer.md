@@ -1,7 +1,10 @@
 #definition #theorem #example #program
 
 Monads do not compose in general, but [[Adjunction|adjunctions]] do. Given an "inner" monad $T = R' L'$ and an "outer" adjunction $L \dashv R$, the composite $R \circ T \circ L$ is again a monad ([[Monads from Adjunctions]]) — the **monad transformer** of the outer adjunction applied to $T$. Its unit and multiplication, drawn as [[String Diagram|string diagrams]], are
-$$\eta_a = R(\eta^i_{L a}) \circ \eta^o_a, \qquad \mu_c = R(\mu^i_{L c}) \circ (R T)(\varepsilon^o_{(T L) c}).$$
+
+$$
+\eta_a = R(\eta^i_{L a}) \circ \eta^o_a, \qquad \mu_c = R(\mu^i_{L c}) \circ (R T)(\varepsilon^o_{(T L) c}).
+$$
 
 > Sources: DaoFP §15.4 ("Monad Transformers", "State monad transformer"); the Monad Transformer Library (MTL).
 

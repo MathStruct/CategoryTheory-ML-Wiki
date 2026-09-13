@@ -1,7 +1,11 @@
 #example #annotation
 
 **Safety proofs in temporal logic** (7 Sketches §7.5.3). In the [[Topos of Behavior Types]] $\mathbf{BT}$, the [[Internal Language of a Topos|internal language]] becomes a temporal logic: variables are behavior types (the altimeter reading $\theta \in \mathbb{R}_{\geq 0}$ changing continuously, the thruster position in $[0,1]$), and *behavior contracts* are [[Predicate|predicates]] on them. For instance "the pilot engages the thruster within one second of the dials showing $\mathsf{bad\_pos}$, and keeps it engaged for five seconds" is the predicate $p : \mathsf{dials} \times \mathsf{thrusters} \to \Omega$,
-$$\forall(t : \mathbb{R}).\ @_t\, \mathsf{bad\_pos}(D) \Rightarrow \exists(r : \mathbb{R}).\ (0 < r < 1) \wedge \forall(r' : \mathbb{R}).\ 0 \leq r' \leq 5 \Rightarrow @_{t + r + r'}\, \mathsf{engaged}(T). \tag{7.82}$$
+
+$$
+\forall(t : \mathbb{R}).\ @_t\, \mathsf{bad\_pos}(D) \Rightarrow \exists(r : \mathbb{R}).\ (0 < r < 1) \wedge \forall(r' : \mathbb{R}).\ 0 \leq r' \leq 5 \Rightarrow @_{t + r + r'}\, \mathsf{engaged}(T). \tag{7.82}
+$$
+
 Here $@_t$ is a [[Modality]] (of type (c) in Proposition 7.71): $@_t(q)$ says "$q$ holds in some small enough neighbourhood of $t$".
 
 > Sources: 7 Sketches §7.1, §7.5.3, Eq. (7.82), §7.6; [SS18] (Schultz–Spivak, *Temporal Type Theory*), [SSV18].

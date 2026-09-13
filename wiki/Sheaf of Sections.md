@@ -1,7 +1,11 @@
 #example #definition #program
 
 Let $f : X \to Y$ be a function between finite sets (Eq. 7.37: $X = \{a_1, a_2, b_1, b_2, b_3, c_1, e_1, e_2\}$, $Y = \{a, b, c, d, e\}$, $f$ sends each element to the letter below it), regarded as a continuous map of discrete [[Topological Space|spaces]]. The presheaf $\mathrm{Sec}_f : \mathrm{Op}(Y)^{\mathrm{op}} \to \mathbf{Set}$,
-$$\mathrm{Sec}_f(U) := \{s : U \to X \mid (s \mathbin{;} f)(u) = u \text{ for all } u \in U\},$$
+
+$$
+\mathrm{Sec}_f(U) := \{s : U \to X \mid (s \mathbin{;} f)(u) = u \text{ for all } u \in U\},
+$$
+
 assigns to $U \subseteq Y$ the set of *cross-sections* over $U$: one element of each [[Fiber]] over $U$. Restriction along $V \subseteq U$ restricts the function $s$ to $V$. It is a [[Sheaf]]: sections over $U_1$ and $U_2$ that agree on $U_1 \cap U_2$ glue uniquely to a section over $U_1 \cup U_2$.
 
 > Sources: 7 Sketches §7.3.3 ("Extended example: sections of a function"), Eqs. (7.37)–(7.43), Exercises 7.38, 7.40, 7.42, 7.44; Example 7.45 (continuous case), Example 7.46 (vector fields), Example 7.61 (vector bundles).

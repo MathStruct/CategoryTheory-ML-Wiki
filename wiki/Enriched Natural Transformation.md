@@ -1,7 +1,11 @@
 #definition
 
 Let $F, G : \mathcal{C} \to \mathcal{D}$ be [[Enriched Functor|$\mathcal{V}$-functors]] between $\mathcal{V}$-[[Enriched Category|categories]]. A **$\mathcal{V}$-natural transformation** $\nu : F \Rightarrow G$ has components that are "global elements" of hom-objects, $\nu_a : I \to \mathcal{D}(Fa, Ga)$, satisfying the naturality condition expressed as a commuting hexagon in $\mathcal{V}$:
-$$\circ \circ (\nu_b \otimes F_{ab}) \circ \lambda^{-1} = \circ \circ (G_{ab} \otimes \nu_a) \circ \rho^{-1} : \mathcal{C}(a, b) \to \mathcal{D}(Fa, Gb),$$
+
+$$
+\circ \circ (\nu_b \otimes F_{ab}) \circ \lambda^{-1} = \circ \circ (G_{ab} \otimes \nu_a) \circ \rho^{-1} : \mathcal{C}(a, b) \to \mathcal{D}(Fa, Gb),
+$$
+
 equivalently $\mathcal{D}(Fa, \nu_b) \circ F_{ab} = \mathcal{D}(\nu_a, Gb) \circ G_{ab}$ using the enriched [[Hom Functor|hom-functor]]'s action on global elements. For $\mathcal{V} = \mathbf{Set}$ this is the ordinary naturality square (pick $f \in \mathcal{C}(a, b)$, then $\nu_b \circ Ff = Gf \circ \nu_a$). $\mathcal{V}$-natural transformations form a *set* $\mathcal{V}\text{-}\mathrm{nat}(F, G)$; the enriched [[End]] $\int_a \mathcal{D}(Fa, Ga)$ gives instead the *object* of natural transformations in $\mathcal{V}$.
 
 > Sources: DaoFP §20.3 ("$\mathcal{V}$-Natural Transformations"), §17.3 (natural transformations as an end), §20.4 (enriched Yoneda); 7 Sketches Remark 2.71, Example 3.57 (for preorders: at most one, existing iff $F \leq G$ pointwise).

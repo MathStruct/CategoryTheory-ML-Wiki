@@ -1,7 +1,11 @@
 #theorem #proof #example
 
 **Theorem.** Every [[Adjunction]] $L \dashv R$ with unit $\eta : \mathrm{Id} \to R L$ and counit $\varepsilon : L R \to \mathrm{Id}$ defines a [[Monad]]
-$$(T, \eta, \mu) = (R \circ L,\ \eta,\ R \circ \varepsilon \circ L),$$
+
+$$
+(T, \eta, \mu) = (R \circ L,\ \eta,\ R \circ \varepsilon \circ L),
+$$
+
 the multiplication being the double whiskering of the counit ($\mu : R L R L \to R L$). Dually $L \circ R$ is a [[Comonad]]. Conversely every monad arises from an adjunction — in fact from a whole category of them, with the [[Kleisli Category|Kleisli adjunction]] initial and the [[Eilenberg-Moore Category|Eilenberg–Moore adjunction]] terminal.
 
 > Sources: DaoFP §15.2 ("Monads from Adjunctions"), §15.3 ("Examples of Monads from Adjunctions"), §15.4–15.5, Exercises 15.2.1, 15.3.1; §10.9; Kittenlab Lecture 7 (free monoid round trip); 7 Sketches §1.4.4 ([[Closure Operator|closure operators]] from [[Galois Connection|Galois connections]], [[7S Exercise 1.119]]).

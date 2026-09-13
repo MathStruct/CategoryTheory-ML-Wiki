@@ -1,9 +1,16 @@
 #definition #theorem #example #program
 
 The **dependent sum** (sigma type) $\Sigma_{x : B}\, T(x)$ is the type of pairs $(x, y)$ with $x : B$ and $y : T(x)$ — a sum *tagged* by elements of $B$; e.g. counted vectors are pairs `(2, (64, 7))`, `(5, (8,21,14,-1,0))` of a length and a tuple. Categorically, for $f : b \to a$ the dependent sum is the **left adjoint of the [[Base Change Functor]]**:
-$$\Sigma_f \dashv f^*, \qquad \Sigma_f \langle s, q : s \to b \rangle := \langle s, f \circ q \rangle : \mathcal{C}/b \to \mathcal{C}/a,$$
+
+$$
+\Sigma_f \dashv f^*, \qquad \Sigma_f \langle s, q : s \to b \rangle := \langle s, f \circ q \rangle : \mathcal{C}/b \to \mathcal{C}/a,
+$$
+
 also written $f_!$ ("$f$ lower shriek"): a bundle finely fibered over $b$ is automatically, more coarsely, fibered over $a$ by post-composition. The adjunction reads
-$$(\mathcal{C}/b)\big(\langle s, q \rangle,\ f^* \langle F, p \rangle\big) \cong (\mathcal{C}/a)\big(\langle s, f \circ q \rangle,\ \langle F, p \rangle\big).$$
+
+$$
+(\mathcal{C}/b)\big(\langle s, q \rangle,\ f^* \langle F, p \rangle\big) \cong (\mathcal{C}/a)\big(\langle s, f \circ q \rangle,\ \langle F, p \rangle\big).
+$$
 
 > Sources: DaoFP §11.3 ("Dependent Sum", "Adding the atlas", "Existential quantification"), §11.2; 7 Sketches §7.4.4 (existential quantification as image); Kittenlab Lecture 13.
 

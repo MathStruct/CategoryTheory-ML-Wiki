@@ -1,7 +1,11 @@
 #theorem #proof
 
 **Proposition 1.111.** Let $f : P \to Q$ be left adjoint to $g : Q \to P$ in a [[Galois Connection]]. If $A \subseteq Q$ has a [[Meet]] $\bigwedge A$, then $g(A) := \{g(a) \mid a \in A\}$ has a meet in $P$ and
-$$g\Big(\bigwedge A\Big) \cong \bigwedge g(A).$$
+
+$$
+g\Big(\bigwedge A\Big) \cong \bigwedge g(A).
+$$
+
 That is, **right adjoints preserve meets**. Dually, **left adjoints preserve joins**: if $A \subseteq P$ has a [[Join]] then $f(\bigvee A) \cong \bigvee f(A)$.
 
 > Sources: 7 Sketches Proposition 1.111, Exercise 1.112, Example 1.113; general version: [[Right Adjoints Preserve Limits]] (DaoFP §10.7).

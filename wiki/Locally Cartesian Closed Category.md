@@ -1,7 +1,11 @@
 #definition #theorem
 
 A category $\mathcal{C}$ is **locally cartesian closed** (LCCC) if every [[Slice Category]] $\mathcal{C}/b$ is a [[Cartesian Closed Category]]. Equivalently (for $\mathcal{C}$ with a terminal object): $\mathcal{C}$ has all [[Pullback|pullbacks]] and every [[Base Change Functor]] $f^* : \mathcal{C}/a \to \mathcal{C}/b$ has a right adjoint $\Pi_f$ (it always has the left adjoint $\Sigma_f$):
-$$\Sigma_f \dashv f^* \dashv \Pi_f .$$
+
+$$
+\Sigma_f \dashv f^* \dashv \Pi_f .
+$$
+
 LCCCs are the categorical models of dependent type theory, the way CCCs model the simply typed lambda calculus.
 
 > Sources: DaoFP §11.2 ("Base-change functor": "To model dependent types, we need to impose an additional condition: we require the category to be locally cartesian closed"), §11.3–11.4; 7 Sketches §7.2.1 (every [[Topos]] is an LCCC).

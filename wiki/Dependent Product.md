@@ -7,13 +7,21 @@ The **dependent product** (pi type, dependent function type) $\Pi_{x : B}\, T(x)
 ## The object of sections
 
 Mimicking the [[Exponential Object]] (application $\varepsilon : C^B \times B \to C$), the object of sections $S(E)$ of $\langle E, p \rangle$ has a dependent application $\varepsilon : S(E) \times B \to E$ with $p \circ \varepsilon = \pi_2$ — the value lands in the right fiber — i.e. $\varepsilon$ is a morphism $\langle S(E) \times B, \pi_2 \rangle \to \langle E, p \rangle$ in $\mathcal{C}/B$, universal:
-$$(\mathcal{C}/B)\big(\langle G \times B, \pi_2 \rangle, \langle E, p \rangle\big) \cong \mathcal{C}(G, S(E)).$$
+
+$$
+(\mathcal{C}/B)\big(\langle G \times B, \pi_2 \rangle, \langle E, p \rangle\big) \cong \mathcal{C}(G, S(E)).
+$$
+
 Each $y \in G$ cuts a horizontal slice $\{(y, b)\}$ of $G \times B$, which a fiberwise map sends to a section of $E$; so elements of $S(E)$ are exactly sections. The counit is dependent function application.
 
 ## Adding the atlas
 
 Replacing $1$ by a base $A$ and $G \times B = {!}^* G$ by the pullback $f^* G$ along $f : B \to A$ gives the definition of $\Pi_f$ as the **right adjoint of the [[Base Change Functor]]**:
-$$(\mathcal{C}/B)\big(f^* \langle G, q \rangle, \langle E, p \rangle\big) \cong (\mathcal{C}/A)\big(\langle G, q \rangle, \Pi_f \langle E, p \rangle\big),$$
+
+$$
+(\mathcal{C}/B)\big(f^* \langle G, q \rangle, \langle E, p \rangle\big) \cong (\mathcal{C}/A)\big(\langle G, q \rangle, \Pi_f \langle E, p \rangle\big),
+$$
+
 written $f_* : \mathcal{C}/B \to \mathcal{C}/A$. The fiber of $\Pi_f E$ over $x \in A$ is the set of *partial sections* of $E$ over the patch $f^{-1}(x) \subseteq B$ ([[DaoFP Exercise 11.4.2]]); $f$ localizes sections to neighbourhoods. Altogether $\Sigma_f \dashv f^* \dashv \Pi_f$ in a [[Locally Cartesian Closed Category]].
 
 - **Logic**: $\Pi_{x : B} T(x)$ is $\forall_{x : B}\, T(x)$ — a section proves every $T(x)$ is inhabited ([[Quantification]]). The induction principle for $\mathbb{N}$ produces an element of $\Pi_{n : \mathbb{N}} T(n)$ from $\mathit{init} : T(Z)$ and $\mathit{step} : \Pi_n (T(n) \to T(Sn))$ ([[Natural Numbers Object]]).

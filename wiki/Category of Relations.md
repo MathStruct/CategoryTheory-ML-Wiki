@@ -1,7 +1,11 @@
 #definition #example
 
 **$\mathbf{Rel}$** is the [[Category]] whose objects are [[Set|sets]] and whose morphisms $X \to Y$ are [[Relation|relations]] $R \subseteq X \times Y$; composition is
-$$S \circ R := \{(x, z) \mid \exists y \in Y.\ (x, y) \in R \wedge (y, z) \in S\}$$
+
+$$
+S \circ R := \{(x, z) \mid \exists y \in Y.\ (x, y) \in R \wedge (y, z) \in S\}
+$$
+
 and the identity on $X$ is $1_X = \{(x, x)\}$ (Kittenlab Lecture 14, 7 Sketches Example 5.8). Restricted to $\underline{m}, \underline{n}$ it is a [[Prop]] with monoidal product $R_1 + R_2 := R_1 \sqcup R_2 \subseteq (m_1 \sqcup m_2) \times (n_1 \sqcup n_2)$ ("no interaction", [[7S Exercise 5.10]]).
 
 > Sources: Kittenlab Lecture 14 ("Relations", "Category of relations"), 15 (relations as [[Span|spans]]); 7 Sketches Example 5.8, Definition 5.79 ($\mathbf{Rel}_R$), Theorem 5.87, §2.6 (relations form a noncommutative quantale), Exercise 5.10; DaoFP §17.1 (profunctors as proof-relevant relations).

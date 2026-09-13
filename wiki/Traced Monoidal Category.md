@@ -1,7 +1,11 @@
 #definition #example
 
 A **traced monoidal category** is a [[Symmetric Monoidal Category]] with a family of operations
-$$\mathrm{Tr}^X_{A,B} : \mathcal{C}(A \otimes X, B \otimes X) \to \mathcal{C}(A, B)$$
+
+$$
+\mathrm{Tr}^X_{A,B} : \mathcal{C}(A \otimes X, B \otimes X) \to \mathcal{C}(A, B)
+$$
+
 ("feed the $X$ output back into the $X$ input") satisfying naturality in $A, B$, dinaturality in $X$, vanishing ($\mathrm{Tr}^I = \mathrm{id}$, $\mathrm{Tr}^{X \otimes Y} = \mathrm{Tr}^X \circ \mathrm{Tr}^Y$), superposing and yanking ($\mathrm{Tr}^X(\sigma_{X,X}) = \mathrm{id}_X$). Graphically: a wire looping from an output back to an input.
 
 > Sources: 7 Sketches §4.4.4 ("wiring diagrams for compact closed categories": loops via cup and cap), Proposition 4.60; §5.3 (feedback in [[Signal Flow Graph|signal flow graphs]]); §6.1 (hypergraph categories allow feedback freely).

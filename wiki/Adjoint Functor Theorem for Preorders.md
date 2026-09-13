@@ -5,11 +5,22 @@
 > Sources: 7 Sketches Theorem 1.115; DaoFP §10.8 ("Freyd's theorem in a preorder", "Solution set condition"); general version: [[Adjoint Functor Theorem]].
 
 *Proof (meets).* One direction is [[Right Adjoints Preserve Meets]]. Conversely suppose $g$ preserves meets. Define the candidate left adjoint by
-$$f(p) := \bigwedge \{q \in Q \mid p \leq g(q)\}, \qquad (1.116)$$
+
+$$
+f(p) := \bigwedge \{q \in Q \mid p \leq g(q)\}, \qquad (1.116)
+$$
+
 which exists because $Q$ has all meets. *Monotone:* if $p \leq p'$ then $\{q' \mid p' \leq g(q')\} \subseteq \{q \mid p \leq g(q)\}$, so by Proposition 1.91 ([[Meet]]) $f(p) \leq f(p')$. By Proposition 1.107 it suffices to show $p_0 \leq g(f(p_0))$ and $f(g(q_0)) \leq q_0$. For the first,
-$$p_0 \leq \bigwedge\{g(q) \mid p_0 \leq g(q)\} \cong g\Big(\bigwedge\{q \mid p_0 \leq g(q)\}\Big) = g(f(p_0)),$$
+
+$$
+p_0 \leq \bigwedge\{g(q) \mid p_0 \leq g(q)\} \cong g\Big(\bigwedge\{q \mid p_0 \leq g(q)\}\Big) = g(f(p_0)),
+$$
+
 where the inequality holds because $p_0$ is below every element of the set, and the isomorphism is meet-preservation. For the second, $\{q_0\} \subseteq \{q \mid g(q_0) \leq g(q)\}$, so
-$$f(g(q_0)) = \bigwedge\{q \mid g(q_0) \leq g(q)\} \leq \bigwedge\{q_0\} = q_0. \qquad\blacksquare$$
+
+$$
+f(g(q_0)) = \bigwedge\{q \mid g(q_0) \leq g(q)\} \leq \bigwedge\{q_0\} = q_0. \qquad\blacksquare
+$$
 
 **DaoFP's view (§10.8).** In a preorder a right adjoint $g$ to $f$ must satisfy $f(p) = \bigwedge\{q \mid p \leq g(q)\}$ — the *limit of the comma category* $p \downarrow g$. Freyd's theorem says that for general categories the same formula works provided $\mathcal{C}$ is complete, $g$ preserves limits, and a *solution set condition* holds guaranteeing the limit is over a *small* diagram; in a preorder with all meets the condition is automatic. Applied to [[Continuation|defunctionalization]]: DaoFP uses the theorem to explain why arbitrary functions can be replaced by a "solution set" of data.
 

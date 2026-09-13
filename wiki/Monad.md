@@ -1,7 +1,11 @@
 #definition #theorem #example #program
 
 A **monad** on a category $\mathcal{C}$ is a [[Monoid Object|monoid]] in the strict [[Monoidal Category|monoidal category]] $([\mathcal{C}, \mathcal{C}], \circ, \mathrm{Id})$ of [[Endofunctor|endofunctors]] under composition (horizontal composition of natural transformations is the tensor of arrows): a triple $(T, \eta, \mu)$ of an endofunctor $T$ and [[Natural Transformation|natural transformations]]
-$$\eta : \mathrm{Id} \to T \ (\text{unit}, \texttt{return}), \qquad \mu : T \circ T \to T \ (\text{multiplication}, \texttt{join}),$$
+
+$$
+\eta : \mathrm{Id} \to T \ (\text{unit}, \texttt{return}), \qquad \mu : T \circ T \to T \ (\text{multiplication}, \texttt{join}),
+$$
+
 satisfying the unit laws $\mu \circ (\eta \circ T) = \mathrm{id}_T = \mu \circ (T \circ \eta)$ and associativity $\mu \circ (\mu \circ T) = \mu \circ (T \circ \mu)$ (whiskering notation). Monads were once called "triples", hence $T$.
 
 > Sources: DaoFP Chapter 14 ("Monads": §14.1 "Programming with Side Effects", §14.2 "Composing Effects", §14.3 "Alternative Definitions", §14.4 "Monad Instances", §14.5 "Do Notation", §14.7 "Monads Categorically": "Substitution", "Monad as a monoid"), Chapter 15 (monads from adjunctions, monad algebras); 7 Sketches §1.4.4 ([[Closure Operator|closure operators]] are monads on preorders), Example 1.123; Kittenlab Lecture 7 (the free-monoid round trip).

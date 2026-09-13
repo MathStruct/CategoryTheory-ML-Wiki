@@ -1,7 +1,11 @@
 #definition #example
 
 An arrow $f : a \to b$ is an **epimorphism** ("epi", drawn $a \twoheadrightarrow b$) if for every object $c$ and every pair $g_1, g_2 : b \to c$,
-$$g_1 \circ f = g_2 \circ f \implies g_1 = g_2.$$
+
+$$
+g_1 \circ f = g_2 \circ f \implies g_1 = g_2.
+$$
+
 Equivalently, pre-composition $(- \circ f) : \mathcal{C}(b, c) \to \mathcal{C}(a, c)$ is injective for every $c$. To show $f$ is *not* epi, find $c$ and two different $g_1, g_2$ that agree after precomposing with $f$.
 
 > Sources: DaoFP §2.5 ("Epimorphisms"), Exercise 2.5.1; 7 Sketches §1.4.2; Kittenlab Lecture 2.

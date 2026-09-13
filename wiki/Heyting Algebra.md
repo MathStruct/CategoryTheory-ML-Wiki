@@ -1,7 +1,11 @@
 #definition #example #theorem
 
 A **Heyting algebra** is a [[Partial Order|poset]] $H$ with finite [[Meet|meets]] $\wedge$, finite [[Join|joins]] $\vee$, top $\mathsf{true}$, bottom $\mathsf{false}$, and an **implication** $\Rightarrow$ characterized by
-$$r \leq (p \Rightarrow q) \iff r \wedge p \leq q,$$
+
+$$
+r \leq (p \Rightarrow q) \iff r \wedge p \leq q,
+$$
+
 i.e. $(- \wedge p) \dashv (p \Rightarrow -)$ is a [[Galois Connection]]. Negation is $\neg p := p \Rightarrow \mathsf{false}$. A Heyting algebra is exactly a thin [[Bicartesian Closed Category]]; it is a *Boolean algebra* when moreover $\neg\neg p = p$ (equivalently $p \vee \neg p = \mathsf{true}$).
 
 > Sources: 7 Sketches §7.4.3 ("the poset $|\Omega^S|$ of predicates on $S$ forms what's called a Heyting algebra"), §7.4.2, Exercises 7.11, 7.59, 7.60, Remark 7.33; DaoFP §6 (bicartesian closed categories).

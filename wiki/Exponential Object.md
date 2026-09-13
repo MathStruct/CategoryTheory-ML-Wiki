@@ -1,7 +1,11 @@
 #definition #example #theorem
 
 In a [[Category]] with [[Product|products]], the **exponential** (**function object**, **internal hom**) $b^a$ (also $[a, b]$ or $a \Rightarrow b$) of objects $a, b$ is an object with an **evaluation** morphism $\varepsilon_{ab} : b^a \times a \to b$ such that for every $f : x \times a \to b$ there is a unique $h : x \to b^a$ (the **curried** $f$) with $f = \varepsilon_{ab} \circ (h \times \mathrm{id}_a)$. Equivalently, a natural isomorphism
-$$\mathcal{C}(x \times a, b) \cong \mathcal{C}(x, b^a),$$
+
+$$
+\mathcal{C}(x \times a, b) \cong \mathcal{C}(x, b^a),
+$$
+
 i.e. $(- \times a) \dashv (-)^a$ — the [[Currying|currying adjunction]]. A category with all exponentials (and finite products) is a [[Cartesian Closed Category]].
 
 > Sources: DaoFP §1.4 ("The Object of Arrows"), Chapter 6 ("Function Types": elimination rule, introduction rule, currying, modus ponens, functoriality), §9.4 ("Exponentials"), §10.1, §10.5; 7 Sketches Example 3.72 ($C^B$ in $\mathbf{Set}$, $|C^B| = |C|^{|B|}$), Exercise 3.73, §7.2.1; Definition 2.79 ([[Monoidal Closed Preorder|hom-elements]] are the preorder shadow).

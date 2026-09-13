@@ -13,7 +13,11 @@ The [[Subobject Classifier]] $\Omega$ of a [[Topos]] carries the **logical conne
 ## In a sheaf topos $\mathbf{Shv}(X)$ (truth values are open sets)
 
 For $U, V \in \Omega(X) = \mathrm{Op}$:
-$$U \wedge V := U \cap V, \qquad U \vee V := U \cup V, \qquad (U \Rightarrow V) := \bigcup \{R \in \mathrm{Op} \mid R \cap U \subseteq V\}, \qquad \neg U := (U \Rightarrow \mathsf{false}) = \mathrm{int}(X \setminus U).$$
+
+$$
+U \wedge V := U \cap V, \qquad U \vee V := U \cup V, \qquad (U \Rightarrow V) := \bigcup \{R \in \mathrm{Op} \mid R \cap U \subseteq V\}, \qquad \neg U := (U \Rightarrow \mathsf{false}) = \mathrm{int}(X \setminus U).
+$$
+
 $\mathsf{true} = X$ and $\mathsf{false} = \varnothing$ ([[7S Exercise 7.60]]). Implication is the hardest to picture; negation is the [[Interior Operator|interior]] of the complement. Example 7.58 on $X = \mathbb{R}$ with $U = (-\infty, 3)$, $V = (-4, 4)$: $U \wedge V = (-4, 3)$, $U \vee V = (-\infty, 4)$, $\neg U = (3, \infty)$, $\neg V = (-\infty, -4) \cup (4, \infty)$, $U \Rightarrow V = (-4, \infty)$, $V \Rightarrow U = U$.
 
 The logic is **intuitionistic**: $U \subseteq \neg\neg U$ always, but $\neg\neg U \subseteq U$ can fail — for $U = \mathbb{R} \setminus \{0\}$, $\neg U = \varnothing$ and $\neg\neg U = \mathbb{R}$ ([[7S Exercise 7.59]]). Excluded middle $U \vee \neg U = X$ fails for the same $U$.

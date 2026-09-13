@@ -1,13 +1,21 @@
 #definition #example
 
 Given a [[Metric Space]] $(X, d)$ and subsets $U, V \subseteq X$, the (asymmetric, "Lawvere") **Hausdorff distance** is
-$$d_L(U, V) := \sup_{u \in U} \inf_{v \in V} d(u, v)$$
+
+$$
+d_L(U, V) := \sup_{u \in U} \inf_{v \in V} d(u, v)
+$$
+
 — "put me in the worst part of $U$; how far must I go to get anywhere in $V$?". The usual symmetric Hausdorff metric is $\max(d_L(U,V), d_L(V,U))$; 7 Sketches finds the unsymmetrized notion "more interesting". It makes the regions US, Spain, Boston a [[Lawvere Metric Space]]: $d(\mathrm{Boston}, \mathrm{US}) = 0$, $d(\mathrm{US}, \mathrm{Boston}) \neq 0$, and $d(\{r < 0\}, \{0\}) = \infty$.
 
 > Sources: 7 Sketches §2.3.3 (footnote 3), Exercise 2.52, Remark 2.97.
 
 **Generalization (Remark 2.97).** For any [[Quantale]] $\mathcal{V}$ and $\mathcal{V}$-category $\mathcal{X}$ with subsets $U, V$ of objects,
-$$\mathcal{X}(U, V) := \bigwedge_{u \in U} \bigvee_{v \in V} \mathcal{X}(u, v).$$
+
+$$
+\mathcal{X}(U, V) := \bigwedge_{u \in U} \bigvee_{v \in V} \mathcal{X}(u, v).
+$$
+
 For $\mathcal{V} = \mathbf{Bool}$ this asks "can I get into $V$ from every $u \in U$?", i.e. $\forall u \in U.\ \exists v \in V.\ u \leq v$; for $\mathcal{V} = \mathcal{P}(M)$ (modes of transportation) it gives the modes that get you into $V$ from every point of $U$. (In $\mathbf{Cost}$, $\bigvee = \inf$ and $\bigwedge = \sup$ because of the reversed order.)
 
 ````tabs

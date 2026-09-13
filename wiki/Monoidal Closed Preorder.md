@@ -1,7 +1,11 @@
 #definition #example #theorem #proof
 
 A [[Symmetric Monoidal Preorder]] $\mathcal{V} = (V, \leq, I, \otimes)$ is **symmetric monoidal closed** (or just **closed**) if for every $v, w \in V$ there is an element $v \multimap w \in V$, the **hom-element**, such that
-$$(a \otimes v) \leq w \quad\text{iff}\quad a \leq (v \multimap w) \qquad (2.80)$$
+
+$$
+(a \otimes v) \leq w \quad\text{iff}\quad a \leq (v \multimap w) \qquad (2.80)
+$$
+
 for all $a, v, w$. "Closed" means the preorder is closed under "taking homs". Think of $v \multimap w$ as a *single-use $v$-to-$w$ converter*: $a$ and $v$ suffice to get $w$ iff $a$ suffices to get a single-use converter.
 
 > Sources: 7 Sketches §2.5.1, Definition 2.79, Remark 2.81, 2.89, Examples 2.83, 2.85, 2.86, Proposition 2.87, 2.98, Exercises 2.82, 2.84; DaoFP §19.1, §20.1 ("Self-enrichment"); related: [[Compact Closed Category]], [[Cartesian Closed Category]], [[Monoidal Closed Category]].

@@ -6,7 +6,11 @@ Given an [[Adjunction]] $L \dashv R$ with hom-set isomorphism $\phi_{x,y} : \mat
 - setting $x := Ry$ and applying $\phi^{-1}$ to $\mathrm{id}_{Ry}$ gives the **counit** $\varepsilon_y : L(Ry) \to y$, a natural transformation $\varepsilon : L \circ R \Rightarrow \mathrm{Id}$.
 
 They satisfy the **triangle identities** (zig-zag identities), using horizontal composition/whiskering:
-$$(\varepsilon \circ L) \cdot (L \circ \eta) = \mathrm{id}_L, \qquad (R \circ \varepsilon) \cdot (\eta \circ R) = \mathrm{id}_R,$$
+
+$$
+(\varepsilon \circ L) \cdot (L \circ \eta) = \mathrm{id}_L, \qquad (R \circ \varepsilon) \cdot (\eta \circ R) = \mathrm{id}_R,
+$$
+
 i.e. $L \xrightarrow{L\eta} LRL \xrightarrow{\varepsilon L} L$ and $R \xrightarrow{\eta R} RLR \xrightarrow{R \varepsilon} R$ are identities. Conversely, natural transformations $\eta, \varepsilon$ satisfying the triangle identities determine the adjunction: $f : x \to Ry$ has mate $\varepsilon_y \circ Lf$, and $g : Lx \to y$ has mate $Rg \circ \eta_x$ ([[DaoFP Exercise 10.5.2]]). "$\eta$ can be used to insert $RL$ anywhere an identity would work; $\varepsilon$ to eliminate $LR$."
 
 > Sources: DaoFP §10.5 ("Unit and Counit of an Adjunction", "Triangle identities", "The unit and counit of the currying adjunction"), Exercises 10.5.1–10.5.4; 7 Sketches Proposition 1.107 (preorder version: $p \leq g(f(p))$ and $f(g(q)) \leq q$), Exercise 1.119; Kittenlab Lecture 7 ($\eta_X : X \to UF X$, $x \mapsto [x]$).

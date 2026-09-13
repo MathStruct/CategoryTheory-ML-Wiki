@@ -6,7 +6,10 @@ get :: s -> a
 set :: s -> a -> s
 ```
 objectifying read/write access to a part of a larger object (a field of a record, a component of a pair, a column of a database row — where lenses were first introduced). A lens is **lawful** if it satisfies
-$$\texttt{set s (get s)} = \texttt{s} \ (\text{set/get}), \qquad \texttt{get (set s a)} = \texttt{a} \ (\text{get/set}), \qquad \texttt{set (set s a) a'} = \texttt{set s a'} \ (\text{set/set}).$$
+
+$$
+\texttt{set s (get s)} = \texttt{s} \ (\text{set/get}), \qquad \texttt{get (set s a)} = \texttt{a} \ (\text{get/set}), \qquad \texttt{set (set s a) a'} = \texttt{set s a'} \ (\text{set/set}).
+$$
 
 > Sources: DaoFP §16.3 ("Lenses"), §17.9 ("Existential lens"), §18 ("Tambara Modules", profunctor optics); §16.3 ("Comonad coalgebras").
 

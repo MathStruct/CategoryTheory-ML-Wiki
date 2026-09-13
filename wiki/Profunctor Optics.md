@@ -1,7 +1,10 @@
 #theorem #definition #example #program
 
 **Profunctor optics** represent an optic (lens, prism, traversal, iso, ...) as a function polymorphic over a class of [[Profunctor|profunctors]]; composition of optics is then ordinary function composition — like representing rotations by matrices so that composing them is matrix multiplication. The master formula, from [[Tannakian Reconstruction]] over a free/forgetful adjunction $F \dashv U$ between a category $\mathcal{T}$ of structured profunctors and all profunctors, with $\Phi = U F$:
-$$\mathcal{O}\langle s, t\rangle\langle a, b\rangle = \int_{P : \mathcal{T}} \mathbf{Set}\big(P\langle a, b\rangle,\ P\langle s, t\rangle\big) \cong \big(\Phi\,(\mathcal{C}^{\mathrm{op}} \times \mathcal{C})(\langle a, b\rangle, -)\big)\langle s, t\rangle .$$
+
+$$
+\mathcal{O}\langle s, t\rangle\langle a, b\rangle = \int_{P : \mathcal{T}} \mathbf{Set}\big(P\langle a, b\rangle,\ P\langle s, t\rangle\big) \cong \big(\Phi\,(\mathcal{C}^{\mathrm{op}} \times \mathcal{C})(\langle a, b\rangle, -)\big)\langle s, t\rangle .
+$$
 
 > Sources: DaoFP §18.2 ("Profunctor Lenses": "Iso", "Profunctor lenses", "Profunctor lenses in Haskell"), §18.3 ("General Optics": "Prisms", "Traversals"), §18.4 ("Mixed Optics"), Exercises 18.2.1, 18.4.1; §17.9 ([[Existential Lens]]).
 

@@ -1,7 +1,11 @@
 #definition #example #theorem
 
 Let $F : \mathcal{P} \to \mathcal{Q}$ be a $\mathcal{V}$-[[Enriched Functor|functor]]. Its **companion** $\hat F : \mathcal{P} \nrightarrow \mathcal{Q}$ and **conjoint** $\check F : \mathcal{Q} \nrightarrow \mathcal{P}$ are the [[Profunctor|profunctors]]
-$$\hat F(p, q) := \mathcal{Q}(F(p), q), \qquad \check F(q, p) := \mathcal{Q}(q, F(p)).$$
+
+$$
+\hat F(p, q) := \mathcal{Q}(F(p), q), \qquad \check F(q, p) := \mathcal{Q}(q, F(p)).
+$$
+
 In the $\mathbf{Bool}$ case a [[Monotone Map]] is "a bunch of arrows, one from each $p$ landing at $F(p)$" — which looks exactly like bridges: that is the companion; mentally reversing every dotted arrow gives bridges from $\mathcal{Q}$ to $\mathcal{P}$, the conjoint. This is how [[Profunctor|profunctors]] generalize functors.
 
 > Sources: 7 Sketches §4.3.3 (Definition 4.34, Examples 4.35, 4.37, Remark 4.39, Exercises 4.36, 4.38, 4.41); [Shu08].

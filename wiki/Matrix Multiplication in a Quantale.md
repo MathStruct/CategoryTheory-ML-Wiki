@@ -1,13 +1,21 @@
 #definition #example #theorem #program
 
 Let $\mathcal{V} = (V, \leq, I, \otimes, \multimap)$ be a [[Quantale]]. A **$\mathcal{V}$-matrix** with rows $X$ and columns $Y$ is a function $M : X \times Y \to V$; $M(x, y)$ is the $(x,y)$-entry. The **product** of $M : X \times Y \to V$ and $N : Y \times Z \to V$ is $M \ast N : X \times Z \to V$,
-$$(M \ast N)(x, z) := \bigvee_{y \in Y} M(x, y) \otimes N(y, z), \qquad (2.101)$$
+
+$$
+(M \ast N)(x, z) := \bigvee_{y \in Y} M(x, y) \otimes N(y, z), \qquad (2.101)
+$$
+
 joins standing in for $\sum$ and $\otimes$ for $\cdot$ in the usual formula. The **identity matrix** $I_X(x, y) := I$ if $x = y$ and $0 := \bigvee\varnothing$ otherwise.
 
 > Sources: 7 Sketches §2.5.3, Definition 2.100, Example 2.102, Exercises 2.103–2.105; Kittenlab Lecture 14 (relation composition "looks suspiciously like matrix multiplication"); Chapter 4 ([[Profunctor|profunctor]] composition is exactly this).
 
 **Example 2.102** ($\mathcal{V} = \mathbf{Bool}$, $X = Z = \underline{3}$, $Y = \underline{2}$):
-$$\begin{pmatrix} \mathsf{f} & \mathsf{f} \\ \mathsf{f} & \mathsf{t} \\ \mathsf{t} & \mathsf{t} \end{pmatrix} \ast \begin{pmatrix} \mathsf{t} & \mathsf{t} & \mathsf{f} \\ \mathsf{t} & \mathsf{f} & \mathsf{t} \end{pmatrix} = \begin{pmatrix} \mathsf{f} & \mathsf{f} & \mathsf{f} \\ \mathsf{t} & \mathsf{f} & \mathsf{t} \\ \mathsf{t} & \mathsf{t} & \mathsf{t} \end{pmatrix}.$$
+
+$$
+\begin{pmatrix} \mathsf{f} & \mathsf{f} \\ \mathsf{f} & \mathsf{t} \\ \mathsf{t} & \mathsf{t} \end{pmatrix} \ast \begin{pmatrix} \mathsf{t} & \mathsf{t} & \mathsf{f} \\ \mathsf{t} & \mathsf{f} & \mathsf{t} \end{pmatrix} = \begin{pmatrix} \mathsf{f} & \mathsf{f} & \mathsf{f} \\ \mathsf{t} & \mathsf{f} & \mathsf{t} \\ \mathsf{t} & \mathsf{t} & \mathsf{t} \end{pmatrix}.
+$$
+
 Identity matrices ([[7S Exercise 2.103]]): $\begin{pmatrix} 1 & 0 \\ 0 & 1\end{pmatrix}$ in $(\mathbb{N}, \leq, 1, \ast)$, $\begin{pmatrix} \mathsf{t} & \mathsf{f} \\ \mathsf{f} & \mathsf{t}\end{pmatrix}$ in $\mathbf{Bool}$, $\begin{pmatrix} 0 & \infty \\ \infty & 0\end{pmatrix}$ in $\mathbf{Cost}$.
 
 **Laws** ([[7S Exercise 2.104]]): $I_X \ast M = M$ and $(M \ast N) \ast P = M \ast (N \ast P)$, using $0 \otimes v = v \otimes \bigvee \varnothing = \bigvee \varnothing = 0$ and distributivity of $\otimes$ over joins (Proposition 2.87). Hence sets and $\mathcal{V}$-matrices form a category — $\mathcal{V}$-$\mathbf{Mat}$, the category of $\mathcal{V}$-[[Profunctor|profunctors]] between discrete $\mathcal{V}$-categories, and for $\mathcal{V} = \mathbf{Bool}$ the [[Category of Relations]].

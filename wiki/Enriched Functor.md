@@ -1,7 +1,10 @@
 #definition #example
 
 Let $\mathcal{X}$ and $\mathcal{Y}$ be $\mathcal{V}$-[[Enriched Category|categories]]. A **$\mathcal{V}$-functor** $F : \mathcal{X} \to \mathcal{Y}$ consists of a function $F : \mathrm{Ob}(\mathcal{X}) \to \mathrm{Ob}(\mathcal{Y})$ such that
-$$\mathcal{X}(x_1, x_2) \leq \mathcal{Y}(F(x_1), F(x_2)) \quad\text{for all } x_1, x_2 \in \mathrm{Ob}(\mathcal{X}).$$
+
+$$
+\mathcal{X}(x_1, x_2) \leq \mathcal{Y}(F(x_1), F(x_2)) \quad\text{for all } x_1, x_2 \in \mathrm{Ob}(\mathcal{X}).
+$$
 
 > Sources: 7 Sketches Definition 2.69, Examples 2.70, 2.72, Exercise 2.73; DaoFP §20.2; the ordinary case is [[Functor]].
 

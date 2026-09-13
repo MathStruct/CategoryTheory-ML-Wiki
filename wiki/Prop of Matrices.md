@@ -1,7 +1,11 @@
 #definition #theorem #proof #example
 
 Let $R$ be a [[Rig]]. An $(m \times n)$-matrix with values in $R$ is a function $M : \underline{m} \times \underline{n} \to R$. The **prop of $R$-matrices** $\mathbf{Mat}(R)$ has morphisms $m \to n$ the $m \times n$ matrices, composition by matrix multiplication
-$$(M \mathbin{;} N)(a, c) := \sum_{b \in \underline{n}} M(a, b) \ast N(b, c) \qquad (5.48)$$
+
+$$
+(M \mathbin{;} N)(a, c) := \sum_{b \in \underline{n}} M(a, b) \ast N(b, c) \qquad (5.48)
+$$
+
 (in the diagrammatic convention a row vector $v$ acts by $v \mathbin{;} A$, Remark 5.49), and monoidal product the **direct sum** $A + B = \begin{pmatrix} A & 0 \\ 0 & B \end{pmatrix}$ ([[7S Exercise 5.51]]). Any combination of multiplication and direct sum is an *interconnection* of matrices. For fixed $n$, $\mathrm{Mat}_n(R)$ is itself a rig (Example 5.40); the prop assembles all sizes into one structure.
 
 > Sources: 7 Sketches §5.3.3–5.4.2 (Definition 5.50, Theorem 5.53, Proposition 5.54, 5.56, Theorem 5.60, Examples 5.61, 5.68, 5.70, Exercises 5.51, 5.55, 5.58, 5.59, 5.62, 5.63, 5.69); Kittenlab Lecture 3–4 ($\mathbf{Mat}$ with objects $\mathbb{N}$, morphisms $n \times m$ matrices; the functor $\mathsf{Fin} \to \mathbf{Mat}$), 11 (coequalizers in $\mathbf{Mat}$); Chapter 2 ([[Matrix Multiplication in a Quantale]] is the quantale case).

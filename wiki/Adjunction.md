@@ -1,7 +1,11 @@
 #definition #example #theorem #proof
 
 Let $L : \mathcal{C} \to \mathcal{D}$ and $R : \mathcal{D} \to \mathcal{C}$ be [[Functor|functors]]. $L$ is **left adjoint** to $R$ (and $R$ **right adjoint** to $L$), written $L \dashv R$, if for all $c \in \mathcal{C}$, $d \in \mathcal{D}$ there is an isomorphism of hom-sets
-$$\alpha_{c,d} : \mathcal{C}(c, R(d)) \xrightarrow{\ \cong\ } \mathcal{D}(L(c), d)$$
+
+$$
+\alpha_{c,d} : \mathcal{C}(c, R(d)) \xrightarrow{\ \cong\ } \mathcal{D}(L(c), d)
+$$
+
 natural in $c$ and $d$ (as functors $\mathcal{C}^{\mathrm{op}} \times \mathcal{D} \to \mathbf{Set}$: for $f : c' \to c$ and $g : d \to d'$, $\alpha_{c',d'}(f \mathbin{;} h \mathbin{;} R g) = L f \mathbin{;} \alpha_{c,d}(h) \mathbin{;} g$). The image $\alpha_{c,d}(f)$ of $f : c \to R d$ is its **mate** (DaoFP: **transpose**), and vice versa. In diagrams the $\Rightarrow$ points in the direction of the left adjoint.
 
 ```tikz

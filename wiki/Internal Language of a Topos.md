@@ -5,7 +5,11 @@ Every [[Topos]] $\mathcal{E}$ has an **internal language**: a formal higher-orde
 > Sources: 7 Sketches §7.4.6 ("Type theories and semantics"), Eq. (7.73), Example 7.74, §7.1, §7.6 ([MM92], [Jac99], [LS88]); DaoFP §11 (dependent types), §6.3 (lambda calculus in a CCC).
 
 **Example 7.74.** For any $f : S \to T$ in a topos, $f$ is an [[Epimorphism]] iff the formula
-$$\forall(t : T).\, \exists(s : S).\, f(s) = t \tag{7.73}$$
+
+$$
+\forall(t : T).\, \exists(s : S).\, f(s) = t \tag{7.73}
+$$
+
 holds. In the topos of [[C-Set|database instances]] on a schema $\mathcal{C}$ this compiles to "for every table $c$ and every row $t \in T(c)$ there is a row $s \in S(c)$ with $f(s) = t$" — surjectivity table by table. In $\mathbf{Shv}(X)$ it compiles to "for every open $U$ and section $t \in T(U)$ there is an open cover $(U_i)$ of $U$ and sections $s_i \in S(U_i)$ with $f(s_i) = t|_{U_i}$" — local surjectivity, because $\exists$ takes covers into account.
 
 - Logic (syntax: expressions and deductions by strict rules) and semantics (meaning in sheaves) are separate: "a computer can carry out logical deductions without knowing what any of them mean about sheaves".

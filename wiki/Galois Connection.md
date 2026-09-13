@@ -1,7 +1,11 @@
 #definition #example #theorem #proof
 
 A **Galois connection** between [[Preorder|preorders]] $P$ and $Q$ is a pair of [[Monotone Map|monotone maps]] $f : P \to Q$ and $g : Q \to P$ such that
-$$f(p) \leq q \quad\text{if and only if}\quad p \leq g(q) \qquad (1.96)$$
+
+$$
+f(p) \leq q \quad\text{if and only if}\quad p \leq g(q) \qquad (1.96)
+$$
+
 for all $p \in P$, $q \in Q$. We say $f$ is the **left adjoint** and $g$ the **right adjoint**, and write $f \dashv g$. Galois connections were first considered by Galois (field extensions vs. automorphism groups); they are the preorder case of [[Adjunction|adjunctions]], and a "relaxed version" of [[Isomorphism of Preorders|isomorphisms]].
 
 > Sources: 7 Sketches §1.4, Definition 1.95, Examples 1.97, 1.113, 1.117, 1.122, Propositions 1.107, 1.111, Theorem 1.115, Exercises 1.98–1.101, 1.109, 1.110, 1.114, 1.119, 1.125; Remark 1.100; DaoFP §10.8 ("Freyd's theorem in a preorder").

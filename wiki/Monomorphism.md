@@ -1,7 +1,11 @@
 #definition #example
 
 An arrow $f : a \to b$ in a [[Category]] is a **monomorphism** ("mono", drawn $a \hookrightarrow b$ or $a \rightarrowtail b$) if for every object $c$ and every pair $g_1, g_2 : c \to a$,
-$$f \circ g_1 = f \circ g_2 \implies g_1 = g_2.$$
+
+$$
+f \circ g_1 = f \circ g_2 \implies g_1 = g_2.
+$$
+
 Equivalently, post-composition $(f \circ -) : \mathcal{C}(c, a) \to \mathcal{C}(c, b)$ is injective for every $c$. To show $f$ is *not* mono, exhibit two different "shapes" in $a$ that $f$ maps to the same shape in $b$.
 
 > Sources: DaoFP §2.4 ("Monomorphisms"), Exercise 2.4.1; Kittenlab Lecture 14 (subobjects as injections); 7 Sketches §7.2 (subobjects), §1.4.2 (epi-mono factorization).

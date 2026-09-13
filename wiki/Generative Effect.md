@@ -1,7 +1,11 @@
 #definition #example
 
 A [[Monotone Map]] $f : P \to Q$ **has a generative effect** if there exist elements $a, b \in P$ such that
-$$f(a) \vee f(b) \neq f(a \vee b).$$
+
+$$
+f(a) \vee f(b) \neq f(a \vee b).
+$$
+
 Thinking of $f$ as an *observation* of systems $a$ and $b$: the left side combines the observations of the pieces, the right side observes the combined system. A generative effect means "we see something when we observe the combined system that we could not expect by merely combining our observations of the pieces". By [[7S Exercise 1.94]] one always has $f(a) \vee f(b) \leq f(a \vee b)$, so the effect is always *more* stuff.
 
 > Sources: 7 Sketches §1.1, §1.3.2, Definition 1.93, Exercises 1.4, 1.6, 1.77; following Adam's thesis [Ada17].

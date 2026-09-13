@@ -1,7 +1,11 @@
 #definition #theorem #example
 
 Ordinary cones pick single "wires" $\gamma_j : 1 \to \mathcal{C}(x, D j)$ from hom-sets; the set of cones with apex $x$ is $[\mathcal{J}, \mathbf{Set}](\Delta_1, \mathcal{C}(x, D-))$. In an [[Enriched Category|enriched]] setting there is no constant $\mathcal{V}$-functor $\Delta_1$ (the unit $I$ need not be terminal), so one "smears the singularity" with a **weight** $W : \mathcal{J} \to \mathcal{V}$ selecting a thicker "cylinder" in each hom-object. A **weighted (indexed) limit** $\lim^W D$ of $D : \mathcal{J} \to \mathcal{C}$ is defined by
-$$\mathcal{C}(x, \lim{}^W D) \cong [\mathcal{J}, \mathcal{V}](W, \mathcal{C}(x, D-)),$$
+
+$$
+\mathcal{C}(x, \lim{}^W D) \cong [\mathcal{J}, \mathcal{V}](W, \mathcal{C}(x, D-)),
+$$
+
 and dually the **weighted colimit** by $\mathcal{C}(\mathrm{colim}^W D, x) \cong [\mathcal{J}^{\mathrm{op}}, \mathcal{V}](W, \mathcal{C}(D-, x))$ with $W : \mathcal{J}^{\mathrm{op}} \to \mathcal{V}$. Ordinary (*conical*) limits are the case $W = \Delta_1$.
 
 > Sources: DaoFP §20.5 ("Weighted Limits"), §20.6 ("Ends as Weighted Limits"), §20.7 ("Kan Extensions"), §20.8 ("Useful Formulas"), Exercises 20.6.1, 20.6.2, 20.7.1; §20.4 (enriched Yoneda).

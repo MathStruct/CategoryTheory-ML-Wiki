@@ -1,7 +1,11 @@
 #definition #theorem #example
 
 For an arrow $f : b \to a$ in a category with [[Pullback|pullbacks]], the **base-change functor** (pullback functor, substitution)
-$$f^* : \mathcal{C}/a \to \mathcal{C}/b$$
+
+$$
+f^* : \mathcal{C}/a \to \mathcal{C}/b
+$$
+
 sends a fibration $\langle e, p : e \to a \rangle$ to $\langle f^* e, f^* p \rangle$, the pullback of $p$ along $f$, and a fiber-preserving map $h : e' \to e$ to the unique $f^* h : f^* e' \to f^* e$ induced by the universal property ([[DaoFP Exercise 11.2.4]]). Note that $f^*$ runs *opposite* to $f$.
 
 ```tikz

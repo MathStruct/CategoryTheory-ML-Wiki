@@ -7,7 +7,11 @@ Let $(\mathcal{C}, I, \otimes)$ be a [[Symmetric Monoidal Category]] and $c$ an 
 (iii) a morphism $\varepsilon_c : c \otimes c^* \to I$, the **counit** (a **cap**),
 
 satisfying the **snake equations** (zig-zag identities):
-$$c \cong c \otimes I \xrightarrow{c \otimes \eta_c} c \otimes (c^* \otimes c) \cong (c \otimes c^*) \otimes c \xrightarrow{\varepsilon_c \otimes c} I \otimes c \cong c \quad\text{is } \mathrm{id}_c,$$
+
+$$
+c \cong c \otimes I \xrightarrow{c \otimes \eta_c} c \otimes (c^* \otimes c) \cong (c \otimes c^*) \otimes c \xrightarrow{\varepsilon_c \otimes c} I \otimes c \cong c \quad\text{is } \mathrm{id}_c,
+$$
+
 and symmetrically $c^* \to c^* \otimes c \otimes c^* \to c^*$ is $\mathrm{id}_{c^*}$. If every object has a dual, $\mathcal{C}$ is **compact closed**.
 
 > Sources: 7 Sketches §4.5 (Definition 4.58, Eq. 4.59, Proposition 4.60, Examples 4.61, Theorem 4.63, Exercises 4.62, 4.64–4.66), §4.1 (Eq. 4.1), §6.6; DaoFP §15.1 (string diagrams: cups and caps for adjunctions), §19.1; [Sel10].

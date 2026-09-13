@@ -1,7 +1,11 @@
 #definition #example #program
 
 The **list type** $L_a$ (list of $a$) is defined by two introduction rules
-$$\mathsf{Nil} : 1 \to L_a, \qquad \mathsf{Cons} : a \times L_a \to L_a,$$
+
+$$
+\mathsf{Nil} : 1 \to L_a, \qquad \mathsf{Cons} : a \times L_a \to L_a,
+$$
+
 ("a list is either empty or a thing followed by a list of things") and the elimination rule: given $\mathit{init} : 1 \to c$ and $\mathit{step} : a \times c \to c$ there is a unique $h : L_a \to c$ with $h \circ \mathsf{Nil} = \mathit{init}$ and $h \circ \mathsf{Cons} = \mathit{step} \circ (\mathrm{id}_a \times h)$. Such an $h$ is a **fold** (list *catamorphism*); in Haskell `foldr step init`, with `[a]`, `[]` and `(:)` as built-in syntax.
 
 ```tikz

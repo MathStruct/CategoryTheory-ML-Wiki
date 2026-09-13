@@ -1,7 +1,11 @@
 #definition #theorem #proof
 
 The **Yoneda functor** is the [[Hom Functor]] curried in one variable:
-$$\mathcal{Y} : \mathcal{C} \to [\mathcal{C}^{\mathrm{op}}, \mathbf{Set}], \qquad \mathcal{Y}(x) := \mathcal{C}(-, x),$$
+
+$$
+\mathcal{Y} : \mathcal{C} \to [\mathcal{C}^{\mathrm{op}}, \mathbf{Set}], \qquad \mathcal{Y}(x) := \mathcal{C}(-, x),
+$$
+
 sending $x$ to the [[Presheaf]] of "the totality of views of $x$ from all possible directions", and an arrow $f : x \to y$ to the natural transformation with components $(f \circ -) : \mathcal{C}(z, x) \to \mathcal{C}(z, y)$. Fixing the other variable gives the co-Yoneda functor $\mathcal{C}^{\mathrm{op}} \to [\mathcal{C}, \mathbf{Set}]$, $x \mapsto \mathcal{C}(x, -)$ (Kittenlab's $y_{\mathcal{C}}$, contravariant because of the flip in $\mathrm{Hom}(Y, X) \cong \mathrm{Hom}(y_X, y_Y)$).
 
 > Sources: DaoFP §9.7 ("Yoneda Embedding"), §9.8, §9.10; Kittenlab Lecture 12; 7 Sketches Exercise 1.66 ($\uparrow : P^{\mathrm{op}} \to \mathcal{U}(P)$).

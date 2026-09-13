@@ -1,7 +1,11 @@
 #definition
 
 A **monoidal natural transformation** between (lax) [[Monoidal Functor|monoidal functors]] $(F, \varphi), (G, \psi) : \mathcal{C} \to \mathcal{D}$ is a [[Natural Transformation]] $\alpha : F \to G$ compatible with the coherence maps:
-$$\alpha_{c_1 \otimes c_2} \circ \varphi_{c_1, c_2} = \psi_{c_1, c_2} \circ (\alpha_{c_1} \otimes \alpha_{c_2}), \qquad \alpha_I \circ \varphi_I = \psi_I .$$
+
+$$
+\alpha_{c_1 \otimes c_2} \circ \varphi_{c_1, c_2} = \psi_{c_1, c_2} \circ (\alpha_{c_1} \otimes \alpha_{c_2}), \qquad \alpha_I \circ \varphi_I = \psi_I .
+$$
+
 Monoidal categories, monoidal functors and monoidal natural transformations form the [[2-Category]] $\mathbf{MonCat}$.
 
 > Sources: DaoFP §14.9 ("The category of monoidal categories with monoidal functors as arrows is called MonCat. In fact it's a 2-category, since one can define structure-preserving natural transformations between monoidal functors"); 7 Sketches §6.4 (morphisms of [[Decorated Cospan|decoration functors]] induce hypergraph functors between decorated cospan categories), §4.4.

@@ -1,7 +1,11 @@
 #example #theorem
 
 The [[Category of Graphs|category $\mathbf{Grph}$]] of directed graphs is a presheaf [[Topos]]: graphs are [[Presheaf|presheaves]] on the arrow shape $\mathbf{ArShp} = (\mathrm{Vertex} \rightrightarrows \mathrm{PureArrow})$, i.e. instances on the schema $\mathbf{Gr} = \mathbf{ArShp}^{\mathrm{op}}$ (Example 7.23). Its [[Subobject Classifier]] $\Omega_{\mathbf{Grph}}$ is itself a graph with two vertices $0, V$ and five arrows:
-$$(0,0;0) : 0 \to 0, \quad (0,V;0) : 0 \to V, \quad (V,0;0) : V \to 0, \quad (V,V;0) : V \to V, \quad (V,V;A) : V \to V.$$
+
+$$
+(0,0;0) : 0 \to 0, \quad (0,V;0) : 0 \to V, \quad (V,0;0) : V \to 0, \quad (V,V;0) : V \to V, \quad (V,V;A) : V \to V.
+$$
+
 The [[Terminal Object|terminal graph]] is one vertex with one loop, and $\mathsf{true} : 1 \to \Omega$ sends that loop to $(V, V; A)$.
 
 > Sources: 7 Sketches Example 7.23 ("presheaves on $\mathbf{ArShp}$ are just directed graphs", "a graph is a sort of lego construction"), Example 7.54, Exercise 7.55, [Vig03]; Kittenlab Lecture 6 (graphs as C-sets).

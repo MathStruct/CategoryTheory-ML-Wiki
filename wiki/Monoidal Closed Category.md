@@ -1,7 +1,11 @@
 #definition #example
 
 A [[Monoidal Category]] $(\mathcal{C}, \otimes, I)$ is **monoidal closed** (**closed**) if for every pair of objects $c, d$ there is an object $c \multimap d$ (the **internal hom**, also $[c, d]$ or $d^c$) with a natural isomorphism
-$$\mathcal{C}(b \otimes c, d) \cong \mathcal{C}(b, c \multimap d),$$
+
+$$
+\mathcal{C}(b \otimes c, d) \cong \mathcal{C}(b, c \multimap d),
+$$
+
 i.e. $(- \otimes c) \dashv (c \multimap -)$ for every $c$ — the [[Categorification|categorification]] of a [[Monoidal Closed Preorder]]. The counit $\varepsilon : [c, d] \otimes c \to d$ is **evaluation**, the unit $b \to [c, b \otimes c]$ **coevaluation**.
 
 > Sources: 7 Sketches §4.5.1 (text before Proposition 4.60), Remark 2.81, Definition 2.79; DaoFP §10.1 (internal vs. external hom), §19.1 ("Closed Monoidal Categories", "Internal hom for Day convolution", "Powering and co-powering"), §20.1 ("Self-enrichment"), §20.2.

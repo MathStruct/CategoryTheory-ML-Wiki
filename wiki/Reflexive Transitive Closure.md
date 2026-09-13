@@ -5,7 +5,11 @@
 > Sources: 7 Sketches §1.4.5, Exercises 1.124, 1.125.
 
 Every preorder relation is a relation, giving an inclusion $U : \mathrm{Pos}(S) \to \mathrm{Rel}(S)$. This is the right adjoint of a [[Galois Connection]] whose left adjoint
-$$\mathrm{Cl} : \mathrm{Rel}(S) \to \mathrm{Pos}(S)$$
+
+$$
+\mathrm{Cl} : \mathrm{Rel}(S) \to \mathrm{Pos}(S)
+$$
+
 takes a relation $R$ to its **reflexive and transitive closure**: add $s \leq s$ for every $s$ and $s \leq u$ whenever $s \leq t$ and $t \leq u$. The adjunction says $\mathrm{Cl}(Q) \sqsubseteq {\leq}$ iff $Q \subseteq U(\leq)$: a preorder contains the closure of $Q$ exactly when it contains $Q$ ([[7S Exercise 1.125]]). The composite $U \circ \mathrm{Cl}$ is a [[Closure Operator]] on $\mathrm{Rel}(S)$.
 
 **Example.** $\mathrm{Rel}(\{1\})$ has two elements $\varnothing \leq \{(1,1)\}$; $\mathrm{Rel}(\{1,2\})$ has 16 ([[7S Exercise 1.124]]).

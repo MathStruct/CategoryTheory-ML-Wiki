@@ -7,7 +7,11 @@ A **bicartesian closed category** is a [[Cartesian Closed Category]] that also h
 **Distributivity theorem.** In a bicartesian closed category, $(b + c) \times a \cong b \times a + c \times a$ and $0 \times a \cong 0$.
 
 *Proof (DaoFP §10.2, via Yoneda).* For arbitrary $x$,
-$$\mathcal{C}((b + c) \times a, x) \cong \mathcal{C}(b + c, x^a) \cong \mathcal{C}(b, x^a) \times \mathcal{C}(c, x^a) \cong \mathcal{C}(b \times a, x) \times \mathcal{C}(c \times a, x) \cong \mathcal{C}(b \times a + c \times a, x),$$
+
+$$
+\mathcal{C}((b + c) \times a, x) \cong \mathcal{C}(b + c, x^a) \cong \mathcal{C}(b, x^a) \times \mathcal{C}(c, x^a) \cong \mathcal{C}(b \times a, x) \times \mathcal{C}(c \times a, x) \cong \mathcal{C}(b \times a + c \times a, x),
+$$
+
 using the [[Currying|currying]] adjunction, the sum adjunction, currying backwards and the sum adjunction backwards; every step is natural in $x$, so by the [[Yoneda Lemma]] the objects are isomorphic. $\blacksquare$ *Shorter proof (§10.7):* $(- \times a)$ is a left adjoint, and left adjoints preserve colimits ([[Right Adjoints Preserve Limits]]); a coproduct is a colimit.
 
 In Haskell the isomorphism is `(Either b c, a) ≅ Either (b, a) (c, a)`; DaoFP Chapter 6 gives the direct construction of one direction using the universal properties and notes the other direction needs the exponential. The identities $x^{a + b} \cong x^a \times x^b$, $(a \times b)^x \cong a^x \times b^x$ ("sum and product revisited") are further consequences.

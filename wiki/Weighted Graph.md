@@ -15,7 +15,11 @@ Just as a Hasse diagram presents a [[Preorder]], a $\mathbf{Cost}$-weighted grap
 | $z$ | 7 | 4 | 0 |
 
 The **graph matrix** $M_G$ takes no thinking: $0$ on the diagonal, the edge weight where there is an edge, $\infty$ ($= \bigvee \varnothing$, the "zero" of the [[Quantale]]) where there is none:
-$$M_Y = \begin{pmatrix} 0 & 4 & 3 \\ 3 & 0 & \infty \\ \infty & 4 & 0 \end{pmatrix}.$$
+
+$$
+M_Y = \begin{pmatrix} 0 & 4 & 3 \\ 3 & 0 & \infty \\ \infty & 4 & 0 \end{pmatrix}.
+$$
+
 The distance matrix is obtained by [[Matrix Multiplication in a Quantale|repeated matrix multiplication]] in $\mathbf{Cost}$: $M_Y^n$ records the shortest paths using $\leq n$ edges and the powers stabilize ($M_Y^2 = M_Y^3 = d_Y$). In general, for any quantale $\mathcal{V}$, the hom-object $\mathcal{X}(x, y)$ of the presented $\mathcal{V}$-category is $\bigvee_{\text{paths } p : x \to y} \bigotimes_{e \in p} w(e)$ — e.g. union over paths of intersections of labels for $\mathcal{V} = \mathcal{P}(M)$ ([[7S Exercise 2.62]]), or max over paths of min edge label for $\mathcal{V} = (\mathbb{N} \cup \{\infty\}, \leq, \infty, \min)$ ([[7S Exercise 2.63]]).
 
 Graph $X$ of Eq. (2.56) ($A \xrightarrow{3} C$, $B \xrightarrow{2} A$, $B \xrightarrow{5} D$, $C \xrightarrow{3} B$, $D \xrightarrow{6} C$): $M_X$ and $d_X$ are computed in [[7S Exercise 2.60]], [[7S Exercise 2.58]], [[7S Exercise 2.105]].

@@ -1,7 +1,11 @@
 #definition #theorem #example #program
 
 The **free monad** on an endofunctor $F$ is the free [[Monoid Object|monoid]] in $([\mathcal{C}, \mathcal{C}], \circ, \mathrm{Id})$, i.e. the free [[Monad]]: the [[Initial Algebra]] of the higher-order "list" functor
-$$\Phi_F G = \mathrm{Id} + F \circ G, \qquad L_F \cong \mathrm{Id} + F \circ L_F$$
+
+$$
+\Phi_F G = \mathrm{Id} + F \circ G, \qquad L_F \cong \mathrm{Id} + F \circ L_F
+$$
+
 (coproducts of functors taken pointwise). Its structure map $\iota = [\eta, \varphi]$ splits into $\eta : \mathrm{Id} \to L_F$ and $\varphi : F \circ L_F \to L_F$, which become the two constructors
 ```haskell
 data FreeMonad f a where

@@ -5,7 +5,10 @@ Let $F : \mathcal{C} \to \mathcal{D}$ be a [[Functor]] between [[Database Schema
 - **$\Delta_F : \mathcal{D}\text{-}\mathbf{Inst} \to \mathcal{C}\text{-}\mathbf{Inst}$** (pullback / "duplicate or destroy"): $\Delta_F(I) := F \mathbin{;} I$, precomposition; on morphisms $(\alpha_F)_c := \alpha_{F(c)}$ (Definition 3.68). It duplicates or destroys tables and columns.
 - **$\Sigma_F : \mathcal{C}\text{-}\mathbf{Inst} \to \mathcal{D}\text{-}\mathbf{Inst}$**, the *left adjoint* of $\Delta_F$ ("sum": union data), built from [[Colimit|colimits]] in $\mathbf{Set}$.
 - **$\Pi_F : \mathcal{C}\text{-}\mathbf{Inst} \to \mathcal{D}\text{-}\mathbf{Inst}$**, the *right adjoint* ("product": pair/query data — database programmers say *join*), built from [[Limit|limits]] in $\mathbf{Set}$.
-$$\Sigma_F \dashv \Delta_F \dashv \Pi_F.$$
+
+$$
+\Sigma_F \dashv \Delta_F \dashv \Pi_F.
+$$
 
 > Sources: 7 Sketches §3.4 (Definition 3.68, §3.4.3–3.4.4, Eq. 3.77, Exercises 3.67, 3.76, 3.78), Remark 3.100, §3.6 ("All concepts are Kan extensions"); FQL; DaoFP Chapter 19 ($\Sigma_F, \Pi_F$ are the left and right [[Kan Extension|Kan extensions]] along $F$), Chapter 11 ([[Dependent Sum]]/[[Dependent Product]] along a map of types); 7 Sketches §1.4.2 (the preorder shadow: [[Pushforward and Pullback of Partitions]]).
 

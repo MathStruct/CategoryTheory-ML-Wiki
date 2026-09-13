@@ -1,7 +1,11 @@
 #definition #example
 
 Let $X = (X, \leq_X)$ and $Y = (Y, \leq_Y)$ be [[Preorder|preorders]]. A **feasibility relation for $X$ given $Y$** is a [[Monotone Map]]
-$$\Phi : X^{\mathrm{op}} \times Y \to \mathbf{Bool}, \qquad\text{written } \Phi : X \nrightarrow Y.$$
+
+$$
+\Phi : X^{\mathrm{op}} \times Y \to \mathbf{Bool}, \qquad\text{written } \Phi : X \nrightarrow Y.
+$$
+
 If $\Phi(x, y) = \mathsf{true}$ we say **$x$ can be obtained given $y$**. Monotonicity says: if $x' \leq_X x$ and $y \leq_Y y'$ then $\Phi(x, y) \leq \Phi(x', y')$ — if $x$ can be obtained given $y$, then anything less ($x'$) can be obtained given anything more ($y'$). A feasibility relation is exactly a $\mathbf{Bool}$-[[Profunctor]] ([[7S Exercise 4.10]]), and Censi calls them *monotone co-design problems*.
 
 > Sources: 7 Sketches §4.2.1 (Definition 4.2, Exercises 4.4, 4.7, 4.10), §4.2.3, §4.3 ($\mathbf{Feas}$), Example 4.11 (bridges), 4.12; Kittenlab Lecture 14 ([[Relation|relations]] as $\mathbb{B}$-valued functions).

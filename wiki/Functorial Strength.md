@@ -1,7 +1,11 @@
 #definition #theorem #example
 
 A **strength** (tensorial strength) for an endofunctor $F$ on a [[Monoidal Category]] is a natural transformation
-$$\sigma_{a,b} : a \otimes F b \to F(a \otimes b)$$
+
+$$
+\sigma_{a,b} : a \otimes F b \to F(a \otimes b)
+$$
+
 compatible with unitors and associator: it "smuggles" the environment $a$ *under* the functor. In Haskell every functor is strong: `strength (e, as) = fmap (e,) as` (tuple section). This is what allows a closure defined inside a functor — `pairWith' a = [\x -> (a, x)]` — to capture `a` from *outside* the list, and what lets the final `return` in a [[Do Notation|do block]] see variables bound in outer lambdas.
 
 > Sources: DaoFP §14.9 ("Functorial strength"), §20.1 ("Self-enrichment": every Haskell endofunctor is enriched, hence strong); §14.9 ("Monads and applicatives").

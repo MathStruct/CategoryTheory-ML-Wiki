@@ -1,7 +1,11 @@
 #definition #example #theorem
 
 In a (locally small) [[Category]] $\mathcal{C}$ the assignment $(a, b) \mapsto \mathcal{C}(a, b)$ is a [[Functor]]
-$$\mathcal{C}(-, -) : \mathcal{C}^{\mathrm{op}} \times \mathcal{C} \to \mathbf{Set},$$
+
+$$
+\mathcal{C}(-, -) : \mathcal{C}^{\mathrm{op}} \times \mathcal{C} \to \mathbf{Set},
+$$
+
 the **hom-functor** — a [[Profunctor]]. On arrows $g' : a' \to a$ and $g : b \to b'$ it sends $h : a \to b$ to $g \circ h \circ g' : a' \to b'$ (pre-compose with $g'$, post-compose with $g$; Haskell `dimap f g h = g . h . f`). Fixing one variable:
 
 - **covariant** $\mathcal{C}(a, -) : \mathcal{C} \to \mathbf{Set}$, with $\mathcal{C}(a, g) = (g \circ -)$ (post-composition): "the world according to $a$" — all arrows out of $a$ organized coherently; an *oracle* answering "is $a$ connected to me?";

@@ -1,0 +1,7 @@
+# Quartz build artefacts
+site/node_modules/
+site/public/
+site/.quartz-cache/
+site/tk.mjs
+# Obsidian workspace state
+.obsidian/workspace.json

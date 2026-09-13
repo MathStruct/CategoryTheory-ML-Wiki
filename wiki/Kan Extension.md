@@ -23,7 +23,10 @@
 
 ## Formulas ([[End]]/[[Coend]], §19.5)
 
-$$(\mathrm{Ran}_P F)\, b \cong \int_e \mathcal{B}(b, P e) \pitchfork F e \qquad (\mathrm{Lan}_P F)\, b \cong \int^e \mathcal{B}(P e, b) \cdot F e$$
+$$
+(\mathrm{Ran}_P F)\, b \cong \int_e \mathcal{B}(b, P e) \pitchfork F e \qquad (\mathrm{Lan}_P F)\, b \cong \int^e \mathcal{B}(P e, b) \cdot F e
+$$
+
 generalizing the [[Ninja Yoneda Lemma|ninja (co-)Yoneda lemmas]] ($P = \mathrm{Id}$). Here $A \pitchfork c$ is the **power** ($\mathcal{C}(b, A \pitchfork c) \cong \mathbf{Set}(A, \mathcal{C}(b, c))$, "multiply $A$ copies of $c$": $\mathbf{2} \pitchfork c = c \times c$) and $A \cdot b$ the **copower** ($\mathcal{C}(A \cdot b, c) \cong \mathbf{Set}(A, \mathcal{C}(b, c))$, $\mathbf{2} \cdot b = b + b$); in $\mathbf{Set}$ both decay to the exponential/product, giving `Ran p f b = forall e. (b -> p e) -> f e` and `Lan p f b = exists e. (p e -> b, f e)`. The proofs write themselves: pull ends out of hom-sets by continuity, apply the (co)power definition, integrate with Yoneda.
 
 ## Everything is a Kan extension

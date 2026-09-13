@@ -20,9 +20,17 @@ Given a [[Symmetric Monoidal Preorder]] $(X, \leq, I, \otimes)$, a [[Wiring Diag
 ## Wiring diagrams as graphical proofs
 
 A wiring diagram with interior boxes inside an exterior box is a proof: *if all interior assertions hold, so does the exterior one*. For the diagram (2.15) with interior boxes
-$$t \leq v \otimes w, \qquad w \otimes u \leq x \otimes z, \qquad v \otimes x \leq y \qquad (2.16)$$
+
+$$
+t \leq v \otimes w, \qquad w \otimes u \leq x \otimes z, \qquad v \otimes x \leq y \qquad (2.16)
+$$
+
 the exterior assertion is $t \otimes u \leq y \otimes z$ (2.17), proved by the chain of vertical slices
-$$t \otimes u \leq v \otimes w \otimes u \leq v \otimes x \otimes z \leq y \otimes z. \qquad (2.18)$$
+
+$$
+t \otimes u \leq v \otimes w \otimes u \leq v \otimes x \otimes z \leq y \otimes z. \qquad (2.18)
+$$
+
 Formally ([[7S Exercise 2.20]]) each step uses monotonicity with a reflexivity $u \leq u$ on the untouched wire, associativity to re-bracket, and transitivity to chain; symmetry is needed only if wires cross. The [[Resource Theory|lemon meringue pie]] diagram (Example 2.19) is a proof that if you can separate eggs, make filling, make meringue, fill the crust and add meringue, then you can prepare a pie.
 
 ```tikz

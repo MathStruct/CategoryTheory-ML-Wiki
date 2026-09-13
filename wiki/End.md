@@ -1,13 +1,21 @@
 #definition #theorem #example #program
 
 The **end** of a functor $P : \mathcal{C}^{\mathrm{op}} \times \mathcal{C} \to \mathcal{D}$ is the dual of the [[Coend]]: the "product of the diagonal entries". A **wedge** is an object $d$ with projections $\pi_x : d \to P\langle x, x\rangle$ such that for every $f : x \to y$
-$$P\langle f, \mathrm{id}_y \rangle \circ \pi_y = P\langle \mathrm{id}_x, f \rangle \circ \pi_x : d \to P\langle x, y \rangle,$$
+
+$$
+P\langle f, \mathrm{id}_y \rangle \circ \pi_y = P\langle \mathrm{id}_x, f \rangle \circ \pi_x : d \to P\langle x, y \rangle,
+$$
+
 and the end $\int_{x : \mathcal{C}} P\langle x, x \rangle$ is the universal wedge. In $\mathbf{Set}$: form the giant product of all $P\langle x, x\rangle$ and keep only the tuples satisfying the wedge condition. In Haskell, parametricity makes the wedge condition automatic: `type End p = forall x. p x x` — to build an end one must supply a *polymorphic formula*, whereas to build a coend one picks a single type (`exists x. p x x`).
 
 > Sources: DaoFP §17.3 ("Ends": "Natural transformations as an end", "Limits as ends"), §17.4 ("Continuity of the Hom-Functor"), §17.5 ("Fubini Rule"), §17.6, §17.11, Exercise 17.3.1; §20.3 (ends as [[Weighted Limit|weighted limits]]).
 
 - **Natural transformations as an end**: $\langle a, b\rangle \mapsto \mathcal{D}(F a, G b)$ is a profunctor, and the wedge condition for its diagonal is exactly naturality $G f \circ \alpha_a = \alpha_b \circ F f$; hence
-$$[\mathcal{C}, \mathcal{D}](F, G) \cong \int_{x : \mathcal{C}} \mathcal{D}(F x, G x), \qquad \texttt{type Natural f g = forall x. f x -> g x}.$$
+
+$$
+[\mathcal{C}, \mathcal{D}](F, G) \cong \int_{x : \mathcal{C}} \mathcal{D}(F x, G x), \qquad \texttt{type Natural f g = forall x. f x -> g x}.
+$$
+
 - **Limits as ends**: for $P\langle x, y\rangle = F y$ a wedge is a [[Cone]], so $\int_x F x = \lim F$; a [[Product]] is the end over the discrete two-object category ([[DaoFP Exercise 17.3.1]]).
 - **Continuity of the hom-functor**: $\mathcal{C}(x, -)$ preserves limits ($\mathcal{C}(x, a \times b) \cong \mathcal{C}(x, a) \times \mathcal{C}(x, b)$) and $\mathcal{C}(-, x)$ turns colimits into limits ($\mathcal{C}(a + b, x) \cong \mathcal{C}(a, x) \times \mathcal{C}(b, x)$); hence the integral sign can be pulled out of a hom-set: $\mathcal{C}(d, \int_a P\langle a, a\rangle) \cong \int_a \mathcal{C}(d, P\langle a, a\rangle)$ and $\mathcal{C}(\int^a P\langle a, a\rangle, d) \cong \int_a \mathcal{C}(P\langle a, a\rangle, d)$.
 - **Fubini**: $\int_c \int_d P \cong \int_d \int_c P \cong \int_{\langle c, d\rangle} P$ whenever the ends exist; likewise for coends.

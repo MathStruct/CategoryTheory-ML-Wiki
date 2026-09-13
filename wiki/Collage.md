@@ -1,7 +1,11 @@
 #definition #example
 
 Let $\Phi : \mathcal{X} \nrightarrow \mathcal{Y}$ be a $\mathcal{V}$-[[Profunctor]]. Its **collage** $\mathrm{Col}(\Phi)$ (DaoFP: **cograph**) is the $\mathcal{V}$-[[Enriched Category|category]] with $\mathrm{Ob}(\mathrm{Col}(\Phi)) := \mathrm{Ob}(\mathcal{X}) \sqcup \mathrm{Ob}(\mathcal{Y})$ and
-$$\mathrm{Col}(\Phi)(a, b) := \begin{cases} \mathcal{X}(a, b) & a, b \in \mathcal{X} \\ \Phi(a, b) & a \in \mathcal{X},\ b \in \mathcal{Y} \\ \varnothing\ (= \bigvee\varnothing) & a \in \mathcal{Y},\ b \in \mathcal{X} \\ \mathcal{Y}(a, b) & a, b \in \mathcal{Y}, \end{cases}$$
+
+$$
+\mathrm{Col}(\Phi)(a, b) := \begin{cases} \mathcal{X}(a, b) & a, b \in \mathcal{X} \\ \Phi(a, b) & a \in \mathcal{X},\ b \in \mathcal{Y} \\ \varnothing\ (= \bigvee\varnothing) & a \in \mathcal{Y},\ b \in \mathcal{X} \\ \mathcal{Y}(a, b) & a, b \in \mathcal{Y}, \end{cases}
+$$
+
 with **collage inclusions** $i_{\mathcal{X}} : \mathcal{X} \to \mathrm{Col}(\Phi)$, $i_{\mathcal{Y}} : \mathcal{Y} \to \mathrm{Col}(\Phi)$. Its Hasse diagram is the union of the two Hasse diagrams plus the bridges as arrows — "put a box around the whole picture and see a new preorder".
 
 > Sources: 7 Sketches §4.3.3 (Definition 4.42, Example 4.43, Exercise 4.44), Example 4.11; DaoFP §17.1 ("Collages"), Exercises 17.1.1–17.1.2.

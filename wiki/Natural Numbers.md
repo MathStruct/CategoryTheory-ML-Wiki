@@ -1,7 +1,10 @@
 #example
 
 The **natural numbers** $\mathbb{N} := \{0, 1, 2, 3, \dots\}$ form a [[Preorder]] with the usual size ordering ($0 \leq 1$, $5 \leq 100$). This is a [[Total Order]]: for all $m, n$ either $m \leq n$ or $n \leq m$, and its [[Hasse Diagram]] is a line
-$$0 \to 1 \to 2 \to 3 \to \cdots$$
+
+$$
+0 \to 1 \to 2 \to 3 \to \cdots
+$$
 
 > Sources: 7 Sketches Example 1.9, 1.45, 1.60, 1.62; DaoFP Ch. 7 ("Natural Numbers" as an initial algebra); Kittenlab Lecture 5 (monoids).
 

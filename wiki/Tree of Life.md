@@ -9,7 +9,7 @@ The set of animal classifications ('tiger', 'mammal', 'sapiens', 'carnivore', â€
 \begin{document}
 \begin{tikzcd}[row sep=small, column sep=tiny]
  & \mathsf{sapiens} \arrow[d] & & & \\
-\mathsf{habilis} \arrow[r] & \mathsf{homo} \arrow[r] & \mathsf{primate} \arrow[drr] & & \\
+\mathsf{habilis} \arrow[r] & \mathsf{homo} \arrow[r] & \mathsf{primate} \arrow[dr] & & \\
 \mathsf{lion} \arrow[r] & \mathsf{panthera} \arrow[r] & \mathsf{carnivore} \arrow[r] & \mathsf{mammal} & \\
 \mathsf{tiger} \arrow[ur] & & & & \\
 \mathsf{species} \arrow[r] & \mathsf{genus} \arrow[r] & \mathsf{family} \arrow[r] & \mathsf{order} \arrow[r] & \mathsf{class}

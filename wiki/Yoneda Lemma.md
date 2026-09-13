@@ -1,7 +1,11 @@
 #theorem #proof #program
 
 **Yoneda lemma.** Let $\mathcal{C}$ be a (locally small) [[Category]], $F : \mathcal{C} \to \mathbf{Set}$ a [[Functor]], and $X$ an object. Then there is a bijection
-$$[\mathcal{C}, \mathbf{Set}]\big(\mathrm{Hom}(X, -),\, F\big) \;\cong\; F(X),$$
+
+$$
+[\mathcal{C}, \mathbf{Set}]\big(\mathrm{Hom}(X, -),\, F\big) \;\cong\; F(X),
+$$
+
 natural in both $X$ and $F$. Dually (contravariant Yoneda), $[\mathcal{C}^{\mathrm{op}}, \mathbf{Set}](\mathrm{Hom}(-, X), F) \cong F(X)$ for a [[Presheaf]] $F$.
 
 > Sources: Kittenlab Lecture 12 ("That's Yoneda, Babe"); DaoFP §3.3 ("Reasoning with Arrows"), §9.6 ("The Yoneda Lemma", "Yoneda lemma in programming", "The contravariant Yoneda lemma"), §9.10, §17.6 ("Ninja Yoneda"), §20.4 (enriched); 7 Sketches Exercise 1.66 ([[Yoneda Lemma for Preorders]]), Remark 1.82; DaoFP Preface: "the fundamental theorem of category theory".
@@ -19,7 +23,11 @@ natural in both $X$ and $F$. Dually (contravariant Yoneda), $[\mathcal{C}^{\math
 *Backward.* Given $\alpha : \mathrm{Hom}(X, -) \Rightarrow F$, take $\alpha_X(\mathrm{id}_X) \in F(X)$ — the **Yoneda trick**: substitute $X$ for the variable to get an endo-hom-set and pick its canonical element.
 
 *Inverse.* $x^*_X(\mathrm{id}_X) = F(\mathrm{id}_X)(x) = x$. Conversely, for $\alpha$ and $f : X \to Y$, the naturality square for $f$ applied to $\mathrm{id}_X$ gives
-$$\alpha_Y(f) = \alpha_Y(\mathrm{id}_X \circ f) = \alpha_Y(\mathrm{Hom}(X, f)(\mathrm{id}_X)) = F(f)(\alpha_X(\mathrm{id}_X)),$$
+
+$$
+\alpha_Y(f) = \alpha_Y(\mathrm{id}_X \circ f) = \alpha_Y(\mathrm{Hom}(X, f)(\mathrm{id}_X)) = F(f)(\alpha_X(\mathrm{id}_X)),
+$$
+
 so $\alpha = (\alpha_X(\mathrm{id}_X))^*$: "where $f$ goes is wholly determined by where $\mathrm{id}_X$ goes". $\blacksquare$ ([[DaoFP Exercise 9.6.1]] handles $F(X) = \varnothing$.)
 
 ```tikz

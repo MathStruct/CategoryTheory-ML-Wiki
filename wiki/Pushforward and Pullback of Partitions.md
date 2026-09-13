@@ -1,7 +1,11 @@
 #definition #example #theorem
 
 Any [[Function]] $g : S \to T$ induces a [[Galois Connection]]
-$$g_! : \mathrm{Prt}(S) \rightleftarrows \mathrm{Prt}(T) : g^*$$
+
+$$
+g_! : \mathrm{Prt}(S) \rightleftarrows \mathrm{Prt}(T) : g^*
+$$
+
 between the [[Preorder of Partitions|preorders of partitions]].
 
 > Sources: 7 Sketches §1.4.2, Examples 1.68, 1.102, 1.104, Exercises 1.69, 1.103, 1.105, 1.106.

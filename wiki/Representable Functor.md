@@ -1,7 +1,11 @@
 #definition #example #theorem #proof
 
 For any object $x$ of a [[Category]] $\mathcal{C}$ the **covariant representable functor** on $x$ is
-$$y_{\mathcal{C}}(x) := \mathrm{Hom}_{\mathcal{C}}(x, -) : \mathcal{C} \to \mathbf{Set},$$
+
+$$
+y_{\mathcal{C}}(x) := \mathrm{Hom}_{\mathcal{C}}(x, -) : \mathcal{C} \to \mathbf{Set},
+$$
+
 sending $y \mapsto \mathrm{Hom}(x, y)$ and $g : y \to z$ to post-composition $\mathrm{Hom}(x, g) = (g \circ -)$. A functor $F : \mathcal{C} \to \mathbf{Set}$ is **representable** if $F \cong \mathrm{Hom}(x, -)$ for some $x$, its **representing object** (or **representative**); dually for presheaves, $F \cong \mathrm{Hom}(-, x)$. "We say '$x$ is a representative for $F$' meaning we have picked a specific isomorphism."
 
 > Sources: Kittenlab Lecture 8 ("Representable Functors", "Representatives of functors"), 10 ("Representables revisited"), 11, 12; DaoFP §8.4, §9.8 ("Representable Functors", "The guessing game", "Representable functors in programming"), Exercises 9.8.1–9.8.5; 7 Sketches Exercise 1.66 (preorder case: [[Upper Set|$\uparrow p$]]).

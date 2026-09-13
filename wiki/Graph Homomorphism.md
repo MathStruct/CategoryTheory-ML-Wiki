@@ -1,7 +1,11 @@
 #definition #example #theorem
 
 A **graph homomorphism** $\alpha : G \to H$ between [[Graph|graphs]] consists of functions $\alpha_V : G(V) \to H(V)$ and $\alpha_E : G(E) \to H(E)$ such that
-$$\alpha_V \circ G(\mathrm{src}) = H(\mathrm{src}) \circ \alpha_E \qquad\text{and}\qquad \alpha_V \circ G(\mathrm{tgt}) = H(\mathrm{tgt}) \circ \alpha_E,$$
+
+$$
+\alpha_V \circ G(\mathrm{src}) = H(\mathrm{src}) \circ \alpha_E \qquad\text{and}\qquad \alpha_V \circ G(\mathrm{tgt}) = H(\mathrm{tgt}) \circ \alpha_E,
+$$
+
 i.e. it "preserves sources and targets": an edge $a \to b$ goes to an edge $\alpha_V(a) \to \alpha_V(b)$. Exactly as a functor sends $A \to B$ to $F(A) \to F(B)$. The two conditions are commutative squares — the naturality squares of a [[Natural Transformation]] between $G, H : \mathsf{Gr} \to \mathbf{Set}$.
 
 ```tikz
