@@ -3,7 +3,7 @@
 A **modality** (modal operator, Lawvere–Tierney topology) in a sheaf topos $\mathbf{Shv}(X)$ is a sheaf morphism $j : \Omega \to \Omega$ such that for all opens $U \subseteq X$ and $p, q \in \Omega(U)$:
 
 (a) $p \leq j(p)$;
-(b) $j(j(p)) \leq j(p)$ (hence $j(j(p)) = j(p)$, [[7S Exercise 7.70]]);
+(b) $j(j(p)) \leq j(p)$ (hence $j(j(p)) = j(p)$, [[7S Chapter 7 Exercises#Exercise 7.70|7S Exercise 7.70]]);
 (c) $j(p \wedge q) = j(p) \wedge j(q)$.
 
 That is, $j$ is a [[Closure Operator]] on each poset of truth values $\Omega(U)$ (and each [[Heyting Algebra]] of [[Predicate|predicates]] $|\Omega^S|$) that preserves finite [[Meet|meets]] — a *nucleus*.
@@ -15,7 +15,7 @@ That is, $j$ is a [[Closure Operator]] on each poset of truth values $\Omega(U)$
 (b) $q \mapsto p \vee q$ — "... or $p$" (the closed modality);
 (c) $q \mapsto (q \Rightarrow p) \Rightarrow p$ — for $p = \mathsf{false}$ this is double negation $\neg\neg$.
 
-Example ([[7S Exercise 7.72]]): with $S$ the sheaf of people and $j$ = "assuming Bob is in San Diego", $j(p(s))$ is the set of times at which either Bob is not in San Diego or $s$ likes the weather; $p(s) \leq j(p(s))$, $j$ is idempotent, and $j$ preserves $\wedge$.
+Example ([[7S Chapter 7 Exercises#Exercise 7.72|7S Exercise 7.72]]): with $S$ the sheaf of people and $j$ = "assuming Bob is in San Diego", $j(p(s))$ is the set of times at which either Bob is not in San Diego or $s$ likes the weather; $p(s) \leq j(p(s))$, $j$ is idempotent, and $j$ preserves $\wedge$.
 
 In [[Temporal Logic|temporal logic]] on the [[Topos of Behavior Types]], $@_t(q)$ — "$q$ holds in some small enough neighbourhood of time $t$" — is a modality of type (c).
 

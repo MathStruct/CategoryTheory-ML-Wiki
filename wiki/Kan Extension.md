@@ -35,7 +35,7 @@ generalizing the [[Ninja Yoneda Lemma|ninja (co-)Yoneda lemmas]] ($P = \mathrm{I
 |---|---|
 | [[Limit]] of $D : \mathcal{J} \to \mathcal{C}$ | $\lim D = \mathrm{Ran}_{!} D$ along $! : \mathcal{J} \to \mathbf{1}$ (a cone is $\gamma : X \circ ! \to D$) |
 | [[Colimit]] | $\mathrm{colim}\, D = \mathrm{Lan}_{!} D$ |
-| left adjoint of $R$ | $L \cong \mathrm{Ran}_R \mathrm{Id}$ (with $\sigma = (\alpha \circ L) \cdot (G \circ \eta)$, [[DaoFP Exercise 19.3.2]]); conversely $\mathrm{Ran}_R \mathrm{Id}$ is a left adjoint iff preserved by $R$ |
+| left adjoint of $R$ | $L \cong \mathrm{Ran}_R \mathrm{Id}$ (with $\sigma = (\alpha \circ L) \cdot (G \circ \eta)$, [[DaoFP Chapter 19 Exercises#Exercise 19.3.2|DaoFP Exercise 19.3.2]]); conversely $\mathrm{Ran}_R \mathrm{Id}$ is a left adjoint iff preserved by $R$ |
 | right adjoint of $L$ | $R \cong \mathrm{Lan}_L \mathrm{Id}$ |
 | [[Codensity Monad]] | $T^F = \mathrm{Ran}_F F$ ($F/F$); the *density comonad* is $\mathrm{Lan}_F F$ |
 | [[Day Convolution]] | $F \star G \cong \mathrm{Lan}_\otimes (F \bar\otimes G)$ for the external product $(F \bar\otimes G)\langle a, b\rangle = F a \times G b$ |

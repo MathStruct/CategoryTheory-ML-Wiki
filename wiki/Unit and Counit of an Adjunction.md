@@ -11,7 +11,7 @@ $$
 (\varepsilon \circ L) \cdot (L \circ \eta) = \mathrm{id}_L, \qquad (R \circ \varepsilon) \cdot (\eta \circ R) = \mathrm{id}_R,
 $$
 
-i.e. $L \xrightarrow{L\eta} LRL \xrightarrow{\varepsilon L} L$ and $R \xrightarrow{\eta R} RLR \xrightarrow{R \varepsilon} R$ are identities. Conversely, natural transformations $\eta, \varepsilon$ satisfying the triangle identities determine the adjunction: $f : x \to Ry$ has mate $\varepsilon_y \circ Lf$, and $g : Lx \to y$ has mate $Rg \circ \eta_x$ ([[DaoFP Exercise 10.5.2]]). "$\eta$ can be used to insert $RL$ anywhere an identity would work; $\varepsilon$ to eliminate $LR$."
+i.e. $L \xrightarrow{L\eta} LRL \xrightarrow{\varepsilon L} L$ and $R \xrightarrow{\eta R} RLR \xrightarrow{R \varepsilon} R$ are identities. Conversely, natural transformations $\eta, \varepsilon$ satisfying the triangle identities determine the adjunction: $f : x \to Ry$ has mate $\varepsilon_y \circ Lf$, and $g : Lx \to y$ has mate $Rg \circ \eta_x$ ([[DaoFP Chapter 10 Exercises#Exercise 10.5.2|DaoFP Exercise 10.5.2]]). "$\eta$ can be used to insert $RL$ anywhere an identity would work; $\varepsilon$ to eliminate $LR$."
 
 > Sources: DaoFP §10.5 ("Unit and Counit of an Adjunction", "Triangle identities", "The unit and counit of the currying adjunction"), Exercises 10.5.1–10.5.4; 7 Sketches Proposition 1.107 (preorder version: $p \leq g(f(p))$ and $f(g(q)) \leq q$), Exercise 1.119; Kittenlab Lecture 7 ($\eta_X : X \to UF X$, $x \mapsto [x]$).
 
@@ -19,10 +19,10 @@ i.e. $L \xrightarrow{L\eta} LRL \xrightarrow{\varepsilon L} L$ and $R \xrightarr
 
 | adjunction | unit | counit |
 |---|---|---|
-| $(+) \dashv \Delta$ | the pair of injections $\langle \mathsf{Left}, \mathsf{Right} \rangle : (a, b) \to \Delta(a+b)$ | $[\mathrm{id}, \mathrm{id}] : x + x \to x$ ([[DaoFP Exercise 10.5.1]]) |
+| $(+) \dashv \Delta$ | the pair of injections $\langle \mathsf{Left}, \mathsf{Right} \rangle : (a, b) \to \Delta(a+b)$ | $[\mathrm{id}, \mathrm{id}] : x + x \to x$ ([[DaoFP Chapter 10 Exercises#Exercise 10.5.1|DaoFP Exercise 10.5.1]]) |
 | $\Delta \dashv (\times)$ | $\langle \mathrm{id}, \mathrm{id} \rangle : x \to x \times x$ | the pair of projections $\langle \mathsf{fst}, \mathsf{snd} \rangle$ |
 | $(- \times a) \dashv (-)^a$ | $\eta : e \to (e \times a)^a$, `unit = curry id` (the curried pair constructor) | $\varepsilon : b^a \times a \to b$, `counit = uncurry id` — function application |
-| free $\dashv$ forgetful monoid | $x \mapsto [x]$, singleton list | $\mathrm{fold}$: evaluate a list of monoid elements ([[DaoFP Exercise 10.9.1]]) |
+| free $\dashv$ forgetful monoid | $x \mapsto [x]$, singleton list | $\mathrm{fold}$: evaluate a list of monoid elements ([[DaoFP Chapter 10 Exercises#Exercise 10.9.1|DaoFP Exercise 10.9.1]]) |
 | [[Galois Connection]] $f \dashv g$ | $p \leq g(f(p))$ | $f(g(q)) \leq q$ |
 | $\mathrm{Colim} \dashv \Delta \dashv \mathrm{Lim}$ | the colimit cocone / the map into the limit of a constant diagram | the universal cocone map / the limit cone |
 

@@ -14,7 +14,7 @@ Equivalently: an object $\mathrm{Lim}\,D$ with a natural isomorphism $[\mathcal{
 | two objects, no arrows | [[Product]] (Example 3.94) |
 | $\bullet \to \bullet \leftarrow \bullet$ | [[Pullback]] (Example 3.99) |
 | $\bullet \rightrightarrows \bullet$ | [[Equalizer]] (DaoFP) |
-| [[Walking Arrow]] $\bullet \to \bullet$ | the source object ([[DaoFP Exercise 9.5.1]]) |
+| [[Walking Arrow]] $\bullet \to \bullet$ | the source object ([[DaoFP Chapter 9 Exercises#Exercise 9.5.1|DaoFP Exercise 9.5.1]]) |
 | a [[Preorder]] as $\mathcal{C}$ | [[Meet]] $\bigwedge$ of the diagram's objects |
 | $\mathcal{C} = \mathbf{Set}$, finite $\mathcal{J}$ | the tuple formula of [[Finite Limits in Set]] (Theorem 3.95); $\Pi_!(I) = \lim I$ ([[Data Migration Functor]]) |
 | $\mathcal{C} = \mathbf{Set}$, any $\mathcal{J}$ | the set of cones with apex $1$: $[\mathcal{J}, \mathbf{Set}](\Delta_1, D) \cong \mathbf{Set}(1, \mathrm{Lim}\,D)$ (DaoFP) |

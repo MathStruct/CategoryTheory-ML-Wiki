@@ -4,7 +4,7 @@ If $F : X \to Y$ and $G : Y \to Z$ are [[Function|functions]], their **composite
 
 > Sources: 7 Sketches Definition 1.28, Example 1.29; Kittenlab Lecture 2; DaoFP §2.1–2.2.
 
-Composition is associative and has the [[Identity Function|identities]] as units — the axioms of a [[Category]]. Evaluating $F$ at an element $x : \{1\} \to X$ is the composite $x \mathbin{;} F$ (see [[Global Element]]). DaoFP: "composition is the essence of programming"; function application $f(a)$ is composition with the arrow $a : 1 \to A$; pre-composition $(- \circ f)$ and post-composition $(g \circ -)$ are themselves functions between hom-sets, and $(- \circ f)$ reverses the order of composition ([[DaoFP Exercise 2.1.3]]).
+Composition is associative and has the [[Identity Function|identities]] as units — the axioms of a [[Category]]. Evaluating $F$ at an element $x : \{1\} \to X$ is the composite $x \mathbin{;} F$ (see [[Global Element]]). DaoFP: "composition is the essence of programming"; function application $f(a)$ is composition with the arrow $a : 1 \to A$; pre-composition $(- \circ f)$ and post-composition $(g \circ -)$ are themselves functions between hom-sets, and $(- \circ f)$ reverses the order of composition ([[DaoFP Chapter 2 Exercises#Exercise 2.1.3|DaoFP Exercise 2.1.3]]).
 
 ````tabs
 tab: Julia

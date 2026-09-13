@@ -16,7 +16,7 @@ This removes the ambiguity of the corner symbol $\lrcorner$ in a rectangle made 
 
 > Sources: 7 Sketches §7.2.1, Proposition 7.3, Exercise 7.4 (proof), Exercises 7.7–7.8 (applications: pullback of an iso is an iso, monos are pullback-stable).
 
-## Proof ([[7S Exercise 7.4]])
+## Proof ([[7S Chapter 7 Exercises#Exercise 7.4|7S Exercise 7.4]])
 
 ($\Rightarrow$) Suppose the left square is a pullback and let $(X, p : X \to C, q : X \to A')$ satisfy $q \mathbin{;} f' \mathbin{;} g' = p \mathbin{;} h_3$. The right pullback gives a unique $r : X \to B$ with $r \mathbin{;} h_2 = q \mathbin{;} f'$ and $r \mathbin{;} g = p$; then the left pullback gives a unique $r' : X \to A$ with $r' \mathbin{;} f = r$, $r' \mathbin{;} h_1 = q$. So $r'$ mediates for the rectangle, and any other mediator $r_0$ must have $r_0 \mathbin{;} f = r$ (uniqueness for the right square) and then $r_0 = r'$ (uniqueness for the left square).
 
@@ -24,8 +24,8 @@ This removes the ambiguity of the corner symbol $\lrcorner$ in a rectangle made 
 
 ## Consequences
 
-- The pullback of an [[Isomorphism]] is an isomorphism, and $(A, B, A, B)$ with identities and $f$ twice is a pullback ([[7S Exercise 7.7]]).
-- [[Monomorphism|Monos]] are stable under pullback ([[7S Exercise 7.8]]): two applications of the lemma to a cube.
+- The pullback of an [[Isomorphism]] is an isomorphism, and $(A, B, A, B)$ with identities and $f$ twice is a pullback ([[7S Chapter 7 Exercises#Exercise 7.7|7S Exercise 7.7]]).
+- [[Monomorphism|Monos]] are stable under pullback ([[7S Chapter 7 Exercises#Exercise 7.8|7S Exercise 7.8]]): two applications of the lemma to a cube.
 
 ````tabs
 tab: Julia

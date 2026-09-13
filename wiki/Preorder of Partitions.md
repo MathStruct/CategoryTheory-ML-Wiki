@@ -14,11 +14,11 @@ A \arrow[r, "f", two heads] \arrow[dr, "g"', two heads] & P \arrow[d, "h"] \\
 \end{document}
 ```
 
-- The **coarsest** partition has one part and corresponds to $! : A \to \{1\}$; the **finest** has singleton parts and corresponds to $\mathrm{id}_A$ ([[7S Exercise 1.53]]).
+- The **coarsest** partition has one part and corresponds to $! : A \to \{1\}$; the **finest** has singleton parts and corresponds to $\mathrm{id}_A$ ([[7S Chapter 1 Exercises#Exercise 1.53|7S Exercise 1.53]]).
 - The [[Join]] $P \vee Q$ is the transitive closure of the union of the two relations — the "join of systems" from [[Generative Effect|§1.1]]. The [[Meet]] $P \wedge Q$ has parts the nonempty intersections $A_p \cap A_q$.
-- $\mathrm{Prt}(\underline{4})$ has 15 elements ([[7S Exercise 1.6]]); $\mathrm{Prt}(\underline{3})$ has 5, with 12 pairs $x \leq y$ ([[7S Exercise 1.42]]).
+- $\mathrm{Prt}(\underline{4})$ has 15 elements ([[7S Chapter 1 Exercises#Exercise 1.6|7S Exercise 1.6]]); $\mathrm{Prt}(\underline{3})$ has 5, with 12 pairs $x \leq y$ ([[7S Chapter 1 Exercises#Exercise 1.42|7S Exercise 1.42]]).
 - Any [[Function]] $g : S \to T$ induces a [[Galois Connection]] $g_! : \mathrm{Prt}(S) \rightleftarrows \mathrm{Prt}(T) : g^*$ ([[Pushforward and Pullback of Partitions]]); for *surjective* $g$ the right adjoint $g^*$ is just precomposition (Example 1.68).
-- The connectivity observation $\Phi : \mathrm{Prt}(\{\bullet, \circ, \ast\}) \to \mathbb{B}$ is monotone ([[7S Exercise 1.77]]) but does not preserve joins.
+- The connectivity observation $\Phi : \mathrm{Prt}(\{\bullet, \circ, \ast\}) \to \mathbb{B}$ is monotone ([[7S Chapter 1 Exercises#Exercise 1.77|7S Exercise 1.77]]) but does not preserve joins.
 
 ````tabs
 tab: Julia

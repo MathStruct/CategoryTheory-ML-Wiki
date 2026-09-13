@@ -12,8 +12,8 @@ Nested loops of imperative languages become binds: `as` aggregates the inner loo
 
 **From the free monoid adjunction** ([[Monads from Adjunctions]], [[Free Monoid]]): $F \dashv U$ between $\mathbf{Set}$ and $\mathbf{Mon}$; $\eta_X : X \to U F X$ sends $x$ to the singleton `[x]` (`return`); the counit $\varepsilon_M : F U M \to M$ is the monoid morphism `foldMap id = foldr mappend mempty`, one direction of $\mathbf{Set}(a, U m) \cong \mathbf{Mon}(F a, m)$; whiskering, $\mu = U \varepsilon F$ instantiates $\varepsilon$ at the free monoid `([], (++))`, giving `join = foldr (++) [] = concat`.
 
-- `pairs as bs = do { a <- as; b <- bs; return (a, b) }` enumerates all pairs ([[Do Notation]], [[DaoFP Exercise 14.5.2]]).
-- Two [[Applicative Functor]] structures: the monadic one applies every function to every argument; the *zip* one (`pure = repeat`, `fs <*> as = zipWith ($) fs as`) is applicative but not a monad ([[DaoFP Exercise 14.9.3]]). The `Monoidal` instance is the cartesian product of lists ([[DaoFP Exercise 14.9.1]]).
+- `pairs as bs = do { a <- as; b <- bs; return (a, b) }` enumerates all pairs ([[Do Notation]], [[DaoFP Chapter 14 Exercises#Exercise 14.5.2|DaoFP Exercise 14.5.2]]).
+- Two [[Applicative Functor]] structures: the monadic one applies every function to every argument; the *zip* one (`pure = repeat`, `fs <*> as = zipWith ($) fs as`) is applicative but not a monad ([[DaoFP Chapter 14 Exercises#Exercise 14.9.3|DaoFP Exercise 14.9.3]]). The `Monoidal` instance is the cartesian product of lists ([[DaoFP Chapter 14 Exercises#Exercise 14.9.1|DaoFP Exercise 14.9.1]]).
 
 ````tabs
 tab: Julia

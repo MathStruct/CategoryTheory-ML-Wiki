@@ -10,9 +10,9 @@ $$
 \mathrm{Cl} : \mathrm{Rel}(S) \to \mathrm{Pos}(S)
 $$
 
-takes a relation $R$ to its **reflexive and transitive closure**: add $s \leq s$ for every $s$ and $s \leq u$ whenever $s \leq t$ and $t \leq u$. The adjunction says $\mathrm{Cl}(Q) \sqsubseteq {\leq}$ iff $Q \subseteq U(\leq)$: a preorder contains the closure of $Q$ exactly when it contains $Q$ ([[7S Exercise 1.125]]). The composite $U \circ \mathrm{Cl}$ is a [[Closure Operator]] on $\mathrm{Rel}(S)$.
+takes a relation $R$ to its **reflexive and transitive closure**: add $s \leq s$ for every $s$ and $s \leq u$ whenever $s \leq t$ and $t \leq u$. The adjunction says $\mathrm{Cl}(Q) \sqsubseteq {\leq}$ iff $Q \subseteq U(\leq)$: a preorder contains the closure of $Q$ exactly when it contains $Q$ ([[7S Chapter 1 Exercises#Exercise 1.125|7S Exercise 1.125]]). The composite $U \circ \mathrm{Cl}$ is a [[Closure Operator]] on $\mathrm{Rel}(S)$.
 
-**Example.** $\mathrm{Rel}(\{1\})$ has two elements $\varnothing \leq \{(1,1)\}$; $\mathrm{Rel}(\{1,2\})$ has 16 ([[7S Exercise 1.124]]).
+**Example.** $\mathrm{Rel}(\{1\})$ has two elements $\varnothing \leq \{(1,1)\}$; $\mathrm{Rel}(\{1,2\})$ has 16 ([[7S Chapter 1 Exercises#Exercise 1.124|7S Exercise 1.124]]).
 
 This is the preorder analogue of the [[Free Category]] on a [[Graph]] (the reflexive-transitive closure *with named paths*), of the [[Free Monoid]], and of the [[Hasse Diagram]] construction: a graph presents the preorder $\mathrm{Cl}(A)$.
 

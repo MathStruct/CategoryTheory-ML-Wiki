@@ -24,7 +24,7 @@ $$
 
 with $[\mathcal{C}^{\mathrm{op}} \times \mathcal{C}, \mathbf{Set}](\Phi P, Q) \cong [\dots](P, \Theta Q)$; so the Tambara category is the [[Eilenberg-Moore Category]] of $\Phi$, giving the free/forgetful adjunction needed for [[Tannakian Reconstruction]]. Evaluating $\Phi$ on the representable $(\mathcal{C}^{\mathrm{op}} \times \mathcal{C})(\langle a, b\rangle, -)$ and applying co-Yoneda returns exactly the existential lens — hence [[Profunctor Optics]].
 
-- **Generalizations**: for $\otimes = +$ the Tambara modules are `Cocartesian`/`Choice` (`alpha' :: p a b -> p (Either c a) (Either c b)`) and the optics are prisms; for the action $c \bullet a = \sum_m c_m \times a^m$ of the [[Day Convolution|Day-monoidal]] category $[\mathbb{N}, \mathcal{C}]$ they give traversals; any action of a monoidal category $\mathcal{M}$ on $\mathcal{C}$ (an *actegory*), or two actions on $\mathcal{C}$ and $\mathcal{D}$, gives *mixed optics* $\int^{m} \mathcal{C}(s, m \bullet a) \times \mathcal{D}(m \bullet b, t)$ ([[DaoFP Exercise 18.4.1]]).
+- **Generalizations**: for $\otimes = +$ the Tambara modules are `Cocartesian`/`Choice` (`alpha' :: p a b -> p (Either c a) (Either c b)`) and the optics are prisms; for the action $c \bullet a = \sum_m c_m \times a^m$ of the [[Day Convolution|Day-monoidal]] category $[\mathbb{N}, \mathcal{C}]$ they give traversals; any action of a monoidal category $\mathcal{M}$ on $\mathcal{C}$ (an *actegory*), or two actions on $\mathcal{C}$ and $\mathcal{D}$, gives *mixed optics* $\int^{m} \mathcal{C}(s, m \bullet a) \times \mathcal{D}(m \bullet b, t)$ ([[DaoFP Chapter 18 Exercises#Exercise 18.4.1|DaoFP Exercise 18.4.1]]).
 - Haskell's `Arrow` is a [[Prearrow]] that is also a Tambara module (`first`).
 
 ````tabs

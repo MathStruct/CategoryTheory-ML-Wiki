@@ -17,7 +17,7 @@ for all $m, n, p \in M$. It is **commutative** if also $m \ast n = n \ast m$.
 - $n \times n$ matrices under matrix multiplication, elementwise product, or elementwise sum.
 - Subsets of $A$ under $\cap$ (unit $A$) or $\cup$ (unit $\varnothing$).
 - Endomorphisms $\mathrm{Hom}(x, x)$ of any object of a [[Category]] under composition.
-- Any commutative monoid $M$ gives a [[Symmetric Monoidal Preorder]] $(\mathrm{Disc}_M, =, e, \ast)$ on the [[Discrete Preorder]] ([[7S Exercise 2.8]]).
+- Any commutative monoid $M$ gives a [[Symmetric Monoidal Preorder]] $(\mathrm{Disc}_M, =, e, \ast)$ on the [[Discrete Preorder]] ([[7S Chapter 2 Exercises#Exercise 2.8|7S Exercise 2.8]]).
 
 ## Monoids are one-object categories (Kittenlab Lecture 5)
 

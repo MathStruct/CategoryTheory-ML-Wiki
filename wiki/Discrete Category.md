@@ -5,7 +5,7 @@ A **discrete category** is a [[Category]] with no morphisms other than identitie
 > Sources: DaoFP §8.1, §10.11; 7 Sketches Example 3.74, 3.94, Exercise 3.83; Kittenlab Lecture 9.
 
 - A [[Functor]] out of a discrete category is just a family of objects; a [[Diagram]] indexed by the discrete category with $n$ objects has as [[Limit]] the $n$-fold [[Product]] and as [[Colimit]] the $n$-fold [[Coproduct]] (Example 3.94; Kittenlab Lecture 9: "$n$-ary coproducts by making $\mathsf{D}$ the discrete category with $n$ objects").
-- The discrete category on two objects has no [[Terminal Object]] ([[7S Exercise 3.83]]).
+- The discrete category on two objects has no [[Terminal Object]] ([[7S Chapter 3 Exercises#Exercise 3.83|7S Exercise 3.83]]).
 - $\mathrm{Disc} \dashv \mathrm{Ob} \dashv \mathrm{Codisc} : \mathbf{Set} \rightleftarrows \mathbf{Cat}$; see [[Codiscrete Category]].
 
 ````tabs

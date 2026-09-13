@@ -22,7 +22,7 @@ $$
 (\mathcal{C}/B)\big(f^* \langle G, q \rangle, \langle E, p \rangle\big) \cong (\mathcal{C}/A)\big(\langle G, q \rangle, \Pi_f \langle E, p \rangle\big),
 $$
 
-written $f_* : \mathcal{C}/B \to \mathcal{C}/A$. The fiber of $\Pi_f E$ over $x \in A$ is the set of *partial sections* of $E$ over the patch $f^{-1}(x) \subseteq B$ ([[DaoFP Exercise 11.4.2]]); $f$ localizes sections to neighbourhoods. Altogether $\Sigma_f \dashv f^* \dashv \Pi_f$ in a [[Locally Cartesian Closed Category]].
+written $f_* : \mathcal{C}/B \to \mathcal{C}/A$. The fiber of $\Pi_f E$ over $x \in A$ is the set of *partial sections* of $E$ over the patch $f^{-1}(x) \subseteq B$ ([[DaoFP Chapter 11 Exercises#Exercise 11.4.2|DaoFP Exercise 11.4.2]]); $f$ localizes sections to neighbourhoods. Altogether $\Sigma_f \dashv f^* \dashv \Pi_f$ in a [[Locally Cartesian Closed Category]].
 
 - **Logic**: $\Pi_{x : B} T(x)$ is $\forall_{x : B}\, T(x)$ — a section proves every $T(x)$ is inhabited ([[Quantification]]). The induction principle for $\mathbb{N}$ produces an element of $\Pi_{n : \mathbb{N}} T(n)$ from $\mathit{init} : T(Z)$ and $\mathit{step} : \Pi_n (T(n) \to T(Sn))$ ([[Natural Numbers Object]]).
 - **Haskell** has no $\Pi$; one passes the index as a *singleton* value: `replicateV :: a -> SNat n -> Vec n a` returns a different type for each `n` — an infinite tuple `((), x, (x,x), (x,x,x), ...)`.

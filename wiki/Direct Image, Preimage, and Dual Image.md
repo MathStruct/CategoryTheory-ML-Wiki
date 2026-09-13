@@ -16,7 +16,7 @@ Kittenlab (Lecture 14) phrases the same in terms of characteristic functions: $f
 
 **Why it matters.** "We did not invent these mappings: they were induced by $f$. It is one of the pleasures of category theory that adjoints so often turn out to have interesting semantic interpretations." The adjoints $f_! \dashv f^* \dashv f_*$ are the [[Quantification|existential and universal quantifiers]] $\exists_f \dashv f^* \dashv \forall_f$ of [[Topos|topos]] logic (7 Sketches §7.4.4) and, at the level of [[Category|categories]], the [[Dependent Sum]] $\Sigma_f \dashv f^* \dashv \Pi_f$ [[Dependent Product]] adjoints to the [[Base Change Functor|base-change]] (DaoFP Ch. 11); for [[Database Schema|databases]], $\Sigma_F \dashv \Delta_F \dashv \Pi_F$ ([[Data Migration Functor]]).
 
-**Example** ([[7S Exercise 1.118]] solution): $X = \{a_1, c_1, c_2\} \to Y = \{a, b, c\}$ projecting down. $f^*\{a,b\} = \{a_1\}$, $f^*\{c\} = \{c_1, c_2\}$; $f_!\{a_1, c_1\} = \{a, c\}$; $f_*\varnothing = \{b\}$ (the empty bucket), $f_*\{a_1, c_1\} = \{a, b\}$.
+**Example** ([[7S Chapter 1 Exercises#Exercise 1.118|7S Exercise 1.118]] solution): $X = \{a_1, c_1, c_2\} \to Y = \{a, b, c\}$ projecting down. $f^*\{a,b\} = \{a_1\}$, $f^*\{c\} = \{c_1, c_2\}$; $f_!\{a_1, c_1\} = \{a, c\}$; $f_*\varnothing = \{b\}$ (the empty bucket), $f_*\{a_1, c_1\} = \{a, b\}$.
 
 ````tabs
 tab: Julia

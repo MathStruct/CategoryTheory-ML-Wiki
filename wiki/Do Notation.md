@@ -11,7 +11,7 @@ main = do                          -- desugars to:  getLine >>= \s1 ->
 
 > Sources: DaoFP §14.5 ("Do Notation"), Exercises 14.5.1–14.5.2; §14.6 (CPS via `Cont` in do notation); §14.9 (`ApplicativeDo`).
 
-- `pairs as bs = do { a <- as; b <- bs; return (a, b) }` in the [[List Monad]]; `ap fs as = do { f <- fs; a <- as; return (f a) }` for any monad ([[DaoFP Exercise 14.5.1]]).
+- `pairs as bs = do { a <- as; b <- bs; return (a, b) }` in the [[List Monad]]; `ap fs as = do { f <- fs; a <- as; return (f a) }` for any monad ([[DaoFP Chapter 14 Exercises#Exercise 14.5.1|DaoFP Exercise 14.5.1]]).
 - The final `return` typically needs variables bound in *outer* lambdas — this depends on the monad being [[Functorial Strength|strong]], which every Haskell functor is.
 - `ApplicativeDo` lets the compiler use [[Applicative Functor|applicative]] combinators where no line depends on an earlier result, enabling parallelism. Imperative coroutines (C++) mimic do notation for hard-coded monads.
 

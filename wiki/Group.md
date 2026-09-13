@@ -4,7 +4,7 @@ A **group** is a [[Monoid]] in which every element has an inverse — equivalent
 
 > Sources: 7 Sketches Exercise 3.32, Example 3.18 ($\mathbb{Z}/2\mathbb{Z}$), §3.2.4 ($\mathbf{Grp}$: "reversible action, symmetry"), Example 3.74 (abelianization is a left adjoint); Kittenlab Lecture 7 (natural transformations between group homomorphisms are conjugations).
 
-- The monoid $\mathbb{N}$ of Example 3.13 is not a group ($s^n \mathbin{;} s = s^{n+1} \neq s^0$); the category presented by one loop $s$ with $s \mathbin{;} s = \mathrm{id}$ is the group $\mathbb{Z}/2\mathbb{Z}$ ([[7S Exercise 3.32]]).
+- The monoid $\mathbb{N}$ of Example 3.13 is not a group ($s^n \mathbin{;} s = s^{n+1} \neq s^0$); the category presented by one loop $s$ with $s \mathbin{;} s = \mathrm{id}$ is the group $\mathbb{Z}/2\mathbb{Z}$ ([[7S Chapter 3 Exercises#Exercise 3.32|7S Exercise 3.32]]).
 - Functors between groups-as-categories are group homomorphisms; a [[Natural Transformation]] $f \Rightarrow g$ between homomorphisms $G \to H$ is an $h \in H$ with $f(x) = h\,g(x)\,h^{-1}$ — for abelian $H$ only $f = g$, but e.g. rotation by $\theta$ and by $-\theta$ in $GL_2(\mathbb{R})$ are conjugate by a reflection (Kittenlab Lecture 7).
 - $\mathbf{Grp} \to \mathbf{Set}$ (forgetful) has a left adjoint (free group); $\mathbf{Ab} \hookrightarrow \mathbf{Grp}$ has left adjoint the abelianization $G \mapsto G/[G,G]$ ([[Free-Forgetful Adjunction]]).
 - A [[Dagger Category|dagger]] structure in which every morphism is unitary makes a category a groupoid; symmetric-monoidal groupoids underlie [[Compact Closed Category|compact closed]] structure in physics.

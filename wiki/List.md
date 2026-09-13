@@ -21,8 +21,8 @@ $$
 > Sources: DaoFP §7.2 ("Lists", "Elimination Rule"), §7.3 ("Functoriality": `map`, `badMap`), §12.4 ("Lists as initial algebras"), §15.3 ("Free monoid and the list monad"), Exercises 7.2.1–7.2.3; Kittenlab Lecture 5 (`ConcatMonoid`); 7 Sketches §5.2.4 (free monoid).
 
 - **Functoriality** (§7.3): for $f : a \to b$, `map f` is the fold with $\mathit{init} = \mathsf{Nil}_b$ and $\mathit{step} = \mathsf{Cons}_b \circ (f \times \mathrm{id})$. The alternative $\mathit{step} = \mathsf{snd}$ (`badMap`, which drops all elements) type-checks but fails the functor law `map id = id` — see [[Functor]].
-- $L_a$ is the [[Free Monoid]] on $a$ and the [[Initial Algebra]] of $F(x) = 1 + a \times x$; `foldr` is the catamorphism. $L_1 \cong N$ ([[Natural Numbers Object]], [[DaoFP Exercise 7.2.1]]).
-- Not every mapping out of a list is a fold, but every *Haskell* function `[a] -> c` written by pattern matching on `[]` and `(:)` is ([[DaoFP Exercise 7.2.2]], [[DaoFP Exercise 7.2.3]]).
+- $L_a$ is the [[Free Monoid]] on $a$ and the [[Initial Algebra]] of $F(x) = 1 + a \times x$; `foldr` is the catamorphism. $L_1 \cong N$ ([[Natural Numbers Object]], [[DaoFP Chapter 7 Exercises#Exercise 7.2.1|DaoFP Exercise 7.2.1]]).
+- Not every mapping out of a list is a fold, but every *Haskell* function `[a] -> c` written by pattern matching on `[]` and `(:)` is ([[DaoFP Chapter 7 Exercises#Exercise 7.2.2|DaoFP Exercise 7.2.2]], [[DaoFP Chapter 7 Exercises#Exercise 7.2.3|DaoFP Exercise 7.2.3]]).
 - `sum = foldr plus Z` on lists of naturals; the [[List Monad]] uses concatenation as `join`.
 
 ````tabs

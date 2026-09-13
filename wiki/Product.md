@@ -19,7 +19,7 @@ X & X \times Y \arrow[l, "p_X"] \arrow[r, "p_Y"'] & Y
 ## Examples
 
 - $\mathbf{Set}$: the cartesian product $\{(x, y)\}$ with $p_X(x,y) = x$, $\langle f, g \rangle(c) = (f(c), g(c))$ (Example 3.87; picture of $\underline{6} \times \underline{4}$ as a grid). In $\mathbf{FinSet}$ with $A = \{1..n\}$, $B = \{1..m\}$: $A \times B = \{1..nm\}$ with $k \mapsto (\mathrm{div}(k,m) + 1, \mathrm{rem}(k,m) + 1)$ and $(i, j) \mapsto (i-1)m + j$ — "the same problem as storing a matrix in linear memory" (Kittenlab).
-- [[Preorder]]: the product $x \times y$ is the [[Meet]] $x \wedge y$ ([[7S Exercise 3.88]]); in $\mathcal{P}(X)$ the intersection (Kittenlab).
+- [[Preorder]]: the product $x \times y$ is the [[Meet]] $x \wedge y$ ([[7S Chapter 3 Exercises#Exercise 3.88|7S Exercise 3.88]]); in $\mathcal{P}(X)$ the intersection (Kittenlab).
 - [[Category of Graphs|Graphs]]: $(G \times H)(V) = G(V) \times H(V)$, $(G \times H)(E) = G(E) \times H(E)$ with componentwise sources and targets (Kittenlab Lecture 13); all [[C-Set|C-sets]] likewise, pointwise.
 - [[Category of Categories|$\mathbf{Cat}$]]: the [[Product Category]] (Example 3.89); $\mathbf{Preord}$: the [[Product Preorder]].
 - Julia: `Tuple{A,B}`; Haskell: `(a, b)` with `fst`, `snd` and `(&&&)` (DaoFP: the **cartesian category** of types).
@@ -27,7 +27,7 @@ X & X \times Y \arrow[l, "p_X"] \arrow[r, "p_Y"'] & Y
 
 ## Three descriptions
 
-1. **Universal cone**: a product is a [[Terminal Object]] in the category $\mathrm{Cone}(X, Y)$ of spans $X \leftarrow C \to Y$ ([[7S Exercise 3.91]]); hence a [[Limit]] of the [[Diagram]] $\bullet\ \bullet$ indexed by the discrete two-object category (Example 3.94), and unique up to unique isomorphism.
+1. **Universal cone**: a product is a [[Terminal Object]] in the category $\mathrm{Cone}(X, Y)$ of spans $X \leftarrow C \to Y$ ([[7S Chapter 3 Exercises#Exercise 3.91|7S Exercise 3.91]]); hence a [[Limit]] of the [[Diagram]] $\bullet\ \bullet$ indexed by the discrete two-object category (Example 3.94), and unique up to unique isomorphism.
 2. **Representability**: $\mathcal{C}(-, X \times Y) \cong \mathcal{C}(-, X) \times \mathcal{C}(-, Y)$, i.e. $[\mathbf{2}, \mathcal{C}](\Delta_x, D) \cong \mathcal{C}(x, a \times b)$ — "product as a universal span" (DaoFP §9.4); naturality of the isomorphism encodes the commuting triangles.
 3. **Adjunction**: $\Delta \dashv (\times)$ with the [[Diagonal Functor]]; the counit is $\langle \mathsf{fst}, \mathsf{snd} \rangle$ (DaoFP §10.2, 10.5).
 

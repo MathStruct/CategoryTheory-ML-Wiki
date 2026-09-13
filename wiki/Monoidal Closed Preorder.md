@@ -13,12 +13,12 @@ for all $a, v, w$. "Closed" means the preorder is closed under "taking homs". Th
 ## Examples
 
 - [[Cost]]: $x \multimap y = \max(0, y - x)$ (Example 2.83) — subtraction defined from order and product.
-- [[Bool (Monoidal Preorder)|$\mathbf{Bool}$]]: $v \multimap w = (v \Rightarrow w)$, implication ([[7S Exercise 2.84]]).
-- $(\mathcal{P}(S), \subseteq, S, \cap)$: $B \multimap C = \overline{B} \cup C$ ([[7S Exercise 2.94]]).
+- [[Bool (Monoidal Preorder)|$\mathbf{Bool}$]]: $v \multimap w = (v \Rightarrow w)$, implication ([[7S Chapter 2 Exercises#Exercise 2.84|7S Exercise 2.84]]).
+- $(\mathcal{P}(S), \subseteq, S, \cap)$: $B \multimap C = \overline{B} \cup C$ ([[7S Chapter 2 Exercises#Exercise 2.94|7S Exercise 2.94]]).
 - Non-example: $(\mathbb{B}, \leq, \mathsf{false}, \vee)$ (Example 2.85).
 - Chemistry is not closed, but $2\mathrm{Na} \multimap (2\mathrm{NaOH} + \mathrm{H_2})$ would be a "potential reaction" (Example 2.86, [[Resource Theory]]).
 
-## Closedness is an adjunction ([[7S Exercise 2.82]])
+## Closedness is an adjunction ([[7S Chapter 2 Exercises#Exercise 2.82|7S Exercise 2.82]])
 
 Condition (2.80) says exactly that $(- \otimes v) : V \to V$ is left adjoint to $(v \multimap -) : V \to V$ in a [[Galois Connection]], once both are monotone: $(- \otimes v)$ is monotone by axiom (a); from reflexivity $(v \multimap w) \leq (v \multimap w)$ we get $(v \multimap w) \otimes v \leq w$, and then $u \leq u'$ gives $(v \multimap u) \otimes v \leq u \leq u'$, hence $(v \multimap u) \leq (v \multimap u')$.
 

@@ -11,14 +11,14 @@ We write $p = \bigvee A$ or $\bigvee_{a \in A} a$, and $a \vee b$ when $A = \{a,
 
 ## Examples
 
-- Joining systems: for [[Partition|partitions]], $A \vee B$ is the transitive closure of the union of connections — the smallest system bigger than both (§1.1.2, [[7S Exercise 1.6]]).
-- [[Booleans]]: join is OR; $\mathsf{true} \vee \mathsf{false} = \mathsf{true}$, $\mathsf{false} \vee \mathsf{false} = \mathsf{false}$ ([[7S Exercise 1.7]]).
+- Joining systems: for [[Partition|partitions]], $A \vee B$ is the transitive closure of the union of connections — the smallest system bigger than both (§1.1.2, [[7S Chapter 1 Exercises#Exercise 1.6|7S Exercise 1.6]]).
+- [[Booleans]]: join is OR; $\mathsf{true} \vee \mathsf{false} = \mathsf{true}$, $\mathsf{false} \vee \mathsf{false} = \mathsf{false}$ ([[7S Chapter 1 Exercises#Exercise 1.7|7S Exercise 1.7]]).
 - [[Power Set]]: $A \vee B = A \cup B$. [[Total Order]]: supremum. [[Divisibility Order]]: $\mathrm{lcm}$.
 - $\{\frac{1}{n+1} \mid n \in \mathbb{N}\} \subseteq \mathbb{R}$ has join $1$; $\mathbb{N} \subseteq \mathbb{R}$ has none.
 
 ## Joins and observations
 
-For any monotone $f$ and $a, b$ with joins, $f(a) \vee f(b) \leq f(a \vee b)$ ([[7S Exercise 1.94]]); strict inequality is a [[Generative Effect]]. Left adjoints of [[Galois Connection|Galois connections]] preserve joins ([[Right Adjoints Preserve Meets|and right adjoints preserve meets]]); a map out of a preorder with all joins is a left adjoint iff it preserves joins ([[Adjoint Functor Theorem for Preorders]]).
+For any monotone $f$ and $a, b$ with joins, $f(a) \vee f(b) \leq f(a \vee b)$ ([[7S Chapter 1 Exercises#Exercise 1.94|7S Exercise 1.94]]); strict inequality is a [[Generative Effect]]. Left adjoints of [[Galois Connection|Galois connections]] preserve joins ([[Right Adjoints Preserve Meets|and right adjoints preserve meets]]); a map out of a preorder with all joins is a left adjoint iff it preserves joins ([[Adjoint Functor Theorem for Preorders]]).
 
 Categorically a join is a [[Colimit]] in the thin category: $a \vee b$ is the [[Coproduct]], $\bigvee \varnothing$ is the bottom element, an [[Initial Object]]. In a [[Quantale]] the monoidal product distributes over all joins.
 

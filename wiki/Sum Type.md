@@ -17,7 +17,7 @@ a \arrow[dr, "\mathsf{Left}"] \arrow[ddr, "f"', bend right] & & b \arrow[dl, "\m
 
 ## Instances
 
-- **Bool** $= 1 + 1$: two constructors `True, False :: Bool` (arrows from $1$); a function `Bool -> A` is the same as a pair of elements of `A`, written `if b then x else y`. So there are $0$ functions $2 \to 0$, $1$ function $2 \to 1$ and $4$ functions $2 \to 2$ — the counts $0^2, 1^2, 2^2$ of [[Exponential Object|exponentials]] ([[DaoFP Exercise 4.1.1]]). See [[Booleans]].
+- **Bool** $= 1 + 1$: two constructors `True, False :: Bool` (arrows from $1$); a function `Bool -> A` is the same as a pair of elements of `A`, written `if b then x else y`. So there are $0$ functions $2 \to 0$, $1$ function $2 \to 1$ and $4$ functions $2 \to 2$ — the counts $0^2, 1^2, 2^2$ of [[Exponential Object|exponentials]] ([[DaoFP Chapter 4 Exercises#Exercise 4.1.1|DaoFP Exercise 4.1.1]]). See [[Booleans]].
 - **Enumerations**: `data RGB = Red | Green | Blue` is $1 + 1 + 1$; a function out of it is a triple of elements, written by pattern matching or `case`; the wildcard `_` matches everything else. `Char`, `Int`, `Double` are (huge) enumerations; `Integer` is genuinely infinite.
 - **Maybe** $= 1 + a$: `data Maybe a = Nothing | Just a`, isomorphic to `Either () a`; used for partial functions instead of exceptions.
 - **Logic**: $A + B$ is disjunction; to prove $C$ from $A + B$ one must handle both cases — exactly the two arrows of the elimination rule (Curry–Howard).
@@ -25,7 +25,7 @@ a \arrow[dr, "\mathsf{Left}"] \arrow[ddr, "f"', bend right] & & b \arrow[dl, "\m
 
 ## Cocartesian categories
 
-A category with all binary sums and an [[Initial Object]] $0$ is **cocartesian**. Using the Yoneda trick (compare mappings *out* of both sides, naturally in the target) one shows $1 + 0 \cong 1$, $a + 0 \cong a$ ([[DaoFP Exercise 4.4.1]]), $a + b \cong b + a$ ([[DaoFP Exercise 4.4.2]], [[DaoFP Exercise 4.4.3]]) and $(a + b) + c \cong a + (b + c)$, and $+$ is functorial: $\langle f, g \rangle := [\mathsf{Left} \circ f, \mathsf{Right} \circ g] : a + b \to a' + b'$ preserves composition and identities ([[DaoFP Exercise 4.4.4]], [[DaoFP Exercise 4.4.5]]). Hence $(\mathcal{C}, +, 0)$ is a [[Symmetric Monoidal Category]] (same content as [[7S Exercise 6.18]]). "When a child learns addition we call it arithmetic. When a grownup learns addition we call it a cocartesian category." The dual notion is a [[Cartesian Category]].
+A category with all binary sums and an [[Initial Object]] $0$ is **cocartesian**. Using the Yoneda trick (compare mappings *out* of both sides, naturally in the target) one shows $1 + 0 \cong 1$, $a + 0 \cong a$ ([[DaoFP Chapter 4 Exercises#Exercise 4.4.1|DaoFP Exercise 4.4.1]]), $a + b \cong b + a$ ([[DaoFP Chapter 4 Exercises#Exercise 4.4.2|DaoFP Exercise 4.4.2]], [[DaoFP Chapter 4 Exercises#Exercise 4.4.3|DaoFP Exercise 4.4.3]]) and $(a + b) + c \cong a + (b + c)$, and $+$ is functorial: $\langle f, g \rangle := [\mathsf{Left} \circ f, \mathsf{Right} \circ g] : a + b \to a' + b'$ preserves composition and identities ([[DaoFP Chapter 4 Exercises#Exercise 4.4.4|DaoFP Exercise 4.4.4]], [[DaoFP Chapter 4 Exercises#Exercise 4.4.5|DaoFP Exercise 4.4.5]]). Hence $(\mathcal{C}, +, 0)$ is a [[Symmetric Monoidal Category]] (same content as [[7S Chapter 6 Exercises#Exercise 6.18|7S Exercise 6.18]]). "When a child learns addition we call it arithmetic. When a grownup learns addition we call it a cocartesian category." The dual notion is a [[Cartesian Category]].
 
 ````tabs
 tab: Julia

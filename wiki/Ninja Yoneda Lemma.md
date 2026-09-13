@@ -13,7 +13,7 @@ Like integrals against a Dirac delta, "integrating over $x$" replaces $x$ by $a$
 
 ## Proof of the co-Yoneda lemma
 
-Compare mappings out to an arbitrary set $S$ (the Yoneda trick): $\mathbf{Set}(\int^x \mathcal{C}(x, a) \times F x,\ S) \cong \int_x \mathbf{Set}(\mathcal{C}(x, a) \times F x, S)$ (co-continuity of hom) $\cong \int_x \mathbf{Set}(\mathcal{C}(x, a), S^{F x})$ (currying) $\cong S^{F a}$ (contravariant ninja Yoneda) $\cong \mathbf{Set}(F a, S)$. Since $S$ is arbitrary, $\int^x \mathcal{C}(x, a) \times F x \cong F a$. $\blacksquare$ The contravariant version is [[DaoFP Exercise 17.6.1]].
+Compare mappings out to an arbitrary set $S$ (the Yoneda trick): $\mathbf{Set}(\int^x \mathcal{C}(x, a) \times F x,\ S) \cong \int_x \mathbf{Set}(\mathcal{C}(x, a) \times F x, S)$ (co-continuity of hom) $\cong \int_x \mathbf{Set}(\mathcal{C}(x, a), S^{F x})$ (currying) $\cong S^{F a}$ (contravariant ninja Yoneda) $\cong \mathbf{Set}(F a, S)$. Since $S$ is arbitrary, $\int^x \mathcal{C}(x, a) \times F x \cong F a$. $\blacksquare$ The contravariant version is [[DaoFP Chapter 17 Exercises#Exercise 17.6.1|DaoFP Exercise 17.6.1]].
 
 ````tabs
 tab: Julia

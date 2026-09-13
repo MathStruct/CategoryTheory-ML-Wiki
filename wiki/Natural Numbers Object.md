@@ -28,8 +28,8 @@ This *elimination rule* is **primitive recursion**: $h$ is the sequence $a_0 = \
 
 - Not every arrow $N \to a$ is recursive — an arbitrary such arrow contains infinite information; the recursive ones are enough to *define* $N$. This is the Peano encoding; in Haskell `data Nat = Z | S Nat`, used mostly for type-level naturals.
 - $N$ is the [[Initial Algebra]] of the [[Endofunctor]] $F(x) = 1 + x$; $h$ is the catamorphism $\mathrm{fold}\, [\mathit{init}, \mathit{step}]$ (Lambek: $[Z, S] : 1 + N \cong N$).
-- The recursor `rec init step` implements all primitive recursive functions, e.g. `plus n = rec n S`; curried addition $N \to N^N$ uses `init = id`, `step = (S .)` ([[DaoFP Exercise 7.1.2]]). Iteration in imperative languages is the same thing; compilers turn one into the other (tail-recursion optimization).
-- [[List|Lists]] $L_a$ generalize $N$: $N \cong L_1$ (base-one numerals, [[DaoFP Exercise 7.2.1]]). A stronger elimination rule — the *induction principle* — needs [[Dependent Type|dependent types]].
+- The recursor `rec init step` implements all primitive recursive functions, e.g. `plus n = rec n S`; curried addition $N \to N^N$ uses `init = id`, `step = (S .)` ([[DaoFP Chapter 7 Exercises#Exercise 7.1.2|DaoFP Exercise 7.1.2]]). Iteration in imperative languages is the same thing; compilers turn one into the other (tail-recursion optimization).
+- [[List|Lists]] $L_a$ generalize $N$: $N \cong L_1$ (base-one numerals, [[DaoFP Chapter 7 Exercises#Exercise 7.2.1|DaoFP Exercise 7.2.1]]). A stronger elimination rule — the *induction principle* — needs [[Dependent Type|dependent types]].
 
 ````tabs
 tab: Julia

@@ -4,7 +4,7 @@ For any [[Set]] $X$, the **identity function** $\mathrm{id}_X : X \to X$ (Kitten
 
 > Sources: 7 Sketches Example 1.23, Proposition 1.70; Kittenlab Lecture 2; DaoFP §2.3.
 
-It is the unit for [[Function Composition]]: $\mathrm{id}_X \mathbin{;} F = F = F \mathbin{;} \mathrm{id}_Y$ for any $F : X \to Y$. Identities are part of the data of any [[Category]] — DaoFP: the identity is "the arrow that does nothing", and $(\mathrm{id}_a \circ -)$ and $(- \circ \mathrm{id}_a)$ are identity operations on hom-sets ([[DaoFP Exercise 2.3.1]]). The identity on a [[Preorder]] is [[Monotone Map|monotone]]; $\mathrm{id}_P$ is monotone $(P,\leq) \to (P, \leq^{\mathrm{op}})$ iff $P$ is a [[Dagger Preorder]] (Example 1.72).
+It is the unit for [[Function Composition]]: $\mathrm{id}_X \mathbin{;} F = F = F \mathbin{;} \mathrm{id}_Y$ for any $F : X \to Y$. Identities are part of the data of any [[Category]] — DaoFP: the identity is "the arrow that does nothing", and $(\mathrm{id}_a \circ -)$ and $(- \circ \mathrm{id}_a)$ are identity operations on hom-sets ([[DaoFP Chapter 2 Exercises#Exercise 2.3.1|DaoFP Exercise 2.3.1]]). The identity on a [[Preorder]] is [[Monotone Map|monotone]]; $\mathrm{id}_P$ is monotone $(P,\leq) \to (P, \leq^{\mathrm{op}})$ iff $P$ is a [[Dagger Preorder]] (Example 1.72).
 
 ````tabs
 tab: Julia

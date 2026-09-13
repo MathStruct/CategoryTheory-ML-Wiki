@@ -1,6 +1,6 @@
 #definition #theorem
 
-**$\mathbf{Preord}$** is the [[Category]] whose objects are [[Preorder|preorders]] and whose morphisms are [[Monotone Map|monotone maps]]. Identities are monotone and composites of monotone maps are monotone (Proposition 1.70, [[7S Exercise 1.71]]), so this is a category.
+**$\mathbf{Preord}$** is the [[Category]] whose objects are [[Preorder|preorders]] and whose morphisms are [[Monotone Map|monotone maps]]. Identities are monotone and composites of monotone maps are monotone (Proposition 1.70, [[7S Chapter 1 Exercises#Exercise 1.71|7S Exercise 1.71]]), so this is a category.
 
 > Sources: 7 Sketches Proposition 1.70, §3.2.4; Kittenlab Lecture 5.
 

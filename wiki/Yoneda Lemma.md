@@ -18,7 +18,7 @@ natural in both $X$ and $F$. Dually (contravariant Yoneda), $[\mathcal{C}^{\math
 
 ## Proof (Kittenlab / DaoFP)
 
-*Forward.* Given $x \in F(X)$ define $x^* : \mathrm{Hom}(X, -) \Rightarrow F$ by $x^*_Y(f) := F(f)(x)$ for $f : X \to Y$. (Naturality in $Y$ is [[DaoFP Exercise 9.6.2]].)
+*Forward.* Given $x \in F(X)$ define $x^* : \mathrm{Hom}(X, -) \Rightarrow F$ by $x^*_Y(f) := F(f)(x)$ for $f : X \to Y$. (Naturality in $Y$ is [[DaoFP Chapter 9 Exercises#Exercise 9.6.2|DaoFP Exercise 9.6.2]].)
 
 *Backward.* Given $\alpha : \mathrm{Hom}(X, -) \Rightarrow F$, take $\alpha_X(\mathrm{id}_X) \in F(X)$ — the **Yoneda trick**: substitute $X$ for the variable to get an endo-hom-set and pick its canonical element.
 
@@ -28,7 +28,7 @@ $$
 \alpha_Y(f) = \alpha_Y(\mathrm{id}_X \circ f) = \alpha_Y(\mathrm{Hom}(X, f)(\mathrm{id}_X)) = F(f)(\alpha_X(\mathrm{id}_X)),
 $$
 
-so $\alpha = (\alpha_X(\mathrm{id}_X))^*$: "where $f$ goes is wholly determined by where $\mathrm{id}_X$ goes". $\blacksquare$ ([[DaoFP Exercise 9.6.1]] handles $F(X) = \varnothing$.)
+so $\alpha = (\alpha_X(\mathrm{id}_X))^*$: "where $f$ goes is wholly determined by where $\mathrm{id}_X$ goes". $\blacksquare$ ([[DaoFP Chapter 9 Exercises#Exercise 9.6.1|DaoFP Exercise 9.6.1]] handles $F(X) = \varnothing$.)
 
 ```tikz
 \usepackage{tikz-cd}

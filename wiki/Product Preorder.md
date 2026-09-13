@@ -4,7 +4,7 @@ Given [[Preorder|preorders]] $(P, \leq)$ and $(Q, \leq)$, the **product preorder
 
 > Sources: 7 Sketches Example 1.56, Exercise 1.57; §2.4.3 (product $\mathcal{V}$-categories).
 
-**Example** ([[7S Exercise 1.57]]): the product of $b \geq a \leq c$ with $1 \leq 2$ has six elements $(a,1) \leq (a,2), (b,1), (c,1) \leq (b,2), (c,2)$.
+**Example** ([[7S Chapter 1 Exercises#Exercise 1.57|7S Exercise 1.57]]): the product of $b \geq a \leq c$ with $1 \leq 2$ has six elements $(a,1) \leq (a,2), (b,1), (c,1) \leq (b,2), (c,2)$.
 
 ```tikz
 \usepackage{tikz-cd}

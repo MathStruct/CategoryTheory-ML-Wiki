@@ -6,7 +6,7 @@ The **free monoid** on a set $A$ (an *alphabet*) is $A^*$, the set of finite **s
 
 - On one generator: $\{s\}^* \cong (\mathbb{N}, +, 0)$, the [[Free Category]] on a single loop (7 Sketches Example 3.13).
 - In Haskell the free monoid on `a` is `[a]`; it is also the [[Initial Algebra]] of the functor $1 + a \times X$ (DaoFP §12.4), and $UF$ is the [[List Monad]] whose unit is the singleton $x \mapsto [x]$ and whose multiplication is `concat` (DaoFP §15.3).
-- A free monoid "remembers to do the multiplication later"; `foldMap` is an interpreter, and the same list can be interpreted additively or multiplicatively ([[DaoFP Exercise 10.9.2]]).
+- A free monoid "remembers to do the multiplication later"; `foldMap` is an interpreter, and the same list can be interpreted additively or multiplicatively ([[DaoFP Chapter 10 Exercises#Exercise 10.9.2|DaoFP Exercise 10.9.2]]).
 - Generalizations: the [[Free Category]] on a graph (typed strings), the [[Free Prop]] on a signature (strings of boxes in series and parallel), and free [[Monoid Object|monoid objects]] in a [[Monoidal Category]].
 
 ````tabs

@@ -16,7 +16,7 @@ satisfying coherence laws (the pentagon and triangle equations, hidden under "we
 
 > Sources: 7 Sketches §4.4.3 (Definition 4.45, Remarks 4.46–4.47, Examples 4.49, Exercises 4.48, 4.50), §4.4.4, §5–6; DaoFP §4.4 ("Symmetric Monoidal Category" from sums), §5.3 ("Monoidal Category", "Monoids"), §14.9 (monoidal functors), §15.1 (string diagrams), §17.7 ([[Day Convolution]]), §19.1, §20.1 (enrichment); Kittenlab (implicitly: $\mathbf{FinSet}$ with $+$).
 
-A [[Symmetric Monoidal Preorder]] is exactly a symmetric monoidal category with at most one morphism between any two objects ([[7S Exercise 4.48]]) — monoidal categories are the [[Categorification|categorification]] of monoidal preorders: equations become isomorphisms ("bookkeeping") which in turn must satisfy new equations.
+A [[Symmetric Monoidal Preorder]] is exactly a symmetric monoidal category with at most one morphism between any two objects ([[7S Chapter 4 Exercises#Exercise 4.48|7S Exercise 4.48]]) — monoidal categories are the [[Categorification|categorification]] of monoidal preorders: equations become isomorphisms ("bookkeeping") which in turn must satisfy new equations.
 
 ## Examples
 
@@ -35,13 +35,13 @@ A [[Symmetric Monoidal Preorder]] is exactly a symmetric monoidal category with 
 
 ## Wiring diagrams and interpretation
 
-An SMC is "an algebraic structure with labelled boxes having multiple typed inputs and outputs" (§4.4.2); series composition is $\mathbin{;}$, parallel composition is $\otimes$, crossing wires is $\sigma$, and coherence lets diagrams be read unambiguously ([[Wiring Diagram]], [[String Diagram]]). [[7S Exercise 4.50]] evaluates a diagram of functions in $(\mathbf{Set}, 1, \times)$ as a single function $A \times B \to G \times F$. DaoFP: "if we think of morphisms as actions, their tensor product corresponds to performing two actions in parallel", and "a tensor product is the lowest common denominator of product and sum: it has an introduction rule requiring both objects but no elimination rule — once created it forgets how it was created; unlike a cartesian product it has no projections". [[Discard and Copy Axioms|Copying and discarding]] are extra structure ([[Cartesian Category|cartesian]] = every object a cocommutative comonoid).
+An SMC is "an algebraic structure with labelled boxes having multiple typed inputs and outputs" (§4.4.2); series composition is $\mathbin{;}$, parallel composition is $\otimes$, crossing wires is $\sigma$, and coherence lets diagrams be read unambiguously ([[Wiring Diagram]], [[String Diagram]]). [[7S Chapter 4 Exercises#Exercise 4.50|7S Exercise 4.50]] evaluates a diagram of functions in $(\mathbf{Set}, 1, \times)$ as a single function $A \times B \to G \times F$. DaoFP: "if we think of morphisms as actions, their tensor product corresponds to performing two actions in parallel", and "a tensor product is the lowest common denominator of product and sum: it has an introduction rule requiring both objects but no elimination rule — once created it forgets how it was created; unlike a cartesian product it has no projections". [[Discard and Copy Axioms|Copying and discarding]] are extra structure ([[Cartesian Category|cartesian]] = every object a cocommutative comonoid).
 
 ## Structures on / in monoidal categories
 
 - [[Monoid Object|Monoids]] in a monoidal category ($\mu : m \otimes m \to m$, $\eta : I \to m$, DaoFP §5.3, 7 Sketches §5.4.2), comonoids, [[Frobenius Monoid|Frobenius monoids]] (§6.3.1), [[Hopf Algebra|bialgebras]].
 - [[Monoidal Functor|Monoidal functors]] (lax/strong/strict; Definition 6.68, DaoFP §14.9), [[Monoidal Natural Transformation|monoidal natural transformations]].
-- [[Enriched Category|Enrichment]] in an SMC (Rough Definition 4.51): hom-objects $\mathcal{X}(x, y) \in \mathcal{V}$, identity $\mathrm{id}_x : I \to \mathcal{X}(x,x)$, composition $\mathcal{X}(x,y) \otimes \mathcal{X}(y,z) \to \mathcal{X}(x,z)$; $\mathbf{Set}$-categories are categories ([[7S Exercise 4.52]]), $\mathbf{Cost}$-categories have identity elements $0 \geq d(x, x)$ ([[7S Exercise 4.54]]).
+- [[Enriched Category|Enrichment]] in an SMC (Rough Definition 4.51): hom-objects $\mathcal{X}(x, y) \in \mathcal{V}$, identity $\mathrm{id}_x : I \to \mathcal{X}(x,x)$, composition $\mathcal{X}(x,y) \otimes \mathcal{X}(y,z) \to \mathcal{X}(x,z)$; $\mathbf{Set}$-categories are categories ([[7S Chapter 4 Exercises#Exercise 4.52|7S Exercise 4.52]]), $\mathbf{Cost}$-categories have identity elements $0 \geq d(x, x)$ ([[7S Chapter 4 Exercises#Exercise 4.54|7S Exercise 4.54]]).
 - Closed structures: [[Monoidal Closed Category]] ($[c, d]$ with $\mathcal{C}(b \otimes c, d) \cong \mathcal{C}(b, [c, d])$), [[Compact Closed Category]] (duals), [[Cartesian Closed Category]]; [[Hypergraph Category]]; [[Traced Monoidal Category|traced]] categories.
 - [[Operad|Operads]] arise from SMCs by taking multi-input morphisms (§6.5.2).
 

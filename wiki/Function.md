@@ -12,7 +12,7 @@ Let $S$ and $T$ be [[Set|sets]]. A **function** from $S$ to $T$ is a [[Relation]
 | [[Injection|injective]] | $\hookrightarrow$ | $F(s_1) = F(s_2)$ implies $s_1 = s_2$ |
 | [[Bijection|bijective]] | $\xrightarrow{\ \sim\ }$ | both |
 
-The [[Identity Function]] $\mathrm{id}_X(x) = x$ is bijective. Functions compose ([[Function Composition]]), and sets with functions form the [[Category of Sets]] $\mathbf{Set}$. A function to the empty set forces the domain to be empty ([[7S Exercise 1.25]]).
+The [[Identity Function]] $\mathrm{id}_X(x) = x$ is bijective. Functions compose ([[Function Composition]]), and sets with functions form the [[Category of Sets]] $\mathbf{Set}$. A function to the empty set forces the domain to be empty ([[7S Chapter 1 Exercises#Exercise 1.25|7S Exercise 1.25]]).
 
 ## Elements as functions (Example 1.29, DaoFP §1.3)
 

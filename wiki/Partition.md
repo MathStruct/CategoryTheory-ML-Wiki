@@ -8,7 +8,7 @@ $$
 
 We denote the partition by $\{A_p\}_{p \in P}$, call $P$ the set of **part labels** and $A_p$ the **$p$-th part**. The conditions say that each $a \in A$ lies in exactly one part.
 
-Two partitions $\{A_p\}_{p\in P}$ and $\{A'_{p'}\}_{p' \in P'}$ are considered *the same* if for each $p \in P$ there is $p' \in P'$ with $A_p = A'_{p'}$ (only the labels changed; cf. [[7S Exercise 1.16]]).
+Two partitions $\{A_p\}_{p\in P}$ and $\{A'_{p'}\}_{p' \in P'}$ are considered *the same* if for each $p \in P$ there is $p' \in P'$ with $A_p = A'_{p'}$ (only the labels changed; cf. [[7S Chapter 1 Exercises#Exercise 1.16|7S Exercise 1.16]]).
 
 > Sources: 7 Sketches Definition 1.14, Examples 1.26, 1.49, 1.52; Section 1.1 (systems as partitions).
 

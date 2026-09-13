@@ -2,7 +2,7 @@
 
 A **database** is a system of interlocking tables; each table has an **ID column** of unique row labels, and the other columns are references: **foreign keys** (internal references to rows of another table, e.g. `WorksIn`, `Mngr`, `Secr`) or external references to strings/integers (`FName`, `DName`). Foreign-key labels can be renamed consistently ($1 \mapsto 1001$) without changing the meaning; external labels cannot (Ruth $\neq$ Bruce).
 
-A **database schema** is the reference structure drawn as a "Hasse diagram for a database": one (black) vertex per table, one (white) vertex per external type, one arrow per non-ID column pointing in the direction of reference ([[7S Exercise 3.3]]: as many arrows as non-ID columns), together with **business rules** — path equations. That is, a schema is a [[Presentation of a Category]]; the data is a [[C-Set]] $\mathcal{C} \to \mathbf{Set}$.
+A **database schema** is the reference structure drawn as a "Hasse diagram for a database": one (black) vertex per table, one (white) vertex per external type, one arrow per non-ID column pointing in the direction of reference ([[7S Chapter 3 Exercises#Exercise 3.3|7S Exercise 3.3]]: as many arrows as non-ID columns), together with **business rules** — path equations. That is, a schema is a [[Presentation of a Category]]; the data is a [[C-Set]] $\mathcal{C} \to \mathbf{Set}$.
 
 > Sources: 7 Sketches §3.1 (Eqs. 3.1–3.5), Remark 3.20, §3.4, §3.6; Kittenlab Lecture 6 ("you can think of $\mathsf{C} = \mathrm{Path}(G)$ as a database schema"; graphs as two-table databases); FQL, the functorial query language.
 

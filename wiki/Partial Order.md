@@ -10,7 +10,7 @@ i.e. $x \leq y$ and $y \leq x$ imply $x = y$ (**antisymmetry**). In category-the
 
 The difference from preorders is "rather minor": every preorder becomes a partial order by identifying equivalent elements (taking the [[Quotient Set]] by $\cong$, Example 1.49 — the [[Skeleton]] of the thin category). "A partial order is like a preorder with a fancy haircut." Any [[Discrete Preorder]] is already a partial order; a [[Codiscrete Preorder]] collapses to a point.
 
-In a partial order, [[Meet|meets]] and [[Join|joins]] are unique when they exist ([[7S Exercise 1.85]]), and $p \vee p = p \wedge p = p$ (Example 1.86).
+In a partial order, [[Meet|meets]] and [[Join|joins]] are unique when they exist ([[7S Chapter 1 Exercises#Exercise 1.85|7S Exercise 1.85]]), and $p \vee p = p \wedge p = p$ (Example 1.86).
 
 **Examples.** [[Real Numbers]] $(\mathbb{R}, \leq)$ (Kittenlab), the [[Power Set]] $\mathcal{P}(X)$ and Kittenlab's poset $\mathcal{P}(X)$ of characteristic functions $\chi : X \to \mathbb{B}$ with $\chi \leq \chi'$ iff $\chi(x) = \mathsf{true} \Rightarrow \chi'(x) = \mathsf{true}$; the [[Natural Numbers]]; [[Divisibility Order]].
 

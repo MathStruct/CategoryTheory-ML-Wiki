@@ -4,7 +4,7 @@ On the [[Natural Numbers]] $\mathbb{N}$, define $n \leq m$ if $n$ **divides** $m
 
 > Sources: 7 Sketches Example 1.45, Exercises 1.46, 1.90.
 
-The [[Hasse Diagram]] of $\{1, \dots, 10\}$ under divisibility ([[7S Exercise 1.46]]):
+The [[Hasse Diagram]] of $\{1, \dots, 10\}$ under divisibility ([[7S Chapter 1 Exercises#Exercise 1.46|7S Exercise 1.46]]):
 
 ```tikz
 \usepackage{tikz-cd}
@@ -18,7 +18,7 @@ The [[Hasse Diagram]] of $\{1, \dots, 10\}$ under divisibility ([[7S Exercise 1.
 \end{document}
 ```
 
-The [[Meet]] of two numbers is their **greatest common divisor** and the [[Join]] is their **least common multiple** ([[7S Exercise 1.90]]): $4 \wedge 6 = 2$, $4 \vee 6 = 12$. The bottom element is $1$; adding $0$ (divisible by everything) gives a top element, making $(\mathbb{N}, \mid)$ a complete lattice.
+The [[Meet]] of two numbers is their **greatest common divisor** and the [[Join]] is their **least common multiple** ([[7S Chapter 1 Exercises#Exercise 1.90|7S Exercise 1.90]]): $4 \wedge 6 = 2$, $4 \vee 6 = 12$. The bottom element is $1$; adding $0$ (divisible by everything) gives a top element, making $(\mathbb{N}, \mid)$ a complete lattice.
 
 ````tabs
 tab: Julia

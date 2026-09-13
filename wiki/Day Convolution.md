@@ -22,7 +22,7 @@ data FreeA f x where
   DoneA :: x -> FreeA f x
   MoreA :: ((a, b) -> x) -> f a -> FreeA f b -> FreeA f x
 ```
-whose `Monoidal` instance is list concatenation (`DoneA x >*< fry = fmap (x,) fry`; `MoreA abx fa frb >*< fry = MoreA (reassoc abx) fa (frb >*< fry)`), from which `pure = DoneA`, `ff <*> fx = fmap app (ff >*< fx)` ([[DaoFP Exercise 17.7.3]]). Compare the [[Free Monad]] for functor composition.
+whose `Monoidal` instance is list concatenation (`DoneA x >*< fry = fmap (x,) fry`; `MoreA abx fa frb >*< fry = MoreA (reassoc abx) fa (frb >*< fry)`), from which `pure = DoneA`, `ff <*> fx = fmap app (ff >*< fx)` ([[DaoFP Chapter 17 Exercises#Exercise 17.7.3|DaoFP Exercise 17.7.3]]). Compare the [[Free Monad]] for functor composition.
 
 ````tabs
 tab: Julia

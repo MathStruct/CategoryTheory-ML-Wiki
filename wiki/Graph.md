@@ -4,7 +4,7 @@ A **graph** $G = (V, A, s, t)$ consists of a [[Set]] $V$ of **vertices**, a set 
 
 > Sources: 7 Sketches Definition 1.36, Example 1.37, Remark 1.39, §3.2.1; Kittenlab Lecture 6, 8, 10; DaoFP §8.1 (free categories).
 
-**Example 1.37.** $V = \{1,2,3,4\}$, $A = \{a,b,c,d,e\}$ with $s, t$ given by ([[7S Exercise 1.38]]):
+**Example 1.37.** $V = \{1,2,3,4\}$, $A = \{a,b,c,d,e\}$ with $s, t$ given by ([[7S Chapter 1 Exercises#Exercise 1.38|7S Exercise 1.38]]):
 
 | arrow | source | target |
 |---|---|---|

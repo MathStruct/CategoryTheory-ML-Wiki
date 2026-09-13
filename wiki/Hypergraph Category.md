@@ -13,11 +13,11 @@ A **hypergraph category** is a [[Symmetric Monoidal Category]] $(\mathcal{C}, I,
 
 ## Hypergraph categories are self-dual compact closed (Proposition 6.66)
 
-Define the cup $\eta_X \mathbin{;} \delta_X : I \to X \otimes X$ and the cap $\mu_X \mathbin{;} \varepsilon_X : X \otimes X \to I$. The snake equation follows: (id ⊗ cup) ; (cap ⊗ id) $=$ (id ⊗ (η ; δ)) ; ((μ ; ε) ⊗ id) $=$ by the Frobenius law $(\mathrm{id} \otimes \eta) \mathbin{;} \mu \mathbin{;} \delta \mathbin{;} (\varepsilon \otimes \mathrm{id})$ $=$ by unitality and counitality $\mathrm{id}_X$ ([[7S Exercise 6.67]] fills in the middle step). Hence $X^* = X$ and wires may be bent freely — the "well-supported compact closed" of Carboni–Walters. Compare [[Graphical Linear Algebra|Theorem 5.87]].
+Define the cup $\eta_X \mathbin{;} \delta_X : I \to X \otimes X$ and the cap $\mu_X \mathbin{;} \varepsilon_X : X \otimes X \to I$. The snake equation follows: (id ⊗ cup) ; (cap ⊗ id) $=$ (id ⊗ (η ; δ)) ; ((μ ; ε) ⊗ id) $=$ by the Frobenius law $(\mathrm{id} \otimes \eta) \mathbin{;} \mu \mathbin{;} \delta \mathbin{;} (\varepsilon \otimes \mathrm{id})$ $=$ by unitality and counitality $\mathrm{id}_X$ ([[7S Chapter 6 Exercises#Exercise 6.67|7S Exercise 6.67]] fills in the middle step). Hence $X^* = X$ and wires may be bent freely — the "well-supported compact closed" of Carboni–Walters. Compare [[Graphical Linear Algebra|Theorem 5.87]].
 
 ## Why hypergraph categories
 
-"Network-type interconnection can be described using a hypergraph category" (§6.1): the domain/codomain split of a morphism is an artifact (circuits have one boundary), but the Frobenius structure lets one move ports freely between the two sides; the [[Operad]] $\mathbf{Cospan}$ removes the artifact entirely (§6.5.1). [[7S Exercise 6.59]] infers wire labels in a hypergraph-category diagram.
+"Network-type interconnection can be described using a hypergraph category" (§6.1): the domain/codomain split of a morphism is an artifact (circuits have one boundary), but the Frobenius structure lets one move ports freely between the two sides; the [[Operad]] $\mathbf{Cospan}$ removes the artifact entirely (§6.5.1). [[7S Chapter 6 Exercises#Exercise 6.59|7S Exercise 6.59]] infers wire labels in a hypergraph-category diagram.
 
 ````tabs
 tab: Julia

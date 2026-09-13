@@ -26,7 +26,7 @@ b \arrow[r, maps to] & F(b)
 
 ## Examples
 
-- Functors $\underline{\mathbf{2}} \to \underline{\mathbf{3}}$ are determined by their action on objects (Example 3.36, six of them); in general they are not ([[7S Exercise 3.40]]: $\bullet \to \bullet$ into $\bullet \rightrightarrows \bullet$).
+- Functors $\underline{\mathbf{2}} \to \underline{\mathbf{3}}$ are determined by their action on objects (Example 3.36, six of them); in general they are not ([[7S Chapter 3 Exercises#Exercise 3.40|7S Exercise 3.40]]: $\bullet \to \bullet$ into $\bullet \rightrightarrows \bullet$).
 - Functors between [[Presentation of a Category|presented categories]] must respect equations (Example 3.41): none from the commutative square to the free square matching objects.
 - Functors between [[Preorder|preorders]] are [[Monotone Map|monotone maps]] (Example 3.42, Kittenlab Lecture 5); between [[Monoid|monoids]], monoid homomorphisms.
 - $F : \mathsf{Fin} \to \mathbf{Mat}$, $f \mapsto$ the 0/1 matrix with $1$ at $(i, f(i))$ (Kittenlab Lecture 4): identities go to identity matrices, and $(AB)_{ik} = \sum_j A_{ij} B_{jk}$ is nonzero exactly when $k = g(f(i))$.
@@ -37,7 +37,7 @@ b \arrow[r, maps to] & F(b)
 ## Properties
 
 - A functor may merge objects and arrows (any category maps to the one-object category $\underline{\mathbf{1}}$) and need not be surjective (a functor from $\underline{\mathbf{1}}$ picks an object). Functors "produce simplified views" — models of $\mathcal{C}$ inside $\mathcal{D}$; a [[Natural Transformation]] compares two such models.
-- **Composition** (Kittenlab Lecture 4, [[7S Exercise 3.43]]): $(G \circ F)(x) = G(F(x))$, $(G \circ F)(f) = G(F(f))$ is a functor: $G(F(\mathrm{id}_x)) = G(\mathrm{id}_{F x}) = \mathrm{id}_{GFx}$ and $G(F(s \circ r)) = G(F s \circ F r) = GFs \circ GFr$. With identity functors this makes the [[Category of Categories]] $\mathbf{Cat}$ (Kittenlab's `KittenC`).
+- **Composition** (Kittenlab Lecture 4, [[7S Chapter 3 Exercises#Exercise 3.43|7S Exercise 3.43]]): $(G \circ F)(x) = G(F(x))$, $(G \circ F)(f) = G(F(f))$ is a functor: $G(F(\mathrm{id}_x)) = G(\mathrm{id}_{F x}) = \mathrm{id}_{GFx}$ and $G(F(s \circ r)) = G(F s \circ F r) = GFs \circ GFr$. With identity functors this makes the [[Category of Categories]] $\mathbf{Cat}$ (Kittenlab's `KittenC`).
 - Full, faithful, essentially surjective functors; [[Equivalence of Categories]]; [[Yoneda Embedding]] is fully faithful.
 - A functor out of a [[Free Category]] is determined freely by its values on the generating graph (Kittenlab Lecture 6); a [[Diagram]] is a functor $\mathcal{J} \to \mathcal{C}$.
 - Functors preserving [[Limit|limits]] are *continuous*, preserving [[Colimit|colimits]] *cocontinuous*; [[Right Adjoints Preserve Limits]].

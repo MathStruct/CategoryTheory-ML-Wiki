@@ -12,7 +12,7 @@ with laws: identity `pure id <*> v = v`, homomorphism `pure f <*> pure x = pure 
 > Sources: DaoFP §14.9 ("Applicative functors", "Closed functors", "Monads and applicatives"), Exercises 14.9.1–14.9.3; §17.7 (applicatives as monoids under [[Day Convolution]]).
 
 - **Lax closed functor**: the splat `f (a -> b) -> (f a -> f b)` is a natural transformation $F(b^a) \to (F b)^{F a}$ — the lax version of preserving [[Exponential Object|exponentials]]. In a [[Cartesian Closed Category]] lax closed = lax [[Monoidal Functor|monoidal]] (`class Monoidal f where unit :: f (); (>*<) :: f a -> f b -> f (a, b)`): `pure a = fmap (const a) unit; fs <*> as = fmap apply (fs >*< as)` and conversely `unit = pure (); as >*< bs = (,) <$> as <*> bs`.
-- Every [[Monad]] (being [[Functorial Strength|strong]]) is applicative: `ap fs as = do { f <- fs; a <- as; return (f a) }`, whence `Applicative` is a superclass of `Monad` with `return = pure`. Not every applicative is a monad: the zip instance of lists (`pure = repeat`, `fs <*> as = zipWith ($) fs as`, [[DaoFP Exercise 14.9.3]]).
+- Every [[Monad]] (being [[Functorial Strength|strong]]) is applicative: `ap fs as = do { f <- fs; a <- as; return (f a) }`, whence `Applicative` is a superclass of `Monad` with `return = pure`. Not every applicative is a monad: the zip instance of lists (`pure = repeat`, `fs <*> as = zipWith ($) fs as`, [[DaoFP Chapter 14 Exercises#Exercise 14.9.3|DaoFP Exercise 14.9.3]]).
 - Monads are more powerful — monadic code can branch on the contents of a value — but applicative composition has no dependencies between parts, so it can run in parallel (Haskell's parallel libraries; `ApplicativeDo`).
 
 ````tabs

@@ -19,7 +19,7 @@ S \arrow[r, "p'"'] & \Omega^T & & \exists_t p \arrow[r, tail] & S
 
 ## In $\mathbf{Set}$
 
-For $p : \mathbb{N} \times \mathbb{Z} \to \mathbb{B}$, $p(n, z) = [n \leq |z|]$: $\forall(z : \mathbb{Z}).\, p(n, z)$ holds exactly for $n = 0$, $\exists(z : \mathbb{Z}).\, p(n, z)$ for all $n$, $\forall(n : \mathbb{N}).\, p(n, z)$ for no $z$, and $\exists(n : \mathbb{N}).\, p(n, z)$ for all $z$ ([[7S Exercise 7.66]]).
+For $p : \mathbb{N} \times \mathbb{Z} \to \mathbb{B}$, $p(n, z) = [n \leq |z|]$: $\forall(z : \mathbb{Z}).\, p(n, z)$ holds exactly for $n = 0$, $\exists(z : \mathbb{Z}).\, p(n, z)$ for all $n$, $\forall(n : \mathbb{N}).\, p(n, z)$ for no $z$, and $\exists(n : \mathbb{N}).\, p(n, z)$ for all $z$ ([[7S Chapter 7 Exercises#Exercise 7.66|7S Exercise 7.66]]).
 
 ## In a sheaf topos $\mathbf{Shv}(X)$
 
@@ -27,7 +27,7 @@ For a section $s \in S(U)$:
 - $(\forall(t : T).\, p(s, t))(s)$ is the *largest* open $V \subseteq U$ such that $p(s|_V, t) = V$ for all $t \in T(V)$.
 - $(\exists(t : T).\, p(s, t))(s)$ is the *union* $V = \bigcup_i V_i$ of all opens $V_i \subseteq U$ for which some $t_i \in T(V_i)$ satisfies $p(s|_{V_i}, t_i) = V_i$. If the result is all of $U$ this does *not* mean a single $t \in T(U)$ works — only a cover $U = \bigcup U_i$ with local witnesses $t_i$: "the existential quantifier is doing a lot of work under the hood, taking coverings into account".
 
-Example 7.65: $S$ = people, $T$ = newsworthy items, $p(s, t)$ = "$s$ is worried about $t$". Then $\forall t.\, p(s,t)$ is the time during which $s$ is worried about *everything* in the news ([[7S Exercise 7.67]]), and $\exists t.\, p(s, t)$ is the time during which $s$ is worried about *something* — the worrying item being allowed to change over time ([[7S Exercise 7.68]]).
+Example 7.65: $S$ = people, $T$ = newsworthy items, $p(s, t)$ = "$s$ is worried about $t$". Then $\forall t.\, p(s,t)$ is the time during which $s$ is worried about *everything* in the news ([[7S Chapter 7 Exercises#Exercise 7.67|7S Exercise 7.67]]), and $\exists t.\, p(s, t)$ is the time during which $s$ is worried about *something* — the worrying item being allowed to change over time ([[7S Chapter 7 Exercises#Exercise 7.68|7S Exercise 7.68]]).
 
 ## Adjoint form
 

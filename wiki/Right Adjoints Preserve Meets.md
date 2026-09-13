@@ -12,9 +12,9 @@ That is, **right adjoints preserve meets**. Dually, **left adjoints preserve joi
 
 *Proof.* Let $m := \bigwedge A$. Since $g$ is monotone, $g(m) \leq g(a)$ for all $a \in A$: $g(m)$ is a lower bound for $g(A)$. Let $b$ be any other lower bound, so $b \leq g(a)$ for all $a \in A$. By the adjunction, $f(b) \leq a$ for all $a$, so $f(b)$ is a lower bound for $A$ and hence $f(b) \leq m$. Using the adjunction again, $b \leq g(m)$. So $g(m)$ is the greatest lower bound. $\blacksquare$
 
-The join claim is [[7S Exercise 1.112]] (same argument with the order reversed).
+The join claim is [[7S Chapter 1 Exercises#Exercise 1.112|7S Exercise 1.112]] (same argument with the order reversed).
 
-**Consequences.** Left adjoints never have a [[Generative Effect]]. Right adjoints need *not* preserve joins (Example 1.113: $P = \{1, 2 \leq 3.9 \leq 4\}$, $Q = \{1, 2 \leq 4\}$, $g$ the label-preserving inclusion $Q \to P$ is right adjoint to $f$ with $f(3.9) = 4$, yet $g(1 \vee 2) = g(4) = 4 \neq 3.9 = g(1) \vee g(2)$; [[7S Exercise 1.114]]). The converse — meet-preservation implies right adjoint when all meets exist — is the [[Adjoint Functor Theorem for Preorders]].
+**Consequences.** Left adjoints never have a [[Generative Effect]]. Right adjoints need *not* preserve joins (Example 1.113: $P = \{1, 2 \leq 3.9 \leq 4\}$, $Q = \{1, 2 \leq 4\}$, $g$ the label-preserving inclusion $Q \to P$ is right adjoint to $f$ with $f(3.9) = 4$, yet $g(1 \vee 2) = g(4) = 4 \neq 3.9 = g(1) \vee g(2)$; [[7S Chapter 1 Exercises#Exercise 1.114|7S Exercise 1.114]]). The converse — meet-preservation implies right adjoint when all meets exist — is the [[Adjoint Functor Theorem for Preorders]].
 
 ````tabs
 tab: Lean

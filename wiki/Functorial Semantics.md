@@ -11,6 +11,6 @@
 - [[C-Set|Database instances]] are functors $\mathcal{C} \to \mathbf{Set}$ from a schema (Chapter 3); [[Data Migration Functor|migration]] is precomposition.
 - [[Decorated Cospan|Decorated cospans]] $F : (\mathbf{FinSet}, \sqcup) \to (\mathbf{Set}, \times)$ and [[Operad|operad algebras]] $\mathbf{Cospan} \to \mathbf{Set}$ give semantics to [[Hypergraph Category|circuit diagrams]] (Chapter 6).
 - The [[Cartesian Closed Category|simply typed lambda calculus]] / [[Topos|type theories]] have semantics in CCCs / toposes (Chapter 7).
-- [[Prop of Matrices|$\mathbf{Mat}(R)$]] itself has semantics $U : \mathbf{Mat}(R) \to \mathbf{Set}$, $n \mapsto R^n$ ([[7S Exercise 5.69]]); behaviours $B : \mathbf{SFG}^+_R \to \mathbf{Rel}_R$ interpret feedback ([[Graphical Linear Algebra]]).
+- [[Prop of Matrices|$\mathbf{Mat}(R)$]] itself has semantics $U : \mathbf{Mat}(R) \to \mathbf{Set}$, $n \mapsto R^n$ ([[7S Chapter 5 Exercises#Exercise 5.69|7S Exercise 5.69]]); behaviours $B : \mathbf{SFG}^+_R \to \mathbf{Rel}_R$ interpret feedback ([[Graphical Linear Algebra]]).
 
 The [[Free Prop|universal property of free]] and [[Presentation of a Prop|presented]] structures is what makes defining such functors easy: specify the images of the generators and check the equations.

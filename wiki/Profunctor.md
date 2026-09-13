@@ -6,7 +6,7 @@ $$
 \Phi : \mathcal{X}^{\mathrm{op}} \times \mathcal{Y} \to \mathcal{V},
 $$
 
-where $\mathcal{V}$ is regarded as [[Monoidal Closed Preorder|enriched in itself]]. Concretely ([[7S Exercise 4.9]]): a function $\Phi : \mathrm{Ob}(\mathcal{X}) \times \mathrm{Ob}(\mathcal{Y}) \to V$ such that
+where $\mathcal{V}$ is regarded as [[Monoidal Closed Preorder|enriched in itself]]. Concretely ([[7S Chapter 4 Exercises#Exercise 4.9|7S Exercise 4.9]]): a function $\Phi : \mathrm{Ob}(\mathcal{X}) \times \mathrm{Ob}(\mathcal{Y}) \to V$ such that
 
 $$
 \mathcal{X}(x', x) \otimes \Phi(x, y) \otimes \mathcal{Y}(y, y') \leq \Phi(x', y').
@@ -19,7 +19,7 @@ In ordinary category theory (DaoFP §8.3, §17.1), a profunctor is a [[Functor]]
 ## Examples
 
 - **$\mathbf{Bool}$-profunctors** are [[Feasibility Relation|feasibility relations]] between preorders — *bridges between cities* (Example 4.11): $\Phi(x, y) = \mathsf{true}$ iff there is a path from $x$ through $\mathcal{X}$, across a bridge, and through $\mathcal{Y}$ to $y$.
-- **[[Cost]]-profunctors** between [[Lawvere Metric Space|Lawvere metric spaces]] are bridges *labelled by length*: $\Phi(x, y)$ is the shortest path from $x$ through $\mathcal{X}$, over a bridge, through $\mathcal{Y}$ to $y$ (Example 4.13: $\Phi(B, x) = 11$, $\Phi(A, z) = 20$, $\Phi(C, y) = 17$; [[7S Exercise 4.15]]). Remark 4.16: with $M_\Phi$ the matrix of bridge lengths ($\infty$ where there is none), $\Phi = d_{\mathcal{X}} \ast M_\Phi \ast d_{\mathcal{Y}} = M_{\mathcal{X}}^3 \ast M_\Phi \ast M_{\mathcal{Y}}^2$ by [[Matrix Multiplication in a Quantale|min-plus matrix multiplication]] ([[7S Exercise 4.17]]).
+- **[[Cost]]-profunctors** between [[Lawvere Metric Space|Lawvere metric spaces]] are bridges *labelled by length*: $\Phi(x, y)$ is the shortest path from $x$ through $\mathcal{X}$, over a bridge, through $\mathcal{Y}$ to $y$ (Example 4.13: $\Phi(B, x) = 11$, $\Phi(A, z) = 20$, $\Phi(C, y) = 17$; [[7S Chapter 4 Exercises#Exercise 4.15|7S Exercise 4.15]]). Remark 4.16: with $M_\Phi$ the matrix of bridge lengths ($\infty$ where there is none), $\Phi = d_{\mathcal{X}} \ast M_\Phi \ast d_{\mathcal{Y}} = M_{\mathcal{X}}^3 \ast M_\Phi \ast M_{\mathcal{Y}}^2$ by [[Matrix Multiplication in a Quantale|min-plus matrix multiplication]] ([[7S Chapter 4 Exercises#Exercise 4.17|7S Exercise 4.17]]).
 - **$\mathbf{Set}$-profunctors** (DaoFP): the [[Hom Functor]] $\mathcal{C}(-, -)$ is the model — "a profunctor provides additional bridges between objects, on top of the hom-sets already there"; a profunctor is a **proof-relevant relation**: each element of $P\langle a, b\rangle$ is a proof that $b$ is related to $a$, compatible with the structure of the categories (if $\mathcal{C}(s, a)$ and $\mathcal{D}(b, t)$ are nonempty then relatedness transfers). In Haskell `class Profunctor p where dimap :: (s -> a) -> (b -> t) -> p a b -> p s t`, with `(->)` as the prime instance (`dimap f g h = g . h . f`): "in programming, all non-trivial profunctors are variations on the function type". The [[Exponential Object]] $b^a$ is functorial as a profunctor.
 - [[Companion and Conjoint|Companions and conjoints]] of functors: $\hat F(p, q) = \mathcal{Q}(F p, q)$, $\check F(q, p) = \mathcal{Q}(q, F p)$; the unit profunctor $U_{\mathcal{X}} = \mathcal{X}(-, -)$.
 - Enriched profunctors $\mathcal{C}^{\mathrm{op}} \otimes \mathcal{D} \to \mathcal{V}$ for a monoidal closed $\mathcal{V}$ (DaoFP §20.2).
@@ -36,7 +36,7 @@ $$
 
 ## Collages
 
-Any profunctor $\Phi : \mathcal{X} \nrightarrow \mathcal{Y}$ glues its two categories into one: the [[Collage]] $\mathrm{Col}(\Phi)$ (DaoFP: *cograph*), with objects $\mathrm{Ob}\,\mathcal{X} \sqcup \mathrm{Ob}\,\mathcal{Y}$ and $\Phi(x, y)$ as the "heteromorphisms" from $\mathcal{X}$ to $\mathcal{Y}$. Conversely a category with a functor to the [[Walking Arrow]] splits as a collage ([[DaoFP Exercise 17.1.2]]).
+Any profunctor $\Phi : \mathcal{X} \nrightarrow \mathcal{Y}$ glues its two categories into one: the [[Collage]] $\mathrm{Col}(\Phi)$ (DaoFP: *cograph*), with objects $\mathrm{Ob}\,\mathcal{X} \sqcup \mathrm{Ob}\,\mathcal{Y}$ and $\Phi(x, y)$ as the "heteromorphisms" from $\mathcal{X}$ to $\mathcal{Y}$. Conversely a category with a functor to the [[Walking Arrow]] splits as a collage ([[DaoFP Chapter 17 Exercises#Exercise 17.1.2|DaoFP Exercise 17.1.2]]).
 
 ## Further
 

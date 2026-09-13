@@ -6,7 +6,7 @@ $$
 f^* : \mathcal{C}/a \to \mathcal{C}/b
 $$
 
-sends a fibration $\langle e, p : e \to a \rangle$ to $\langle f^* e, f^* p \rangle$, the pullback of $p$ along $f$, and a fiber-preserving map $h : e' \to e$ to the unique $f^* h : f^* e' \to f^* e$ induced by the universal property ([[DaoFP Exercise 11.2.4]]). Note that $f^*$ runs *opposite* to $f$.
+sends a fibration $\langle e, p : e \to a \rangle$ to $\langle f^* e, f^* p \rangle$, the pullback of $p$ along $f$, and a fiber-preserving map $h : e' \to e$ to the unique $f^* h : f^* e' \to f^* e$ induced by the universal property ([[DaoFP Chapter 11 Exercises#Exercise 11.2.4|DaoFP Exercise 11.2.4]]). Note that $f^*$ runs *opposite* to $f$.
 
 ```tikz
 \usepackage{tikz-cd}

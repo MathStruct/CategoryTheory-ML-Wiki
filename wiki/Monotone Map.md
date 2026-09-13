@@ -11,9 +11,9 @@ A **monotone map** between [[Preorder|preorders]] $(A, \leq_A)$ and $(B, \leq_B)
 - [[Cardinality]] $|\cdot| : \mathcal{P}(X) \to \mathbb{N}$ (Example 1.62).
 - The inclusion $\mathcal{U}(P) \to \mathcal{P}(P)$ of [[Upper Set|upper sets]] into the [[Power Set]] (Example 1.64).
 - Pullback of [[Partition|partitions]] $f^* : \mathrm{Prt}(Y) \to \mathrm{Prt}(X)$ along a surjection $f : X \twoheadrightarrow Y$, $s \mapsto f \mathbin{;} s$ (Example 1.68); see [[Pushforward and Pullback of Partitions]].
-- Every function out of a [[Discrete Preorder]] is monotone ([[7S Exercise 1.67]]).
+- Every function out of a [[Discrete Preorder]] is monotone ([[7S Chapter 1 Exercises#Exercise 1.67|7S Exercise 1.67]]).
 - Monotone maps $P \to \mathbb{B}$ are the same as [[Upper Set|upper sets]] ([[Upper Sets Classified by Maps to Bool]]).
-- The connectivity observation $\Phi : \mathrm{Prt}(\{\bullet,\circ,\ast\}) \to \mathbb{B}$ ([[7S Exercise 1.77]]) — monotone but with a [[Generative Effect]].
+- The connectivity observation $\Phi : \mathrm{Prt}(\{\bullet,\circ,\ast\}) \to \mathbb{B}$ ([[7S Chapter 1 Exercises#Exercise 1.77|7S Exercise 1.77]]) — monotone but with a [[Generative Effect]].
 
 ## Monotone maps are functors (Kittenlab Lecture 5)
 
@@ -21,7 +21,7 @@ A **monotone map** between [[Preorder|preorders]] $(A, \leq_A)$ and $(B, \leq_B)
 
 *Proof.* A morphism $x \to y$ must be sent to a morphism $F(x) \to F(y)$, and since there is at most one morphism between any two objects, $F$ automatically preserves composites and identities. $\blacksquare$
 
-**Proposition 1.70.** The [[Identity Function]] is monotone, and the composite $f \mathbin{;} g$ of monotone maps is monotone ([[7S Exercise 1.71]]). Hence preorders and monotone maps form a category $\mathbf{Preord}$ (Kittenlab: $\mathsf{Preorder}$), a full [[Subcategory]] of $\mathbf{Cat}$; see [[Category of Preorders]].
+**Proposition 1.70.** The [[Identity Function]] is monotone, and the composite $f \mathbin{;} g$ of monotone maps is monotone ([[7S Chapter 1 Exercises#Exercise 1.71|7S Exercise 1.71]]). Hence preorders and monotone maps form a category $\mathbf{Preord}$ (Kittenlab: $\mathsf{Preorder}$), a full [[Subcategory]] of $\mathbf{Cat}$; see [[Category of Preorders]].
 
 Some functors involving $\mathbf{Preord}$ (Kittenlab):
 1. $\mathbf{Preord} \to \mathbf{Cat}$, view a preorder as a category;

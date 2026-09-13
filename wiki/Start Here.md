@@ -5,8 +5,8 @@ Welcome. This vault is a wiki built from three sources — Fong & Spivak's *An I
 ## How the vault is organized
 
 - **Concept notes** (root folder): one note per definition, theorem or construction, e.g. [[Category]], [[Adjunction]], [[Monad]]. Each starts with a tag line (`#definition #theorem #proof #example #program #annotation`), gives the definition, then bullets that merge what each book contributes, a `> Sources:` line with exact section/exercise numbers, and a code block with tabs for **Julia** ([[Catlab]] v0.16), **Lean 4** (Mathlib names, given as `#check`s) and **Haskell**.
-- **Exercises/** — `7S Exercise X.Y` and `DaoFP Exercise X.Y.Z`: the statements only, each linking to its solution.
-- **Solutions/** — `7S Solution X.Y` and `DaoFP Solution X.Y.Z`: worked solutions (7 Sketches' come from its Appendix A, DaoFP's are written out), often with code.
+- **Exercises/** — one note per chapter (`7S Chapter 3 Exercises`, `DaoFP Chapter 9 Exercises`), with a heading per exercise; links from concept notes point at these headings, e.g. [[7S Chapter 6 Exercises#Exercise 6.10|7S Exercise 6.10]].
+- **Solutions/** — the matching `… Chapter N Solutions` notes: worked solutions (7 Sketches' come from its Appendix A, DaoFP's are written out), often with code. Each exercise links to its solution and back.
 - Links to notes that do not exist are intentional loose ends; the graph view will show them.
 - Formulas are LaTeX (`$…$` inline, `$$…$$` display); commutative diagrams are `tikz` blocks (tikz-cd).
 
@@ -21,38 +21,38 @@ Each stage lists the notes to read (roughly in order) and the exercises that go 
 ### Stage 1 — Sets, preorders and the first adjunctions (7 Sketches Ch. 1)
 The gentlest entry: order theory as category theory in miniature.
 [[Set]], [[Function]], [[Relation]], [[Partition]], [[Equivalence Relation]] → [[Preorder]], [[Hasse Diagram]], [[Partial Order]], [[Monotone Map]] → [[Meet]], [[Join]], [[Upper Set]] → [[Generative Effect]] → [[Galois Connection]], [[Right Adjoints Preserve Meets]], [[Adjoint Functor Theorem for Preorders]] → [[Closure Operator]], [[Pushforward and Pullback of Partitions]].
-*Exercises*: [[7S Exercise 1.1]]–[[7S Exercise 1.125]] (see the Map of Content for the list).
+*Exercises*: [[7S Chapter 1 Exercises]].
 
 ### Stage 2 — Categories, functors, natural transformations (7 Sketches Ch. 3, DaoFP Ch. 1–3, 8–9, Kittenlab 1–7)
 [[Category]] (read this first — it is the template for the whole vault), [[Free Category]], [[Presentation of a Category]], [[Isomorphism]], [[Monomorphism]], [[Epimorphism]] → [[Functor]], [[Natural Transformation]], [[Functor Category]] → [[Universal Property]], [[Terminal Object]], [[Initial Object]], [[Product]], [[Coproduct]] → [[Representable Functor]], [[Yoneda Lemma]], [[Yoneda Embedding]].
 Kittenlab's angle: [[Category of Finite Sets]], [[Graph Homomorphism]], [[C-Set]], [[Database Schema]].
-*Exercises*: 7S 3.x; DaoFP 2.x, 3.x, 8.x, 9.x.
+*Exercises*: [[7S Chapter 3 Exercises]]; [[DaoFP Chapter 2 Exercises]], [[DaoFP Chapter 3 Exercises]], [[DaoFP Chapter 8 Exercises]], [[DaoFP Chapter 9 Exercises]].
 
 ### Stage 3 — Limits, colimits, adjunctions (7 Sketches Ch. 3 & 6, DaoFP Ch. 9–10, Kittenlab 8–13)
 [[Cone]], [[Limit]], [[Pullback]], [[Equalizer]], [[Finite Limits in Set]] → [[Cocone]], [[Colimit]], [[Pushout]], [[Coequalizer]], [[Finite Colimits in Set]], [[Colimits and Connection]] → [[Adjunction]], [[Unit and Counit of an Adjunction]], [[Free-Forgetful Adjunction]], [[Right Adjoints Preserve Limits]], [[Adjoint Functor Theorem]] → [[Data Migration Functor]] → [[Exponential Object]], [[Currying]], [[Cartesian Closed Category]].
-*Exercises*: 7S 3.79–3.101, 6.3–6.41; DaoFP 9.x, 10.x.
+*Exercises*: [[7S Chapter 3 Exercises#Exercise 3.79|7S 3.79]]–3.101 and [[7S Chapter 6 Exercises#Exercise 6.3|6.3]]–6.41; [[DaoFP Chapter 9 Exercises]], [[DaoFP Chapter 10 Exercises]].
 
 ### Stage 4 — Monoidal structure (7 Sketches Ch. 2 & 4)
 [[Symmetric Monoidal Preorder]], [[Wiring Diagram]], [[Resource Theory]] → [[Enriched Category]], [[Lawvere Metric Space]], [[Quantale]], [[Matrix Multiplication in a Quantale]] → [[Monoidal Category]], [[Symmetric Monoidal Category]], [[Monoid Object]], [[Monoidal Functor]] → [[Profunctor]], [[Feasibility Relation]], [[Compact Closed Category]].
-*Exercises*: 7S 2.x, 4.x.
+*Exercises*: [[7S Chapter 2 Exercises]], [[7S Chapter 4 Exercises]].
 
 After stage 4, pick a track (or interleave them).
 
 ### Track A — Applied category theory: props, circuits, toposes (7 Sketches Ch. 5–7)
 [[Prop]], [[Presentation of a Prop]], [[Signal Flow Graph]], [[Prop of Matrices]], [[Graphical Linear Algebra]] → [[Frobenius Monoid]], [[Hypergraph Category]], [[Decorated Cospan]], [[Structured Cospan]], [[Operad]], [[Undirected Wiring Diagram]], [[Petri Net]] → [[Topos]], [[Subobject Classifier]], [[Internal Logic of a Topos]], [[Heyting Algebra]], [[Topological Space]], [[Sheaf]], [[Sheaf of Sections]], [[Quantification]], [[Modality]], [[Topos of Behavior Types]], [[Temporal Logic]].
-*Exercises*: 7S 5.x, 6.48–6.96, 7.x.
+*Exercises*: [[7S Chapter 5 Exercises]], [[7S Chapter 6 Exercises#Exercise 6.48|7S 6.48]]–6.96, [[7S Chapter 7 Exercises]].
 
 ### Track B — Programming with categories: types, recursion, monads (DaoFP Ch. 4–7, 12–16)
 [[Sum Type]], [[Cartesian Category]], [[Bicartesian Closed Category]] → [[Natural Numbers Object]], [[List]] → [[Algebra of an Endofunctor]], [[Initial Algebra]], [[Coalgebra of an Endofunctor]], [[Terminal Coalgebra]] → [[Side Effects as Functors]], [[Monad]], [[Kleisli Category]], [[Maybe Monad]], [[State Monad]], [[List Monad]], [[Continuation Monad]], [[Do Notation]] → [[Free Monad]], [[Applicative Functor]], [[Functorial Strength]] → [[String Diagram]], [[Monads from Adjunctions]], [[Monad Transformer]], [[Eilenberg-Moore Category]] → [[Comonad]], [[Store Comonad]], [[Lens]].
-*Exercises*: DaoFP 4.x–7.x, 12.x–16.x.
+*Exercises*: [[DaoFP Chapter 4 Exercises]]–[[DaoFP Chapter 7 Exercises|7]], [[DaoFP Chapter 12 Exercises]]–[[DaoFP Chapter 16 Exercises|16]].
 
 ### Track C — Dependent types (DaoFP Ch. 11)
 [[Dependent Type]], [[Fiber]], [[Slice Category]], [[Base Change Functor]], [[Dependent Sum]], [[Dependent Product]], [[Locally Cartesian Closed Category]], [[Equality Type]]. Pairs well with the [[Sheaf of Sections]] note from Track A.
-*Exercises*: DaoFP 11.x.
+*Exercises*: [[DaoFP Chapter 11 Exercises]].
 
 ### Track D — Advanced: (co)ends, optics, Kan extensions, enrichment (DaoFP Ch. 17–20, 7 Sketches Ch. 4.3)
 [[Coend]], [[End]], [[Ninja Yoneda Lemma]], [[Day Convolution]], [[Bicategory of Profunctors]], [[Existential Lens]] → [[Tannakian Reconstruction]], [[Tambara Module]], [[Profunctor Optics]] → [[Kan Extension]], [[Codensity Monad]] → [[Enriched Functor]], [[Enriched Natural Transformation]], [[Weighted Limit]].
-*Exercises*: DaoFP 17.x–20.x.
+*Exercises*: [[DaoFP Chapter 17 Exercises]]–[[DaoFP Chapter 20 Exercises|20]].
 
 ## Three ways in, depending on who you are
 

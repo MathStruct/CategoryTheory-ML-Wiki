@@ -19,9 +19,9 @@ sending $y \mapsto \mathrm{Hom}(x, y)$ and $g : y \to z$ to post-composition $\m
 ## Functors represented by an object
 
 - $U : \mathbf{Vect} \to \mathbf{Set}$ is represented by $\mathbb{R}$: $\mathrm{Hom}(\mathbb{R}, V) \cong V$ via $f \mapsto f(1)$; the naturality "toblerone" is $(g \circ f)(1) = g(f(1))$ (Lecture 10). The constant singleton functor on $\mathbf{Vect}$ is represented by $\mathbb{R}^0$.
-- $\mathrm{Hom}(X, -) \times \mathrm{Hom}(Y, -)$ is represented by the [[Coproduct]] $X + Y$; in general a representing object of $\mathrm{Hom}(x,-) \times \mathrm{Hom}(y,-)$ *is* the coproduct (Lecture 8). Representing $\{f : B \to X \mid f \circ p = f \circ q\}$ gives the [[Coequalizer]] (Lecture 11); representing $\mathrm{Hom}_{\mathcal{C}^{\mathsf{D}}}(F, \Delta(-))$ gives the [[Colimit]] (Lecture 9). Dually [[Limit|limits]], [[Product|products]] ([[DaoFP Exercise 9.8.1]]).
-- The singleton functor $c \mapsto \{c\}$ is representable iff $\mathcal{C}$ has an [[Initial Object]] ([[DaoFP Exercise 9.8.2]]); the constant $1$ functor is represented by the initial object, "the logarithm of 1" ([[DaoFP Exercise 9.8.4]]).
-- Non-example: on $(\mathbb{Q}_{\geq 0}, \leq)$, $F(x) = [2 \leq x^2]$ has no representative since $\sqrt 2 \notin \mathbb{Q}$; on $\mathbb{R}_{\geq 0}$ it does (Lecture 10). Lists are not representable ("no logarithm of a sum"), but a list functor is a sum of representables ([[DaoFP Exercise 9.8.5]]); infinite streams are represented by $\mathbb{N}$.
+- $\mathrm{Hom}(X, -) \times \mathrm{Hom}(Y, -)$ is represented by the [[Coproduct]] $X + Y$; in general a representing object of $\mathrm{Hom}(x,-) \times \mathrm{Hom}(y,-)$ *is* the coproduct (Lecture 8). Representing $\{f : B \to X \mid f \circ p = f \circ q\}$ gives the [[Coequalizer]] (Lecture 11); representing $\mathrm{Hom}_{\mathcal{C}^{\mathsf{D}}}(F, \Delta(-))$ gives the [[Colimit]] (Lecture 9). Dually [[Limit|limits]], [[Product|products]] ([[DaoFP Chapter 9 Exercises#Exercise 9.8.1|DaoFP Exercise 9.8.1]]).
+- The singleton functor $c \mapsto \{c\}$ is representable iff $\mathcal{C}$ has an [[Initial Object]] ([[DaoFP Chapter 9 Exercises#Exercise 9.8.2|DaoFP Exercise 9.8.2]]); the constant $1$ functor is represented by the initial object, "the logarithm of 1" ([[DaoFP Chapter 9 Exercises#Exercise 9.8.4|DaoFP Exercise 9.8.4]]).
+- Non-example: on $(\mathbb{Q}_{\geq 0}, \leq)$, $F(x) = [2 \leq x^2]$ has no representative since $\sqrt 2 \notin \mathbb{Q}$; on $\mathbb{R}_{\geq 0}$ it does (Lecture 10). Lists are not representable ("no logarithm of a sum"), but a list functor is a sum of representables ([[DaoFP Chapter 9 Exercises#Exercise 9.8.5|DaoFP Exercise 9.8.5]]); infinite streams are represented by $\mathbb{N}$.
 
 ## Properties
 
@@ -29,7 +29,7 @@ sending $y \mapsto \mathrm{Hom}(x, y)$ and $g : y \to z$ to post-composition $\m
 
 **The guessing game** (DaoFP §9.8): one theorist hides an object; the other probes it with objects $a$ and receives the sets $\mathcal{C}(a, x)$ and, for arrows, functions between them. The answers define a presheaf whose representing object is the secret — unless the opponent invents a *non-representable* "fantastic beast", "often as interesting as the real ones". Kittenlab's version: identifying a person at a party by whom they talked to.
 
-**In programming** (DaoFP): `class Representable f where type Key f; tabulate :: (Key f -> x) -> f x; index :: f x -> (Key f -> x)` — `tabulate` turns a function into a lookup table (memoization), `index` looks up. `Stream` is representable by `Nat`, `Pair x x` by `Bool` ([[DaoFP Exercise 9.8.3]]).
+**In programming** (DaoFP): `class Representable f where type Key f; tabulate :: (Key f -> x) -> f x; index :: f x -> (Key f -> x)` — `tabulate` turns a function into a lookup table (memoization), `index` looks up. `Stream` is representable by `Nat`, `Pair x x` by `Bool` ([[DaoFP Chapter 9 Exercises#Exercise 9.8.3|DaoFP Exercise 9.8.3]]).
 
 ````tabs
 tab: Julia

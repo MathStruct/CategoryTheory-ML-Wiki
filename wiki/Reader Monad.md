@@ -11,7 +11,7 @@ Bind threads the same environment into both computations; `return` ignores it. A
 > Sources: DaoFP §14.1 ("Environment"), §14.4, Exercise 14.4.1 (`E e a = e -> Maybe a`, a reader/maybe combination); §15.3 (the reader functor is $R_s$ of the currying adjunction), §17.1 (hom functor).
 
 - `Reader e` is the [[Hom Functor]] $\mathcal{C}(e, -)$; its monad structure comes from the fact that $e$ is a comonoid (copy/delete) in a cartesian category — the environment can be duplicated and passed to both parts of a bind.
-- Combined with `Maybe` it gives `E e a = e -> Maybe a` ([[DaoFP Exercise 14.4.1]]); combined with a product it gives the [[State Monad]].
+- Combined with `Maybe` it gives `E e a = e -> Maybe a` ([[DaoFP Chapter 14 Exercises#Exercise 14.4.1|DaoFP Exercise 14.4.1]]); combined with a product it gives the [[State Monad]].
 
 ````tabs
 tab: Julia

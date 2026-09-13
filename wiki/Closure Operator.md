@@ -9,7 +9,7 @@ A **closure operator** $j : P \to P$ on a [[Preorder]] $P$ is a [[Monotone Map]]
 
 ## Closure operators from Galois connections
 
-If $f \dashv g$ is a [[Galois Connection]] then $f \mathbin{;} g : P \to P$ is a closure operator ([[7S Exercise 1.119]]): $p \leq g(f(p))$ is the unit inequality, and $g(f(g(f(p)))) \cong g(f(p))$ follows from $f(g(q)) \leq q$ with $q = f(p)$ applied inside $g$, together with extensivity. The other composite $g \mathbin{;} f$ is an [[Interior Operator]].
+If $f \dashv g$ is a [[Galois Connection]] then $f \mathbin{;} g : P \to P$ is a closure operator ([[7S Chapter 1 Exercises#Exercise 1.119|7S Exercise 1.119]]): $p \leq g(f(p))$ is the unit inequality, and $g(f(g(f(p)))) \cong g(f(p))$ follows from $f(g(q)) \leq q$ with $q = f(p)$ applied inside $g$, together with extensivity. The other composite $g \mathbin{;} f$ is an [[Interior Operator]].
 
 ## Galois connections from closure operators (Example 1.122)
 

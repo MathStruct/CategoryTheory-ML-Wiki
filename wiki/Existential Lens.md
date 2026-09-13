@@ -11,7 +11,7 @@ $$
 \mathcal{L}\langle s, t\rangle\langle a, b\rangle = \int^{c} \mathcal{C}(s, c \times a) \times \mathcal{C}(c \times b, t),
 $$
 
-a *type-changing* [[Lens]]: replacing the focus $a$ by $b$ turns the whole $s$ into $t$. The integrand is a profunctor in $\langle x, y\rangle$ via $\mathcal{C}(s, y \times a) \times \mathcal{C}(x \times b, t)$ ([[DaoFP Exercise 17.9.1]]).
+a *type-changing* [[Lens]]: replacing the focus $a$ by $b$ turns the whole $s$ into $t$. The integrand is a profunctor in $\langle x, y\rangle$ via $\mathcal{C}(s, y \times a) \times \mathcal{C}(x \times b, t)$ ([[DaoFP Chapter 17 Exercises#Exercise 17.9.1|DaoFP Exercise 17.9.1]]).
 
 > Sources: DaoFP §17.9 ("Existential Lens": "Existential lens in Haskell", "Existential lens in category theory", "Type-changing lens in Haskell", "Lens composition", "Category of lenses"), §17.10 ("Lenses and Fibrations"), Exercise 17.9.1; §18 ([[Tambara Module|Tambara modules]] give the practical representation).
 

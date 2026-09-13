@@ -22,17 +22,17 @@ Anyone can propose $(X, \leq, I, \otimes)$; it is a symmetric monoidal preorder 
 
 | preorder | unit | product | note |
 |---|---|---|---|
-| $(\mathbb{R}, \leq, 0, +)$ | $0$ | $+$ | Example 2.4; $(\mathbb{R}, \leq, 1, \ast)$ fails monotonicity ([[7S Exercise 2.5]]) |
-| $(\mathrm{Disc}_M, =, e, \ast)$ for a commutative [[Monoid]] $M$ | $e$ | $\ast$ | Example 2.6, [[7S Exercise 2.8]] |
-| [[Bool (Monoidal Preorder)|$\mathbf{Bool}$]] $= (\mathbb{B}, \leq, \mathsf{true}, \wedge)$ | $\mathsf{true}$ | $\wedge$ | Example 2.27; also $(\mathbb{B}, \leq, \mathsf{false}, \vee)$ ([[7S Exercise 2.29]]) |
-| $(\mathbb{N}, \leq, 0, +)$ and $(\mathbb{N}, \leq, 1, \ast)$ | | | Example 2.30, [[7S Exercise 2.31]], [[7S Exercise 2.45]] |
-| $(\mathbb{N}, \mid, 1, \ast)$ | $1$ | $\ast$ | Example 2.32 ([[Divisibility Order]]); $(\mathbb{N}, \mid, 0, +)$ fails ([[7S Exercise 2.33]]) |
-| $\mathbf{NMY} = (\{\mathsf{no} \leq \mathsf{maybe} \leq \mathsf{yes}\}, \mathsf{yes}, \min)$ | | | [[7S Exercise 2.34]] |
-| $(\mathcal{P}(S), \subseteq, S, \cap)$ | $S$ | $\cap$ | [[7S Exercise 2.35]]; a [[Quantale]] |
-| $\mathrm{Prop}_{\mathbb{N}}$, statements about $n$ ordered by implication | $\mathsf{true}$ | $\wedge$ | [[7S Exercise 2.36]] |
+| $(\mathbb{R}, \leq, 0, +)$ | $0$ | $+$ | Example 2.4; $(\mathbb{R}, \leq, 1, \ast)$ fails monotonicity ([[7S Chapter 2 Exercises#Exercise 2.5|7S Exercise 2.5]]) |
+| $(\mathrm{Disc}_M, =, e, \ast)$ for a commutative [[Monoid]] $M$ | $e$ | $\ast$ | Example 2.6, [[7S Chapter 2 Exercises#Exercise 2.8|7S Exercise 2.8]] |
+| [[Bool (Monoidal Preorder)|$\mathbf{Bool}$]] $= (\mathbb{B}, \leq, \mathsf{true}, \wedge)$ | $\mathsf{true}$ | $\wedge$ | Example 2.27; also $(\mathbb{B}, \leq, \mathsf{false}, \vee)$ ([[7S Chapter 2 Exercises#Exercise 2.29|7S Exercise 2.29]]) |
+| $(\mathbb{N}, \leq, 0, +)$ and $(\mathbb{N}, \leq, 1, \ast)$ | | | Example 2.30, [[7S Chapter 2 Exercises#Exercise 2.31|7S Exercise 2.31]], [[7S Chapter 2 Exercises#Exercise 2.45|7S Exercise 2.45]] |
+| $(\mathbb{N}, \mid, 1, \ast)$ | $1$ | $\ast$ | Example 2.32 ([[Divisibility Order]]); $(\mathbb{N}, \mid, 0, +)$ fails ([[7S Chapter 2 Exercises#Exercise 2.33|7S Exercise 2.33]]) |
+| $\mathbf{NMY} = (\{\mathsf{no} \leq \mathsf{maybe} \leq \mathsf{yes}\}, \mathsf{yes}, \min)$ | | | [[7S Chapter 2 Exercises#Exercise 2.34|7S Exercise 2.34]] |
+| $(\mathcal{P}(S), \subseteq, S, \cap)$ | $S$ | $\cap$ | [[7S Chapter 2 Exercises#Exercise 2.35|7S Exercise 2.35]]; a [[Quantale]] |
+| $\mathrm{Prop}_{\mathbb{N}}$, statements about $n$ ordered by implication | $\mathsf{true}$ | $\wedge$ | [[7S Chapter 2 Exercises#Exercise 2.36|7S Exercise 2.36]] |
 | [[Cost]] $= ([0, \infty], \geq, 0, +)$ | $0$ | $+$ | Example 2.37 (Lawvere) |
 | $(\mathrm{Mat}, \to, 0, +)$, chemical materials and reactions | $0$ | $+$ | [[Resource Theory]] |
-| $\mathbf{W} = (\mathbb{N} \cup \{\infty\}, \leq, \infty, \min)$ | $\infty$ | $\min$ | [[7S Exercise 2.63]] |
+| $\mathbf{W} = (\mathbb{N} \cup \{\infty\}, \leq, \infty, \min)$ | $\infty$ | $\min$ | [[7S Chapter 2 Exercises#Exercise 2.63|7S Exercise 2.63]] |
 
 **Non-example** (Example 2.9): poker hands ordered by strength, with $h_1 \otimes h_2$ = "best hand from the ten cards", fails monotonicity: $h_1 \leq i_1$, $h_2 \leq i_2$ but $h_1 \otimes h_2$ can be a royal flush beating $i_1 \otimes i_2$.
 
@@ -40,7 +40,7 @@ Anyone can propose $(X, \leq, I, \otimes)$; it is a symmetric monoidal preorder 
 
 - The [[Opposite Monoidal Preorder]] $(X, \geq, I, \otimes)$ is again symmetric monoidal (Proposition 2.38).
 - Structure-preserving maps are [[Monoidal Monotone Map|monoidal monotones]].
-- A symmetric monoidal preorder $\mathcal{V}$ is a *base of enrichment*: $\mathcal{V}$-categories ([[Enriched Category]]) let $\mathcal{V}$ "structure the question of getting from $a$ to $b$". Symmetry is needed for [[Product of Enriched Categories|products]] ([[7S Exercise 2.75]]).
+- A symmetric monoidal preorder $\mathcal{V}$ is a *base of enrichment*: $\mathcal{V}$-categories ([[Enriched Category]]) let $\mathcal{V}$ "structure the question of getting from $a$ to $b$". Symmetry is needed for [[Product of Enriched Categories|products]] ([[7S Chapter 2 Exercises#Exercise 2.75|7S Exercise 2.75]]).
 - Extra axioms give different [[Wiring Diagram|wiring-diagram styles]]: the [[Discard and Copy Axioms|discard axiom]] $x \leq I$ (manufacturing) and copy axiom $x \leq x \otimes x$ (informatics).
 - A symmetric monoidal preorder is exactly a thin [[Symmetric Monoidal Category]]; a *closed* one is a [[Monoidal Closed Preorder]], and one with all joins is a [[Quantale]]. Ordered commutative monoids in the algebra literature are the skeletal case.
 

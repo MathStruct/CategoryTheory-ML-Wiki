@@ -14,7 +14,7 @@ A **unital commutative quantale** is a [[Monoidal Closed Preorder|symmetric mono
 | $(\mathbb{N}, \leq, 1, \ast)$ (with $\infty$ added) | $\ast$ | $1$ | $\sup$ | $0$ | |
 | $\mathcal{P}(M)$ for a monoid $M$; binary relations on a set under composition | | | | | noncommutative (§2.6) |
 
-In $\mathbf{Cost}$ every $A \subseteq [0, \infty]$ has a join, its infimum in the usual order: $\bigvee \{2, 3\} = 2$, $\bigvee \{2.5, 2.05, \dots\} = 2$, $\bigvee \varnothing = \infty$ (Example 2.91, [[7S Exercise 2.92]]).
+In $\mathbf{Cost}$ every $A \subseteq [0, \infty]$ has a join, its infimum in the usual order: $\bigvee \{2, 3\} = 2$, $\bigvee \{2.5, 2.05, \dots\} = 2$, $\bigvee \varnothing = \infty$ (Example 2.91, [[7S Chapter 2 Exercises#Exercise 2.92|7S Exercise 2.92]]).
 
 ## Theory
 

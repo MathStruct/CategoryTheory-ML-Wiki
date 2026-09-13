@@ -21,8 +21,8 @@ class Functor w => Comonad w where
 
 ## Examples
 
-- **Environment** `((,) e)`: `g =<= f = \ea -> g (fst ea, f ea)`, `extract = snd` — co-Kleisli arrows `(e, a) -> b` compose by passing the same environment ([[DaoFP Exercise 16.0.1]]). (Currying the same arrows gives the [[Reader Monad]].)
-- **Stream** `data Stream a = Cons a (Stream a)`: `extract` is the head, `duplicate` produces the stream of all tails; `extend f` applies a co-Kleisli arrow needing arbitrary *look-ahead* at every position — a **convolution**. `smooth = extend avg` with `avg` averaging the first five elements is a low-pass filter. Comonads structure computations on spatially or temporally extended data (signal/image processing, PDE simulations, Conway's Game of Life). Bidirectional streams and Gaussian filters: [[DaoFP Exercise 16.1.2]], [[DaoFP Exercise 16.1.3]].
+- **Environment** `((,) e)`: `g =<= f = \ea -> g (fst ea, f ea)`, `extract = snd` — co-Kleisli arrows `(e, a) -> b` compose by passing the same environment ([[DaoFP Chapter 16 Exercises#Exercise 16.0.1|DaoFP Exercise 16.0.1]]). (Currying the same arrows gives the [[Reader Monad]].)
+- **Stream** `data Stream a = Cons a (Stream a)`: `extract` is the head, `duplicate` produces the stream of all tails; `extend f` applies a co-Kleisli arrow needing arbitrary *look-ahead* at every position — a **convolution**. `smooth = extend avg` with `avg` averaging the first five elements is a low-pass filter. Comonads structure computations on spatially or temporally extended data (signal/image processing, PDE simulations, Conway's Game of Life). Bidirectional streams and Gaussian filters: [[DaoFP Chapter 16 Exercises#Exercise 16.1.2|DaoFP Exercise 16.1.2]], [[DaoFP Chapter 16 Exercises#Exercise 16.1.3|DaoFP Exercise 16.1.3]].
 - **Signal** `Sig (Double -> a) Double` (a continuous stream plus the current time) and generally the [[Store Comonad]] $L_s R_s c = c^s \times s$ from the currying adjunction; its coalgebras are [[Lens|lenses]].
 - Every [[Adjunction]] $L \dashv R$ gives the comonad $(L R, \varepsilon, L \eta R)$ ([[Monads from Adjunctions]]).
 

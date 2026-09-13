@@ -6,7 +6,7 @@
 
 - **Haskell reading**: a dot $\alpha : F \to G$ is `alpha :: forall x. F x -> G x`; vertical composition is `.`; whiskering $\beta \circ F$ is `beta` instantiated at `F x`, $G \circ \alpha$ is `fmap alpha`.
 - **Monad**: $\eta$ is a dot spawning a $T$-string from nothing (the identity functor is not drawn), $\mu$ a dot merging two $T$-strings into one; the unit laws are pictures where an $\eta$-appendage is retracted by yanking, associativity is the two ways of merging three strings.
-- **[[Adjunction]]**: the unit is a *cup* $\eta : \mathrm{Id} \to R L$, the counit a *cap* $\varepsilon : L R \to \mathrm{Id}$; the triangle (zigzag) identities say a zigzag string can be pulled straight: `triangle = fmap counit . unit :: R x -> R x` is the identity ([[DaoFP Exercise 15.1.1]]).
+- **[[Adjunction]]**: the unit is a *cup* $\eta : \mathrm{Id} \to R L$, the counit a *cap* $\varepsilon : L R \to \mathrm{Id}$; the triangle (zigzag) identities say a zigzag string can be pulled straight: `triangle = fmap counit . unit :: R x -> R x` is the identity ([[DaoFP Chapter 15 Exercises#Exercise 15.1.1|DaoFP Exercise 15.1.1]]).
 - Monad from an adjunction: $\mu = R \varepsilon L$ is a cap between two $L R$ pairs, sandwiched by $R \dots L$ ([[Monads from Adjunctions]]). Compare the snake equations of a [[Compact Closed Category]].
 
 ````tabs

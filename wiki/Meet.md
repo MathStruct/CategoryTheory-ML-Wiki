@@ -11,7 +11,7 @@ We write $p = \bigwedge A$ or $\bigwedge_{a \in A} a$; if $A = \{a, b\}$ we writ
 
 ## "The" meet (Remark 1.82)
 
-Two meets $p, q$ of the same $A$ satisfy $p \leq q$ and $q \leq p$, so $p \cong q$ ([[Equivalent Elements of a Preorder]]); in a [[Partial Order]] they are equal ([[7S Exercise 1.85]]). Since category theory cares only about how things relate to other things, the abuse of writing "the" meet is harmless — "any two things defined by the same universal property are unique up to unique isomorphism".
+Two meets $p, q$ of the same $A$ satisfy $p \leq q$ and $q \leq p$, so $p \cong q$ ([[Equivalent Elements of a Preorder]]); in a [[Partial Order]] they are equal ([[7S Chapter 1 Exercises#Exercise 1.85|7S Exercise 1.85]]). Since category theory cares only about how things relate to other things, the abuse of writing "the" meet is harmless — "any two things defined by the same universal property are unique up to unique isomorphism".
 
 ## Examples
 
@@ -19,8 +19,8 @@ Two meets $p, q$ of the same $A$ satisfy $p \leq q$ and $q \leq p$, so $p \cong 
 - Several meets may exist: in $a, b \geq c \cong d$, both $c$ and $d$ are meets of $\{a, b\}$ (Example 1.84).
 - $\bigwedge \{p\} \cong p$ and in a partial order $p \wedge p = p$ (Example 1.86).
 - [[Power Set]]: $A \wedge B = A \cap B$ (Example 1.87); Kittenlab Lecture 13: the [[Product]] of two subsets is their intersection.
-- [[Booleans]]: meet is AND (Example 1.88). [[Total Order]]: meet is infimum (Example 1.89). [[Divisibility Order]]: meet is $\gcd$ ([[7S Exercise 1.90]]).
-- In $\mathbb{R}$, $\bigwedge \mathbb{N} = 0$ and $\bigwedge \{\frac{1}{n+1}\} = 0$ ([[7S Exercise 1.80]]).
+- [[Booleans]]: meet is AND (Example 1.88). [[Total Order]]: meet is infimum (Example 1.89). [[Divisibility Order]]: meet is $\gcd$ ([[7S Chapter 1 Exercises#Exercise 1.90|7S Exercise 1.90]]).
+- In $\mathbb{R}$, $\bigwedge \mathbb{N} = 0$ and $\bigwedge \{\frac{1}{n+1}\} = 0$ ([[7S Chapter 1 Exercises#Exercise 1.80|7S Exercise 1.80]]).
 
 ## Proposition 1.91 (meets of nested subsets)
 

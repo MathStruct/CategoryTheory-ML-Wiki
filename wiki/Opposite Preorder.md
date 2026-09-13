@@ -5,7 +5,7 @@ Given a [[Preorder]] $(P, \leq)$, the **opposite preorder** $(P, \leq^{\mathrm{o
 > Sources: 7 Sketches Example 1.58, 1.72, Exercise 1.66; DaoFP §8.1 (opposite categories), §5.2 (duality).
 
 - The identity is monotone $P \to P^{\mathrm{op}}$ iff $P$ is a [[Dagger Preorder]] (Example 1.72).
-- The principal-upper-set map $\uparrow : P^{\mathrm{op}} \to \mathcal{U}(P)$ is monotone ([[7S Exercise 1.66]]) — a preorder [[Yoneda Embedding]].
+- The principal-upper-set map $\uparrow : P^{\mathrm{op}} \to \mathcal{U}(P)$ is monotone ([[7S Chapter 1 Exercises#Exercise 1.66|7S Exercise 1.66]]) — a preorder [[Yoneda Embedding]].
 - Reversing the order swaps [[Meet|meets]] and [[Join|joins]], and swaps left and right adjoints in a [[Galois Connection]]. This is the preorder instance of the [[Opposite Category]] and of [[Cartesian Category|duality]] ("reversing the arrows", DaoFP §3, §5.2): every statement about preorders has a dual obtained by replacing $\leq$ with $\geq$.
 - The reverse ordering on $\mathbb{N}$ ("like golf") is $\mathbb{N}^{\mathrm{op}}$; the base $\mathbf{Cost} = ([0,\infty], \geq)$ of [[Lawvere Metric Space|Lawvere metric spaces]] is $[0, \infty]^{\mathrm{op}}$.
 

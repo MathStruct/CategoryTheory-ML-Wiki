@@ -16,7 +16,7 @@ With `s = Int`, `f` is an infinite array and `s` the current position: `duplicat
 
 **Coalgebras are lenses.** A comonad coalgebra `phi :: s -> Store a s` is a pair `set :: s -> a -> s`, `get :: s -> a` — a [[Lens]] with source `s` and focus `a`; the coalgebra laws are exactly the lens laws set/get, set/set, get/set.
 
-**Cellular automata** ([[DaoFP Exercise 16.3.1]]): rule 110 is the co-Kleisli arrow `step :: Store Int Cell -> Cell` looking at `f (n-1), f n, f (n+1)`; generations are `iterate (extend step) initial`.
+**Cellular automata** ([[DaoFP Chapter 16 Exercises#Exercise 16.3.1|DaoFP Exercise 16.3.1]]): rule 110 is the co-Kleisli arrow `step :: Store Int Cell -> Cell` looking at `f (n-1), f n, f (n+1)`; generations are `iterate (extend step) initial`.
 
 ````tabs
 tab: Julia

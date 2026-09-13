@@ -10,7 +10,7 @@ LCCCs are the categorical models of dependent type theory, the way CCCs model th
 
 > Sources: DaoFP §11.2 ("Base-change functor": "To model dependent types, we need to impose an additional condition: we require the category to be locally cartesian closed"), §11.3–11.4; 7 Sketches §7.2.1 (every [[Topos]] is an LCCC).
 
-- Products in $\mathcal{C}/b$ are pullbacks over $b$ ([[DaoFP Exercise 11.2.3]]); exponentials in $\mathcal{C}/b$ are $\Pi_p(p^* -)$. $\mathcal{C}/1 \cong \mathcal{C}$, so an LCCC with a terminal object is cartesian closed.
+- Products in $\mathcal{C}/b$ are pullbacks over $b$ ([[DaoFP Chapter 11 Exercises#Exercise 11.2.3|DaoFP Exercise 11.2.3]]); exponentials in $\mathcal{C}/b$ are $\Pi_p(p^* -)$. $\mathcal{C}/1 \cong \mathcal{C}$, so an LCCC with a terminal object is cartesian closed.
 - Examples: $\mathbf{Set}$, $\mathbf{FinSet}$, every elementary [[Topos]] (presheaf categories, [[C-Set|C-sets]], sheaves). Non-examples: $\mathbf{Cat}$, $\mathbf{Top}$ (pullback does not preserve colimits there).
 - In an LCCC, $f^*$ preserves colimits and exponentials (it is a left adjoint) — which is what makes substitution well behaved in type theory.
 

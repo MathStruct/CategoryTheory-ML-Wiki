@@ -4,15 +4,15 @@ For any [[Graph]] $G = (V, A, s, t)$, the **free category** $\mathrm{Free}(G)$ (
 
 > Sources: 7 Sketches Definition 3.7, Eq. (3.8), Example 3.13, Exercises 3.9, 3.10, 3.12, 3.15, 3.33; Remark 3.23; Kittenlab Lecture 6; DaoFP §8.1 (stick-figure categories), §10.9 (free constructions).
 
-*Proof that it is a category* ([[7S Exercise 3.9]]): define a path as $(v, a_1, \dots, a_n)$ with $s(a_1) = v$ and $t(a_i) = s(a_{i+1})$; concatenation $(v, a_1..a_m) \mathbin{;} (w, b_1..b_n) = (v, a_1, .., a_m, b_1, .., b_n)$ when $t(p) = w$. Concatenating with a length-0 path returns the same tuple (unitality), and either bracketing of three paths yields the same tuple (associativity). $\blacksquare$
+*Proof that it is a category* ([[7S Chapter 3 Exercises#Exercise 3.9|7S Exercise 3.9]]): define a path as $(v, a_1, \dots, a_n)$ with $s(a_1) = v$ and $t(a_i) = s(a_{i+1})$; concatenation $(v, a_1..a_m) \mathbin{;} (w, b_1..b_n) = (v, a_1, .., a_m, b_1, .., b_n)$ when $t(p) = w$. Concatenating with a length-0 path returns the same tuple (unitality), and either bracketing of three paths yields the same tuple (associativity). $\blacksquare$
 
 ## Examples
 
 - $\underline{\mathbf{2}} = \mathrm{Free}(v_1 \xrightarrow{f_1} v_2)$: two objects, three morphisms $\mathrm{id}_{v_1}, f_1, \mathrm{id}_{v_2}$ — the [[Walking Arrow]].
-- $\underline{\mathbf{3}} = \mathrm{Free}(v_1 \to v_2 \to v_3)$: three objects, six morphisms ([[7S Exercise 3.10]]); $\underline{\mathbf{n}}$ has $1 + 2 + \cdots + n$ morphisms, $\underline{\mathbf{1}}$ has one object and one morphism, $\underline{\mathbf{0}}$ is empty ([[7S Exercise 3.12]]).
-- Example 3.13: the graph with one vertex $z$ and one loop $s$ has paths $z, s, s \mathbin{;} s, \dots$, one of each length: $\mathrm{Free}$ of it is the [[Natural Numbers]] $(\mathbb{N}, +, 0)$ as a one-object category, a [[Monoid]] (concatenation adds lengths, [[7S Exercise 3.15]]).
+- $\underline{\mathbf{3}} = \mathrm{Free}(v_1 \to v_2 \to v_3)$: three objects, six morphisms ([[7S Chapter 3 Exercises#Exercise 3.10|7S Exercise 3.10]]); $\underline{\mathbf{n}}$ has $1 + 2 + \cdots + n$ morphisms, $\underline{\mathbf{1}}$ has one object and one morphism, $\underline{\mathbf{0}}$ is empty ([[7S Chapter 3 Exercises#Exercise 3.12|7S Exercise 3.12]]).
+- Example 3.13: the graph with one vertex $z$ and one loop $s$ has paths $z, s, s \mathbin{;} s, \dots$, one of each length: $\mathrm{Free}$ of it is the [[Natural Numbers]] $(\mathbb{N}, +, 0)$ as a one-object category, a [[Monoid]] (concatenation adds lengths, [[7S Chapter 3 Exercises#Exercise 3.15|7S Exercise 3.15]]).
 - The free square category has ten morphisms; adding the equation $f \mathbin{;} h = g \mathbin{;} i$ gives the *commutative square* with nine ([[Presentation of a Category]]).
-- The only isomorphisms in $\mathrm{Free}(G)$ are identities, since lengths add ([[7S Exercise 3.33]]).
+- The only isomorphisms in $\mathrm{Free}(G)$ are identities, since lengths add ([[7S Chapter 3 Exercises#Exercise 3.33|7S Exercise 3.33]]).
 
 ## Properties
 

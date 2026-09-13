@@ -4,7 +4,7 @@ $\mathbf{FinSet}$ is the [[Category]] whose objects are [[Finite Set|finite sets
 
 > Sources: 7 Sketches Definition 3.24, Example 3.29; Kittenlab Lectures 2–4 ($\mathsf{Fin}$, `FinSetC`), 8, 13 (`FinSet`/`FinFunction` as `Int`-indexed), 15.
 
-- [[Cardinality]] classifies objects up to [[Isomorphism]]: $A \cong \underline{n}$ iff $|A| = n$; there are $n!$ isomorphisms between two $n$-element sets ([[7S Exercise 3.30]]).
+- [[Cardinality]] classifies objects up to [[Isomorphism]]: $A \cong \underline{n}$ iff $|A| = n$; there are $n!$ isomorphisms between two $n$-element sets ([[7S Chapter 3 Exercises#Exercise 3.30|7S Exercise 3.30]]).
 - $\mathbf{FinSet}$ has all finite [[Limit|limits]] and [[Colimit|colimits]] ([[Product]] $\{1..nm\}$ with index arithmetic, Kittenlab Lecture 13; [[Coproduct]] $\{1..n+m\}$; [[Pushout|pushouts]] via union-find, Lecture 9; [[Coequalizer|coequalizers]]).
 - The functor $\mathsf{Fin} \to \mathbf{Mat}$ sending $f : n \to m$ to the $n \times m$ 0/1 matrix with a $1$ at $(i, f(i))$ is a [[Functor]] (Kittenlab Lecture 4): identities go to identity matrices and composition to matrix multiplication.
 - [[Cospan|Cospans]] in $\mathbf{FinSet}$ are [[Undirected Wiring Diagram|undirected wiring diagrams]] (Kittenlab Lecture 15, 7 Sketches §6.2.5); [[Prop|props]] have $\mathrm{Ob} = \mathbb{N}$ like the skeleton of $\mathbf{FinSet}$, and $\mathbf{FinSet}$ itself with $+$ is a prop (7 Sketches Example 5.5).

@@ -7,7 +7,7 @@ Let $\mathcal{V}$ be a [[Symmetric Monoidal Preorder]] and $\mathcal{X}, \mathca
 
 > Sources: 7 Sketches Definition 2.74, Example 2.76, Exercises 2.75, 2.78; DaoFP §20.1 ("tensor product of $\mathcal{V}$-categories"); ordinary case: [[Product Category]], preorder case: [[Product Preorder]].
 
-*It is a $\mathcal{V}$-category* ([[7S Exercise 2.75]]): $I = I \otimes I \leq \mathcal{X}(x,x) \otimes \mathcal{Y}(y,y)$; and
+*It is a $\mathcal{V}$-category* ([[7S Chapter 2 Exercises#Exercise 2.75|7S Exercise 2.75]]): $I = I \otimes I \leq \mathcal{X}(x,x) \otimes \mathcal{Y}(y,y)$; and
 
 $$
 \mathcal{X}(x_1,x_2) \otimes \mathcal{Y}(y_1,y_2) \otimes \mathcal{X}(x_2,x_3) \otimes \mathcal{Y}(y_2,y_3) \cong \mathcal{X}(x_1,x_2) \otimes \mathcal{X}(x_2,x_3) \otimes \mathcal{Y}(y_1,y_2) \otimes \mathcal{Y}(y_2,y_3) \leq \mathcal{X}(x_1,x_3) \otimes \mathcal{Y}(y_1,y_3),
@@ -15,7 +15,7 @@ $$
 
 where **symmetry** is used exactly to swap the middle two factors — which is why $\mathcal{V}$ must be symmetric (DaoFP makes the same point for the tensor product of $\mathcal{V}$-categories, whose identity is $j_c \otimes j_d : I \otimes I \to \mathcal{C}(c,c) \otimes \mathcal{D}(d,d)$).
 
-**Examples.** For $\mathcal{V} = \mathbf{Bool}$ the AND in "$(p_1, q_1) \leq (p_2, q_2)$ iff $p_1 \leq p_2$ and $q_1 \leq q_2$" is $\otimes$: the [[Product Preorder]]. For $\mathcal{V} = \mathbf{Cost}$ distances add: $d_{X \times Y}((x,y),(x',y')) = d_X(x,x') + d_Y(y,y')$ (Example 2.76: the product of the path $A \xrightarrow{2} B \xrightarrow{3} C$ with $p \rightleftarrows q$ (weights $5, 8$) is a $2 \times 3$ grid; [[7S Exercise 2.78]]: in $\mathbb{R} \times \mathbb{R}$, $d((5,6),(-1,4)) = 6 + 2 = 8$). In matrix terms the product is the **Kronecker product** of hom-matrices with $\otimes$ in place of multiplication — a block matrix with one $X$-shaped block, shifted by an entry of $Y$, for every entry of $Y$.
+**Examples.** For $\mathcal{V} = \mathbf{Bool}$ the AND in "$(p_1, q_1) \leq (p_2, q_2)$ iff $p_1 \leq p_2$ and $q_1 \leq q_2$" is $\otimes$: the [[Product Preorder]]. For $\mathcal{V} = \mathbf{Cost}$ distances add: $d_{X \times Y}((x,y),(x',y')) = d_X(x,x') + d_Y(y,y')$ (Example 2.76: the product of the path $A \xrightarrow{2} B \xrightarrow{3} C$ with $p \rightleftarrows q$ (weights $5, 8$) is a $2 \times 3$ grid; [[7S Chapter 2 Exercises#Exercise 2.78|7S Exercise 2.78]]: in $\mathbb{R} \times \mathbb{R}$, $d((5,6),(-1,4)) = 6 + 2 = 8$). In matrix terms the product is the **Kronecker product** of hom-matrices with $\otimes$ in place of multiplication — a block matrix with one $X$-shaped block, shifted by an entry of $Y$, for every entry of $Y$.
 
 ````tabs
 tab: Julia

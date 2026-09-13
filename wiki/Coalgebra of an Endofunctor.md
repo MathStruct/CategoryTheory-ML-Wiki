@@ -24,7 +24,7 @@ split (n : ns) = NodeF n left right where (left, right) = partition (<= n) ns
 ```
 
 - Duality is not perfect in $\mathbf{Set}$: $0$ has no incoming arrows but $1$ has many outgoing ones, so [[Terminal Coalgebra|terminal coalgebras]] "add their own interesting twists" (infinite data, laziness).
-- For the identity functor every set is a fixed point; $\varnothing$ is the least (initial algebra) and $1$ the greatest (terminal coalgebra) ([[DaoFP Exercise 13.2.2]], [[DaoFP Exercise 13.2.3]]).
+- For the identity functor every set is a fixed point; $\varnothing$ is the least (initial algebra) and $1$ the greatest (terminal coalgebra) ([[DaoFP Chapter 13 Exercises#Exercise 13.2.2|DaoFP Exercise 13.2.2]], [[DaoFP Chapter 13 Exercises#Exercise 13.2.3|DaoFP Exercise 13.2.3]]).
 - Coalgebras model state machines/dynamical systems: $\alpha : S \to O \times S^I$; a [[Discrete Dynamical System]] is a coalgebra for the identity functor.
 
 ````tabs

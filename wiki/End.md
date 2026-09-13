@@ -16,7 +16,7 @@ $$
 [\mathcal{C}, \mathcal{D}](F, G) \cong \int_{x : \mathcal{C}} \mathcal{D}(F x, G x), \qquad \texttt{type Natural f g = forall x. f x -> g x}.
 $$
 
-- **Limits as ends**: for $P\langle x, y\rangle = F y$ a wedge is a [[Cone]], so $\int_x F x = \lim F$; a [[Product]] is the end over the discrete two-object category ([[DaoFP Exercise 17.3.1]]).
+- **Limits as ends**: for $P\langle x, y\rangle = F y$ a wedge is a [[Cone]], so $\int_x F x = \lim F$; a [[Product]] is the end over the discrete two-object category ([[DaoFP Chapter 17 Exercises#Exercise 17.3.1|DaoFP Exercise 17.3.1]]).
 - **Continuity of the hom-functor**: $\mathcal{C}(x, -)$ preserves limits ($\mathcal{C}(x, a \times b) \cong \mathcal{C}(x, a) \times \mathcal{C}(x, b)$) and $\mathcal{C}(-, x)$ turns colimits into limits ($\mathcal{C}(a + b, x) \cong \mathcal{C}(a, x) \times \mathcal{C}(b, x)$); hence the integral sign can be pulled out of a hom-set: $\mathcal{C}(d, \int_a P\langle a, a\rangle) \cong \int_a \mathcal{C}(d, P\langle a, a\rangle)$ and $\mathcal{C}(\int^a P\langle a, a\rangle, d) \cong \int_a \mathcal{C}(P\langle a, a\rangle, d)$.
 - **Fubini**: $\int_c \int_d P \cong \int_d \int_c P \cong \int_{\langle c, d\rangle} P$ whenever the ends exist; likewise for coends.
 - The [[Ninja Yoneda Lemma]] $\int_x \mathbf{Set}(\mathcal{C}(a, x), F x) \cong F a$ is the Yoneda lemma with the set of natural transformations written as an end. In calculus one rarely sees "product integrals" because logarithms turn them into sums; category theory has no logarithm, so ends and coends are equally important.

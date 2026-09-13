@@ -13,8 +13,8 @@ with projections $p_i(d_1, \dots, d_n) = d_i$ is a [[Limit]] of $D$. "As far as 
 ## Instances
 
 - Empty graph: $n = 0$, one empty tuple $()$: the limit is $\{()\}$, the [[Terminal Object]] (Example 3.96).
-- Two vertices, no arrows: pairs $(d_1, d_2)$, the [[Product]] $A \times B$ ([[7S Exercise 3.97]]).
-- One vertex: $\lim D = D(v)$ itself ([[7S Exercise 3.98]]).
+- Two vertices, no arrows: pairs $(d_1, d_2)$, the [[Product]] $A \times B$ ([[7S Chapter 3 Exercises#Exercise 3.97|7S Exercise 3.97]]).
+- One vertex: $\lim D = D(v)$ itself ([[7S Chapter 3 Exercises#Exercise 3.98|7S Exercise 3.98]]).
 - [[Cospan]] $x \xrightarrow{f} a \xleftarrow{g} y$: triples $(d_x, d_a, d_y)$ with $f(d_x) = d_a = g(d_y)$, i.e. pairs $(d_x, d_y)$ with $f(d_x) = g(d_y)$: the [[Pullback]] $X \times_A Y$ (Example 3.99) — pairs $(i, j) \in \underline{6} \times \underline{4}$ whose colours agree.
 - Parallel pair $f, g : a \rightrightarrows b$: $\{d \in D(a) \mid f(d) = g(d)\}$, the [[Equalizer]] — "solutions of a system of equations" (DaoFP).
 - $! : \mathcal{C} \to \underline{1}$ on the email schema: tuples (email, address) with $\mathsf{sent\_by} = \mathsf{received\_by} = $ address, i.e. self-sent emails: $\Pi_!(I)$ ([[Data Migration Functor]]).

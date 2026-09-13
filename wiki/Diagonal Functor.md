@@ -10,7 +10,7 @@ $$
 (+) \dashv \Delta \dashv (\times),
 $$
 
-i.e. $\mathcal{C}(a + b, x) \cong (\mathcal{C} \times \mathcal{C})((a,b), \Delta x)$ and $(\mathcal{C} \times \mathcal{C})(\Delta x, (a, b)) \cong \mathcal{C}(x, a \times b)$ — "we could impress it in clay, in a modern version of cuneiform". The [[Unit and Counit of an Adjunction|unit]] of the sum adjunction is the pair of injections and the counit of the product adjunction the pair of projections ([[DaoFP Exercise 10.5.1]]). For a general indexing category, $\mathrm{Colim} \dashv \Delta \dashv \mathrm{Lim}$ ([[Limit]], [[Colimit]]). In a preorder, $\Delta$ is the map $x \mapsto (x, x)$ and its adjoints are [[Join]] and [[Meet]].
+i.e. $\mathcal{C}(a + b, x) \cong (\mathcal{C} \times \mathcal{C})((a,b), \Delta x)$ and $(\mathcal{C} \times \mathcal{C})(\Delta x, (a, b)) \cong \mathcal{C}(x, a \times b)$ — "we could impress it in clay, in a modern version of cuneiform". The [[Unit and Counit of an Adjunction|unit]] of the sum adjunction is the pair of injections and the counit of the product adjunction the pair of projections ([[DaoFP Chapter 10 Exercises#Exercise 10.5.1|DaoFP Exercise 10.5.1]]). For a general indexing category, $\mathrm{Colim} \dashv \Delta \dashv \mathrm{Lim}$ ([[Limit]], [[Colimit]]). In a preorder, $\Delta$ is the map $x \mapsto (x, x)$ and its adjoints are [[Join]] and [[Meet]].
 
 ````tabs
 tab: Lean

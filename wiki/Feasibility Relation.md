@@ -6,7 +6,7 @@ $$
 \Phi : X^{\mathrm{op}} \times Y \to \mathbf{Bool}, \qquad\text{written } \Phi : X \nrightarrow Y.
 $$
 
-If $\Phi(x, y) = \mathsf{true}$ we say **$x$ can be obtained given $y$**. Monotonicity says: if $x' \leq_X x$ and $y \leq_Y y'$ then $\Phi(x, y) \leq \Phi(x', y')$ — if $x$ can be obtained given $y$, then anything less ($x'$) can be obtained given anything more ($y'$). A feasibility relation is exactly a $\mathbf{Bool}$-[[Profunctor]] ([[7S Exercise 4.10]]), and Censi calls them *monotone co-design problems*.
+If $\Phi(x, y) = \mathsf{true}$ we say **$x$ can be obtained given $y$**. Monotonicity says: if $x' \leq_X x$ and $y \leq_Y y'$ then $\Phi(x, y) \leq \Phi(x', y')$ — if $x$ can be obtained given $y$, then anything less ($x'$) can be obtained given anything more ($y'$). A feasibility relation is exactly a $\mathbf{Bool}$-[[Profunctor]] ([[7S Chapter 4 Exercises#Exercise 4.10|7S Exercise 4.10]]), and Censi calls them *monotone co-design problems*.
 
 > Sources: 7 Sketches §4.2.1 (Definition 4.2, Exercises 4.4, 4.7, 4.10), §4.2.3, §4.3 ($\mathbf{Feas}$), Example 4.11 (bridges), 4.12; Kittenlab Lecture 14 ([[Relation|relations]] as $\mathbb{B}$-valued functions).
 
@@ -18,14 +18,14 @@ If $\Phi(x, y) = \mathsf{true}$ we say **$x$ can be obtained given $y$**. Monoto
 
 ## Bridges (Example 4.11)
 
-Think of the preorders as **cities** (Hasse diagrams: an arrow $A \to B$ is a way to get from $A$ to $B$) and the profunctor as **bridges** between them. $\Phi(x, y) = \mathsf{true}$ iff one can get from $x$ to $y$ using paths within the cities and the bridges: for the pictured $\Phi : X \nrightarrow Y$ with $W \leq N$, $b \leq a$ and bridges $N \to e$, $E \to a$, …, $\Phi(N, e) = \Phi(E, a) = \mathsf{true}$ but $\Phi(W, d) = \mathsf{false}$. The whole picture, boxed, is a new preorder — the [[Collage]] $\mathrm{Col}(\Phi)$. The matrix of values $\Phi(m, n) \in \mathbb{B}$ is the **feasibility matrix** ([[7S Exercise 4.12]]), and composition of feasibility relations is [[Matrix Multiplication in a Quantale|$\mathbf{Bool}$-matrix multiplication]].
+Think of the preorders as **cities** (Hasse diagrams: an arrow $A \to B$ is a way to get from $A$ to $B$) and the profunctor as **bridges** between them. $\Phi(x, y) = \mathsf{true}$ iff one can get from $x$ to $y$ using paths within the cities and the bridges: for the pictured $\Phi : X \nrightarrow Y$ with $W \leq N$, $b \leq a$ and bridges $N \to e$, $E \to a$, …, $\Phi(N, e) = \Phi(E, a) = \mathsf{true}$ but $\Phi(W, d) = \mathsf{false}$. The whole picture, boxed, is a new preorder — the [[Collage]] $\mathrm{Col}(\Phi)$. The matrix of values $\Phi(m, n) \in \mathbb{B}$ is the **feasibility matrix** ([[7S Chapter 4 Exercises#Exercise 4.12|7S Exercise 4.12]]), and composition of feasibility relations is [[Matrix Multiplication in a Quantale|$\mathbf{Bool}$-matrix multiplication]].
 
 ## Properties
 
-- The preimage $\Phi^{-1}(\mathsf{true})$ is an [[Upper Set]] of $X^{\mathrm{op}} \times Y$ ([[7S Exercise 4.4]]: "my aunt can explain a category given this book, hence a monoid given this book, and a category given nothing").
-- Feasibility relations compose via $(\Phi \mathbin{;} \Psi)(p, r) = \bigvee_q \Phi(p, q) \wedge \Psi(q, r)$ — "the navigator searches $Q$ for a way-point" — forming the category $\mathbf{Feas} = \mathbf{Prof}_{\mathbf{Bool}}$ ([[Category of Profunctors]]), which is [[Compact Closed Category|compact closed]] with $X^* = X^{\mathrm{op}}$ and monoidal product the [[Product Preorder]]: $\Phi \times \Psi$ is "provide both $x_1$ and $y_1$ given both $x_2$ and $y_2$" ([[7S Exercise 4.64]]).
+- The preimage $\Phi^{-1}(\mathsf{true})$ is an [[Upper Set]] of $X^{\mathrm{op}} \times Y$ ([[7S Chapter 4 Exercises#Exercise 4.4|7S Exercise 4.4]]: "my aunt can explain a category given this book, hence a monoid given this book, and a category given nothing").
+- Feasibility relations compose via $(\Phi \mathbin{;} \Psi)(p, r) = \bigvee_q \Phi(p, q) \wedge \Psi(q, r)$ — "the navigator searches $Q$ for a way-point" — forming the category $\mathbf{Feas} = \mathbf{Prof}_{\mathbf{Bool}}$ ([[Category of Profunctors]]), which is [[Compact Closed Category|compact closed]] with $X^* = X^{\mathrm{op}}$ and monoidal product the [[Product Preorder]]: $\Phi \times \Psi$ is "provide both $x_1$ and $y_1$ given both $x_2$ and $y_2$" ([[7S Chapter 4 Exercises#Exercise 4.64|7S Exercise 4.64]]).
 - Every monotone map $F : P \to Q$ gives feasibility relations $\hat F(p, q) = [F(p) \leq q]$ ([[Companion and Conjoint|companion]]) and $\check F(q, p) = [q \leq F(p)]$ (conjoint); e.g. $\widehat{+}(a, b, c, d) = [a + b + c \leq d]$ for $+ : \mathbb{R}^3 \to \mathbb{R}$ (Example 4.37).
-- Interpretation of $\mathbf{Bool}$'s [[Quantale]] structure: $\wedge$ composes bridges, $\vee$ searches way-points, and $\Rightarrow$ (with $b \wedge c \leq d$ iff $b \leq c \Rightarrow d$, [[7S Exercise 4.7]]) is the hom-element. "It is the fact that $\mathbf{Bool}$ is a quantale which makes everything in this chapter work."
+- Interpretation of $\mathbf{Bool}$'s [[Quantale]] structure: $\wedge$ composes bridges, $\vee$ searches way-points, and $\Rightarrow$ (with $b \wedge c \leq d$ iff $b \leq c \Rightarrow d$, [[7S Chapter 4 Exercises#Exercise 4.7|7S Exercise 4.7]]) is the hom-element. "It is the fact that $\mathbf{Bool}$ is a quantale which makes everything in this chapter work."
 
 ````tabs
 tab: Julia

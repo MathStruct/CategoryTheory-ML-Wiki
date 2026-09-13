@@ -16,12 +16,12 @@ Compared with a [[Metric Space]], symmetry and "$d(x,y) = 0 \Rightarrow x = y$" 
 | enriched notion | metric notion |
 |---|---|
 | $\mathbf{Cost}$-[[Enriched Functor|functor]] $F$ with $d_X(x_1, x_2) \geq d_Y(F x_1, F x_2)$ | 1-Lipschitz (distance non-increasing) map (Example 2.72) |
-| skeletal dagger $\mathbf{Cost}$-category | extended metric space ([[7S Exercise 2.73]]) |
-| [[Product of Enriched Categories|$\mathbf{Cost}$-product]] $X \times Y$ | $d((x,y),(x',y')) = d_X(x,x') + d_Y(y,y')$, the $\ell^1$ / Manhattan metric ([[7S Exercise 2.78]]: $d((5,6),(-1,4)) = 8$, not $\sqrt{40}$) |
-| [[Change of Base]] along $[x = 0] : \mathbf{Cost} \to \mathbf{Bool}$ | the preorder "$x \leq y$ iff $d(x,y) = 0$", e.g. "is a part of" for regions ([[7S Exercise 2.67]]) |
+| skeletal dagger $\mathbf{Cost}$-category | extended metric space ([[7S Chapter 2 Exercises#Exercise 2.73|7S Exercise 2.73]]) |
+| [[Product of Enriched Categories|$\mathbf{Cost}$-product]] $X \times Y$ | $d((x,y),(x',y')) = d_X(x,x') + d_Y(y,y')$, the $\ell^1$ / Manhattan metric ([[7S Chapter 2 Exercises#Exercise 2.78|7S Exercise 2.78]]: $d((5,6),(-1,4)) = 8$, not $\sqrt{40}$) |
+| [[Change of Base]] along $[x = 0] : \mathbf{Cost} \to \mathbf{Bool}$ | the preorder "$x \leq y$ iff $d(x,y) = 0$", e.g. "is a part of" for regions ([[7S Chapter 2 Exercises#Exercise 2.67|7S Exercise 2.67]]) |
 | change of base along $[x < \infty]$ | the preorder "$y$ is reachable from $x$" |
 | presentation by a $\mathbf{Cost}$-weighted graph | shortest-path distances, computed by [[Matrix Multiplication in a Quantale|min-plus matrix powers]] |
-| $(\mathbb{R}_{\geq 0}, \geq, 0, +)$-category | finite-distance Lawvere metric space ([[7S Exercise 2.55]]) |
+| $(\mathbb{R}_{\geq 0}, \geq, 0, +)$-category | finite-distance Lawvere metric space ([[7S Chapter 2 Exercises#Exercise 2.55|7S Exercise 2.55]]) |
 | $\mathbf{Cost}$-[[Profunctor|profunctor]] | a distance-like relation between two spaces (Chapter 4) |
 
 Lawvere's paper [Law73] goes further, e.g. Cauchy completeness in categorical terms.

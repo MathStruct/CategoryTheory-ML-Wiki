@@ -13,9 +13,9 @@ It is **strong** if (a′) $I_Q \cong f(I_P)$ and (b′) $f(p_1) \otimes_Q f(p_2
 
 - $i : (\mathbb{N}, \leq, 0, +) \to (\mathbb{R}, \leq, 0, +)$, $n \mapsto n$: strict.
 - $\lfloor - \rfloor : (\mathbb{R}, \leq, 0, +) \to (\mathbb{N}, \leq, 0, +)$: monoidal monotone since $\lfloor x \rfloor + \lfloor y \rfloor \leq \lfloor x + y \rfloor$, but not strong: $\lfloor 0.5 \rfloor + \lfloor 0.5 \rfloor \neq \lfloor 1 \rfloor$.
-- $g : \mathbf{Bool} \to \mathbf{Cost}$, $\mathsf{false} \mapsto \infty$, $\mathsf{true} \mapsto 0$: strict ([[7S Exercise 2.43]]).
-- $d, u : \mathbf{Cost} \to \mathbf{Bool}$, $d(x) = [x = 0]$ and $u(x) = [x < \infty]$: both strict ([[7S Exercise 2.44]]); via [[Change of Base]] they turn [[Lawvere Metric Space|Lawvere metric spaces]] into preorders in two different ways ([[7S Exercise 2.68]]).
-- The constant map $n \mapsto 1$ is the unique monoidal monotone $(\mathbb{N}, \leq, 0, +) \to (\mathbb{N}, \leq, 1, \ast)$ ([[7S Exercise 2.45]]).
+- $g : \mathbf{Bool} \to \mathbf{Cost}$, $\mathsf{false} \mapsto \infty$, $\mathsf{true} \mapsto 0$: strict ([[7S Chapter 2 Exercises#Exercise 2.43|7S Exercise 2.43]]).
+- $d, u : \mathbf{Cost} \to \mathbf{Bool}$, $d(x) = [x = 0]$ and $u(x) = [x < \infty]$: both strict ([[7S Chapter 2 Exercises#Exercise 2.44|7S Exercise 2.44]]); via [[Change of Base]] they turn [[Lawvere Metric Space|Lawvere metric spaces]] into preorders in two different ways ([[7S Chapter 2 Exercises#Exercise 2.68|7S Exercise 2.68]]).
+- The constant map $n \mapsto 1$ is the unique monoidal monotone $(\mathbb{N}, \leq, 0, +) \to (\mathbb{N}, \leq, 1, \ast)$ ([[7S Chapter 2 Exercises#Exercise 2.45|7S Exercise 2.45]]).
 
 ## Use
 

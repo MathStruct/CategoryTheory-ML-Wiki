@@ -20,9 +20,9 @@ $\mathcal{V}$ is the **base of enrichment**; $\mathcal{X}$ is **enriched in** $\
 |---|---|---|
 | [[Bool (Monoidal Preorder)|$\mathbf{Bool}$]] | [[Preorder]] ([[Preorders are Bool-Categories]]) | is $x \leq y$? |
 | [[Cost]] | [[Lawvere Metric Space]] | distance $d(x, y) \in [0, \infty]$ |
-| $\mathbf{NMY}$ | points with a no/maybe/yes answer to "can I get from $x$ to $y$?" | [[7S Exercise 2.61]] |
-| $(\mathcal{P}(M), \subseteq, M, \cap)$ | modes of transport that get you from $x$ to $y$ | [[7S Exercise 2.62]] |
-| $(\mathbb{N} \cup \{\infty\}, \leq, \infty, \min)$ | weight limits on routes | [[7S Exercise 2.63]] |
+| $\mathbf{NMY}$ | points with a no/maybe/yes answer to "can I get from $x$ to $y$?" | [[7S Chapter 2 Exercises#Exercise 2.61|7S Exercise 2.61]] |
+| $(\mathcal{P}(M), \subseteq, M, \cap)$ | modes of transport that get you from $x$ to $y$ | [[7S Chapter 2 Exercises#Exercise 2.62|7S Exercise 2.62]] |
+| $(\mathbb{N} \cup \{\infty\}, \leq, \infty, \min)$ | weight limits on routes | [[7S Chapter 2 Exercises#Exercise 2.63|7S Exercise 2.63]] |
 | $(\mathbf{Set}, \times, 1)$ | ordinary (locally small) [[Category]] | the hom-*set* |
 | $(\mathbf{Cat}, \times, \mathbf{1})$ | a (strict) [[2-Category]] | the hom-category (DaoFP §20.1) |
 | any closed $\mathcal{V}$ | $\mathcal{V}$ itself (self-enrichment, Remark 2.89) | $v \multimap w$ |
@@ -44,11 +44,11 @@ Replace the preorder $\mathcal{V}$ by a [[Symmetric Monoidal Category]] $(\mathc
 \end{document}
 ```
 
-DaoFP's motivations: category theory "reluctantly draws upon set theory" through hom-sets; enrichment replaces structureless hom-sets by objects whose richness lives in the morphisms of $\mathcal{V}$ ("having fewer morphisms often means having more structure"). "Enrichment doesn't always mean adding more stuff" — enriching in the walking arrow $\mathbb{B}$ *impoverishes* to preorders. Every $\mathcal{V}$-category has an **underlying ordinary category** $\mathcal{C}_0$ whose hom-sets are the global elements $\mathcal{V}(I, \mathcal{C}(a, b))$ ([[DaoFP Exercise 20.1.2]]). Any [[Monoidal Closed Category|monoidal closed category]] is **self-enriched** via internal homs $[a, b]$, with composition built from the evaluation counit $\varepsilon$ and identity from $\lambda$; this is why a Haskell `Functor` (whose `fmap :: (a -> b) -> (f a -> f b)` acts on *internal* homs) is really an [[Enriched Functor]], and why every Haskell functor is [[Functorial Strength|strong]].
+DaoFP's motivations: category theory "reluctantly draws upon set theory" through hom-sets; enrichment replaces structureless hom-sets by objects whose richness lives in the morphisms of $\mathcal{V}$ ("having fewer morphisms often means having more structure"). "Enrichment doesn't always mean adding more stuff" — enriching in the walking arrow $\mathbb{B}$ *impoverishes* to preorders. Every $\mathcal{V}$-category has an **underlying ordinary category** $\mathcal{C}_0$ whose hom-sets are the global elements $\mathcal{V}(I, \mathcal{C}(a, b))$ ([[DaoFP Chapter 20 Exercises#Exercise 20.1.2|DaoFP Exercise 20.1.2]]). Any [[Monoidal Closed Category|monoidal closed category]] is **self-enriched** via internal homs $[a, b]$, with composition built from the evaluation counit $\varepsilon$ and identity from $\lambda$; this is why a Haskell `Functor` (whose `fmap :: (a -> b) -> (f a -> f b)` acts on *internal* homs) is really an [[Enriched Functor]], and why every Haskell functor is [[Functorial Strength|strong]].
 
 ## Constructions
 
-[[Change of Base]] along a [[Monoidal Monotone Map]] / monoidal functor; [[Enriched Functor|$\mathcal{V}$-functors]]; [[Enriched Natural Transformation|$\mathcal{V}$-natural transformations]]; the [[Opposite Enriched Category|opposite]] $\mathcal{X}^{\mathrm{op}}(x, y) := \mathcal{X}(y, x)$, [[Dagger Preorder|dagger]] and skeletal $\mathcal{V}$-categories ([[7S Exercise 2.73]]); [[Product of Enriched Categories|products]] $\mathcal{X} \times \mathcal{Y}$; $\mathcal{V}$-[[Profunctor|profunctors]] (Chapter 4); presentation by [[Weighted Graph|$\mathcal{V}$-weighted graphs]] computed by [[Matrix Multiplication in a Quantale]] when $\mathcal{V}$ is a [[Quantale]]; generalized [[Hausdorff Distance]]; and in DaoFP, enriched [[Yoneda Lemma]], [[Weighted Limit|weighted limits]], enriched [[End|ends]] and [[Kan Extension|Kan extensions]]. The authoritative reference is Kelly [Kel05].
+[[Change of Base]] along a [[Monoidal Monotone Map]] / monoidal functor; [[Enriched Functor|$\mathcal{V}$-functors]]; [[Enriched Natural Transformation|$\mathcal{V}$-natural transformations]]; the [[Opposite Enriched Category|opposite]] $\mathcal{X}^{\mathrm{op}}(x, y) := \mathcal{X}(y, x)$, [[Dagger Preorder|dagger]] and skeletal $\mathcal{V}$-categories ([[7S Chapter 2 Exercises#Exercise 2.73|7S Exercise 2.73]]); [[Product of Enriched Categories|products]] $\mathcal{X} \times \mathcal{Y}$; $\mathcal{V}$-[[Profunctor|profunctors]] (Chapter 4); presentation by [[Weighted Graph|$\mathcal{V}$-weighted graphs]] computed by [[Matrix Multiplication in a Quantale]] when $\mathcal{V}$ is a [[Quantale]]; generalized [[Hausdorff Distance]]; and in DaoFP, enriched [[Yoneda Lemma]], [[Weighted Limit|weighted limits]], enriched [[End|ends]] and [[Kan Extension|Kan extensions]]. The authoritative reference is Kelly [Kel05].
 
 ````tabs
 tab: Julia

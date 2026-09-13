@@ -8,7 +8,7 @@ The [[Subobject Classifier]] $\Omega$ of a [[Topos]] carries the **logical conne
 
 - **AND**: the element $(\mathsf{true}, \mathsf{true}) : 1 \to \mathbb{B} \times \mathbb{B}$ is a mono; its characteristic map sends only $(\mathsf{true}, \mathsf{true})$ to $\mathsf{true}$ — the truth table of $\wedge$. So $\wedge = \ulcorner (\mathsf{true}, \mathsf{true}) \urcorner$.
 - **OR** classifies the subset $\{(\mathsf{t},\mathsf{t}), (\mathsf{t},\mathsf{f}), (\mathsf{f},\mathsf{t})\} \subseteq \mathbb{B} \times \mathbb{B}$, i.e. the union $\{\mathsf{true}\} \times \mathbb{B} \,\cup\, \mathbb{B} \times \{\mathsf{true}\}$ — a colimit of limits involving only $\Omega$ and $1$, hence available in every topos.
-- **NOT** classifies the subobject $\{\mathsf{false}\} \subseteq \mathbb{B}$ ([[7S Exercise 7.19]]); **IMPLIES** $P \Rightarrow Q :\Leftrightarrow P = (P \wedge Q)$ classifies $\{(\mathsf{t},\mathsf{t}), (\mathsf{f},\mathsf{t}), (\mathsf{f},\mathsf{f})\}$, the equalizer of $\wedge$ and the first projection ([[7S Exercise 7.20]]).
+- **NOT** classifies the subobject $\{\mathsf{false}\} \subseteq \mathbb{B}$ ([[7S Chapter 7 Exercises#Exercise 7.19|7S Exercise 7.19]]); **IMPLIES** $P \Rightarrow Q :\Leftrightarrow P = (P \wedge Q)$ classifies $\{(\mathsf{t},\mathsf{t}), (\mathsf{f},\mathsf{t}), (\mathsf{f},\mathsf{f})\}$, the equalizer of $\wedge$ and the first projection ([[7S Chapter 7 Exercises#Exercise 7.20|7S Exercise 7.20]]).
 
 ## In a sheaf topos $\mathbf{Shv}(X)$ (truth values are open sets)
 
@@ -18,9 +18,9 @@ $$
 U \wedge V := U \cap V, \qquad U \vee V := U \cup V, \qquad (U \Rightarrow V) := \bigcup \{R \in \mathrm{Op} \mid R \cap U \subseteq V\}, \qquad \neg U := (U \Rightarrow \mathsf{false}) = \mathrm{int}(X \setminus U).
 $$
 
-$\mathsf{true} = X$ and $\mathsf{false} = \varnothing$ ([[7S Exercise 7.60]]). Implication is the hardest to picture; negation is the [[Interior Operator|interior]] of the complement. Example 7.58 on $X = \mathbb{R}$ with $U = (-\infty, 3)$, $V = (-4, 4)$: $U \wedge V = (-4, 3)$, $U \vee V = (-\infty, 4)$, $\neg U = (3, \infty)$, $\neg V = (-\infty, -4) \cup (4, \infty)$, $U \Rightarrow V = (-4, \infty)$, $V \Rightarrow U = U$.
+$\mathsf{true} = X$ and $\mathsf{false} = \varnothing$ ([[7S Chapter 7 Exercises#Exercise 7.60|7S Exercise 7.60]]). Implication is the hardest to picture; negation is the [[Interior Operator|interior]] of the complement. Example 7.58 on $X = \mathbb{R}$ with $U = (-\infty, 3)$, $V = (-4, 4)$: $U \wedge V = (-4, 3)$, $U \vee V = (-\infty, 4)$, $\neg U = (3, \infty)$, $\neg V = (-\infty, -4) \cup (4, \infty)$, $U \Rightarrow V = (-4, \infty)$, $V \Rightarrow U = U$.
 
-The logic is **intuitionistic**: $U \subseteq \neg\neg U$ always, but $\neg\neg U \subseteq U$ can fail — for $U = \mathbb{R} \setminus \{0\}$, $\neg U = \varnothing$ and $\neg\neg U = \mathbb{R}$ ([[7S Exercise 7.59]]). Excluded middle $U \vee \neg U = X$ fails for the same $U$.
+The logic is **intuitionistic**: $U \subseteq \neg\neg U$ always, but $\neg\neg U \subseteq U$ can fail — for $U = \mathbb{R} \setminus \{0\}$, $\neg U = \varnothing$ and $\neg\neg U = \mathbb{R}$ ([[7S Chapter 7 Exercises#Exercise 7.59|7S Exercise 7.59]]). Excluded middle $U \vee \neg U = X$ fails for the same $U$.
 
 ## Quantifiers and modalities
 

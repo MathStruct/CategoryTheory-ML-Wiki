@@ -4,7 +4,7 @@ Given any [[Category]] $\mathcal{C}$, its **preorder reflection** is the [[Preor
 
 > Sources: 7 Sketches §3.2.3, Exercise 3.22, Remark 3.23; Kittenlab Lecture 5 (functor 2 in the list of functors between $\mathbf{Cat}$ and $\mathsf{Preorder}$).
 
-- The preorder reflection of the one-object category $\mathbb{N}$ (Example 3.13) is $\underline{1}$ ([[7S Exercise 3.22]]).
+- The preorder reflection of the one-object category $\mathbb{N}$ (Example 3.13) is $\underline{1}$ ([[7S Chapter 3 Exercises#Exercise 3.22|7S Exercise 3.22]]).
 - "Considering a preorder as a category is right adjoint to turning a category into a preorder by preorder reflection" — an [[Adjunction]] $\mathrm{Refl} \dashv \mathrm{Incl} : \mathbf{Preord} \rightleftarrows \mathbf{Cat}$; a statement "you might not understand exactly, but it's true".
 - A [[Diagram]] $D : \mathcal{J} \to \mathcal{C}$ commutes iff it factors through the preorder reflection of $\mathcal{J}$ (footnote to Definition 3.51).
 - The [[Free Category]] on a graph and the preorder presented by a [[Hasse Diagram]] are the two ends of the spectrum of [[Presentation of a Category|presentations]] with the same graph.

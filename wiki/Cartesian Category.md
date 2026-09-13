@@ -8,12 +8,12 @@ A **cartesian category** is a [[Category]] with all binary [[Product|products]] 
 
 All laws are proved "by the mapping-in property" (the Yoneda trick, dual to that for [[Sum Type|sums]]):
 - $a \times b \cong b \times a$ — `swap (x, y) = (y, x)`, its own inverse; arrows into $a \times b$ and into $b \times a$ are both determined by the same pair $(f, g)$, and the bijection is natural under pre-composition with $k : x' \to x$.
-- $1 \times a \cong a$ — the **left unitor** $\lambda = \mathsf{snd}$ with inverse $\lambda^{-1} = \langle !, \mathrm{id} \rangle$; $\lambda^{-1} \circ \mathsf{snd} = \mathrm{id}$ follows from uniqueness of the mediating arrow ([[DaoFP Exercise 5.1.1]]). Dually the **right unitor** $\rho : a \times 1 \to a$ (`runit`).
+- $1 \times a \cong a$ — the **left unitor** $\lambda = \mathsf{snd}$ with inverse $\lambda^{-1} = \langle !, \mathrm{id} \rangle$; $\lambda^{-1} \circ \mathsf{snd} = \mathrm{id}$ follows from uniqueness of the mediating arrow ([[DaoFP Chapter 5 Exercises#Exercise 5.1.1|DaoFP Exercise 5.1.1]]). Dually the **right unitor** $\rho : a \times 1 \to a$ (`runit`).
 - $(a \times b) \times c \cong a \times (b \times c)$ — the **associator** $\alpha$ (`assoc`); the empty tuple `()` is the product of zero types, the unit $1$.
 - **Functoriality**: for $f : a \to a'$, $g : b \to b'$, $f \times g := \langle f \circ \mathsf{fst},\ g \circ \mathsf{snd} \rangle : a \times b \to a' \times b'$ (`bimap` of the [[Bifunctor]] `(,)`).
 - Symmetry holds only up to isomorphism: swapping components changes how the information is *accessed*, not its content.
 
-Hence $(\mathcal{C}, \times, 1)$ is a [[Symmetric Monoidal Category]]; a category may carry several monoidal structures at once, e.g. both $+$ and $\times$. A cartesian category with [[Exponential Object|exponentials]] is a [[Cartesian Closed Category]]; with sums as well, [[Bicartesian Closed Category|bicartesian closed]]. Mixed maps such as $b + a \times b \to (1 + a) \times b$ are built by decomposing into sums-out and products-in ([[DaoFP Exercise 5.1.2]]–[[DaoFP Exercise 5.1.4]]).
+Hence $(\mathcal{C}, \times, 1)$ is a [[Symmetric Monoidal Category]]; a category may carry several monoidal structures at once, e.g. both $+$ and $\times$. A cartesian category with [[Exponential Object|exponentials]] is a [[Cartesian Closed Category]]; with sums as well, [[Bicartesian Closed Category|bicartesian closed]]. Mixed maps such as $b + a \times b \to (1 + a) \times b$ are built by decomposing into sums-out and products-in ([[DaoFP Chapter 5 Exercises#Exercise 5.1.2|DaoFP Exercise 5.1.2]]–[[DaoFP Chapter 5 Exercises#Exercise 5.1.4|DaoFP Exercise 5.1.4]]).
 
 ## Duality
 

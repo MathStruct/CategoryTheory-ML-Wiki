@@ -6,7 +6,7 @@
 
 ## Chemistry
 
-Material collections such as $\mathrm{H_2O}$, $\mathrm{NaCl}$, $2\mathrm{NaOH}$, $\mathrm{CH_4} + 3\mathrm{O_2}$ form the preorder $(\mathrm{Mat}, \to, 0, +)$: $\to$ is the order (reaction), $+$ the monoidal product, $0$ the unit ([[7S Exercise 2.21]]). E.g. $2\mathrm{H_2O} + 2\mathrm{Na} \to 2\mathrm{NaOH} + \mathrm{H_2}$ (reactant $\to$ product).
+Material collections such as $\mathrm{H_2O}$, $\mathrm{NaCl}$, $2\mathrm{NaOH}$, $\mathrm{CH_4} + 3\mathrm{O_2}$ form the preorder $(\mathrm{Mat}, \to, 0, +)$: $\to$ is the order (reaction), $+$ the monoidal product, $0$ the unit ([[7S Chapter 2 Exercises#Exercise 2.21|7S Exercise 2.21]]). E.g. $2\mathrm{H_2O} + 2\mathrm{Na} \to 2\mathrm{NaOH} + \mathrm{H_2}$ (reactant $\to$ product).
 
 **Catalysis.** From the reactions
 

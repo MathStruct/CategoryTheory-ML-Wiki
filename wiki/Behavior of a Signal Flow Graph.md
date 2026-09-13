@@ -10,7 +10,7 @@ the graph of the linear map given by the matrix $S(g)$ (Eq. 5.75). For the copy 
 
 > Sources: 7 Sketches §5.4.3 ("The behavioral approach", "Mirror image of an icon", "Combining directions"), Exercises 5.77, 5.80, 5.82–5.85, Theorem 5.87; Willems' behavioural approach [Wil07]; Kittenlab Lecture 14 (a model as an exclusion law: a subset of a universum).
 
-- Reversed add: $\{(x, (y,z)) \mid x = y + z\}$; reversed copy: $\{((y, z), x) \mid x = y = z\}$ ([[7S Exercise 5.77]]).
-- $B(g \mathbin{;} h^{\mathrm{op}}) = \{(x, y) \mid S(g)x = S(h)y\}$ and $B(g^{\mathrm{op}} \mathbin{;} h) = \{(S(g)x, S(h)x)\}$ ([[7S Exercise 5.82]], [[7S Exercise 5.83]]): systems of linear equations and parametrized subspaces.
-- Behaviours are linear relations; kernel = compose with reversed zeros, image = compose with reversed discards ([[7S Exercise 5.84]]).
+- Reversed add: $\{(x, (y,z)) \mid x = y + z\}$; reversed copy: $\{((y, z), x) \mid x = y = z\}$ ([[7S Chapter 5 Exercises#Exercise 5.77|7S Exercise 5.77]]).
+- $B(g \mathbin{;} h^{\mathrm{op}}) = \{(x, y) \mid S(g)x = S(h)y\}$ and $B(g^{\mathrm{op}} \mathbin{;} h) = \{(S(g)x, S(h)x)\}$ ([[7S Chapter 5 Exercises#Exercise 5.82|7S Exercise 5.82]], [[7S Chapter 5 Exercises#Exercise 5.83|7S Exercise 5.83]]): systems of linear equations and parametrized subspaces.
+- Behaviours are linear relations; kernel = compose with reversed zeros, image = compose with reversed discards ([[7S Chapter 5 Exercises#Exercise 5.84|7S Exercise 5.84]]).
 - Cup and cap behaviours $\{(0, (x,x))\}$, $\{((x,x), 0)\}$ make $\mathbf{Rel}_R$ [[Compact Closed Category|compact closed]] (Theorem 5.87). See [[Graphical Linear Algebra]].

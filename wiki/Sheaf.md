@@ -13,12 +13,12 @@ Morphisms of sheaves are [[Natural Transformation|natural transformations]] of t
 ## Remarks and examples
 
 - **Empty cover** (Example 7.36): the empty family covers $\varnothing$, and the empty tuple is its only matching family; so a sheaf must have $P(\varnothing) = \{()\}$ — a necessary but rarely sufficient condition.
-- **Sections of a function/bundle** (Example 7.45): for continuous $f : X \to Y$, $\mathrm{Sec}_f(U) = \{g : U \to X \text{ continuous} \mid g \mathbin{;} f = \mathrm{id}_U\}$ is a sheaf on $Y$; see [[Sheaf of Sections]]. Vector fields on a manifold are the sections of the tangent bundle (Example 7.46); this is *one* sheaf among a proper class of sheaves on $M$ ([[7S Exercise 7.47]]).
+- **Sections of a function/bundle** (Example 7.45): for continuous $f : X \to Y$, $\mathrm{Sec}_f(U) = \{g : U \to X \text{ continuous} \mid g \mathbin{;} f = \mathrm{id}_U\}$ is a sheaf on $Y$; see [[Sheaf of Sections]]. Vector fields on a manifold are the sections of the tangent bundle (Example 7.46); this is *one* sheaf among a proper class of sheaves on $M$ ([[7S Chapter 7 Exercises#Exercise 7.47|7S Exercise 7.47]]).
 - **Constant sheaf** (Example 7.78): $\underline{A}(U) := A$ for a set $A$ — behaviours that never change. (Strictly, this is a sheaf on spaces whose opens are connected, like basic opens of $\mathbb{I}\mathbb{R}$.)
-- **Local functions** (Example 7.79, [[7S Exercise 7.80]]): $F_X(U) = \{f : U \to X \text{ continuous}\}$ and, for a subspace $R \subseteq X$, $H_X(U) = \{f : U \cap R \to X \text{ continuous}\}$ are sheaves: continuous functions agreeing on overlaps glue.
-- **Trivial covers**: if every object covers only itself, sheaves = presheaves; so presheaf categories ($\mathcal{C}$-$\mathbf{Inst}$, [[C-Set|C-sets]], [[Category of Graphs|graphs]]) count as sheaf toposes (footnote 10). $\mathbf{Set} = \mathbf{Shv}(\{*\})$ (Example 7.48, [[7S Exercise 7.52]]).
+- **Local functions** (Example 7.79, [[7S Chapter 7 Exercises#Exercise 7.80|7S Exercise 7.80]]): $F_X(U) = \{f : U \to X \text{ continuous}\}$ and, for a subspace $R \subseteq X$, $H_X(U) = \{f : U \cap R \to X \text{ continuous}\}$ are sheaves: continuous functions agreeing on overlaps glue.
+- **Trivial covers**: if every object covers only itself, sheaves = presheaves; so presheaf categories ($\mathcal{C}$-$\mathbf{Inst}$, [[C-Set|C-sets]], [[Category of Graphs|graphs]]) count as sheaf toposes (footnote 10). $\mathbf{Set} = \mathbf{Shv}(\{*\})$ (Example 7.48, [[7S Chapter 7 Exercises#Exercise 7.52|7S Exercise 7.52]]).
 - The [[Subobject Classifier]] of $\mathbf{Shv}(X)$ is the sheaf $\Omega(U) = \{U' \in \mathrm{Op} \mid U' \subseteq U\}$; sheaves on the [[Interval Domain]] are [[Topos of Behavior Types|behavior types]].
-- On the [[Sierpinski Space]], a sheaf is just a function ([[7S Exercise 7.49]]).
+- On the [[Sierpinski Space]], a sheaf is just a function ([[7S Chapter 7 Exercises#Exercise 7.49|7S Exercise 7.49]]).
 
 ````tabs
 tab: Julia

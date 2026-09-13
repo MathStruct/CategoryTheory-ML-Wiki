@@ -11,7 +11,7 @@ Kleisli composition short-circuits: if the first computation fails, the second i
 
 > Sources: DaoFP §14.1–14.4, §15.3 ("Pointed objects and the Maybe monad"), Exercises 14.4.1, 15.3.1; §4.3 ("Maybe").
 
-**From an adjunction** ([[Monads from Adjunctions]]): a *pointed object* is a pair $(a, p : 1 \to a)$; pointed objects and point-preserving arrows form the coslice category $1/\mathcal{C}$. The forgetful $U : 1/\mathcal{C} \to \mathcal{C}$ has left adjoint $F a = (1 + a, \mathsf{Left})$ (freely add a point), and $U F a = 1 + a$ is `Maybe` ([[DaoFP Exercise 15.3.1]]); replacing $1$ by a fixed $e$ gives `Either e`. The [[Natural Numbers Object]] is the [[Initial Algebra]] of the same functor.
+**From an adjunction** ([[Monads from Adjunctions]]): a *pointed object* is a pair $(a, p : 1 \to a)$; pointed objects and point-preserving arrows form the coslice category $1/\mathcal{C}$. The forgetful $U : 1/\mathcal{C} \to \mathcal{C}$ has left adjoint $F a = (1 + a, \mathsf{Left})$ (freely add a point), and $U F a = 1 + a$ is `Maybe` ([[DaoFP Chapter 15 Exercises#Exercise 15.3.1|DaoFP Exercise 15.3.1]]); replacing $1$ by a fixed $e$ gives `Either e`. The [[Natural Numbers Object]] is the [[Initial Algebra]] of the same functor.
 
 ````tabs
 tab: Julia

@@ -17,8 +17,8 @@ A **Hasse diagram** is a [[Graph]] $G = (V, A, s, t)$ that *presents* a [[Preord
 \end{document}
 ```
 
-- Any graph works, even with "useless" parallel arrows and loops ([[7S Exercise 1.40]]). Arrows implied by transitivity (e.g. $x \to z$ when $x \to y \to z$) may be omitted or drawn: Example 1.76's $Q$ and $R$ are the same preorder.
-- A collection of points with no arrows is the Hasse diagram of a [[Discrete Preorder]] ([[7S Exercise 1.41]]).
+- Any graph works, even with "useless" parallel arrows and loops ([[7S Chapter 1 Exercises#Exercise 1.40|7S Exercise 1.40]]). Arrows implied by transitivity (e.g. $x \to z$ when $x \to y \to z$) may be omitted or drawn: Example 1.76's $Q$ and $R$ are the same preorder.
+- A collection of points with no arrows is the Hasse diagram of a [[Discrete Preorder]] ([[7S Chapter 1 Exercises#Exercise 1.41|7S Exercise 1.41]]).
 - Categorically: the preorder presented by $G$ is the [[Preorder Reflection]] of the [[Free Category]] on $G$. Conversely a [[Presentation of a Category|presented category]] adds *named* morphisms and path equations; a preorder is the case where all parallel paths are equated.
 
 ````tabs

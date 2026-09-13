@@ -15,10 +15,10 @@ The triangle inequality says that a route $x \to z$ never costs more than going 
 
 Conditions (a) and (d) "wonderfully capture something about distance", but (b) and (c) are too restrictive:
 - *effort* to travel in a hilly neighbourhood is asymmetric;
-- *regions* (US, Spain, Boston) with $d(A, B) =$ "worst-case distance to get from somewhere in $A$ to anywhere in $B$" ($\sup_{a \in A} \inf_{b \in B} d(a, b)$, the asymmetric [[Hausdorff Distance]]): $d(\mathrm{US}, \mathrm{Spain}) > d(\mathrm{Spain}, \mathrm{US})$ ([[7S Exercise 2.52]]) and $d(\mathrm{Boston}, \mathrm{US}) = 0 \neq d(\mathrm{US}, \mathrm{Boston})$;
+- *regions* (US, Spain, Boston) with $d(A, B) =$ "worst-case distance to get from somewhere in $A$ to anywhere in $B$" ($\sup_{a \in A} \inf_{b \in B} d(a, b)$, the asymmetric [[Hausdorff Distance]]): $d(\mathrm{US}, \mathrm{Spain}) > d(\mathrm{Spain}, \mathrm{US})$ ([[7S Chapter 2 Exercises#Exercise 2.52|7S Exercise 2.52]]) and $d(\mathrm{Boston}, \mathrm{US}) = 0 \neq d(\mathrm{US}, \mathrm{Boston})$;
 - infinite distances: "from here to Pluto is $\infty$".
 
-Dropping (b), (c) and allowing $\infty$ yields the [[Lawvere Metric Space]] — a category enriched in [[Cost]]. Extended metric spaces are exactly the *skeletal dagger* $\mathbf{Cost}$-categories ([[7S Exercise 2.73]]), just as sets are skeletal dagger preorders: "preorders are to sets as Lawvere metric spaces are to extended metric spaces".
+Dropping (b), (c) and allowing $\infty$ yields the [[Lawvere Metric Space]] — a category enriched in [[Cost]]. Extended metric spaces are exactly the *skeletal dagger* $\mathbf{Cost}$-categories ([[7S Chapter 2 Exercises#Exercise 2.73|7S Exercise 2.73]]), just as sets are skeletal dagger preorders: "preorders are to sets as Lawvere metric spaces are to extended metric spaces".
 
 ````tabs
 tab: Lean

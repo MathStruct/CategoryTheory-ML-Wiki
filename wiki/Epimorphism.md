@@ -12,7 +12,7 @@ Equivalently, pre-composition $(- \circ f) : \mathcal{C}(b, c) \to \mathcal{C}(a
 
 **Intuition (DaoFP).** Mappings *out* of an object define its properties: think of elements of a finite target $c$ as colours painting $b$. If $f$ is not epi, its image may cover only the part of $b$ painted alike by $g_1$ and $g_2$, so the two agree on $a$ although they differ on $b$. "Of course, in an actual category there is no peeking inside objects."
 
-- In $\mathbf{Set}$ epis are exactly the [[Surjection|surjections]] (`even :: Int -> Bool` covers all of `Bool`). Any arrow *to* the [[Terminal Object]] is epi ([[DaoFP Exercise 2.5.1]]).
+- In $\mathbf{Set}$ epis are exactly the [[Surjection|surjections]] (`even :: Int -> Bool` covers all of `Bool`). Any arrow *to* the [[Terminal Object]] is epi ([[DaoFP Chapter 2 Exercises#Exercise 2.5.1|DaoFP Exercise 2.5.1]]).
 - Epi is dual to [[Monomorphism]]: an epi in $\mathcal{C}$ is a mono in $\mathcal{C}^{\mathrm{op}}$. A [[Section and Retraction|retraction]] is always epi.
 - Surjections out of $A$ = [[Partition|partitions]] of $A$; the [[Epi-Mono Factorization]] $A \twoheadrightarrow \mathrm{im}(f) \hookrightarrow B$ underlies [[Pushforward and Pullback of Partitions]].
 - Epi + mono need not be iso (DaoFP; e.g. dense inclusions in $\mathbf{Top}$).

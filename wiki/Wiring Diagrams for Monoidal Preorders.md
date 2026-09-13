@@ -31,7 +31,7 @@ $$
 t \otimes u \leq v \otimes w \otimes u \leq v \otimes x \otimes z \leq y \otimes z. \qquad (2.18)
 $$
 
-Formally ([[7S Exercise 2.20]]) each step uses monotonicity with a reflexivity $u \leq u$ on the untouched wire, associativity to re-bracket, and transitivity to chain; symmetry is needed only if wires cross. The [[Resource Theory|lemon meringue pie]] diagram (Example 2.19) is a proof that if you can separate eggs, make filling, make meringue, fill the crust and add meringue, then you can prepare a pie.
+Formally ([[7S Chapter 2 Exercises#Exercise 2.20|7S Exercise 2.20]]) each step uses monotonicity with a reflexivity $u \leq u$ on the untouched wire, associativity to re-bracket, and transitivity to chain; symmetry is needed only if wires cross. The [[Resource Theory|lemon meringue pie]] diagram (Example 2.19) is a proof that if you can separate eggs, make filling, make meringue, fill the crust and add meringue, then you can prepare a pie.
 
 ```tikz
 \usepackage{tikz}

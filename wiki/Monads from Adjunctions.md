@@ -8,9 +8,9 @@ $$
 
 the multiplication being the double whiskering of the counit ($\mu : R L R L \to R L$). Dually $L \circ R$ is a [[Comonad]]. Conversely every monad arises from an adjunction — in fact from a whole category of them, with the [[Kleisli Category|Kleisli adjunction]] initial and the [[Eilenberg-Moore Category|Eilenberg–Moore adjunction]] terminal.
 
-> Sources: DaoFP §15.2 ("Monads from Adjunctions"), §15.3 ("Examples of Monads from Adjunctions"), §15.4–15.5, Exercises 15.2.1, 15.3.1; §10.9; Kittenlab Lecture 7 (free monoid round trip); 7 Sketches §1.4.4 ([[Closure Operator|closure operators]] from [[Galois Connection|Galois connections]], [[7S Exercise 1.119]]).
+> Sources: DaoFP §15.2 ("Monads from Adjunctions"), §15.3 ("Examples of Monads from Adjunctions"), §15.4–15.5, Exercises 15.2.1, 15.3.1; §10.9; Kittenlab Lecture 7 (free monoid round trip); 7 Sketches §1.4.4 ([[Closure Operator|closure operators]] from [[Galois Connection|Galois connections]], [[7S Chapter 1 Exercises#Exercise 1.119|7S Exercise 1.119]]).
 
-*Proof sketch* ([[String Diagram|string diagrams]]). The monad laws follow from the triangle identities: replace each $T$-string by the parallel pair $L, R$; the unit law $\mu \circ (\eta \circ T) = \mathrm{id}$ becomes a zigzag in the $R$-string, which the first triangle identity straightens; associativity is the statement that two caps can be applied in either order ([[DaoFP Exercise 15.2.1]]). In Haskell, when $T$ is an endofunctor, `join = fmap counit` (the left whiskering by $R$ is a lifting, the right whiskering by $L$ is instantiation done by type inference). $\blacksquare$
+*Proof sketch* ([[String Diagram|string diagrams]]). The monad laws follow from the triangle identities: replace each $T$-string by the parallel pair $L, R$; the unit law $\mu \circ (\eta \circ T) = \mathrm{id}$ becomes a zigzag in the $R$-string, which the first triangle identity straightens; associativity is the statement that two caps can be applied in either order ([[DaoFP Chapter 15 Exercises#Exercise 15.2.1|DaoFP Exercise 15.2.1]]). In Haskell, when $T$ is an endofunctor, `join = fmap counit` (the left whiskering by $R$ is a lifting, the right whiskering by $L$ is instantiation done by type inference). $\blacksquare$
 
 ## Examples
 

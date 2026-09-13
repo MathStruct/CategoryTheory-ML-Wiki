@@ -8,13 +8,13 @@ A **$\mathcal{C}$-set** (7 Sketches: a **$\mathcal{C}$-instance**; Kittenlab: an
 
 | schema $\mathcal{C}$ | $\mathcal{C}$-set | source |
 |---|---|---|
-| $\underline{\mathbf{1}}$ | a [[Set]] (one-column table, "controlled vocabulary") | [[7S Exercise 3.45]]; $\mathbf{Set}^{\underline{1}} \simeq \mathbf{Set}$ (Example 3.56) |
+| $\underline{\mathbf{1}}$ | a [[Set]] (one-column table, "controlled vocabulary") | [[7S Chapter 3 Exercises#Exercise 3.45|7S Exercise 3.45]]; $\mathbf{Set}^{\underline{1}} \simeq \mathbf{Set}$ (Example 3.56) |
 | $\underline{\mathbf{2}} = \bullet \to \bullet$ | a [[Function]] (two tables, e.g. Beatles $\to$ instruments) | §3.3.1 |
 | $\mathsf{Gr}$: $E \rightrightarrows V$ | a [[Graph]]; morphisms are [[Graph Homomorphism|graph homomorphisms]] | §3.3.5, Kittenlab L6 |
 | $\mathsf{DDS}$: one loop `next` | a [[Discrete Dynamical System]] | §3.4.1 |
 | loop $s$ with $s \mathbin{;} s = s$ | a set $Z$ with an idempotent $S : Z \to Z$: citizens $\mapsto$ president, $n \mapsto 0$, expressions $\mapsto$ their value, $n \mapsto$ smallest prime factor | Example 3.46 |
-| loop with $s \mathbin{;} s = \mathrm{id}$ | an involution ("do-si-do", mirror image of a photo) | [[7S Exercise 3.48]] |
-| $a \xrightarrow{f} b \rightrightarrows c$ with $f\mathbin{;}g = f\mathbin{;}h$ | secret-Santa: people, gifts, giver, receiver, self-gifters | [[7S Exercise 3.48]] |
+| loop with $s \mathbin{;} s = \mathrm{id}$ | an involution ("do-si-do", mirror image of a photo) | [[7S Chapter 3 Exercises#Exercise 3.48|7S Exercise 3.48]] |
+| $a \xrightarrow{f} b \rightrightarrows c$ with $f\mathbin{;}g = f\mathbin{;}h$ | secret-Santa: people, gifts, giver, receiver, self-gifters | [[7S Chapter 3 Exercises#Exercise 3.48|7S Exercise 3.48]] |
 | $\mathsf{Petri}$: $I \rightrightarrows S, T \leftleftarrows O$ | a [[Petri Net]] (SIR, Lotka–Volterra) | Kittenlab L6, L10 |
 | $\mathsf{DPG}$ | a directed [[Port Graph]] / [[Wiring Diagram]] | Kittenlab L6 |
 | `mySchema` | the Employee/Department database | §3.1 |

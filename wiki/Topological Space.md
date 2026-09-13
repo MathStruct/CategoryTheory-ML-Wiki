@@ -12,15 +12,15 @@ If $U = \bigcup_{i \in I} U_i$ we say $(U_i)_{i \in I}$ **covers** $U$ (an *open
 
 ## Examples
 
-- **Metric spaces** (Example 7.26): in $\mathbb{R}^2$ (or any [[Metric Space]]) the $\epsilon$-ball is $B(p; \epsilon) = \{p' \mid d(p, p') < \epsilon\}$; $U$ is open iff every $p \in U$ has some $B(p; \epsilon) \subseteq U$. On $\mathbb{R}$: $B(x, \epsilon) = (x - \epsilon, x + \epsilon)$; $(0,2)$ and $(1,3)$ cover $(0,3)$; $\bigcup_{i \geq 1} (\tfrac{1}{i}, 1) = (0, 1)$ is an infinite cover ([[7S Exercise 7.27]]).
-- **Coarse and discrete** (Example 7.28): $\mathrm{Op}_{\mathrm{crse}} = \{\varnothing, X\}$ has the fewest opens; $\mathrm{Op}_{\mathrm{fine}} = \mathcal{P}(X)$ the most — the **discrete space**, from which every function is continuous ([[7S Exercise 7.29]]).
+- **Metric spaces** (Example 7.26): in $\mathbb{R}^2$ (or any [[Metric Space]]) the $\epsilon$-ball is $B(p; \epsilon) = \{p' \mid d(p, p') < \epsilon\}$; $U$ is open iff every $p \in U$ has some $B(p; \epsilon) \subseteq U$. On $\mathbb{R}$: $B(x, \epsilon) = (x - \epsilon, x + \epsilon)$; $(0,2)$ and $(1,3)$ cover $(0,3)$; $\bigcup_{i \geq 1} (\tfrac{1}{i}, 1) = (0, 1)$ is an infinite cover ([[7S Chapter 7 Exercises#Exercise 7.27|7S Exercise 7.27]]).
+- **Coarse and discrete** (Example 7.28): $\mathrm{Op}_{\mathrm{crse}} = \{\varnothing, X\}$ has the fewest opens; $\mathrm{Op}_{\mathrm{fine}} = \mathcal{P}(X)$ the most — the **discrete space**, from which every function is continuous ([[7S Chapter 7 Exercises#Exercise 7.29|7S Exercise 7.29]]).
 - **Sierpiński space** (Example 7.30): $X = \{1, 2\}$ with $\mathrm{Op}_1 = \{\varnothing, \{1\}, X\}$ (or the isomorphic $\mathrm{Op}_2$); the two remaining topologies on $\{1, 2\}$ are coarse and discrete. See [[Sierpinski Space]].
-- **Subspace topology** ([[7S Exercise 7.32]]): for $Y \subseteq X$, $A \subseteq Y$ is open iff $A = B \cap Y$ for some $B \in \mathrm{Op}$; the inclusion $Y \hookrightarrow X$ is then continuous.
+- **Subspace topology** ([[7S Chapter 7 Exercises#Exercise 7.32|7S Exercise 7.32]]): for $Y \subseteq X$, $A \subseteq Y$ is open iff $A = B \cap Y$ for some $B \in \mathrm{Op}$; the inclusion $Y \hookrightarrow X$ is then continuous.
 - The [[Interval Domain]] $\mathbb{I}\mathbb{R}$, the site of the [[Topos of Behavior Types]].
 
 ## The preorder of open sets
 
-$(\mathrm{Op}, \subseteq)$ is a [[Preorder]] (indeed a [[Partial Order]]), hence a [[Category]]: one morphism $U \to V$ iff $U \subseteq V$. A [[Presheaf]] on $\mathrm{Op}$ assigns sets of *sections* to opens with *restriction* maps; a [[Sheaf]] is a presheaf respecting covers. Moreover $(\mathrm{Op}, \subseteq, X, \cap)$ is a [[Quantale]] (Remark 7.33) and a [[Heyting Algebra]]: a $\mathrm{Op}$-[[Enriched Category|enriched category]] has "size restrictions" $\mathcal{C}(a, b) \in \mathrm{Op}$ like bridges a truck must fit under ([[7S Exercise 7.34]]).
+$(\mathrm{Op}, \subseteq)$ is a [[Preorder]] (indeed a [[Partial Order]]), hence a [[Category]]: one morphism $U \to V$ iff $U \subseteq V$. A [[Presheaf]] on $\mathrm{Op}$ assigns sets of *sections* to opens with *restriction* maps; a [[Sheaf]] is a presheaf respecting covers. Moreover $(\mathrm{Op}, \subseteq, X, \cap)$ is a [[Quantale]] (Remark 7.33) and a [[Heyting Algebra]]: a $\mathrm{Op}$-[[Enriched Category|enriched category]] has "size restrictions" $\mathcal{C}(a, b) \in \mathrm{Op}$ like bridges a truck must fit under ([[7S Chapter 7 Exercises#Exercise 7.34|7S Exercise 7.34]]).
 
 ````tabs
 tab: Julia

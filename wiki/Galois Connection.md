@@ -21,13 +21,13 @@ P \arrow[r, bend left, "f"] & Q \arrow[l, bend left, "g"]
 
 ## Examples
 
-- **Example 1.97.** $\lceil -/3 \rceil : \mathbb{R} \to \mathbb{Z}$ is left adjoint to $(3 \times -) : \mathbb{Z} \to \mathbb{R}$, since $\lceil x/3 \rceil \leq y$ iff $x \leq 3y$. The right adjoint of $(3 \times -)$ is $\lfloor -/3 \rfloor$ ([[7S Exercise 1.98]]); $\lceil -/3 \rceil$ has no left adjoint ([[7S Exercise 1.101]]).
-- Between [[Total Order|total orders]] drawn with bending arrows, $f \dashv g$ iff the arrows do not cross (Remark 1.100, [[7S Exercise 1.99]]).
+- **Example 1.97.** $\lceil -/3 \rceil : \mathbb{R} \to \mathbb{Z}$ is left adjoint to $(3 \times -) : \mathbb{Z} \to \mathbb{R}$, since $\lceil x/3 \rceil \leq y$ iff $x \leq 3y$. The right adjoint of $(3 \times -)$ is $\lfloor -/3 \rfloor$ ([[7S Chapter 1 Exercises#Exercise 1.98|7S Exercise 1.98]]); $\lceil -/3 \rceil$ has no left adjoint ([[7S Chapter 1 Exercises#Exercise 1.101|7S Exercise 1.101]]).
+- Between [[Total Order|total orders]] drawn with bending arrows, $f \dashv g$ iff the arrows do not cross (Remark 1.100, [[7S Chapter 1 Exercises#Exercise 1.99|7S Exercise 1.99]]).
 - [[Pushforward and Pullback of Partitions]]: any function $g : S \to T$ gives $g_! \dashv g^*$ between $\mathrm{Prt}(S)$ and $\mathrm{Prt}(T)$.
 - [[Direct Image, Preimage, and Dual Image]]: $f_! \dashv f^* \dashv f_*$ between power sets (Example 1.117).
 - [[Closure Operator|Closure operators]] $j$ give $j \dashv \iota$ between $P$ and $\mathrm{fix}_j$ (Example 1.122).
 - [[Reflexive Transitive Closure]]: $\mathrm{Cl} \dashv U$ between relations and preorders on a set (§1.4.5).
-- Example 1.113 shows right adjoints need not preserve joins ([[7S Exercise 1.114]]).
+- Example 1.113 shows right adjoints need not preserve joins ([[7S Chapter 1 Exercises#Exercise 1.114|7S Exercise 1.114]]).
 - [[Quantale|Monoidal closed preorders]]: $(- \otimes a) \dashv (a \multimap -)$.
 
 ## Proposition 1.107 (unit/counit characterization)
@@ -36,16 +36,16 @@ For monotone $f : P \to Q$, $g : Q \to P$ the following are equivalent:
 (a) $f \dashv g$;
 (b) for all $p, q$: $p \leq g(f(p))$ and $f(g(q)) \leq q$. $\qquad (1.108)$
 
-*Proof.* Suppose $f \dashv g$. For $p \in P$ put $q := f(p)$; reflexivity $f(p) \leq q$ gives $p \leq g(q) = g(f(p))$. Similarly $f(g(q)) \leq q$ ([[7S Exercise 1.109]]). Conversely assume (1.108). If $f(p) \leq q$ then by monotonicity $g(f(p)) \leq g(q)$, and $p \leq g(f(p))$, so $p \leq g(q)$. The other direction is similar. $\blacksquare$
+*Proof.* Suppose $f \dashv g$. For $p \in P$ put $q := f(p)$; reflexivity $f(p) \leq q$ gives $p \leq g(q) = g(f(p))$. Similarly $f(g(q)) \leq q$ ([[7S Chapter 1 Exercises#Exercise 1.109|7S Exercise 1.109]]). Conversely assume (1.108). If $f(p) \leq q$ then by monotonicity $g(f(p)) \leq g(q)$, and $p \leq g(f(p))$, so $p \leq g(q)$. The other direction is similar. $\blacksquare$
 
 Replacing $\leq$ by $\cong$ in (1.108) recovers isomorphism. The inequalities are the preorder versions of the [[Unit and Counit of an Adjunction|unit and counit]].
 
 ## Basic theory
 
-- **Uniqueness**: a right (or left) adjoint, if it exists, is unique up to equivalence: $g(q) \cong g'(q)$ for all $q$ ([[7S Exercise 1.110]]; proof: $g(q) \leq g'(f(g(q))) \leq g'(q)$).
+- **Uniqueness**: a right (or left) adjoint, if it exists, is unique up to equivalence: $g(q) \cong g'(q)$ for all $q$ ([[7S Chapter 1 Exercises#Exercise 1.110|7S Exercise 1.110]]; proof: $g(q) \leq g'(f(g(q))) \leq g'(q)$).
 - **[[Right Adjoints Preserve Meets]]**, left adjoints preserve joins (Proposition 1.111). Hence left adjoints have no [[Generative Effect]].
 - **[[Adjoint Functor Theorem for Preorders]]** (Theorem 1.115): if $Q$ has all meets, $g : Q \to P$ is a right adjoint iff it preserves meets; dually for joins. DaoFP §10.8 presents the same fact as Freyd's adjoint functor theorem in a preorder.
-- The composite $f \mathbin{;} g : P \to P$ is a [[Closure Operator]], and $g \mathbin{;} f$ an [[Interior Operator]] ([[7S Exercise 1.119]]).
+- The composite $f \mathbin{;} g : P \to P$ is a [[Closure Operator]], and $g \mathbin{;} f$ an [[Interior Operator]] ([[7S Chapter 1 Exercises#Exercise 1.119|7S Exercise 1.119]]).
 - Galois connections relate different models of computation states in program analysis (abstract interpretation, [NNH99]).
 
 ````tabs

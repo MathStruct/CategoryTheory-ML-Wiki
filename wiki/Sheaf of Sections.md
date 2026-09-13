@@ -10,9 +10,9 @@ assigns to $U \subseteq Y$ the set of *cross-sections* over $U$: one element of 
 
 > Sources: 7 Sketches §7.3.3 ("Extended example: sections of a function"), Eqs. (7.37)–(7.43), Exercises 7.38, 7.40, 7.42, 7.44; Example 7.45 (continuous case), Example 7.46 (vector fields), Example 7.61 (vector bundles).
 
-- $|\mathrm{Sec}_f(\{a, b\})| = 2 \cdot 3 = 6$ (Eq. 7.39); $|\mathrm{Sec}_f(\{a,b,c\})| = 6$, $\mathrm{Sec}_f(\{a,b,c,d\}) = \varnothing$ because the fiber over $d$ is empty, $|\mathrm{Sec}_f(\{a,b,d,e\})| = 0$ likewise ([[7S Exercise 7.40]]). In general $|\mathrm{Sec}_f(U)| = \prod_{u \in U} |f^{-1}(u)|$.
-- Restriction $\mathrm{Sec}_f(\{a,b,c\}) \to \mathrm{Sec}_f(\{a,c\})$ forgets the $b$-component; it is $3$-to-$1$ ([[7S Exercise 7.42]]).
-- Non-matching pairs such as $(a_1, b_1)$ over $\{a,b\}$ and $(b_2, e_1)$ over $\{b, e\}$ have no gluing ([[7S Exercise 7.44]]).
+- $|\mathrm{Sec}_f(\{a, b\})| = 2 \cdot 3 = 6$ (Eq. 7.39); $|\mathrm{Sec}_f(\{a,b,c\})| = 6$, $\mathrm{Sec}_f(\{a,b,c,d\}) = \varnothing$ because the fiber over $d$ is empty, $|\mathrm{Sec}_f(\{a,b,d,e\})| = 0$ likewise ([[7S Chapter 7 Exercises#Exercise 7.40|7S Exercise 7.40]]). In general $|\mathrm{Sec}_f(U)| = \prod_{u \in U} |f^{-1}(u)|$.
+- Restriction $\mathrm{Sec}_f(\{a,b,c\}) \to \mathrm{Sec}_f(\{a,c\})$ forgets the $b$-component; it is $3$-to-$1$ ([[7S Chapter 7 Exercises#Exercise 7.42|7S Exercise 7.42]]).
+- Non-matching pairs such as $(a_1, b_1)$ over $\{a,b\}$ and $(b_2, e_1)$ over $\{b, e\}$ have no gluing ([[7S Chapter 7 Exercises#Exercise 7.44|7S Exercise 7.44]]).
 - **General case** (Example 7.45): for any continuous $f : X \to Y$, $\mathrm{Sec}_f(U) = \{g : U \to X \text{ continuous} \mid g \mathbin{;} f = \mathrm{id}_U\}$ is a sheaf on $Y$. For the tangent bundle $\pi : TM \to M$ of a manifold, $\mathrm{Sec}_\pi$ is the sheaf of **vector fields** (wind velocities on Earth: fields on Afghanistan and Pakistan agreeing at the border glue). The hairy ball theorem — every global vector field on the sphere vanishes somewhere, although local ones need not — is a [[Generative Effect]] between local and global sections, measured by cohomology.
 - Sections of a [[Fiber|bundle]] are the semantic counterpart of a [[Dependent Product]] (DaoFP §11): $\mathrm{Sec}_f(Y) = \prod_{y \in Y} f^{-1}(y)$.
 

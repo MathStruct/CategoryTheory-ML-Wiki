@@ -24,7 +24,7 @@ P \arrow[r] & P \sqcup_S T & & \mathrm{im}(g \mathbin{;} c) \arrow[r, hook] & P
 \end{document}
 ```
 
-**Example 1.102.** $S = \{1,2,3,4\}$, $T = \{12, 3, 4\}$, $g(1) = g(2) = 12$, $g(3) = 3$, $g(4) = 4$. The partition $(1)(2)(34)$ of $S$ is pushed forward to $(12)(34)$. Example 1.104 shows a pullback along a non-surjective map. [[7S Exercise 1.106]] checks the adjunction formula $g_!(c) \leq d \iff c \leq g^*(d)$ in examples.
+**Example 1.102.** $S = \{1,2,3,4\}$, $T = \{12, 3, 4\}$, $g(1) = g(2) = 12$, $g(3) = 3$, $g(4) = 4$. The partition $(1)(2)(34)$ of $S$ is pushed forward to $(12)(34)$. Example 1.104 shows a pullback along a non-surjective map. [[7S Chapter 1 Exercises#Exercise 1.106|7S Exercise 1.106]] checks the adjunction formula $g_!(c) \leq d \iff c \leq g^*(d)$ in examples.
 
 This is the preorder shadow of the [[Data Migration Functor|data migration]] adjunction $\Sigma_g \dashv \Delta_g$ and of the [[Direct Image, Preimage, and Dual Image|image/preimage]] adjunction; it is why every function, not just surjections, acts contravariantly on partitions.
 

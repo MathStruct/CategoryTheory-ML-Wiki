@@ -20,7 +20,7 @@ G(V) \arrow[r, "\alpha_V"'] & H(V) & G(V) \arrow[r, "\alpha_V"'] & H(V)
 
 > Sources: Kittenlab Lecture 6 ("Sneak peak: natural transformations"), 7; 7 Sketches §3.3.5, Example 3.63, Exercise 3.64.
 
-**Example 3.63/[[7S Exercise 3.64]].** $G = 1 \xrightarrow{a} 2 \xrightarrow{b} 3$, $H = 4 \xrightarrow{c, d} 5 \circlearrowleft e$. The unique homomorphism with $\alpha_E(a) = d$ has $\alpha_E(b) = e$, $\alpha_V(1) = 4$, $\alpha_V(2) = \alpha_V(3) = 5$.
+**Example 3.63/[[7S Chapter 3 Exercises#Exercise 3.64|7S Exercise 3.64]].** $G = 1 \xrightarrow{a} 2 \xrightarrow{b} 3$, $H = 4 \xrightarrow{c, d} 5 \circlearrowleft e$. The unique homomorphism with $\alpha_E(a) = d$ has $\alpha_E(b) = e$, $\alpha_V(1) = 4$, $\alpha_V(2) = \alpha_V(3) = 5$.
 
 **Example (Kittenlab).** A **three-colouring** of $G$ is a homomorphism into the triangle graph $K_3$: adjacent vertices get different colours because $K_3$ has no loops. Catlab's `homomorphisms` search solves such constraint problems.
 

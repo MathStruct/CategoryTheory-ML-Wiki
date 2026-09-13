@@ -1,6 +1,6 @@
 #definition #example #theorem
 
-For [[Category|categories]] $\mathcal{C}, \mathcal{D}$, the **functor category** $\mathcal{D}^{\mathcal{C}}$ (also $[\mathcal{C}, \mathcal{D}]$ or $\mathbf{Fun}(\mathcal{C}, \mathcal{D})$) has [[Functor|functors]] $F : \mathcal{C} \to \mathcal{D}$ as objects and [[Natural Transformation|natural transformations]] as morphisms; composition is vertical composition of natural transformations (componentwise) and identities are $(\mathrm{id}_F)_c = \mathrm{id}_{F(c)}$ ([[7S Exercise 3.55]]).
+For [[Category|categories]] $\mathcal{C}, \mathcal{D}$, the **functor category** $\mathcal{D}^{\mathcal{C}}$ (also $[\mathcal{C}, \mathcal{D}]$ or $\mathbf{Fun}(\mathcal{C}, \mathcal{D})$) has [[Functor|functors]] $F : \mathcal{C} \to \mathcal{D}$ as objects and [[Natural Transformation|natural transformations]] as morphisms; composition is vertical composition of natural transformations (componentwise) and identities are $(\mathrm{id}_F)_c = \mathrm{id}_{F(c)}$ ([[7S Chapter 3 Exercises#Exercise 3.55|7S Exercise 3.55]]).
 
 > Sources: 7 Sketches Definition 3.54, Examples 3.56, 3.57, Definition 3.60; Kittenlab Lecture 7 (`FunctorCat`), 8, 9, 12; DaoFP §9.3 ("Functor categories"), §9.7, §10.1, §10.4.
 

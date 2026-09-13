@@ -21,7 +21,7 @@ natural in $c$ and $d$ (as functors $\mathcal{C}^{\mathrm{op}} \times \mathcal{D
 
 ## Examples
 
-- **Currying** (Example 3.72, DaoFP §10.1): $(- \times B) \dashv (-)^B$ on $\mathbf{Set}$, $\mathbf{Set}(A \times B, C) \cong \mathbf{Set}(A, C^B)$; "if you give me just $a$, I'll return a function $B \to C$ waiting for the $B$ input". Defines the [[Exponential Object]] and [[Cartesian Closed Category|cartesian closed categories]]; $\mathbf{Cat}$ is one too, with $[\mathcal{D}, \mathcal{E}]$ ([[7S Exercise 3.73]]: on morphisms $f \times B$ and $f^B = (- \mathbin{;} f)$; currying $+$ gives $p(3) = (n \mapsto n + 3)$).
+- **Currying** (Example 3.72, DaoFP §10.1): $(- \times B) \dashv (-)^B$ on $\mathbf{Set}$, $\mathbf{Set}(A \times B, C) \cong \mathbf{Set}(A, C^B)$; "if you give me just $a$, I'll return a function $B \to C$ waiting for the $B$ input". Defines the [[Exponential Object]] and [[Cartesian Closed Category|cartesian closed categories]]; $\mathbf{Cat}$ is one too, with $[\mathcal{D}, \mathcal{E}]$ ([[7S Chapter 3 Exercises#Exercise 3.73|7S Exercise 3.73]]: on morphisms $f \times B$ and $f^B = (- \mathbin{;} f)$; currying $+$ gives $p(3) = (n \mapsto n + 3)$).
 - **Sum and product** (DaoFP §10.2): $(+) \dashv \Delta \dashv (\times)$ with the [[Diagonal Functor]]; more generally $\mathrm{Colim} \dashv \Delta \dashv \mathrm{Lim}$ (§10.4).
 - **Free/forgetful** (Example 3.74, DaoFP §10.9): free [[Group|group]], [[Monoid|monoid]], ring, vector space $\dashv$ underlying set; [[Free Category|free category]] and free preorder on a graph $\dashv$ underlying graph; [[Discrete Category|discrete]] $\dashv$ underlying $\dashv$ [[Codiscrete Category|codiscrete]] (preorders, graphs, categories, topological spaces); abelianization $\dashv$ inclusion $\mathbf{Ab} \hookrightarrow \mathbf{Grp}$; [[Preorder Reflection]] $\dashv$ inclusion. See [[Free-Forgetful Adjunction]].
 - **Data migration** (§3.4.3): $\Sigma_F \dashv \Delta_F \dashv \Pi_F$ ([[Data Migration Functor]]); [[Kan Extension|Kan extensions]] generalize.
@@ -30,16 +30,16 @@ natural in $c$ and $d$ (as functors $\mathcal{C}^{\mathrm{op}} \times \mathcal{D
 
 ## Equivalent formulations (DaoFP §10.5–10.6)
 
-- **Unit and counit**: $\eta : \mathrm{Id} \Rightarrow RL$ with $\eta_c := \alpha^{-1}(\mathrm{id}_{Lc})$, and $\varepsilon : LR \Rightarrow \mathrm{Id}$ with $\varepsilon_d := \alpha(\mathrm{id}_{Rd})$ (the Yoneda trick), satisfying the **triangle identities** $(\varepsilon \circ L) \cdot (L \circ \eta) = \mathrm{id}_L$ and $(R \circ \varepsilon) \cdot (\eta \circ R) = \mathrm{id}_R$. Conversely such $\eta, \varepsilon$ give the hom-set bijection: $f : c \to Rd \mapsto \varepsilon_d \circ Lf$ and $g : Lc \to d \mapsto Rg \circ \eta_c$ ([[DaoFP Exercise 10.5.2]]). This definition works in any [[2-Category]]. See [[Unit and Counit of an Adjunction]].
+- **Unit and counit**: $\eta : \mathrm{Id} \Rightarrow RL$ with $\eta_c := \alpha^{-1}(\mathrm{id}_{Lc})$, and $\varepsilon : LR \Rightarrow \mathrm{Id}$ with $\varepsilon_d := \alpha(\mathrm{id}_{Rd})$ (the Yoneda trick), satisfying the **triangle identities** $(\varepsilon \circ L) \cdot (L \circ \eta) = \mathrm{id}_L$ and $(R \circ \varepsilon) \cdot (\eta \circ R) = \mathrm{id}_R$. Conversely such $\eta, \varepsilon$ give the hom-set bijection: $f : c \to Rd \mapsto \varepsilon_d \circ Lf$ and $g : Lc \to d \mapsto Rg \circ \eta_c$ ([[DaoFP Chapter 10 Exercises#Exercise 10.5.2|DaoFP Exercise 10.5.2]]). This definition works in any [[2-Category]]. See [[Unit and Counit of an Adjunction]].
 - **Universal arrows**: $L \dashv R$ iff for every $d$ there is a terminal object $(Rd, \varepsilon_d)$ in the [[Comma Category]] $L \downarrow d$ — a [[Universal Arrow]] from $L$ to $d$; dually initial objects $(Lc, \eta_c)$ in $c \downarrow R$. An adjunction is a "half-equivalence": if $\eta, \varepsilon$ are isomorphisms it is an [[Equivalence of Categories]].
 
 ## Properties
 
 - [[Right Adjoints Preserve Limits]] and left adjoints preserve colimits (DaoFP §10.7; preorder version [[Right Adjoints Preserve Meets]]). Hence e.g. distributivity $(b + c) \times a \cong b \times a + c \times a$, since $(- \times a)$ is a left adjoint.
-- Adjoints are unique up to natural isomorphism ([[7S Exercise 1.110]] for preorders).
+- Adjoints are unique up to natural isomorphism ([[7S Chapter 1 Exercises#Exercise 1.110|7S Exercise 1.110]] for preorders).
 - Adjunctions compose: $L' \dashv R'$ and $L \dashj R$ give $(L' \circ L) \dashv (R \circ R')$; categories and adjunctions form $\mathbf{Adj}(\mathbf{Cat})$ (DaoFP §10.10).
 - Existence: the [[Adjoint Functor Theorem]] (Freyd) — a limit-preserving functor from a complete category with a solution set has a left adjoint; preorder case [[Adjoint Functor Theorem for Preorders]]; programming instance: [[Defunctionalization]].
-- $Lx$ [[Representable Functor|represents]] the co-presheaf $y \mapsto \mathcal{C}(x, Ry)$ and $Ry$ represents the presheaf $x \mapsto \mathcal{D}(Lx, y)$ ([[DaoFP Exercise 10.3.2]], [[DaoFP Exercise 10.3.3]]).
+- $Lx$ [[Representable Functor|represents]] the co-presheaf $y \mapsto \mathcal{C}(x, Ry)$ and $Ry$ represents the presheaf $x \mapsto \mathcal{D}(Lx, y)$ ([[DaoFP Chapter 10 Exercises#Exercise 10.3.2|DaoFP Exercise 10.3.2]], [[DaoFP Chapter 10 Exercises#Exercise 10.3.3|DaoFP Exercise 10.3.3]]).
 
 "Universal constructions are one of the most important themes of category theory: one gives some specified shape and says 'find me the best solution!'; category theory asks 'approximate from the left or the right?'" (7 Sketches §3.6). "A sculptor subtracts irrelevant stone until a sculpture emerges" (DaoFP Ch. 10).
 
