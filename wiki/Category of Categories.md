@@ -35,7 +35,7 @@ Categories.id(::KittenC, c::Category) = IdFunctor(c)
 tab: Lean
 ```lean
 #check CategoryTheory.Cat          -- the category of small categories (a bundled Category.{v,u})
-#check CategoryTheory.Cat.terminal? -- see `CategoryTheory.Cat.isTerminalPUnit`
+#check CategoryTheory.Discrete PUnit   -- the terminal category (Cat has a terminal object)
 #check CategoryTheory.Cat.equivOfIso
 -- Cat is a strict 2-category / bicategory:
 #check CategoryTheory.Cat.bicategory

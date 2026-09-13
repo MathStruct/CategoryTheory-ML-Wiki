@@ -18,7 +18,7 @@ It "describes how $c$ is seen from the perspective of its category: the totality
 
 - **Typed sets** (Kittenlab): for a set $T$ of types, a $T$-typed set is $(A, t : A \to T)$ and morphisms preserve types — exactly $\mathbf{Set}/T$. Typed [[Graph|graphs]] and typed [[Petri Net|Petri nets]] (e.g. RegNets) live in slices of $\mathbf{Grph}$ and $\mathbf{Petri}$. [[Product|Products]] in $\mathcal{C}/T$ are [[Pullback|pullbacks]] over $T$ (the "typed product").
 - If $\mathcal{C}$ has a [[Terminal Object]] $1$, the coslice $1/\mathcal{C}$ has as objects all [[Global Element|global elements]] of all objects; a morphism $f : a \to b$ maps elements of $a$ to elements of $b$ — this "justifies our intuition of types as sets of values" (DaoFP).
-- $\mathcal{C}/c$ is the [[Comma Category]] $\mathrm{Id}_{\mathcal{C}} \downarrow c$; the [[Category of Elements]] of a presheaf is a slice of the presheaf category; [[Fibration|fibrations]] and [[Dependent Type|dependent types]] are families in $\mathcal{C}/c$ (DaoFP Ch. 11: "type families as fibrations", base change $f^* : \mathcal{C}/c \to \mathcal{C}/c'$ by pullback, with adjoints $\Sigma_f \dashv f^* \dashv \Pi_f$).
+- $\mathcal{C}/c$ is the [[Comma Category]] $\mathrm{Id}_{\mathcal{C}} \downarrow c$; the [[Category of Elements]] of a presheaf is a slice of the presheaf category; [[Dependent Type|fibrations]] and [[Dependent Type|dependent types]] are families in $\mathcal{C}/c$ (DaoFP Ch. 11: "type families as fibrations", base change $f^* : \mathcal{C}/c \to \mathcal{C}/c'$ by pullback, with adjoints $\Sigma_f \dashv f^* \dashv \Pi_f$).
 
 ````tabs
 tab: Julia
