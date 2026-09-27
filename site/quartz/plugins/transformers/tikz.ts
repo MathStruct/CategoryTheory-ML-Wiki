@@ -5,6 +5,7 @@ import { createHash } from "crypto"
 import fs from "fs"
 import path from "path"
 import * as tikzjax from "node-tikzjax"
+import { darkVariant, DarkPalette } from "./tikzTheme"
 // CommonJS interop: the default export may be nested under `.default`
 const tex2svg: (src: string, o?: any) => Promise<string> =
   (tikzjax as any).default?.default ?? (tikzjax as any).default ?? (tikzjax as any)
@@ -13,10 +14,15 @@ const tex2svg: (src: string, o?: any) => Promise<string> =
  * Renders ```tikz code blocks (Obsidian "inline-tikz"/"tikzjax" format:
  * \usepackage lines, then \begin{document} ... \end{document}) to inline SVG
  * at build time with node-tikzjax. Results are cached on disk by content hash.
+ *
+ * Each diagram is emitted twice: the original (light) SVG and a colour-remapped dark
+ * variant; CSS shows the one matching the current theme (see custom.scss).
  */
 interface Options {
   cacheDir: string
   fontCssUrl: string
+  /** Colours for the dark variant; defaults to the site's darkMode `dark`/`light` colours. */
+  darkPalette?: Partial<DarkPalette>
 }
 
 const defaultOptions: Options = {
@@ -76,7 +82,12 @@ export const TikZ: QuartzTransformerPlugin<Partial<Options>> = (userOpts) => {
   const opts = { ...defaultOptions, ...userOpts }
   return {
     name: "TikZ",
-    markdownPlugins() {
+    markdownPlugins(ctx) {
+      const themeDark = ctx.cfg.configuration.theme.colors.darkMode
+      const palette: DarkPalette = {
+        foreground: opts.darkPalette?.foreground ?? themeDark.dark,
+        background: opts.darkPalette?.background ?? themeDark.light,
+      }
       return [
         () => async (tree: Root, file) => {
           const jobs: Array<Promise<void>> = []
@@ -86,7 +97,11 @@ export const TikZ: QuartzTransformerPlugin<Partial<Options>> = (userOpts) => {
               .then((svg) => {
                 parent.children[index] = {
                   type: "html",
-                  value: `<figure class="tikz">${svg}</figure>`,
+                  value:
+                    `<figure class="tikz">` +
+                    svg.replace(/<svg\b/, '<svg class="tikz-light"') +
+                    darkVariant(svg, palette).replace(/<svg\b/, '<svg class="tikz-dark"') +
+                    `</figure>`,
                 } as any
               })
               .catch((err) => {

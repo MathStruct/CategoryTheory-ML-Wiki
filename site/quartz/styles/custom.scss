@@ -40,7 +40,10 @@ figure.tikz {
   overflow-x: auto;
   svg { max-width: 100%; height: auto; }
 }
-[saved-theme="dark"] figure.tikz svg {
-  filter: invert(0.88) hue-rotate(180deg);
+// Light and dark variants are both emitted; show the one matching the theme
+figure.tikz svg.tikz-dark { display: none; }
+:root[saved-theme="dark"] figure.tikz {
+  svg.tikz-light { display: none; }
+  svg.tikz-dark { display: inline; }
 }
 pre.tikz-error { border-left: 3px solid #c33; }
