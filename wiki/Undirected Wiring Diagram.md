@@ -9,6 +9,10 @@ An **undirected wiring diagram** (UWD) is a [[Wiring Diagram]] without input/out
 - In Catlab a UWD is an [[C-Set|ACSet]] on the schema with objects Box, Port, OuterPort, Junction and morphisms $\mathrm{box} : \mathrm{Port} \to \mathrm{Box}$, $\mathrm{junction} : \mathrm{Port} \to \mathrm{Junction}$, $\mathrm{outer\_junction} : \mathrm{OuterPort} \to \mathrm{Junction}$; `@relation` writes one as a conjunctive query (a relational join), and `oapply` evaluates an [[Operad Algebra]] on it — hence UWDs are also the syntax of database *queries*, relational composition and [[Data Migration Functor|$\Pi$-migrations]].
 - [[Open Graph|Open graphs]], open [[Petri Net|Petri nets]] and open circuits ([[Decorated Cospan]]) are cospans whose apex carries extra structure; their composition follows the UWD pattern.
 
+## Factor graphs are undirected wiring diagrams
+
+A factor graph — factors as boxes, variables as junctions — is an undirected wiring diagram, and evaluating it in an algebra of relations (or of unnormalised densities) is `oapply`. Collapsing a subgraph into a single factor whose ports are its boundary variables is operadic composition. What the relational algebra lacks, and probabilistic factor-graph libraries add, is a notion of *belief* at each junction and of *messages* between boxes; see [[Hypergraph Category]] and the [Lenticulum.jl vault](https://mathstruct.org/Lenticulum.jl/dev/vault/Factor-Graphs/Factor-Graphs).
+
 ````tabs
 tab: Julia
 **Docs:** [Relational programs / UWDs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/wiring_diagrams/#Catlab.WiringDiagrams.UndirectedWiringDiagrams) — Kittenlab [Lecture 15](https://algebraicjulia.github.io/Kittenlab.jl/lecture15.html)

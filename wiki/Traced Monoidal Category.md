@@ -13,6 +13,10 @@ $$
 - Every [[Compact Closed Category]] is traced: $\mathrm{Tr}^X f = (\mathrm{id}_B \otimes \epsilon_X) \circ (f \otimes \mathrm{id}_{X^*}) \circ (\mathrm{id}_A \otimes \eta_X)$ using the cup and cap; conversely the *Int construction* freely completes a traced category to a compact closed one. In $\mathbf{FinVect}$ the trace of $f : X \to X$ is the usual matrix trace. [[Hypergraph Category|Hypergraph categories]] and [[Category of Relations|$\mathbf{Rel}$]] are traced.
 - Traces model feedback and fixed points: in a [[Cartesian Category]] with a trace the yanking law gives a fixed-point operator (the trace of $\langle f, \mathrm{id}\rangle$), which is how recursion is interpreted in traced models of computation (Hasegawa).
 
+## Two-part architectures
+
+GANs, actor–critic learners and controllers with observers are all drawn as two boxes closing a loop; the loop is a trace, and in a compact closed setting it is canonical. The wiring is therefore never the obstacle — what distinguishes these architectures is whether the two halves optimise one objective (EM, VAEs, active inference: coordinate descent), opposite ones (GANs: a minimax [[Open Game]]) or different ones (actor–critic: a general bilevel problem).
+
 ````tabs
 tab: Julia
 **Docs:** [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)

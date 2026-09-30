@@ -44,6 +44,10 @@ CTfS reads a monad as a *modelling decision about hidden context*: "monads can f
 - In a [[Cartesian Closed Category]] every monad has [[Functorial Strength|strength]] and is hence an [[Applicative Functor]]; monads are more powerful than applicatives because monadic code can branch on results.
 - Dual: [[Comonad]].
 
+## Graded and probabilistic monads
+
+A [[Graded Monad]] indexes computations by a monoid of effects (costs, privacy budgets, error bounds). The probability monads — [[Giry Monad]], [[Distribution Monad]] — are commutative and affine, which is what makes their Kleisli categories [[Markov Category|Markov categories]].
+
 ````tabs
 tab: Julia
 **Docs:** Kittenlab [Lecture 7](https://algebraicjulia.github.io/Kittenlab.jl/lecture7.html)

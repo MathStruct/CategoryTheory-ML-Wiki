@@ -9,9 +9,22 @@ A **rig** (**semiring**; "a ring without negatives") is a tuple $(R, 0, +, 1, \a
 
 Signals can be *added* and *amplified*, and amplification distributes over addition; the possible amplifications form a rig.
 
-> Sources: 7 Sketches §5.3.1 (Definition 5.36, Examples 5.37–5.42, Exercise 5.41), Example 5.73; §5.3–5.4 ([[Signal Flow Graph|signal flow graphs]] over a rig, [[Prop of Matrices|$\mathbf{Mat}(R)$]]); [Gla13].
+> Sources: 7 Sketches §5.3.1 (Definition 5.36, Examples 5.37–5.42, Exercise 5.41), Example 5.73; §5.3–5.4 ([[Signal Flow Graph|signal flow graphs]] over a rig, [[Prop of Matrices|$\mathbf{Mat}(R)$]]); [Gla13]; Aji & McEliece, *The generalized distributive law*, IEEE Trans. Inf. Theory 46 (2000); Bistarelli, Montanari & Rossi, *Semiring-based constraint satisfaction and optimization*, JACM 44 (1997); Fritz [arXiv:1908.07021](https://arxiv.org/abs/1908.07021) ([[A Synthetic Approach to Markov Kernels, Conditional Independence and Theorems on Sufficient Statistics|notes]]) Example 8.2.
 
 **Examples.** $(\mathbb{N}, 0, +, 1, \ast)$; the [[Booleans]] $(\mathbb{B}, \mathsf{false}, \vee, \mathsf{true}, \wedge)$; any [[Quantale]] $(V, \bigvee\varnothing, \vee, I, \otimes)$ — in particular [[Cost]] gives the tropical (min, +) rig; the $n \times n$ matrices $\mathrm{Mat}_n(R)$ over any rig (generally noncommutative: in $\mathrm{Mat}_2(\mathbb{N})$, $\begin{pmatrix}0&1\\0&0\end{pmatrix}\begin{pmatrix}0&1\\1&0\end{pmatrix} \neq$ the reverse product, [[7S Chapter 5 Exercises#Exercise 5.41|7S Exercise 5.41]]); any ring, e.g. $\mathbb{R}$; the polynomial rig $\mathbb{R}[s, s^{-1}]$ of control theory ($s$ = integration, $s^{-1}$ = differentiation). A rig is a [[Monoid Object]] in $(\mathbf{CMon}, \otimes, \mathbb{N})$ (Example 5.73). Matrix multiplication $\sum_b M(a,b) \ast N(b,c)$ makes sense over any rig — [[Matrix Multiplication in a Quantale]] is the case of a quantale.
+
+## Semirings and message passing
+
+Replace $(+, \times)$ by the operations of any commutative semiring and the same message-passing algorithm on a tree-shaped factor graph computes a different quantity — the **generalized distributive law** (Aji & McEliece 2000):
+
+| semiring | "sum" / "product" | belief propagation computes |
+|---|---|---|
+| $(\mathbb R_{\ge0}, +, \times)$ | sum-product | marginals, the partition function |
+| $(\mathbb R \cup \{\infty\}, \min, +)$ | min-sum (Viterbi) | minimum-energy configurations |
+| $([0,1], \max, \times)$ | max-product | MAP assignments |
+| $(\{0,1\}, \vee, \wedge)$ | Boolean | constraint satisfaction / logic programming |
+
+The first two are the ends of a **temperature**: $-T \log \sum_i e^{-E_i/T} \to \min_i E_i$ as $T \to 0$, so min-sum is the zero-temperature limit of sum-product (the log-semiring deforms into the tropical one). Energy-based models live at $T = 0$, probabilistic ones at $T = 1$; mixing factors from both in one graph silently adds incommensurable quantities unless the semiring is tracked — a job for a [[Graded Monad|grade]] or type index. Semiring-valued matrices compose like [[Matrix Multiplication in a Quantale|quantale-valued matrices]], and $\mathbf{Mat}(R)$ is a [[Hypergraph Category]] for any commutative semiring $R$ (Fritz, Example 8.2).
 
 ````tabs
 tab: Julia

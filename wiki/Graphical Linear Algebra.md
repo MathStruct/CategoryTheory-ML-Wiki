@@ -2,7 +2,7 @@
 
 **Graphical linear algebra** (Sobociński, Bonchi, Zanasi, Baez–Erbele) does linear algebra with [[Signal Flow Graph|signal flow graphs]]: matrices, kernels, images, and linear relations are diagrams, and equations between them are proved by local graphical rewrites.
 
-> Sources: 7 Sketches §5.4 (Theorem 5.60, Examples 5.61, Exercises 5.62–5.63, §5.4.3, Theorem 5.87), §5.5; [Sob] (Graphical Linear Algebra blog: determinants, eigenvectors, "division by zero"), [BE15], [Zan15], [BSZ14; BSZ15; BS17], [FSR16].
+> Sources: 7 Sketches §5.4 (Theorem 5.60, Examples 5.61, Exercises 5.62–5.63, §5.4.3, Theorem 5.87), §5.5; [Sob] (Graphical Linear Algebra blog: determinants, eigenvectors, "division by zero"), [BE15], [Zan15], [BSZ14; BSZ15; BS17], [FSR16]; Bonchi, Sobociński & Zanasi, *Interacting Hopf Algebras* [arXiv:1403.7048](https://arxiv.org/abs/1403.7048) ([[Interacting Hopf Algebras|notes]]).
 
 ## The presentation of $\mathbf{Mat}(R)$ (Theorem 5.60)
 
@@ -21,6 +21,10 @@ Generators: copy $\bullet\!<$, discard $\bullet$, add $>\!\circ$, zero $\circ$, 
 Interpreting a graph $g : m \to n$ by its **behaviour** $B(g) = \{(x, S(g)x)\} \subseteq R^m \times R^n$ and mirror-image icons $g^{\mathrm{op}}$ by the transposed relation embeds $\mathbf{Mat}(R)$ in the prop $\mathbf{Rel}_R$ of relations (Definition 5.79, composition by "there exists a middle $y$", Eq. 5.78). Behaviours are **linear relations** (subspaces): closed under $+$ and scalars, and closed under composition ([[7S Chapter 5 Exercises#Exercise 5.84|7S Exercise 5.84]], [[7S Chapter 5 Exercises#Exercise 5.85|7S Exercise 5.85]]), so linear relations form a sub-prop $\mathbf{LinRel}_R$. Solution sets $\{(x,y) \mid S(g)x = S(h)y\}$, kernels (compose with reversed zeros) and images (compose with reversed discards) are all diagrams. There is a sound and complete presentation of $\mathbf{LinRel}_R$ with generators $G_R \sqcup G_R^{\mathrm{op}}$, the equations of Theorem 5.60 plus a few more, some of which say $\mathbf{Rel}_R$ is [[Compact Closed Category|compact closed]] with every $n$ self-dual (Theorem 5.87): the cup is "reversed discard, then copy" with behaviour $\eta_1 = \{(0, (x, x))\}$ and the cap is "reversed copy, then discard" with behaviour $\varepsilon_1 = \{((x,x), 0)\}$ (Eq. 5.86). This gives **feedback** and a graphical treatment of control theory ([FSR16]).
 
 The chapter's moral: props with presentations turn diagram manipulation into rigorous proof — "a sound and complete reasoning system" — and the separation of syntax from semantics by a functor ([[Functorial Semantics]]) is "perhaps the most significant idea".
+
+## Adding probability
+
+Linear relations (interacting Hopf algebras) have a probabilistic extension: [[Gaussian Relations]], axiomatised completely by *Graphical Quadratic Algebra* (Stein, Zanasi, Piedeleu & Samuelson, [arXiv:2403.02284](https://arxiv.org/abs/2403.02284) ([[Graphical Quadratic Algebra|notes]])), in which Gaussian noise, exact linear constraints and uninformative priors are all string diagrams.
 
 ````tabs
 tab: Julia

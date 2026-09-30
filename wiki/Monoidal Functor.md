@@ -19,6 +19,10 @@ obeying bookkeeping axioms compatible with associators, unitors and symmetries. 
 - The [[Free Prop|semantics functor]] $S : \mathbf{SFG}_R \to \mathbf{Mat}(R)$ is a strict monoidal (prop) functor; [[Change of Base]] uses a monoidal functor between enriching categories; [[Operad|operad functors]] are the operadic analogue.
 - **Functorial strength** $\sigma_{a,b} : a \otimes F b \to F(a \otimes b)$ (DaoFP §14.9, §20.2) is a related notion: in a closed category strong = enriched.
 
+## Laxness as an approximation
+
+In probabilistic learning, lax monoidality measures what an approximation throws away: [[Bayesian Inversion]] is only a lax monoidal functor on open models, because the parallel composite of two inversions sees only the marginals of a correlated prior — the defect is the mutual information of the branches ([[Lax Functor]], [[Bayesian Lens]]).
+
 ````tabs
 tab: Julia
 **Docs:** [Theories (Catlab)](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)

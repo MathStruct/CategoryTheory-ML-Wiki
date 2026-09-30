@@ -14,7 +14,7 @@ $$
 
 and symmetrically $c^* \to c^* \otimes c \otimes c^* \to c^*$ is $\mathrm{id}_{c^*}$. If every object has a dual, $\mathcal{C}$ is **compact closed**.
 
-> Sources: 7 Sketches §4.5 (Definition 4.58, Eq. 4.59, Proposition 4.60, Examples 4.61, Theorem 4.63, Exercises 4.62, 4.64–4.66), §4.1 (Eq. 4.1), §6.6; DaoFP §15.1 (string diagrams: cups and caps for adjunctions), §19.1; [Sel10].
+> Sources: 7 Sketches §4.5 (Definition 4.58, Eq. 4.59, Proposition 4.60, Examples 4.61, Theorem 4.63, Exercises 4.62, 4.64–4.66), §4.1 (Eq. 4.1), §6.6; DaoFP §15.1 (string diagrams: cups and caps for adjunctions), §19.1; [Sel10]; St Clere Smithe & Perin [arXiv:2503.18608](https://arxiv.org/abs/2503.18608) ([[AutoBayes - A Compositional Framework for Generalized Variational Inference|notes]]) Remark 8, Example 4.
 
 ## Wiring diagrams with feedback
 
@@ -47,6 +47,10 @@ In a compact closed category wires carry a **direction**: a forward wire labelle
 ## Proposition 4.60
 
 If $\mathcal{C}$ is compact closed then (1) $\mathcal{C}$ is [[Monoidal Closed Category|monoidal closed]] with $c \multimap d := c^* \otimes d$ and the isomorphism $\mathcal{C}(b \otimes c, d) \cong \mathcal{C}(b, c^* \otimes d)$ given by precomposing with $\mathrm{id}_b \otimes \eta_c$ (and using the snake equations for the inverse); (2) duals are unique up to isomorphism; (3) $c \cong c^{**}$. Compact closed categories are thus a special kind of closed monoidal category, hence the name; in $\mathbf{Feas}$ the internal hom $X^{\mathrm{op}} \times Y$ is the preorder whose elements are exactly the pairs in a feasibility relation. DaoFP's [[String Diagram|string diagrams]] for [[Adjunction|adjunctions]] use the same cups/caps: an adjunction is a "dual pair" of 1-cells in the 2-category $\mathbf{Cat}$.
+
+## Open models: cups clamp data
+
+In the AutoBayes framework, [[Open Model|open models]] with copiers, cups $1 \nrightarrow\!\!\!\bullet\ A \otimes A$ and (unnormalised) caps form a **self-dual compact closed** bicategory (St Clere Smithe & Perin, Remark 8). A cup bends an unobserved leg into an observed one: composing $X \otimes c$ after $\mathrm{cup}_X$ makes both inputs and outputs observed, which is *supervised learning* — clamping labels to data (Example 4). Wires can be bent around, so a model no longer has a fixed input/output direction, and feedback loops (cyclic models) become expressible — at the price of unnormalised measures. Compact closure bends one wire at a time; wiring an arbitrary graph, where a variable meets $d$ factors, needs the stronger structure of a [[Hypergraph Category]].
 
 ````tabs
 tab: Julia

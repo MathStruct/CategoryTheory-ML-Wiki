@@ -20,6 +20,8 @@ a *type-changing* [[Lens]]: replacing the focus $a$ by $b$ turns the whole $s$ i
 - **Composition** takes the product of residues: `compLens (LensE l2 r2) (LensE l1 r1) = LensE (assoc' . bimap id l2 . l1) (r1 . bimap id r2 . assoc)`; e.g. `compLens prodLens prodLens` on `("Outer", (True, 42))` gets `42` and can set it to `'z'`. Lenses form the category $\mathbf{Lens}$ with objects pairs $\langle s, t\rangle$ — but the coend formula for composition is too clumsy in practice, which motivates profunctor optics.
 - **Fibrational view** (§17.10): `get` is a projection $p : E \to B$ of a bundle and `set` a *transport* $q : E \times B \to E$ to a new fiber; the lens laws become the *transport law* $p \circ q = \pi_2$, the *identity law* $q \circ (\mathrm{id} \times p) \circ \delta = \mathrm{id}$ and the *composition law* $q \circ (q \times \mathrm{id}) = q \circ (\mathrm{id} \times \varepsilon \times \mathrm{id})$, written with the comonoid $(\delta, \varepsilon)$ of $E$ so as to generalize to monoidal categories. Type-changing lenses transport between a family of bundles fibered over a category of focus types.
 
+The general notion — mixed optics for arbitrary actions — is [[Optic]].
+
 ````tabs
 tab: Julia
 **Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)

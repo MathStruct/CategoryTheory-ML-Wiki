@@ -20,6 +20,8 @@ $$
 - **Prism**: `s` either contains the focus `a` or a residue `c`; mapping out of a sum turns the coend into $\mathcal{C}(s, t + a) \times \mathcal{C}(b, t)$ by co-Yoneda. `toPrismP (Prism from to) = dimap from to . alpha'`.
 - **Traversal**: residues $c_n$ with $n$ holes form a functor $\mathbb{N} \to \mathcal{C}$; the actions compose by [[Day Convolution]] on $[\mathbb{N}, \mathcal{C}]$, and the general Tambara derivation goes through unchanged. **Mixed optics** use an actegory acting on two categories.
 
+The general notion — mixed optics for arbitrary actions — is [[Optic]].
+
 ````tabs
 tab: Julia
 **Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)

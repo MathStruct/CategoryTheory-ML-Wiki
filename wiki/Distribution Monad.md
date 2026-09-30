@@ -29,6 +29,10 @@ the matrix product $F G$, and $\eta$ is the identity matrix. So $\mathrm{Kl}(\ma
 
 The algebras of $\mathrm{Dist}$ are **convex sets** (sets where convex combinations can be evaluated, like $[0, 1]$ or any vector space's convex subsets): expectation $\mathrm{Dist}(\mathbb R) \to \mathbb R$ is such an algebra structure. For measure-theoretic probability the analogous monad on measurable spaces is the Giry monad.
 
+## The general picture
+
+The distribution monad is the finitely supported case of the [[Giry Monad]]; its Kleisli category is the discrete part of $\mathbf{Stoch}$, the prototypical [[Markov Category]]. There, conditioning, [[Bayesian Inversion]] and [[Conditional Independence]] become equations between string diagrams.
+
 ````tabs
 tab: Julia
 **Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)

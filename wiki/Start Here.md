@@ -60,11 +60,22 @@ After stage 4, pick a track (or interleave them).
 [[Coend]], [[End]], [[Ninja Yoneda Lemma]], [[Day Convolution]], [[Bicategory of Profunctors]], [[Existential Lens]] → [[Tannakian Reconstruction]], [[Tambara Module]], [[Profunctor Optics]] → [[Kan Extension]], [[Codensity Monad]] → [[Enriched Functor]], [[Enriched Natural Transformation]], [[Weighted Limit]].
 *Exercises*: [[DaoFP Chapter 17 Exercises]]–[[DaoFP Chapter 20 Exercises|20]].
 
+### Track E — Category theory for machine learning (arXiv papers; the road to Lenticulum.jl)
+The research literature on categorical deep learning, categorical probability and compositional inference. Every note cites numbered definitions from the papers, which have their own notes in [[Papers]]. Prerequisites: Stages 2–4 ([[Monoidal Category]], [[String Diagram]], [[Lens]], [[Kleisli Category]], [[Frobenius Monoid]], [[Hypergraph Category]]).
+1. *Two-dimensional structure*: [[Bicategory]], [[Lax Functor]], [[Grothendieck Construction]], [[Actegory]].
+2. *Learning with lenses*: [[Para Construction]] → [[Optic]] → [[Parametric Lens]] → [[Cartesian Differential Category]] → [[Reverse Derivative Category]] → [[Gradient-Based Learning with Parametric Lenses]], [[Backprop as Functor]].
+3. *Categorical probability*: [[Copy-Discard Category]] → [[Markov Category]] → [[Giry Monad]] → [[Almost-Sure Equality]] → [[Conditionals and Disintegration]] → [[Bayesian Inversion]] → [[Conditional Independence]].
+4. *Compositional inference*: [[Open Model]] → [[Bayesian Lens]] → [[Variational Free Energy]] → [[Statistical Game]]; and games proper, [[Open Game]].
+5. *Acausal models and bookkeeping*: [[Hypergraph Category]] (factor graphs) → [[Partial Markov Category]] → [[Gaussian Relations]] → [[Rig]] (semirings in message passing) → [[Graded Monad]] → [[Double Category]].
+
+This track is the categorical background of [Lenticulum.jl](https://mathstruct.org/Lenticulum.jl/dev/vault/), whose theory vault links back to these notes.
+
 ## Three ways in, depending on who you are
 
 - **Coming from programming (Haskell/Julia)**: read [[Category]], [[Functor]], [[Natural Transformation]], then jump to Track B and use the Haskell tabs; come back to Stage 3 when you meet [[Adjunction]] in [[Monads from Adjunctions]].
 - **Coming from mathematics**: Stages 1–4 in order, then Track A; the Lean tabs give the Mathlib names to formalize what you read.
 - **Coming from the sciences** (CTfS's intended reader): Stage 0, then [[Database Schema]], [[C-Set]], [[Data Migration Functor]], [[Sheaf]] and [[Markov Chain]] — the examples are ologs, experiments and databases rather than proofs.
+- **Coming from machine learning research**: Stage 2 quickly, then Track E; the [[Papers]] index lists what to read in the original.
 - **Wanting to compute**: install Catlab 0.16 as described in [[Catlab]] and work through the Julia tabs of [[C-Set]], [[Data Migration Functor]], [[Colimit]], [[Undirected Wiring Diagram]] and [[Decorated Cospan]] — Kittenlab's material is concentrated there.
 
 ## Cross-cutting themes to watch for
