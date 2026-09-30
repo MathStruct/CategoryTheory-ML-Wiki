@@ -8,26 +8,28 @@ A **topos** (plural *toposes* or *topoi*) is a [[Category]] that behaves like $\
 
 Every Grothendieck topos is an elementary topos. Facts true in any topos $\mathcal{E}$ (7 Sketches §7.2.1): $\mathcal{E}$ has all (finite) [[Limit|limits]] and [[Colimit|colimits]], is cartesian closed, has [[Epi-Mono Factorization|epi-mono factorizations]], and has a subobject classifier.
 
-> Sources: 7 Sketches §7.1–§7.2 (Set as an exemplar topos), §7.4 (Toposes), footnote 4 (elementary topos), footnotes 9–10, §7.6 ([MM92], [Joh02], [McL92]); DaoFP §11 (dependent types), §17 (presheaf categories).
+> Sources: 7 Sketches §7.1–§7.2 (Set as an exemplar topos), §7.4 (Toposes), footnote 4 (elementary topos), footnotes 9–10, §7.6 ([MM92], [Joh02], [McL92]); DaoFP §11 (dependent types), §17 (presheaf categories); CTfS §5.2.1 ("database states on $\mathcal{C}$ form a topos"), §4.2.4.5 (Lawvere's categorical characterization of $\mathbf{Set}$)
 
 ## Examples
 
 | topos | site | truth values $\Omega$ |
 |---|---|---|
-| [[Category of Sets|$\mathbf{Set}$]] | the one-point space $\{*\}$ (Example 7.48) | [[Booleans|$\mathbb{B}$]] |
-| [[C-Set|$\mathcal{C}$-$\mathbf{Inst}$]], [[Presheaf|presheaves]] $[\mathcal{C}^{\mathrm{op}}, \mathbf{Set}]$ | a small category $\mathcal{C}$ with trivial covers | sieves on $c$ |
-| [[Category of Graphs|$\mathbf{Grph}$]] | the arrow shape $\mathbf{ArShp}$ (Example 7.23) | the graph $\Omega_{\mathbf{Grph}}$, see [[Topos of Graphs]] |
+| [[Category of Sets\|$\mathbf{Set}$]] | the one-point space $\{*\}$ (Example 7.48) | [[Booleans\|$\mathbb{B}$]] |
+| [[C-Set\|$\mathcal{C}$-$\mathbf{Inst}$]], [[Presheaf\|presheaves]] $[\mathcal{C}^{\mathrm{op}}, \mathbf{Set}]$ | a small category $\mathcal{C}$ with trivial covers | sieves on $c$ |
+| [[Category of Graphs\|$\mathbf{Grph}$]] | the arrow shape $\mathbf{ArShp}$ (Example 7.23) | the graph $\Omega_{\mathbf{Grph}}$, see [[Topos of Graphs]] |
 | $\mathbf{Shv}(X)$ | a [[Topological Space]] $(X, \mathrm{Op})$ | $\Omega(U) = $ open subsets of $U$ |
-| [[Topos of Behavior Types|$\mathbf{BT} = \mathbf{Shv}(\mathbb{I}\mathbb{R})$]] | the [[Interval Domain]] | open sets of time intervals |
+| [[Topos of Behavior Types\|$\mathbf{BT} = \mathbf{Shv}(\mathbb{I}\mathbb{R})$]] | the [[Interval Domain]] | open sets of time intervals |
 
 ## Why care
 
 - Each topos has an [[Internal Language of a Topos|internal language]] — a higher-order logic with $\wedge, \vee, \neg, \Rightarrow, \forall, \exists$ whose semantics (Kripke–Joyal) is given by the [[Subobject Classifier]], the [[Heyting Algebra]] of [[Predicate|predicates]], and [[Quantification]]. "Any object $Y$ understands itself — its parts and the logic of how they fit together — by asking questions of the oracle $\Omega$."
 - Truth values in a sheaf topos are *open sets*: a proposition is "true on $U$", not merely true or false. This lets one define graphs, groups or spaces *that change through time* ([[Topos of Behavior Types]]) and prove safety properties in a [[Temporal Logic|temporal logic]].
+- **For databases** (CTfS §5.2.1): the instances on any schema form a topos, "which means that just about every consideration we made for sets holds for instances on any schema" — elements become representables, subsets become sub-instances classified by $\Omega$, and so on ([[Category of Sets]] has CTfS's dictionary). Lawvere showed that $\mathbf{Set}$ itself is "merely a category with certain properties" (the elementary theory of the category of sets, ETCS; CTfS §4.2.4.5).
 - Toposes were invented by Grothendieck's school ([AGV71]) for the Weil conjectures; Lawvere and Tierney recognized their logical content.
 
 ````tabs
 tab: Julia
+**Docs:** [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) · [ACSets API](https://algebraicjulia.github.io/ACSets.jl/stable/api/) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/)
 ```julia
 using Catlab
 # Catlab's C-sets (ACSets) form presheaf toposes: finite limits, colimits,

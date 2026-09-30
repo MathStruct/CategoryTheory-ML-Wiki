@@ -16,6 +16,7 @@ Upper sets are the preorder version of [[Presheaf|presheaves]] / [[C-Set|co-pres
 
 ````tabs
 tab: Julia
+**Docs:** [Vignette: preorders](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/preorders/)
 ```julia
 # upper sets of a finite preorder given by a leq predicate on elements xs
 is_upper(leq, xs, U) = all((p ∈ U && leq(p, q)) <= (q ∈ U) for p in xs, q in xs)

@@ -10,7 +10,7 @@ $$
 \Sigma_F \dashv \Delta_F \dashv \Pi_F.
 $$
 
-> Sources: 7 Sketches §3.4 (Definition 3.68, §3.4.3–3.4.4, Eq. 3.77, Exercises 3.67, 3.76, 3.78), Remark 3.100, §3.6 ("All concepts are Kan extensions"); FQL; DaoFP Chapter 19 ($\Sigma_F, \Pi_F$ are the left and right [[Kan Extension|Kan extensions]] along $F$), Chapter 11 ([[Dependent Sum]]/[[Dependent Product]] along a map of types); 7 Sketches §1.4.2 (the preorder shadow: [[Pushforward and Pullback of Partitions]]).
+> Sources: 7 Sketches §3.4 (Definition 3.68, §3.4.3–3.4.4, Eq. 3.77, Exercises 3.67, 3.76, 3.78), Remark 3.100, §3.6 ("All concepts are Kan extensions"); FQL; DaoFP Chapter 19 ($\Sigma_F, \Pi_F$ are the left and right [[Kan Extension|Kan extensions]] along $F$), Chapter 11 ([[Dependent Sum]]/[[Dependent Product]] along a map of types); 7 Sketches §1.4.2 (the preorder shadow: [[Pushforward and Pullback of Partitions]]); CTfS §5.1.4 (Examples 5.1.4.7, 5.1.4.10, Exercises 5.1.4.5, 5.1.4.8, 5.1.4.11), Application 5.2.1.2
 
 ## Examples
 
@@ -18,10 +18,19 @@ $$
 - Airline seats (Eq. 3.5): $F : \mathcal{A} \to \mathcal{B}$ sends $\mathsf{Economy}, \mathsf{FirstClass} \mapsto \mathsf{AirlineSeat}$. $\Delta_F$ copies the seat table into both; $\Sigma_F(I)(\mathsf{AirlineSeat}) = I(\mathsf{Economy}) \sqcup I(\mathsf{FirstClass})$; $\Pi_F(I)(\mathsf{AirlineSeat})$ is the set of pairs $(e, f)$ with the same price and position — presumably empty here, but with "Rewards Program" and "First Class Seats" it finds the first-class seats in the rewards program: a **query**.
 - **Single-set summaries** ($\mathcal{D} = \underline{\mathbf{1}}$, $! : \mathcal{C} \to \underline{\mathbf{1}}$, [[7S Chapter 3 Exercises#Exercise 3.76|7S Exercise 3.76]]): identifying $\underline{1}\text{-}\mathbf{Inst} \simeq \mathbf{Set}$, $\Sigma_!(I) = \mathrm{colim}\,I$ and $\Pi_!(I) = \lim I$. For the email schema $\mathsf{Email} \rightrightarrows \mathsf{Address}$ (Eq. 3.77, $\cong \mathsf{Gr}$, [[7S Chapter 3 Exercises#Exercise 3.78|7S Exercise 3.78]]), $\Sigma_!(I)$ is the set of emailing groups (connected components: Bob–Grace–Pat–Emmy, Sue–Doug) — a typical $\Sigma$ *quotient*; $\Pi_!(I)$ is the set of self-to-self emails ($\mathsf{Em\_6}$) — a typical $\Pi$ *selection*. See [[Finite Limits in Set]].
 
+**A worked example with tables** (CTfS §5.1.4, from Spivak's *Functorial data migration*). Let $\mathcal{C}$ have two fact tables, $\mathsf{T1}$ (SSN, First, Last) and $\mathsf{T2}$ (First, Last, Salary), over leaf tables SSN, First, Last, Salary; let $\mathcal{D}$ have one fact table $\mathsf{T}$ with all four columns; $F : \mathcal{C} \to \mathcal{D}$ sends $\mathsf{T1}, \mathsf{T2} \mapsto \mathsf{T}$.
+
+- $\Delta_F$ ("if I get my information from you, your information becomes my information"): from $\mathsf{T}$ = {XF667: 115-234 Bob Smith \$250, XF891: 122-988 Sue Smith \$300, XF221: 198-877 Alice Jones \$100} it produces $\mathsf{T1}$ and $\mathsf{T2}$ as two *projections* of the same rows — duplicating the table and deleting a column from each copy.
+- $\Sigma_F$ puts the rows of $\mathsf{T1}$ = {Bob Smith, Sue Smith, Alice Jones} and $\mathsf{T2}$ = {Alice Jones \$100, Sam Miller \$150, Sue Smith \$300, Carl Pratt \$200} into one table $\mathsf{T}$ with 7 rows. Missing values are filled with fresh **labeled nulls** / **Skolem variables** such as `T1-001.Salary` and `T2-002.SSN`: "the universal response: freely add new variables that take the place of missing information".
+- $\Pi_F$ keeps only the pairs $(t_1, t_2)$ that agree on First and Last — a **join**: (Sue Smith, 122-988, \$300) and (Alice Jones, 198-877, \$100).
+- Along $F : \underline 3 \to \underline 2$, $1 \mapsto 1$, $2, 3 \mapsto 2$: $\Sigma_F(I_1, I_2, I_3) = (I_1, I_2 \sqcup I_3)$ and $\Pi_F(I_1, I_2, I_3) = (I_1, I_2 \times I_3)$ ([[CTfS Chapter 5 Exercises#Exercise 5.1.4.8|CTfS Exercises 5.1.4.8]], [[CTfS Chapter 5 Exercises#Exercise 5.1.4.11|5.1.4.11]]). Along $[1] \to [2]$ skipping the middle object, $\Delta$ composes the two foreign keys "word ↦ part of speech ↦ word class" into one ([[CTfS Chapter 5 Exercises#Exercise 5.1.4.5|CTfS Exercise 5.1.4.5]]).
+- **Schema evolution** (CTfS Application 5.2.1.2): when our understanding of a subject changes through schemas $\mathcal{C}_1 \to \mathcal{C}_2 \to \cdots \to \mathcal{C}_n$, old data is pushed forward with $\Sigma$ "in the freest possible way" and the epochs are united by a colimit in $\mathcal{C}_n\text{-}\mathbf{Set}$.
+
 "Everything follows from the definition of adjoint functors"; complex migrations are built from $\Delta, \Sigma, \Pi$ — "in practice essentially all useful migrations". The word *pullback* here is not the [[Pullback|limit]] of a cospan, though via the [[Category of Elements]] and discrete opfibrations it is a pullback in $\mathbf{Cat}$ (Remark 3.100).
 
 ````tabs
 tab: Julia
+**Docs:** [FinCats](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinCats) · [Data migration](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FunctorialDataMigrations) · [ACSets API](https://algebraicjulia.github.io/ACSets.jl/stable/api/) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/) · [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)
 ```julia
 using Catlab
 @present SchDDS(FreeSchema) begin State::Ob; next::Hom(State, State) end

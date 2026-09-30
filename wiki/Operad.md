@@ -9,7 +9,7 @@ An **operad** $\mathcal{O}$ (also *multicategory* / *coloured operad*; Leinster 
 
 satisfying generalized associativity and identity laws. Operads are a "meta-compositional structure": whereas [[Free Prop|free]] and [[Presentation of a Prop|presented]] structures tailor *instances* of preorders, categories or props, operads tailor *the algebraic structures themselves*. "Making tea is a 2-ary operation: you need warm water and tea leaves."
 
-> Sources: 7 Sketches §6.5 (Rough Definition 6.91, Examples 6.92–6.94, Definition 6.97, Rough Definition 6.98, Exercise 6.96), §6.6; [May72; Lei04; RS13; Spi13; VSL15]; Catlab (`oapply` for operad algebras on wiring diagrams).
+> Sources: 7 Sketches §6.5 (Rough Definition 6.91, Examples 6.92–6.94, Definition 6.97, Rough Definition 6.98, Exercise 6.96), §6.6; [May72; Lei04; RS13; Spi13; VSL15]; Catlab (`oapply` for operad algebras on wiring diagrams); CTfS §5.4 (Warning 5.4.0.5, Definition 5.4.1.1, Examples 5.4.1.2–5.4.1.3, Definitions 5.4.1.6, 5.4.1.8, Applications 5.4.2.1–5.4.2.10)
 
 ## Examples
 
@@ -19,12 +19,22 @@ satisfying generalized associativity and identity laws. Operads are a "meta-comp
 - **Context-free grammars are to operads as graphs are to categories** (Example 6.92): syntactic categories (noun, determiner, noun phrase, sentence) are types, production rules are generating operations, and a grammar presents a free operad [HMP98].
 - Operads of wiring diagrams with constraints (e.g. no "passing wires", needed for feedback in dynamical systems [VSL15]); the operad of cobordisms; "there is an operad for operads" ([Lei04, 2.2.23]).
 
+## Operads for self-similarity (Category Theory for Scientists §5.4)
+
+CTfS (which, warning of the clash with the classical one-object usage, says *operad* for multicategory) stresses operads as a language for **self-similar, hierarchical structure** — agents made of agents, materials made of materials.
+
+- **Little squares** (CTfS Example 5.4.1.3): one type $\square$; an operation $(\square, \dots, \square) \to \square$ is a placement of $n$ non-overlapping squares inside a square; substitution places tiny squares inside each small square and rescales. With several shapes (squares, circles, triangles) as types one gets a coloured version ([[CTfS Chapter 5 Exercises#Exercise 5.4.1.4|CTfS Exercise 5.4.1.4]]).
+- **Materials** (CTfS Applications 5.4.2.1–5.4.2.2): a tendon is collagen fibres assembled in series and then in parallel; each fibre is fibrils assembled likewise, and so on down to tropocollagen molecules. An operad models the *arrangements*; an [[Operad Algebra|algebra]] $A$ says which actual materials fill each slot, another algebra $B$ which *strengths* they can have, and a morphism of algebras $A \to B$ — assigning a strength to every material compatibly with all arrangements — is "a very precise goal for the field of material mechanics".
+- **Relations and wiring diagrams** (CTfS Examples 5.4.2.4, 5.4.2.8): the operad $\mathcal R$ whose operations $(x_1, \dots, x_n) \to y$ are relations $R \subseteq x_1 \times \cdots \times x_n \times y$, composed by fiber products; the operad $\mathcal W$ of wiring diagrams, whose objects are "circles with cables", each cable carrying a set of values (e.g. $\mathbb Z$ or $\{\text{sweet}, \text{sour}, \text{salty}, \text{bitter}, \text{umami}\}$), composed by pushouts. Sending a circle to the product of its cables' value sets is an operad morphism $\mathcal W \to \mathcal R$: a phenomenon experienced by an entity is a choice of value on every cable. Applications: an entity *survives* (or a bureaucracy *allows*) exactly those phenomena that each sub-entity allows; connectomes and supply chains; Radul–Sussman propagator networks.
+- Every category is an operad with only unary operations, and "just like a schema is a category presentation, one can present operads by generators and relations; an algebra on an operad corresponds to an instance on a schema" (CTfS Remark 5.4.1.9).
+
 **Operad functors** (Rough Definition 6.98): a map of types $f : T \to U$ and maps $\mathcal{O}(t_1, \dots, t_n; t) \to \mathcal{P}(f t_1, \dots, f t_n; f t)$ preserving substitution and identities. **[[Operad Algebra|Algebras]]** are operad functors $\mathcal{O} \to \mathbf{Set}$: ways to *fill the boxes* of a wiring-diagram grammar.
 
 Operads conclude the "informal hierarchy of compositional structures: preorders, categories, monoidal categories, operads".
 
 ````tabs
 tab: Julia
+**Docs:** [Relational programs / UWDs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/wiring_diagrams/#Catlab.WiringDiagrams.UndirectedWiringDiagrams) · [Wiring diagrams](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/wiring_diagrams/#Catlab.WiringDiagrams.DirectedWiringDiagrams)
 ```julia
 using Catlab, Catlab.WiringDiagrams
 # operations of the operad Cospan as undirected wiring diagrams (Exercise 6.96)

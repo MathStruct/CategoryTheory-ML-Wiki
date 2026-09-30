@@ -33,12 +33,16 @@ This *elimination rule* is **primitive recursion**: $h$ is the sequence $a_0 = \
 
 ````tabs
 tab: Julia
+**Docs:** [ThCategory (GATlab)](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/#GATlab.Stdlib.StdTheories.ThCategory) · [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/) — Kittenlab [Lecture 5](https://algebraicjulia.github.io/Kittenlab.jl/lecture5.html)
 ```julia
 # the recursor: a mapping out of ℕ from init and step
 rec(init, step) = n -> n == 0 ? init : step(rec(init, step)(n - 1))
 plus(n) = rec(n, x -> x + 1)
 plus(3)(4)                                   # 7
 double = rec(0, x -> x + 2); double(5)       # 10
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab: ℕ as the free category on one object and one generating loop
 using Catlab
 @present NatCat(FreeCategory) begin N::Ob; S::Hom(N, N) end

@@ -6,6 +6,7 @@ A **structured cospan** (Baez–Courser; Catlab's `StructuredCospan`) is a cospa
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Structured cospans](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.StructuredCospans) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/) — Kittenlab [Lecture 15](https://algebraicjulia.github.io/Kittenlab.jl/lecture15.html)
 ```julia
 using Catlab
 const OpenGraphOb, OpenGraph = OpenACSetTypes(Graph, :V)   # L : FinSet → Graph is the discrete-graph functor

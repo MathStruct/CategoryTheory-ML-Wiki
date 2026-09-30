@@ -22,6 +22,7 @@ A \arrow[r, "f", two heads] \arrow[dr, "g"', two heads] & P \arrow[d, "h"] \\
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Vignette: partitions](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/partitions/)
 ```julia
 # partitions of {1..n} as surjections; fineness = existence of h with f⋅h == g
 using Catlab

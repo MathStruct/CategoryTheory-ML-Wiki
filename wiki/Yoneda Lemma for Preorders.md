@@ -16,6 +16,7 @@ Picture for $P = (b \geq a \leq c)$: $\uparrow a = \{a, b, c\}$, $\uparrow b = \
 
 ````tabs
 tab: Julia
+**Docs:** Kittenlab [Lecture 10](https://algebraicjulia.github.io/Kittenlab.jl/lecture10.html)
 ```julia
 principal_up(leq, xs, p) = Set(q for q in xs if leq(p, q))
 # Yoneda: p ≤ p' iff ↑p' ⊆ ↑p

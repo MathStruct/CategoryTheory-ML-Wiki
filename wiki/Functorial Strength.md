@@ -15,6 +15,7 @@ compatible with unitors and associator: it "smuggles" the environment $a$ *under
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
 ```julia
 # strength for the list functor: (e, [b]) ↦ [(e, b)]
 strength(e, bs) = [(e, b) for b in bs]

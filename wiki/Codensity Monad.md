@@ -8,7 +8,7 @@ The **codensity monad** of a functor $F : \mathcal{D} \to \mathcal{C}$ is the ri
 
 **In Haskell.** From the end formula, $\mathrm{Ran}_F F\, c = \int_d \mathbf{Set}(\mathcal{C}(c, F d), F d)$:
 ```haskell
-newtype Codensity f c = C (forall d. (c -> f d) -> f d)
+newtype Codensity f c = C { runCodensity :: forall d. (c -> f d) -> f d }
 instance Monad (Codensity f) where
   return x = C (\k -> k x)
   m >>= kl = C (\k -> runCodensity m (\a -> runCodensity (kl a) k))
@@ -17,6 +17,7 @@ instance Monad (Codensity f) where
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
 ```julia
 # Codensity of a functor as callbacks: C(k -> ...) with k :: c -> f d; here f = identity
 ret(x) = k -> k(x)

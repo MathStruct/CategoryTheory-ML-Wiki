@@ -2,7 +2,7 @@
 
 Let $X$ and $Y$ be [[Set|sets]]. A **relation** between $X$ and $Y$ is a subset $R \subseteq X \times Y$. A **binary relation on** $X$ is a relation between $X$ and $X$, i.e. $R \subseteq X \times X$.
 
-> Sources: 7 Sketches Definition 1.12, Example 1.13; Kittenlab Lecture 14 & 15; DaoFP §17.1 ("Profunctors as relations").
+> Sources: 7 Sketches Definition 1.12, Example 1.13; Kittenlab Lecture 14 & 15; DaoFP §17.1 ("Profunctors as relations"); CTfS Definition 3.3.3.8, Exercises 3.3.3.9–3.3.3.12, 3.4.1.2
 
 **Infix notation**: pick a symbol $\star$ and write $a \star b$ for $(a,b) \in R$. Examples: $\leq$ on $\mathbb{R}$ (so $5 \leq 6$ rather than $(5,6) \in R$), $=$, $\approx$, $<$, and divisibility $|$ in number theory ($5 \mid 10$).
 
@@ -12,6 +12,10 @@ Let $X$ and $Y$ be [[Set|sets]]. A **relation** between $X$ and $Y$ is a subset 
 - [[Equivalence Relation|Equivalence relations]] are reflexive, symmetric, transitive binary relations.
 - [[Preorder|Preorder relations]] are reflexive and transitive binary relations.
 - All binary relations on $S$ form a preorder $\mathrm{Rel}(S)$ under inclusion; see [[Reflexive Transitive Closure]] for the Galois connection $\mathrm{Cl} \dashv U$ between $\mathrm{Rel}(S)$ and preorders on $S$.
+
+## Relations as tables and pictures (Category Theory for Scientists)
+
+A binary relation on $\mathbb N$ can be listed as a two-column table of the related pairs: $m \leq n$ (rows $(0,0), (0,1), (1,1), (0,2), \dots$), $n = 5m$ ($(0,0), (1,5), (2,10), \dots$), $|n - m| \leq 1$ ($(0,0), (0,1), (1,0), (1,1), (1,2), \dots$) — the first is a [[Total Order]], the second is not reflexive, the third not transitive (CTfS §3.3.3.7, Exercise 3.4.1.2). A relation on $\mathbb R$ is a region of the plane: "$x$ is within $\varepsilon$ of $y$" is the band $|x - y| \leq \varepsilon$ around the diagonal — reflexive and symmetric but not transitive, which is why approximate equality is not an equivalence relation ([[CTfS Chapter 3 Exercises#Exercise 3.3.3.9|CTfS Exercise 3.3.3.9]]). Relations and [[Graph|graphs]] convert into each other ([[Category of Relations]]).
 
 ## Relations as a joint constraint (Kittenlab)
 
@@ -25,6 +29,7 @@ which is matrix multiplication with $(\vee, \wedge)$ in place of $(+, \cdot)$. T
 
 ````tabs
 tab: Julia
+**Docs:** [FinRelations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinRelations) — Kittenlab [Lecture 14](https://algebraicjulia.github.io/Kittenlab.jl/lecture14.html)
 ```julia
 # Kittenlab Lecture 14: finite relations as bit matrices
 const FinRelation = BitMatrix
@@ -36,7 +41,9 @@ function compose(R::FinRelation, S::FinRelation)
   FinRelation([any(R[i,j] && S[j,k] for j in 1:m1) for i in 1:n, k in 1:l])
 end
 compose(R, R)   # the relation i < j - 1
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab: the category of finite sets and relations (FinRel)
 using Catlab, Catlab.CategoricalAlgebra.FinRelations
 R = FinRelation((x, y) -> x < y, 3, 3)   # relation given by a predicate

@@ -2,23 +2,25 @@
 
 A **$\mathcal{C}$-set** (7 Sketches: a **$\mathcal{C}$-instance**; Kittenlab: an **acset**, "attributed C-set", pronounced to rhyme with *hatchet*; also **copresheaf**) on a small category $\mathcal{C}$ is a [[Functor]] $I : \mathcal{C} \to \mathbf{Set}$. When $\mathcal{C}$ is a [[Database Schema|schema]] — a finitely presented category — it is a *database instance*: each object becomes a table (a set of rows/IDs) and each morphism a column (a function to another table's IDs); functoriality enforces the path equations ("business rules"). External attributes (white nodes such as `string`) are forced to specific sets — Catlab's *attributes*, hence the "a" in acset.
 
-> Sources: 7 Sketches §3.3.1–3.3.3 (Definition 3.44, Examples 3.46, 3.53, 3.56, Exercises 3.45, 3.48), §3.3.5 (Definition 3.60: the category $\mathcal{C}\text{-}\mathbf{Inst} = \mathbf{Set}^{\mathcal{C}}$), Remark 3.20; Kittenlab Lecture 6 ("ACSets in Julia"), 7, 8, 10, 12; DaoFP §9.7 (co-presheaves), §20.2 (enriched co-presheaves). Warning (7 Sketches footnote 5): an "instance" is the state of the whole database at an instant, not a row (the OO usage).
+> Sources: 7 Sketches §3.3.1–3.3.3 (Definition 3.44, Examples 3.46, 3.53, 3.56, Exercises 3.45, 3.48), §3.3.5 (Definition 3.60: the category $\mathcal{C}\text{-}\mathbf{Inst} = \mathbf{Set}^{\mathcal{C}}$), Remark 3.20; Kittenlab Lecture 6 ("ACSets in Julia"), 7, 8, 10, 12; DaoFP §9.7 (co-presheaves), §20.2 (enriched co-presheaves). Warning (7 Sketches footnote 5): an "instance" is the state of the whole database at an instant, not a row (the OO usage); CTfS §3.5.3 (Definition 3.5.3.1), §4.2.2.5, Definition 4.3.3.1 ($\mathcal{C}\text{-}\mathbf{Set}$), Examples 4.3.3.2–4.3.3.6
 
 ## Examples
 
 | schema $\mathcal{C}$ | $\mathcal{C}$-set | source |
 |---|---|---|
-| $\underline{\mathbf{1}}$ | a [[Set]] (one-column table, "controlled vocabulary") | [[7S Chapter 3 Exercises#Exercise 3.45|7S Exercise 3.45]]; $\mathbf{Set}^{\underline{1}} \simeq \mathbf{Set}$ (Example 3.56) |
+| $\underline{\mathbf{1}}$ | a [[Set]] (one-column table, "controlled vocabulary") | [[7S Chapter 3 Exercises#Exercise 3.45\|7S Exercise 3.45]]; $\mathbf{Set}^{\underline{1}} \simeq \mathbf{Set}$ (Example 3.56) |
 | $\underline{\mathbf{2}} = \bullet \to \bullet$ | a [[Function]] (two tables, e.g. Beatles $\to$ instruments) | §3.3.1 |
-| $\mathsf{Gr}$: $E \rightrightarrows V$ | a [[Graph]]; morphisms are [[Graph Homomorphism|graph homomorphisms]] | §3.3.5, Kittenlab L6 |
+| $\mathsf{Gr}$: $E \rightrightarrows V$ | a [[Graph]]; morphisms are [[Graph Homomorphism\|graph homomorphisms]] | §3.3.5, Kittenlab L6 |
 | $\mathsf{DDS}$: one loop `next` | a [[Discrete Dynamical System]] | §3.4.1 |
 | loop $s$ with $s \mathbin{;} s = s$ | a set $Z$ with an idempotent $S : Z \to Z$: citizens $\mapsto$ president, $n \mapsto 0$, expressions $\mapsto$ their value, $n \mapsto$ smallest prime factor | Example 3.46 |
-| loop with $s \mathbin{;} s = \mathrm{id}$ | an involution ("do-si-do", mirror image of a photo) | [[7S Chapter 3 Exercises#Exercise 3.48|7S Exercise 3.48]] |
-| $a \xrightarrow{f} b \rightrightarrows c$ with $f\mathbin{;}g = f\mathbin{;}h$ | secret-Santa: people, gifts, giver, receiver, self-gifters | [[7S Chapter 3 Exercises#Exercise 3.48|7S Exercise 3.48]] |
+| loop with $s \mathbin{;} s = \mathrm{id}$ | an involution ("do-si-do", mirror image of a photo) | [[7S Chapter 3 Exercises#Exercise 3.48\|7S Exercise 3.48]] |
+| $a \xrightarrow{f} b \rightrightarrows c$ with $f\mathbin{;}g = f\mathbin{;}h$ | secret-Santa: people, gifts, giver, receiver, self-gifters | [[7S Chapter 3 Exercises#Exercise 3.48\|7S Exercise 3.48]] |
 | $\mathsf{Petri}$: $I \rightrightarrows S, T \leftleftarrows O$ | a [[Petri Net]] (SIR, Lotka–Volterra) | Kittenlab L6, L10 |
 | $\mathsf{DPG}$ | a directed [[Port Graph]] / [[Wiring Diagram]] | Kittenlab L6 |
 | `mySchema` | the Employee/Department database | §3.1 |
-| $\mathcal{C}(x, -)$ | the [[Representable Functor|representable]] $y_{\mathcal{C}}(x)$ | Kittenlab L8, L10 |
+| $\mathcal{C}(x, -)$ | the [[Representable Functor\|representable]] $y_{\mathcal{C}}(x)$ | Kittenlab L8, L10 |
+
+**More examples from Category Theory for Scientists.** A [[Monoid Action|monoid action]] is an instance on a one-object schema, its action table being the single table with one column per generator (CTfS Example 3.5.3.3); a [[Finite State Machine]] is an instance on the free monoid $\mathrm{List}(\Sigma)$; an $A$-indexed set is an instance on the discrete schema $A$ ([[CTfS Chapter 4 Exercises#Exercise 4.3.3.3|CTfS Exercise 4.3.3.3]]); a self-email is an email whose sender equals its recipient, enforced by the path equation $\mathsf{is.sentBy} = \mathsf{is.sentTo}$ ([[CTfS Chapter 3 Exercises#Exercise 3.5.3.2|CTfS Exercise 3.5.3.2]]). *Counting morphisms* shows what naturality buys: between the graph instances $I$ (3 vertices, 3 arrows) and $J$ (5 vertices, 4 arrows) of CTfS Example 4.3.3.4 there are $5^3 \cdot 4^3 = 8000$ pairs of component functions but only **4** natural transformations; from the one-arrow graph $Y_A$ to any graph $X$ there are exactly as many as $X$ has arrows ([[CTfS Chapter 4 Exercises#Exercise 4.3.3.6|CTfS Exercise 4.3.3.6]]) — Yoneda in action. With a [[Monad]] one can also have *Kleisli instances*, e.g. graphs whose edges may lack endpoints ([[Kleisli Instance]]).
 
 ## Structure
 
@@ -29,17 +31,22 @@ A **$\mathcal{C}$-set** (7 Sketches: a **$\mathcal{C}$-instance**; Kittenlab: an
 
 ````tabs
 tab: Julia
+**Docs:** [FinCats](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinCats) · [Categories & functors](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Categories) · [ACSets API](https://algebraicjulia.github.io/ACSets.jl/stable/api/) · [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/) — Kittenlab [Lecture 6](https://algebraicjulia.github.io/Kittenlab.jl/lecture6.html), [Lecture 8](https://algebraicjulia.github.io/Kittenlab.jl/lecture8.html), [Lecture 12](https://algebraicjulia.github.io/Kittenlab.jl/lecture12.html)
+
+**Builds on:** [[Category]] (`Category`), [[Free Category]] (`FinCat`, `FinCatMorphism`), [[Functor]] (`Functor`) — run those notes' Julia code first.
 ```julia
 # Kittenlab src/Diagrams.jl: a functor out of a finitely presented category, stored per generator
 struct Diagram{L, Ob, Hom, C<:Category{Ob, Hom}} <: Functor{FinCat{L}, C}
   diagram::FinCat{L}; base::C
   ob_map::Dict{L, Ob}; hom_map::Dict{L, Hom}
 end
-Functors.ob_map(d::Diagram{L}, x::L) where {L} = d.ob_map[x]
-function Functors.hom_map(d::Diagram{L}, x::FinCatMorphism{L}) where {L}
+ob_map(d::Diagram{L}, x::L) where {L} = d.ob_map[x]
+function hom_map(d::Diagram{L}, x::FinCatMorphism{L}) where {L}
   foldl((f, g) -> compose(d.base, f, g), map(l -> d.hom_map[l], x.path); init = id(d.base, ob_map(d, x.dom)))
 end
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab: ACSets — the schema is presented, the instance is a struct of tables
 using Catlab
 @present SchDDS(FreeSchema) begin

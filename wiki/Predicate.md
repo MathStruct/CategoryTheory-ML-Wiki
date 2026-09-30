@@ -10,6 +10,7 @@ In a [[Topos]] $\mathcal{E}$ a **predicate** on an object $S$ is a morphism $p :
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets)
 ```julia
 using Catlab
 # predicates on a finite set as Bool vectors; the poset of predicates is Sub(S)

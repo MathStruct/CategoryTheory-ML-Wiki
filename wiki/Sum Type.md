@@ -29,6 +29,7 @@ A category with all binary sums and an [[Initial Object]] $0$ is **cocartesian**
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits) — Kittenlab [Lecture 11](https://algebraicjulia.github.io/Kittenlab.jl/lecture11.html)
 ```julia
 using Catlab
 # sums of finite sets are coproducts; copairing implements the elimination rule

@@ -17,12 +17,15 @@ is the [[Symmetric Monoidal Preorder]] on the [[Booleans]] with monoidal unit $\
 
 **Properties.** $\mathbf{Bool}$ is [[Monoidal Closed Preorder|monoidal closed]] with hom-element implication $v \Rightarrow w$ ([[7S Chapter 2 Exercises#Exercise 2.84|7S Exercise 2.84]]) and is a [[Quantale]] with joins given by OR ([[7S Chapter 2 Exercises#Exercise 2.93|7S Exercise 2.93]]); the empty join is $\mathsf{false}$ ([[7S Chapter 2 Exercises#Exercise 2.92|7S Exercise 2.92]]). Its identity [[Matrix Multiplication in a Quantale|$\mathbf{Bool}$-matrix]] is the usual identity with $\mathsf{true}$ on the diagonal.
 
-**The other structure.** $(\mathbb{B}, \leq, \mathsf{false}, \vee)$ is also a symmetric monoidal preorder ([[7S Chapter 2 Exercises#Exercise 2.29|7S Exercise 2.29]]), but it is *not* closed (Example 2.85): $\mathsf{false} \leq p \multimap q$ always, yet $(\mathsf{false} \vee \mathsf{true}) \not\leq \mathsf{false}$.
+**The other structure.** $(\mathbb{B}, \leq, \mathsf{false}, \vee)$ is also a symmetric monoidal preorder ([[7S Chapter 2 Exercises#Exercise 2.29|7S Exercise 2.29]]), but it is *not* closed (Example 2.85): closedness would need $a \vee \mathsf{true} \leq \mathsf{false} \iff a \leq (\mathsf{true} \multimap \mathsf{false})$; for $a = \mathsf{false}$ the right side always holds while the left side $\mathsf{true} \leq \mathsf{false}$ fails.
 
 **Maps.** [[Monoidal Monotone Map|Monoidal monotones]] $\mathbf{Bool} \to \mathbf{Cost}$ ($\mathsf{false} \mapsto \infty$, $\mathsf{true} \mapsto 0$) and $\mathbf{Cost} \to \mathbf{Bool}$ ("is $x = 0$?", "is $x < \infty$?") connect preorders and [[Lawvere Metric Space|metric spaces]] via [[Change of Base]]. $\mathbf{Bool}$-[[Profunctor|profunctors]] are [[Feasibility Relation|feasibility relations]] (Chapter 4).
 
 ````tabs
 tab: Julia
+**Docs:** Kittenlab [Lecture 14](https://algebraicjulia.github.io/Kittenlab.jl/lecture14.html)
+
+**Builds on:** [[Preorder]] (`Preorder`) — run that note's Julia code first.
 ```julia
 struct BoolPre <: Preorder{Bool} end
 leq(::BoolPre, a::Bool, b::Bool) = a <= b       # false ≤ true

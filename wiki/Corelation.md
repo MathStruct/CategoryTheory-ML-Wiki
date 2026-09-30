@@ -2,12 +2,13 @@
 
 Given finite sets $A$ and $B$, a **corelation** $A \to B$ is an [[Equivalence Relation]] on $A \sqcup B$ (drawn as dashed loops encircling equivalent elements). **$\mathbf{Corel}$** is the [[Category]] with finite sets as objects and corelations as morphisms; the composite $\beta \circ \alpha$ of $\alpha : A \to B$ and $\beta : B \to C$ relates two elements of $A \sqcup C$ iff one can travel from one to the other staying within equivalence classes of $\alpha$ or $\beta$. Formally: $\alpha \mathbin{;} \beta := \iota_{A \sqcup C}^*\big((\iota_{A \sqcup B})_!(\alpha) \vee (\iota_{B \sqcup C})_!(\beta)\big)$ — push both relations forward to $A \sqcup B \sqcup C$, take the join (transitive closure of the union) in the preorder of equivalence relations, and pull back to $A \sqcup C$ (using the [[Pushforward and Pullback of Partitions|pushforward and pullback]] of §1.4).
 
-> Sources: 7 Sketches Example 4.61, Exercise 4.62, footnote 2; §6.x (corelations as a [[Hypergraph Category]], "we'll see it again in the chapters to come").
+> Sources: 7 Sketches Example 4.61, Exercise 4.62, footnote 2; Example 6.64 ($\mathbf{Corel}$ as a [[Hypergraph Category]]).
 
 $\mathbf{Corel}$ is a [[Symmetric Monoidal Category]] under $(\varnothing, \sqcup)$ and is **[[Compact Closed Category|compact closed]] with every finite set its own dual**: the unit $\eta_A : \varnothing \to A \sqcup A$ and the counit $\varepsilon_A : A \sqcup A \to \varnothing$ are both the equivalence relation on $A \sqcup A$ whose parts are the pairs $\{(a, 1), (a, 2)\}$; the snake equations hold because composing two such pairings along the middle copy of $A$ yields the pairing again ([[7S Chapter 4 Exercises#Exercise 4.62|7S Exercise 4.62]] for $\underline{3}$). Corelations are the "connectivity" of [[Cospan|cospans]] of finite sets (a cospan $A \to N \leftarrow B$ induces the equivalence "same image in $N$"), and $\mathbf{Corel}$ is the prototypical [[Hypergraph Category]] used for electrical circuits: a corelation says which terminals are wired together.
 
 ````tabs
 tab: Julia
+**Docs:** [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits)
 ```julia
 # corelations A → B as equivalence relations on A ⊔ B (elements 1..nA are A, nA+1..nA+nB are B),
 # composed by union-find on A ⊔ B ⊔ C and restriction to A ⊔ C

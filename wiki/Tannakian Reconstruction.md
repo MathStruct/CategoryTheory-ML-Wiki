@@ -18,6 +18,7 @@ For a one-object category (a [[Monoid]] $\mathcal{M}$) this says $\int_F \mathbf
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
 ```julia
 # Cayley / difference lists: represent lists as prepending closures; reversal in O(N)
 rep(as) = xs -> vcat(as, xs)

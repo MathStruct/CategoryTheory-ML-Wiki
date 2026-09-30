@@ -17,6 +17,7 @@ and dually the **weighted colimit** by $\mathcal{C}(\mathrm{colim}^W D, x) \cong
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits)
 ```julia
 using Catlab
 # a weighted limit in Set with a discrete shape J = {1, 2}: lim^W D = ∏_j (W j ⋔ D j) = ∏_j D j^{W j}

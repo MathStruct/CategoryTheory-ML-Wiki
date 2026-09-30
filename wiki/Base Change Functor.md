@@ -28,6 +28,7 @@ b \arrow[r, "f"'] & a
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits) — Kittenlab [Lecture 14](https://algebraicjulia.github.io/Kittenlab.jl/lecture14.html)
 ```julia
 using Catlab
 # base change in FinSet: pull the bundle p : E → A back along f : B → A

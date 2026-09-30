@@ -8,7 +8,7 @@ Let $f : A \to B$ be a [[Function]] — think of $A$ as apples, $B$ as buckets, 
 | **direct image** $f_! : \mathcal{P}(A) \to \mathcal{P}(B)$ (left adjoint) | $f_!(A') = \{b \mid \exists a \in A'.\ f(a) = b\}$ | buckets containing at least one chosen apple |
 | **dual image** $f_* : \mathcal{P}(A) \to \mathcal{P}(B)$ (right adjoint) | $f_*(A') = \{b \mid \forall a.\ f(a) = b \Rightarrow a \in A'\}$ | buckets *all* of whose apples are chosen (empty buckets count) |
 
-> Sources: 7 Sketches Example 1.117, Exercise 1.118; Kittenlab Lecture 14 ("Pullback", "Direct image"); DaoFP §11.3–11.4 (dependent sum and product as adjoints to substitution), §7.4.4 of 7 Sketches (quantification).
+> Sources: 7 Sketches Example 1.117, Exercise 1.118; Kittenlab Lecture 14 ("Pullback", "Direct image"); DaoFP §11.3–11.4 (dependent sum and product as adjoints to substitution), §7.4.4 of 7 Sketches (quantification); CTfS Example 3.4.3.2, Exercise 3.4.3.4, §5.1.1.10 ("Quantifiers as adjoints")
 
 Kittenlab (Lecture 14) phrases the same in terms of characteristic functions: $f^*(\chi) = \chi \circ f$ ("pullback", also "preimage"), and $f_*(\chi)(y) = [\exists x.\ \chi(x) \wedge f(x) = y]$ (its $f_*$ is 7 Sketches' $f_!$). Both preserve the ordering of subsets, making $\mathcal{P}$ a contravariant and a covariant [[Functor]] $\mathbf{Set} \to \mathbf{Pos}$.
 
@@ -20,13 +20,16 @@ Kittenlab (Lecture 14) phrases the same in terms of characteristic functions: $f
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) — Kittenlab [Lecture 14](https://algebraicjulia.github.io/Kittenlab.jl/lecture14.html)
+
+**Builds on:** [[Category]] (`FinFunction`) — run that note's Julia code first.
 ```julia
 # Kittenlab Lecture 14 on subsets of {1..n} as BitVectors
 struct FinSet′; n::Int end
 struct FinFunction′; dom::FinSet′; codom::FinSet′; values::Vector{Int} end
 const FinSubset = BitVector
 
-preimage(f::FinFunction′, U::FinSubset) = FinSubset([U[y] for y in f.values])      # f^*
+pullback_subset(f::FinFunction′, U::FinSubset) = FinSubset([U[y] for y in f.values])   # f^*
 
 function direct_image(f::FinFunction′, U::FinSubset)                                 # f_!
   V = FinSubset(zeros(Bool, f.codom.n))
@@ -43,8 +46,10 @@ end
 f = FinFunction′(FinSet′(3), FinSet′(3), [1, 3, 3])   # a₁ ↦ a, c₁,c₂ ↦ c
 direct_image(f, FinSubset([true, true, false]))        # {a, c}
 dual_image(f, FinSubset([false, false, false]))        # {b}: the empty bucket
-
-# Catlab
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
+# Catlab (a separate session): fibers of a FinFunction
 using Catlab
 g = FinFunction([1, 3, 3], 3)
 preimage(g, 3)          # [2, 3]

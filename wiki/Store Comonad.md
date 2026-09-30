@@ -20,6 +20,7 @@ With `s = Int`, `f` is an infinite array and `s` the current position: `duplicat
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
 ```julia
 # Store Int c as (accessor, index); extract, duplicate, extend
 struct Store; f::Function; s::Int; end

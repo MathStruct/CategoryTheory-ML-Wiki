@@ -21,6 +21,7 @@ Define the cup $\eta_X \mathbin{;} \delta_X : I \to X \otimes X$ and the cap $\m
 
 ````tabs
 tab: Julia
+**Docs:** [Relational programs / UWDs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/wiring_diagrams/#Catlab.WiringDiagrams.UndirectedWiringDiagrams) · [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/) — Kittenlab [Lecture 15](https://algebraicjulia.github.io/Kittenlab.jl/lecture15.html)
 ```julia
 using Catlab, Catlab.WiringDiagrams, Catlab.Programs
 # undirected wiring diagrams are the string diagrams of hypergraph categories; @relation builds them

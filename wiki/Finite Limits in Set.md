@@ -8,7 +8,7 @@ $$
 
 with projections $p_i(d_1, \dots, d_n) = d_i$ is a [[Limit]] of $D$. "As far as limits are concerned, the equations in $\mathcal{J}$ don't matter."
 
-> Sources: 7 Sketches §3.5.3 (Theorem 3.95, Examples 3.96, 3.99, Exercises 3.97, 3.98); DaoFP §9.5 (limits in $\mathbf{Set}$ are cones with apex $1$); Kittenlab Lecture 13–14.
+> Sources: 7 Sketches §3.5.3 (Theorem 3.95, Examples 3.96, 3.99, Exercises 3.97, 3.98); DaoFP §9.5 (limits in $\mathbf{Set}$ are cones with apex $1$); Kittenlab Lecture 13–14; CTfS §2.5 (Definition 2.5.1.1, Lemma 2.5.1.14, Proposition 2.5.1.17, Exercises 2.5.1.2–2.5.1.6, 2.5.3.5)
 
 ## Instances
 
@@ -16,6 +16,7 @@ with projections $p_i(d_1, \dots, d_n) = d_i$ is a [[Limit]] of $D$. "As far as 
 - Two vertices, no arrows: pairs $(d_1, d_2)$, the [[Product]] $A \times B$ ([[7S Chapter 3 Exercises#Exercise 3.97|7S Exercise 3.97]]).
 - One vertex: $\lim D = D(v)$ itself ([[7S Chapter 3 Exercises#Exercise 3.98|7S Exercise 3.98]]).
 - [[Cospan]] $x \xrightarrow{f} a \xleftarrow{g} y$: triples $(d_x, d_a, d_y)$ with $f(d_x) = d_a = g(d_y)$, i.e. pairs $(d_x, d_y)$ with $f(d_x) = g(d_y)$: the [[Pullback]] $X \times_A Y$ (Example 3.99) — pairs $(i, j) \in \underline{6} \times \underline{4}$ whose colours agree.
+- CTfS's fiber product keeps the middle coordinate: $X \times_Z Y := \{(x, w, y) \mid f(x) = w = g(y)\}$ — the same set up to isomorphism. Edge cases: if $Y = \varnothing$ the pullback is empty; if $Z$ is a point it is the product $X \times Y$ ([[CTfS Chapter 2 Exercises#Exercise 2.5.1.5|CTfS Exercise 2.5.1.5]]). With Aristotelian space $S = \mathbb R^3$ and time $T = \mathbb R$ and $X$ = "the center of mass of MIT at its founding", pulling the projections of $S \times T$ back along the point gives the world-line through that place (all times) and the whole of space at that instant ([[CTfS Chapter 2 Exercises#Exercise 2.5.1.6|CTfS Exercise 2.5.1.6]]).
 - Parallel pair $f, g : a \rightrightarrows b$: $\{d \in D(a) \mid f(d) = g(d)\}$, the [[Equalizer]] — "solutions of a system of equations" (DaoFP).
 - $! : \mathcal{C} \to \underline{1}$ on the email schema: tuples (email, address) with $\mathsf{sent\_by} = \mathsf{received\_by} = $ address, i.e. self-sent emails: $\Pi_!(I)$ ([[Data Migration Functor]]).
 
@@ -23,6 +24,7 @@ The formula "selects tuples satisfying equations or constraints — this is what
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits) · [Free diagrams](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FreeDiagrams) — Kittenlab [Lecture 13](https://algebraicjulia.github.io/Kittenlab.jl/lecture13.html)
 ```julia
 # the tuple formula for a finite diagram in FinSet given by sets and generating functions
 function set_limit(sets::Vector{Int}, arrows::Vector{Tuple{Int,Int,Vector{Int}}})   # (i, j, D(a))
@@ -30,7 +32,9 @@ function set_limit(sets::Vector{Int}, arrows::Vector{Tuple{Int,Int,Vector{Int}}}
   [t for t in tuples if all(Da[t[i]] == t[j] for (i, j, Da) in arrows)]
 end
 set_limit([4, 3, 2], [(1, 2, [1, 1, 2, 3]), (3, 2, [1, 3])])   # pullback: [(1,1,1), (2,1,1), (4,3,2)]
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 using Catlab
 limit(Cospan(FinFunction([1, 1, 2, 3], 3), FinFunction([1, 3], 3))) |> apex   # FinSet(3)
 ```

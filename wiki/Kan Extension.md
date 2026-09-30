@@ -35,11 +35,11 @@ generalizing the [[Ninja Yoneda Lemma|ninja (co-)Yoneda lemmas]] ($P = \mathrm{I
 |---|---|
 | [[Limit]] of $D : \mathcal{J} \to \mathcal{C}$ | $\lim D = \mathrm{Ran}_{!} D$ along $! : \mathcal{J} \to \mathbf{1}$ (a cone is $\gamma : X \circ ! \to D$) |
 | [[Colimit]] | $\mathrm{colim}\, D = \mathrm{Lan}_{!} D$ |
-| left adjoint of $R$ | $L \cong \mathrm{Ran}_R \mathrm{Id}$ (with $\sigma = (\alpha \circ L) \cdot (G \circ \eta)$, [[DaoFP Chapter 19 Exercises#Exercise 19.3.2|DaoFP Exercise 19.3.2]]); conversely $\mathrm{Ran}_R \mathrm{Id}$ is a left adjoint iff preserved by $R$ |
+| left adjoint of $R$ | $L \cong \mathrm{Ran}_R \mathrm{Id}$ (with $\sigma = (\alpha \circ L) \cdot (G \circ \eta)$, [[DaoFP Chapter 19 Exercises#Exercise 19.3.2\|DaoFP Exercise 19.3.2]]); conversely $\mathrm{Ran}_R \mathrm{Id}$ is a left adjoint iff preserved by $R$ |
 | right adjoint of $L$ | $R \cong \mathrm{Lan}_L \mathrm{Id}$ |
 | [[Codensity Monad]] | $T^F = \mathrm{Ran}_F F$ ($F/F$); the *density comonad* is $\mathrm{Lan}_F F$ |
 | [[Day Convolution]] | $F \star G \cong \mathrm{Lan}_\otimes (F \bar\otimes G)$ for the external product $(F \bar\otimes G)\langle a, b\rangle = F a \times G b$ |
-| [[Data Migration Functor|data migration]] | $\Sigma_F = \mathrm{Lan}_F$, $\Pi_F = \mathrm{Ran}_F$ on [[C-Set|C-sets]] |
+| [[Data Migration Functor\|data migration]] | $\Sigma_F = \mathrm{Lan}_F$, $\Pi_F = \mathrm{Ran}_F$ on [[C-Set\|C-sets]] |
 | [[Dependent Sum]] / [[Dependent Product]] | $\Sigma_f, \Pi_f$ along a function of sets (discrete categories) |
 
 ## In Haskell
@@ -61,6 +61,7 @@ sigmaL alpha (Lan pe_b fe) = fmap pe_b (alpha fe)
 
 ````tabs
 tab: Julia
+**Docs:** [FinCats](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinCats) · [ACSets API](https://algebraicjulia.github.io/ACSets.jl/stable/api/) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/) · [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)
 ```julia
 using Catlab
 # Kan extensions of C-sets along a schema functor: Σ_F = Lan_F, Π_F = Ran_F (data migration)

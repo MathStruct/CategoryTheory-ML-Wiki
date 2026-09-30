@@ -8,11 +8,11 @@ A **unital commutative quantale** is a [[Monoidal Closed Preorder|symmetric mono
 
 | quantale | $\otimes$ | $I$ | $\bigvee$ | $0 = \bigvee\varnothing$ | $\multimap$ |
 |---|---|---|---|---|---|
-| [[Bool (Monoidal Preorder)|$\mathbf{Bool}$]] | $\wedge$ | $\mathsf{true}$ | OR | $\mathsf{false}$ | $\Rightarrow$ |
+| [[Bool (Monoidal Preorder)\|$\mathbf{Bool}$]] | $\wedge$ | $\mathsf{true}$ | OR | $\mathsf{false}$ | $\Rightarrow$ |
 | [[Cost]] | $+$ | $0$ | $\inf$ (usual order) | $\infty$ — "beware!" | $\max(0, y - x)$ |
 | $(\mathcal{P}(S), \subseteq, S, \cap)$ | $\cap$ | $S$ | $\bigcup$ | $\varnothing$ | $\overline{B} \cup C$ |
-| $(\mathbb{N}, \leq, 1, \ast)$ (with $\infty$ added) | $\ast$ | $1$ | $\sup$ | $0$ | |
-| $\mathcal{P}(M)$ for a monoid $M$; binary relations on a set under composition | | | | | noncommutative (§2.6) |
+| $(\mathbb{N}, \leq, 1, \ast)$ (with $\infty$ added) | $\ast$ | $1$ | $\sup$ | $0$ | $\lfloor y / x \rfloor$ (for $x \neq 0$) |
+| $\mathcal{P}(M)$ for a monoid $M$; binary relations on a set under composition | pointwise product $AB$ / relational composition | $\{e\}$ / identity relation | $\bigcup$ | $\varnothing$ | two residuals — noncommutative (§2.6) |
 
 In $\mathbf{Cost}$ every $A \subseteq [0, \infty]$ has a join, its infimum in the usual order: $\bigvee \{2, 3\} = 2$, $\bigvee \{2.5, 2.05, \dots\} = 2$, $\bigvee \varnothing = \infty$ (Example 2.91, [[7S Chapter 2 Exercises#Exercise 2.92|7S Exercise 2.92]]).
 
@@ -28,6 +28,7 @@ Noncommutative quantales (relations under composition, power sets of monoids) ha
 
 ````tabs
 tab: Julia
+**Docs:** [Vignette: monoidal preorders & SMCs](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/smc/)
 ```julia
 # a finite quantale given by elements, leq, otimes, munit; joins computed from leq
 struct FiniteQuantale{T}

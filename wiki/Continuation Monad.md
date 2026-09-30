@@ -16,6 +16,7 @@ See [[Continuation Passing Style]] for the CPS transformation turning recursion 
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
 ```julia
 # continuations as functions of a handler
 ret(a) = k -> k(a)

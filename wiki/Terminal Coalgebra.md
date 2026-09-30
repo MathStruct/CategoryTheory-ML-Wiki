@@ -26,6 +26,9 @@ Functors without leaves are fine for coalgebras: `data StreamF a x = StreamF a x
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
+
+**Builds on:** [[Coalgebra of an Endofunctor]] (`LeafF`, `NodeF`), [[Initial Algebra]] (`Fix`) — run those notes' Julia code first.
 ```julia
 # anamorphism, hylomorphism and quicksort with the TreeF coalgebra of [[Coalgebra of an Endofunctor]]
 ana(coa, fmap) = a -> Fix(fmap(ana(coa, fmap), coa(a)))

@@ -24,10 +24,11 @@ The distance matrix is obtained by [[Matrix Multiplication in a Quantale|repeate
 
 Graph $X$ of Eq. (2.56) ($A \xrightarrow{3} C$, $B \xrightarrow{2} A$, $B \xrightarrow{5} D$, $C \xrightarrow{3} B$, $D \xrightarrow{6} C$): $M_X$ and $d_X$ are computed in [[7S Chapter 2 Exercises#Exercise 2.60|7S Exercise 2.60]], [[7S Chapter 2 Exercises#Exercise 2.58|7S Exercise 2.58]], [[7S Chapter 2 Exercises#Exercise 2.105|7S Exercise 2.105]].
 
-Categorically this is the [[Free Category|free $\mathcal{V}$-category]] on a $\mathcal{V}$-graph, and the [[Adjoint Functor Theorem for Preorders|adjoint]] to the forgetful map.
+Categorically this is the *free* $\mathcal{V}$-category on a $\mathcal{V}$-weighted graph — the $\mathcal{V}$-analogue of the [[Free Category]] on a graph — i.e. the left adjoint of the forgetful map from $\mathcal{V}$-categories to $\mathcal{V}$-weighted graphs.
 
 ````tabs
 tab: Julia
+**Docs:** [ACSets API](https://algebraicjulia.github.io/ACSets.jl/stable/api/) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/)
 ```julia
 # Cost-weighted graph → distance matrix by min-plus powers
 function graph_matrix(n, edges)   # edges: (src, tgt, weight)
@@ -46,7 +47,9 @@ function distances(M)
 end
 MY = graph_matrix(3, [(1,3,3.0), (1,2,4.0), (2,1,3.0), (3,2,4.0)])   # x=1, y=2, z=3
 distances(MY)   # [0 4 3; 3 0 6; 7 4 0]
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab: weighted graphs as ACSets with an edge attribute
 using Catlab
 g = @acset WeightedGraph{Float64} begin

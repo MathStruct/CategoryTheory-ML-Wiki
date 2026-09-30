@@ -11,6 +11,7 @@ Given any [[Category]] $\mathcal{C}$, its **preorder reflection** is the [[Preor
 
 ````tabs
 tab: Julia
+**Docs:** Kittenlab [Lecture 5](https://algebraicjulia.github.io/Kittenlab.jl/lecture5.html)
 ```julia
 # preorder reflection of a finite category given by an object list and a hom-nonempty predicate
 function preorder_reflection(objects, homs_nonempty)

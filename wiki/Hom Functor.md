@@ -21,6 +21,7 @@ the **hom-functor** — a [[Profunctor]]. On arrows $g' : a' \to a$ and $g : b \
 
 ````tabs
 tab: Julia
+**Docs:** [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) · [ACSets API](https://algebraicjulia.github.io/ACSets.jl/stable/api/) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/) — Kittenlab [Lecture 8](https://algebraicjulia.github.io/Kittenlab.jl/lecture8.html)
 ```julia
 # Kittenlab Lecture 8/10: the representable Hom(x, -) on a finitely presented category as a C-set;
 # for graphs, Hom(V,-) is the one-vertex graph and Hom(E,-) the one-edge graph.

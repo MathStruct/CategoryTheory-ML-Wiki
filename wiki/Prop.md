@@ -16,16 +16,16 @@ and check the axioms of a symmetric monoidal category. Props are the complementa
 
 | prop | morphisms $m \to n$ | notes |
 |---|---|---|
-| [[Category of Finite Sets|$\mathbf{FinSet}$]] | functions $\underline{m} \to \underline{n}$; $f + g$ by disjoint union (Eq. 5.4) | Example 5.3, [[7S Chapter 5 Exercises#Exercise 5.5|7S Exercise 5.5]] |
+| [[Category of Finite Sets\|$\mathbf{FinSet}$]] | functions $\underline{m} \to \underline{n}$; $f + g$ by disjoint union (Eq. 5.4) | Example 5.3, [[7S Chapter 5 Exercises#Exercise 5.5\|7S Exercise 5.5]] |
 | $\mathbf{Bij}$ | bijections (empty unless $m = n$) | the [[Free Prop]] on the empty signature (Example 5.27) |
-| [[Corelation|$\mathbf{Corel}$]] | partitions of $\underline{m} \sqcup \underline{n}$ | compact closed (Example 5.7) |
-| [[Category of Relations|$\mathbf{Rel}$]] | relations $R \subseteq \underline{m} \times \underline{n}$ | Example 5.8; $\mathbf{Rel}_R$ for a rig $R$ (Definition 5.79) |
-| [[Port Graph|$\mathbf{PG}$]] | open directed acyclic port graphs | the free prop on one generator of every arity |
-| [[Free Prop|$\mathrm{Free}(G)$]] | $G$-labeled port graphs / prop expressions | $\mathbf{SFG}_R = \mathrm{Free}(G_R)$ (signal flow graphs) |
-| [[Prop of Matrices|$\mathbf{Mat}(R)$]] | $m \times n$ matrices over a [[Rig]] $R$ | composition = matrix multiplication, $+$ = direct sum |
+| [[Corelation\|$\mathbf{Corel}$]] | partitions of $\underline{m} \sqcup \underline{n}$ | compact closed (Example 5.7) |
+| [[Category of Relations\|$\mathbf{Rel}$]] | relations $R \subseteq \underline{m} \times \underline{n}$ | Example 5.8; $\mathbf{Rel}_R$ for a rig $R$ (Definition 5.79) |
+| [[Port Graph\|$\mathbf{PG}$]] | open directed acyclic port graphs | the free prop on one generator of every arity |
+| [[Free Prop\|$\mathrm{Free}(G)$]] | $G$-labeled port graphs / prop expressions | $\mathbf{SFG}_R = \mathrm{Free}(G_R)$ (signal flow graphs) |
+| [[Prop of Matrices\|$\mathbf{Mat}(R)$]] | $m \times n$ matrices over a [[Rig]] $R$ | composition = matrix multiplication, $+$ = direct sum |
 | $\mathbf{LinRel}_R$ | linear relations $\subseteq R^m \times R^n$ | [[Graphical Linear Algebra]] |
-| posetal props | a poset structure $\preceq$ on $\mathbb{N}$ with $+$ monotone | [[7S Chapter 5 Exercises#Exercise 5.9|7S Exercise 5.9]]: discrete, usual, reverse orders; *not* divisibility |
-| $\mathbf{Cospan}_{\mathbf{FinSet}}$ | cospans $\underline{m} \to N \leftarrow \underline{n}$ | the [[Hypergraph Category|hypergraph prop]] (Chapter 6) |
+| posetal props | a poset structure $\preceq$ on $\mathbb{N}$ with $+$ monotone | [[7S Chapter 5 Exercises#Exercise 5.9\|7S Exercise 5.9]]: discrete, usual, reverse orders; *not* divisibility |
+| $\mathbf{Cospan}_{\mathbf{FinSet}}$ | cospans $\underline{m} \to N \leftarrow \underline{n}$ | the [[Hypergraph Category\|hypergraph prop]] (Chapter 6) |
 
 ## Prop functors and presentations
 
@@ -35,6 +35,7 @@ Props are exactly $\mathbb{N}$-coloured operads' "one-sorted" cousins; a symmetr
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/) — Kittenlab [Lecture 4](https://algebraicjulia.github.io/Kittenlab.jl/lecture4.html)
 ```julia
 using Catlab
 # FinSet with + is a prop: objects are natural numbers, morphisms functions, ⊕ is disjoint union

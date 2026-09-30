@@ -2,7 +2,7 @@
 
 A **set** is, informally, a collection of things called **elements**. We write $x \in X$ if $x$ is an element of $X$. Repetition and order do not matter: $\{h, 1\} = \{h, h, 1, h, 1\}$.
 
-> Sources: 7 Sketches §1.2.1 (Example 1.9); Kittenlab Lecture 1 & 3; DaoFP Preface ("Set theory").
+> Sources: 7 Sketches §1.2.1 (Example 1.9); Kittenlab Lecture 1 & 3; DaoFP Preface ("Set theory"); CTfS §2.1.1 (Notation 2.1.1.1, Exercise 2.1.1.2)
 
 ## Important sets and notation
 
@@ -25,6 +25,8 @@ A **set** is, informally, a collection of things called **elements**. We write $
 
 Notation: $Z := \mathsf{foo}$ *assigns* meaning to $Z$; $Z = \mathsf{foo}$ merely asserts equality.
 
+**What must a set provide?** CTfS: we can think of a set $X$ as "a collection of things $x \in X$, each of which is recognizable as being in $X$ and such that for each pair of named elements $x, x' \in X$ we can tell if $x = x'$ or not. The set of pendulums is the collection of things we agree to call pendulums, each of which is recognizable as being a pendulum, and for any two people pointing at pendulums we can tell if they're pointing at the same pendulum." This is the standard an [[Olog]] type must meet. Quantifiers: $\exists$ "there exists", $\exists!$ "there exists a unique", $\forall$ "for all" — e.g. $\{n \in \mathbb Z \mid n \text{ is even}\} = \{n \in \mathbb Z \mid \exists m \in \mathbb Z.\ 2m = n\}$; $\{1,2,3\}$ has 8 subsets.
+
 ## Three views of "set"
 
 1. **7 Sketches** takes sets as primitive collections; functions are special [[Relation]]s (Definition 1.22, see [[Function]]).
@@ -33,6 +35,7 @@ Notation: $Z := \mathsf{foo}$ *assigns* meaning to $Z$; $Z = \mathsf{foo}$ merel
 
 ````tabs
 tab: Julia
+**Docs:** [Sets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Sets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits) — Kittenlab [Lecture 1](https://algebraicjulia.github.io/Kittenlab.jl/lecture1.html), [Lecture 3](https://algebraicjulia.github.io/Kittenlab.jl/lecture3.html)
 ```julia
 # Kittenlab Lecture 3: a (possibly infinite) set is a predicate on Julia values
 abstract type ComputableSet end

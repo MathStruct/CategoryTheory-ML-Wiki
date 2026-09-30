@@ -21,6 +21,7 @@ obeying bookkeeping axioms compatible with associators, unitors and symmetries. 
 
 ````tabs
 tab: Julia
+**Docs:** [Theories (Catlab)](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)
 ```julia
 # Example 6.69: the power set as a lax monoidal functor (Set, 1, ×) → (Set, 1, ×)
 powerset(S) = [Set(c) for c in Iterators.map(collect, Iterators.filter(_ -> true, subsets(collect(S))))]

@@ -2,7 +2,7 @@
 
 A **graph** $G = (V, A, s, t)$ consists of a [[Set]] $V$ of **vertices**, a set $A$ of **arrows** (or **edges** $E$), and two [[Function|functions]] $s, t : A \to V$, the **source** and **target** functions. If $s(a) = v$ and $t(a) = w$ we say $a$ is an arrow from $v$ to $w$. Multiple arrows between the same vertices, and loops, are allowed.
 
-> Sources: 7 Sketches Definition 1.36, Example 1.37, Remark 1.39, §3.2.1; Kittenlab Lecture 6, 8, 10; DaoFP §8.1 (free categories).
+> Sources: 7 Sketches Definition 1.36, Example 1.37, Remark 1.39, §3.2.1; Kittenlab Lecture 6, 8, 10; DaoFP §8.1 (free categories); CTfS Definition 3.3.1.1, Examples 3.3.1.2–3.3.1.7, Exercises 3.3.1.4–3.3.1.10, §3.3.3.7, §4.2.1.19
 
 **Example 1.37.** $V = \{1,2,3,4\}$, $A = \{a,b,c,d,e\}$ with $s, t$ given by ([[7S Chapter 1 Exercises#Exercise 1.38|7S Exercise 1.38]]):
 
@@ -18,13 +18,13 @@ A **graph** $G = (V, A, s, t)$ consists of a [[Set]] $V$ of **vertices**, a set 
 \usepackage{tikz-cd}
 \begin{document}
 \begin{tikzcd}
-1 \arrow[r, "a"] \arrow[d, "b"'] \arrow[dr, "c"] & 2 \arrow[d, "e"] \arrow[loop right, "d"] \\
-3 & 3' & 4
+1 \arrow[r, "a"] \arrow[dr, "b"', bend right=20] \arrow[dr, "c", bend left=20] & 2 \arrow[d, "e"] \arrow[loop right, "d"] \\
+4 & 3
 \end{tikzcd}
 \end{document}
 ```
 
-(the two copies of $3$ are the same vertex; there are two parallel arrows $b, c : 1 \to 3$.)
+(two parallel arrows $b, c : 1 \to 3$, a loop $d$ at $2$, and an isolated vertex $4$.)
 
 ## Paths and the free category
 
@@ -34,10 +34,20 @@ A [[Path in a Graph|path]] is a sequence of arrows with the target of each equal
 
 A graph is exactly a functor $\mathsf{Gr} \to \mathbf{Set}$, where $\mathsf{Gr}$ is the [[Free Category]] on the graph with two vertices $E, V$ and arrows $\mathrm{src}, \mathrm{tgt} : E \to V$ — a [[C-Set]] ("acset") on the schema $\mathsf{Gr}$. A [[Graph Homomorphism]] is a [[Natural Transformation]] between such functors; the [[Representable Functor|representables]] $y_V$ and $y_E$ are the one-vertex graph and the one-edge graph, and the [[Yoneda Lemma]] says $G(V) \cong \mathrm{Hom}(y_V, G)$, $G(E) \cong \mathrm{Hom}(y_E, G)$ (Lecture 12). Graphs have [[Coproduct|coproducts]] and [[Product|products]] computed vertex-wise and edge-wise (Lectures 8, 13). Graphs are the simplest [[Database Schema|database]]: a vertex table and an edge table with two foreign keys.
 
+## More examples (Category Theory for Scientists §3.3)
+
+- **Tables.** A graph is entirely captured by two tables: an arrow table with columns *src*, *tgt* and a vertex table with only IDs (CTfS Example 3.3.1.2) — the "graph indexing category" $A \rightrightarrows V$ read as a [[Database Schema]].
+- **Built from other data.** A function $f : A \to B$ gives a graph with vertices $A \sqcup B$ and one arrow $a \to f(a)$ per $a \in A$; a [[Span]] $A \leftarrow R \to B$ is a *bipartite graph* (CTfS Example 3.3.1.6); a binary relation $R \subseteq S \times S$ is a graph with at most one arrow between any two vertices (CTfS §3.3.3.7). Any set of vertices gives the discrete graph (no arrows) and the complete graph (one arrow per ordered pair) — the left and right adjoints of the vertex-set functor.
+- **Loops and components** are the [[Equalizer]] and [[Coequalizer]] of $\mathrm{src}, \mathrm{tgt}$ (CTfS Exercise 3.3.1.10).
+- **Every [[Olog]] has an underlying graph**, and a [[Preorder]] is a graph with at most one arrow $a \to b$ and an arrow whenever there is a path (CTfS Remark 3.4.1.9). A [[Symmetric Graph]] has an involution pairing each arrow with a reverse one.
+
 Related graph-like structures: [[Petri Net]], [[Port Graph]], [[Wiring Diagram]], [[Open Graph]].
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [FinCats](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinCats) · [ACSets API](https://algebraicjulia.github.io/ACSets.jl/stable/api/) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/) · [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/) — Kittenlab [Lecture 6](https://algebraicjulia.github.io/Kittenlab.jl/lecture6.html)
+
+**Builds on:** [[C-Set]] (`Diagram`), [[Category]] (`FinFunction`, `FinSetC`), [[Free Category]] (`FinCat`) — run those notes' Julia code first.
 ```julia
 # Kittenlab Lecture 6: a graph as a diagram (functor) from the schema SchGraph
 const SchGraph = FinCat(Set([:E, :V]), Dict(:src => (:E, :V), :tgt => (:E, :V)))
@@ -49,7 +59,9 @@ function path_graph(n::Int)
     Dict(:src => FinFunction(E, V, Dict(e => e for e in E)),
          :tgt => FinFunction(E, V, Dict(e => e + 1 for e in E))))
 end
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab: the schema is presented with @present and graphs are ACSets on it
 using Catlab
 @present SchGraph(FreeSchema) begin

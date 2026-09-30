@@ -24,6 +24,7 @@ A value is a tree whose nodes are functorfuls of branches and whose leaves hold 
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
 ```julia
 # a free monad over a command functor: Pure(a) | Free(f(FreeMonad))
 abstract type FreeM end

@@ -8,7 +8,18 @@ Let $(X, \mathrm{Op})$ be a [[Topological Space]] and $P : \mathrm{Op}^{\mathrm{
 
 Morphisms of sheaves are [[Natural Transformation|natural transformations]] of the underlying presheaves; the category $\mathbf{Shv}(X, \mathrm{Op})$ of sheaves on $X$ is a [[Topos]].
 
-> Sources: 7 Sketches §7.3 ("a sheaf on a space is roughly 'a sort of thing that can happen on the space'"), §7.3.3, Definition 7.35, Examples 7.36, 7.45, 7.46, 7.48, Exercises 7.42–7.44, 7.47, 7.49, 7.80; §7.4.1; §7.5.2.
+> Sources: 7 Sketches §7.3 ("a sheaf on a space is roughly 'a sort of thing that can happen on the space'"), §7.3.3, Definition 7.35, Examples 7.36, 7.45, 7.46, 7.48, Exercises 7.42–7.44, 7.47, 7.49, 7.80; §7.4.1; §7.5.2; CTfS §5.2.3 (Application 5.2.3.1, Definitions 5.2.3.2, 5.2.3.5, Examples 5.2.3.4, 5.2.3.6, Applications 5.2.3.7, 5.2.3.9, Example 5.2.3.10, §5.2.3.11–5.2.3.13, Example 5.2.3.14)
+
+## Sheaves in science (Category Theory for Scientists §5.2.3)
+
+"Sheaves allow us to consider the local-global nature of such maps, taking into account reparable discrepancies in data gathering tools."
+
+- **A consistent translation system** (CTfS Application 5.2.3.1). Cover the earth with 10 000 overlapping regions $U_i$, each with its own temperature recorder $T_i : U_i \to [-100, 200]$. On an overlap $U_i \cap U_j$ two devices disagree, but by a known translation ("$T_i$ reads 3° warmer than $T_j$"). "A consistent system of translation formulas is called a sheaf. It does not demand a universal 'true' temperature function, but only a consistent translation system between them."
+- **Gluing measurements** (CTfS Examples 5.2.3.4, 5.2.3.6): $U = (5, 10)$ is covered by $V_1 = (5,7)$, $V_2 = (6,9)$, $V_3 = (7,10)$ with overlaps $(6,7)$, $\varnothing$, $(7,9)$; measurements on the $V_i$ that agree on the overlaps glue to one measurement on $U$. Assigning to a region all temperature assignments between two bounds $R_1 \leq f \leq R_2$ gives a sheaf; restricting to *continuous* assignments gives a sub-sheaf ([[CTfS Chapter 5 Exercises#Exercise 5.2.3.3|CTfS Exercise 5.2.3.3]]).
+- **The night sky** (CTfS Application 5.2.3.7): functions from regions of outer space to visible wavelengths $[390, 700]$ nm form a sheaf; the sheaf condition is "the taken-for-granted fact that we can patch together different observations of space" — three overlapping telescope views glue into one image.
+- **Prediction** (CTfS Application 5.2.3.9): knowledge $A \subseteq O(U)$ of the temperatures on $U$ pulls back along restriction $O(X) \to O(U)$ and pushes forward to $O(V)$; the image is what can be predicted about $V$ ("warm in Texas, Arkansas and Kansas ⇒ not cold in Oklahoma"). Laws that agree on the overlap of two jurisdictions ("no hunting near rivers" on $U$, "no hunting in public areas" on $V$, where public areas and river banks coincide) glue to one law on $U \cup V$ (CTfS Example 5.2.3.10).
+- **Shared worldviews** (CTfS §5.2.3.11): on a [[Simplicial Complex]] of people, assign to every simplex the [[Olog]] of concepts its members share; a face inclusion gives a schema morphism, and after passing to the Alexandrov topology this is a *sheaf of categories*. Over the union of the simplices $CIJ$ and $IJK$ one gets the concepts shared by $C, I, J$ on which $I, J$ agree with $K$.
+- **Valid time** (CTfS §5.2.3.13, Example 5.2.3.14): information holding throughout a time interval restricts to subintervals and glues along overlaps, so a time-varying database is a sheaf of $\mathcal{C}$-sets on $\mathbb R$. In a maternity ward, nurses on overlapping 8-hour shifts (00–08, 04–12, 08–16) record only patients present throughout; a baby born at 05:00 appears in the overlap $\text{Shift}_1 \cap \text{Shift}_2$ but not in $\text{Shift}_1$. Compare the [[Topos of Behavior Types]].
 
 ## Remarks and examples
 
@@ -22,6 +33,7 @@ Morphisms of sheaves are [[Natural Transformation|natural transformations]] of t
 
 ````tabs
 tab: Julia
+**Docs:** [Vignette: sheaves](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/sheaves/)
 ```julia
 # the sheaf of sections of a finite function f : X → Y on the discrete space Y (Example 7.45)
 X = ["a1","a2","b1","b2","b3","c1","e1","e2"]

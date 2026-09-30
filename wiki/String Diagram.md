@@ -11,6 +11,7 @@
 
 ````tabs
 tab: Julia
+**Docs:** [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/) · [Vignette: wiring diagram basics](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/wiring_diagrams/wiring_diagram_basics/)
 ```julia
 using Catlab
 # Catlab draws string (wiring) diagrams for monoidal categories; a one-object 2-category is the same thing

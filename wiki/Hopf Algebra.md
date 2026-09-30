@@ -9,6 +9,7 @@ A **bialgebra** in a [[Symmetric Monoidal Category]] is an object carrying both 
 
 ````tabs
 tab: Julia
+**Docs:** [Theories (Catlab)](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)
 ```julia
 using Catlab
 # the bialgebra law inside the free hypergraph/symmetric monoidal theory of Mat(ℤ) is the

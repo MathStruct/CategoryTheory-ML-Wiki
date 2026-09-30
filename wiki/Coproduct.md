@@ -12,7 +12,7 @@ X \arrow[r, "\iota_X"] \arrow[dr, "f"'] & X + Y \arrow[d, "{[f, g]}", dashed] & 
 \end{document}
 ```
 
-> Sources: Kittenlab Lecture 8 ("Representatives of functors", coproducts as representing objects, the "traditional" definition), 9, 11 ("Coproducts of types in Julia"); DaoFP Chapter 4 ("Sum Types", "Cocartesian Categories"), §9.4 ("Sum as a universal cospan"), §10.2 ("The sum adjunction"); 7 Sketches §6.2.2 (Definition 6.6, Examples 6.7–6.9, Exercises 6.10–6.11), §3.4.3 ($\Sigma$ "unions data").
+> Sources: Kittenlab Lecture 8 ("Representatives of functors", coproducts as representing objects, the "traditional" definition), 9, 11 ("Coproducts of types in Julia"); DaoFP Chapter 4 ("Sum Types", "Cocartesian Categories"), §9.4 ("Sum as a universal cospan"), §10.2 ("The sum adjunction"); 7 Sketches §6.2.2 (Definition 6.6, Examples 6.7–6.9, Exercises 6.10–6.11), §3.4.3 ($\Sigma$ "unions data"); CTfS §2.4.2 (Definition 2.4.2.1, Lemma 2.4.2.7, Examples 2.4.2.3–2.4.2.12), Definition 4.5.1.23, Examples 4.5.1.19–4.5.1.27
 
 ## Examples
 
@@ -21,6 +21,14 @@ X \arrow[r, "\iota_X"] \arrow[dr, "f"'] & X + Y \arrow[d, "{[f, g]}", dashed] & 
 - [[Category of Graphs|Graphs]] and all [[C-Set|C-sets]]: pointwise, $(G + H)(V) = G(V) + H(V)$, $(G + H)(E) = G(E) + H(E)$ (Kittenlab Lecture 8).
 - **Sum types** in programming: Julia `Union{Left{S}, Right{T}}` — a function out of it is written by dispatch on `Left`/`Right`, i.e. by two functions, one per summand; the tagged union `TaggedUnion{S,T}` is another representing object with "precisely the same external interface" but different performance (Kittenlab Lecture 11). Haskell `Either a b` with `either :: (a -> x) -> (b -> x) -> Either a b -> x`; `Bool = 1 + 1`, `Maybe a = 1 + a`, enumerations (DaoFP Chapter 4). In logic: disjunction $A \vee B$; a proof is a proof of one side.
 - $\mathbb{N}$-ary coproducts are [[Colimit|colimits]] over a [[Discrete Category]] with $n$ objects; the empty coproduct is the [[Initial Object]] (Kittenlab Lecture 9). Coproducts of monoids, groups, categories, and props exist but are *not* disjoint unions (7 Sketches §5.2.3).
+
+## Examples from Category Theory for Scientists
+
+- **Airplane seats** (CTfS Examples 2.4.2.3, 2.4.2.8). "A seat in an airplane" is the coproduct of "an economy-class seat" and "a first-class seat". The universal property says: *if we know how economy seats are priced and how first-class seats are priced, and every seat is one or the other, we know how all seats are priced* — the induced map $[\text{price}_E, \text{price}_F]$; likewise the induced map to "an airplane" needs no extra bookkeeping. In an olog the injections are labelled "is" and the coproduct box "an $A$ or a $B$".
+- **Disjointness matters** (CTfS Example 2.4.2.12). The coproduct of "an animal that can fly" and "an animal that can swim" contains every duck *twice*, once labelled as a flyer and once as a swimmer; to count ducks once one needs a [[Pushout]] over "an animal that can fly and swim" (cf. [[CTfS Chapter 2 Exercises#Exercise 2.4.2.13|CTfS Exercise 2.4.2.13]] on photons as particles and waves).
+- **Piecewise curves** (CTfS Application 2.4.2.9): functions on $[a,b]$ and $[c,d]$ (say the elastic and plastic regimes of a stress–strain curve) extend uniquely to $[a,b] \sqcup [c,d]$; if they must agree at a shared endpoint one again needs a pushout.
+- **In a preorder** the coproduct is the join: in $(\mathbb N, \mid)$, $9 + 12 = \mathrm{lcm}(9, 12) = 36$ (CTfS Exercise 4.5.1.29); the coproduct of two preorders puts them side by side with no relations between them, so "apples $\sqcup$ oranges" is an *unbiased* guess at preferences on fruit (CTfS Exercise 4.5.1.20). Coproducts need not exist: in $\mathbb{R}^2$ ordered by "$q$ lies on the ray from $0$ through $p$, beyond $p$", the points $(1,0)$ and $(0,1)$ have no coproduct (CTfS Example 4.5.1.26).
+- **Graphs and dynamical systems** (CTfS Examples 4.5.1.21–4.5.1.22): the coproduct of two graphs or two [[Discrete Dynamical System|discrete dynamical systems]] is the disjoint union of their tables; "None shall receive maps from $X$ and $Y$ except through me!"
 
 ## Three descriptions (Kittenlab Lecture 8, DaoFP §9.4, §10.2)
 
@@ -37,6 +45,7 @@ X \arrow[r, "\iota_X"] \arrow[dr, "f"'] & X + Y \arrow[d, "{[f, g]}", dashed] & 
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits) — Kittenlab [Lecture 8](https://algebraicjulia.github.io/Kittenlab.jl/lecture8.html), [Lecture 9](https://algebraicjulia.github.io/Kittenlab.jl/lecture9.html), [Lecture 11](https://algebraicjulia.github.io/Kittenlab.jl/lecture11.html)
 ```julia
 # Kittenlab Lecture 11: coproducts of Julia types are tagged unions; functions out are by dispatch
 struct Left{T};  val::T end
@@ -45,7 +54,9 @@ const Coproduct{S,T} = Union{Left{S}, Right{T}}
 foo(l::Left{Int}) = l.val^2                 # one function per summand: the universal property
 foo(r::Right{String}) = length(r.val)
 (foo(Left(4)), foo(Right("hello")))         # (16, 5)
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab
 using Catlab
 C = coproduct(FinSet(2), FinSet(3))

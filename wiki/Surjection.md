@@ -2,7 +2,7 @@
 
 A [[Function]] $f : A \to B$ is **surjective** (a **surjection**, drawn $A \twoheadrightarrow B$) if for all $t \in B$ there exists $s \in A$ with $f(s) = t$.
 
-> Sources: 7 Sketches Definition 1.22, Example 1.26; Kittenlab Lecture 2; DaoFP §2.5 (epimorphisms).
+> Sources: 7 Sketches Definition 1.22, Example 1.26; Kittenlab Lecture 2; DaoFP §2.5 (epimorphisms); CTfS Definition 2.7.5.1, Proposition 2.7.5.4
 
 **Quantifier order matters** (Kittenlab): "for every $b$ there exists $a$" allows a different $a$ for each $b$; "there exists $a$ such that for every $b$" would force $B$ to be a singleton.
 
@@ -15,13 +15,18 @@ A [[Function]] $f : A \to B$ is **surjective** (a **surjection**, drawn $A \twoh
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) — Kittenlab [Lecture 2](https://algebraicjulia.github.io/Kittenlab.jl/lecture2.html)
+
+**Builds on:** [[Function]] (`𝔽Mor`) — run that note's Julia code first.
 ```julia
 # Kittenlab Lecture 2
 function is_surjective(f::𝔽Mor)
   seen = Set([f(x) for x in f.dom])
   all(y ∈ seen for y in f.codom)
 end
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab
 using Catlab
 f = FinFunction([1, 2, 2], 2)

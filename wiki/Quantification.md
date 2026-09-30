@@ -35,6 +35,7 @@ Quantifiers are the [[Adjunction|adjoints]] of pullback: $\exists_\pi \dashv \pi
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits) · [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets)
 ```julia
 using Catlab
 # Set: quantify the finite predicate p(n, z) = (n ≤ |z|) on 0:3 × -3:3

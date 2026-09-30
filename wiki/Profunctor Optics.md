@@ -11,9 +11,9 @@ $$
 | optic | $\mathcal{T}$ | existential / concrete form | profunctor form |
 |---|---|---|---|
 | **Iso** (adapter) | all profunctors | $\mathcal{C}(s, a) \times \mathcal{C}(b, t)$: `(s -> a, b -> t)` | `forall p. Profunctor p => p a b -> p s t` |
-| **Lens** | [[Tambara Module|Tambara]] for $\times$ (`Cartesian`) | $\int^c \mathcal{C}(s, c \times a) \times \mathcal{C}(c \times b, t)$; `get, set` | `forall p. Cartesian p => p a b -> p s t` |
+| **Lens** | [[Tambara Module\|Tambara]] for $\times$ (`Cartesian`) | $\int^c \mathcal{C}(s, c \times a) \times \mathcal{C}(c \times b, t)$; `get, set` | `forall p. Cartesian p => p a b -> p s t` |
 | **Prism** | Tambara for $+$ (`Cocartesian`) | $\int^c \mathcal{C}(s, c + a) \times \mathcal{C}(c + b, t) \cong \mathcal{C}(s, t + a) \times \mathcal{C}(b, t)$; `match :: s -> Either t a`, `build :: b -> t` | `forall p. Cocartesian p => p a b -> p s t` |
-| **Traversal** | generalized Tambara for $c \bullet a = \sum_m c_m \times a^m$ | $\mathbf{Set}(s, \sum_n \mathbf{Set}(b^n, t) \times a^n)$; `s -> ([b] -> t, [a])` (sizes must match — really needs [[Dependent Type|dependent types]]) | `forall p. Traversing p => p a b -> p s t` |
+| **Traversal** | generalized Tambara for $c \bullet a = \sum_m c_m \times a^m$ | $\mathbf{Set}(s, \sum_n \mathbf{Set}(b^n, t) \times a^n)$; `s -> ([b] -> t, [a])` (sizes must match — really needs [[Dependent Type\|dependent types]]) | `forall p. Traversing p => p a b -> p s t` |
 
 - **Iso**: `toIsoP (f, g) = dimap f g`; conversely a function that maps $P\langle a,b\rangle \to P\langle s,t\rangle$ for *every* profunctor can only be a closure over a pair `(s -> a, b -> t)` — recovered by feeding the profunctor `Adapter a b s t = (s -> a, b -> t)` at the identities ([[DaoFP Chapter 18 Exercises#Exercise 18.2.1|DaoFP Exercise 18.2.1]]).
 - **Lens**: `toLensP (LensE from to) = dimap from to . alpha`; back via the Cartesian profunctor `FlipLens a b s t = (s -> a, s -> b -> t)` fed with `FlipLens id (\_ b -> b)`. Composition: `lens3 = lens2 . lens1`.
@@ -22,6 +22,7 @@ $$
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
 ```julia
 # profunctor lens on the function profunctor: p a b -> p s t with p = (->), i.e. an "over"
 alpha(f) = ((c, a),) -> (c, f(a))

@@ -50,6 +50,9 @@ Replacing $\leq$ by $\cong$ in (1.108) recovers isomorphism. The inequalities ar
 
 ````tabs
 tab: Julia
+**Docs:** [Vignette: meets](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/meets/)
+
+**Builds on:** [[Natural Numbers]] (`UsualOrder`) — run that note's Julia code first.
 ```julia
 # check the adjunction condition on finite preorders
 is_galois(pP, pQ, f, g, ps, qs) =

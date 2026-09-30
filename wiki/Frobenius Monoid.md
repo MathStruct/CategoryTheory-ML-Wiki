@@ -25,6 +25,7 @@ Define the **spider** $s_{m,n} : X^{\otimes m} \to X^{\otimes n}$ as $(m - 1)$ m
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits) · [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)
 ```julia
 # Catlab: the theory of hypergraph categories / Frobenius structure via `ThHypergraphCategory`
 using Catlab

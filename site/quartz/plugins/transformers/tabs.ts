@@ -1,6 +1,11 @@
 import { QuartzTransformerPlugin } from "../types"
 import { Root, Code, RootContent } from "mdast"
 import { visit } from "unist-util-visit"
+import { fromMarkdown } from "mdast-util-from-markdown"
+import { gfm } from "micromark-extension-gfm"
+import { gfmFromMarkdown } from "mdast-util-gfm"
+import { math } from "micromark-extension-math"
+import { mathFromMarkdown } from "mdast-util-math"
 
 /**
  * Renders ````tabs blocks of the Obsidian "Markdown Tabs" plugin:
@@ -15,7 +20,9 @@ import { visit } from "unist-util-visit"
  *   ````
  *
  * Each tab body may contain fenced code blocks (kept as `code` nodes so the
- * normal syntax highlighter handles them) and plain text lines.
+ * normal syntax highlighter handles them) and markdown text (links, emphasis,
+ * inline code, math), which is parsed like the rest of the note so that e.g. a
+ * "Docs:" line with links to the Catlab/GATlab documentation renders as links.
  */
 type Tab = { title: string; nodes: RootContent[] }
 
@@ -26,7 +33,13 @@ function parseTabs(src: string): Tab[] {
   let text: string[] = []
   const flushText = () => {
     const t = text.join("\n").trim()
-    if (t && cur) cur.nodes.push({ type: "paragraph", children: [{ type: "text", value: t }] })
+    if (t && cur)
+      cur.nodes.push(
+        ...(fromMarkdown(t, {
+          extensions: [gfm(), math()],
+          mdastExtensions: [gfmFromMarkdown(), mathFromMarkdown()],
+        }).children as RootContent[]),
+      )
     text = []
   }
   for (const line of src.split("\n")) {

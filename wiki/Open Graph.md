@@ -8,6 +8,7 @@ Kittenlab's plan: "our goal for the next couple lectures is to learn how to comp
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Structured cospans](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.StructuredCospans) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/) — Kittenlab [Lecture 9](https://algebraicjulia.github.io/Kittenlab.jl/lecture9.html), [Lecture 15](https://algebraicjulia.github.io/Kittenlab.jl/lecture15.html)
 ```julia
 using Catlab
 # Catlab: open graphs as structured cospans with feet in FinSet

@@ -2,23 +2,29 @@
 
 A [[Function]] $f : A \to B$ is **injective** (an **injection**, drawn $A \hookrightarrow B$) if for all $t \in B$ and $s_1, s_2 \in A$ with $f(s_1) = t = f(s_2)$ we have $s_1 = s_2$. Equivalently (Kittenlab): whenever $a \neq a'$ then $f(a) \neq f(a')$.
 
-> Sources: 7 Sketches Definition 1.22, Exercise 1.24; Kittenlab Lecture 2; DaoFP §2.4 (monomorphisms).
+> Sources: 7 Sketches Definition 1.22, Exercise 1.24; Kittenlab Lecture 2; DaoFP §2.4 (monomorphisms); CTfS Definition 2.7.5.1, Proposition 2.7.5.4, Proposition 2.7.5.5, Example 2.7.5.7, Corollary 2.7.5.8
 
 **Examples.** $\{1,2\} \to \{1,2,3\}$, $1 \mapsto 1$, $2 \mapsto 2$ is injective (and not surjective). $\{1,2,3\} \to \{1,2\}$ with $3 \mapsto 2$ is not. The unique function $\varnothing \to \{1\}$ is injective but not surjective.
 
 - Injective functions are exactly the [[Monomorphism|monomorphisms]] in $\mathbf{Set}$ (DaoFP §2.4). Any arrow out of the [[Terminal Object]] is a monomorphism.
+- **Pullbacks of injections** (CTfS Proposition 2.7.5.5, Example 2.7.5.7): pulling an injection back along any map gives an injection, and in an [[Olog]] such a pullback has a canonical label. Pulling "a cow $\xrightarrow{\text{is}}$ an animal" back along "a rib $\xrightarrow{\text{is made by}}$ an animal" gives "a rib which is made by a cow". Every injection $A \hookrightarrow X$ is the pullback of $\mathit{True} : \{\star\} \to \{\mathit{True}, \mathit{False}\}$ along its characteristic function (CTfS Corollary 2.7.5.8, [[Subobject Classifier]]).
 - A function is a [[Bijection]] iff it is injective and [[Surjection|surjective]]; then it has an inverse.
 - The [[Pigeonhole Principle]]: a function from a larger finite set to a smaller one cannot be injective.
 - An injection $U \hookrightarrow X$ is the "[[Subobject]]" view of a [[Subset]].
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) — Kittenlab [Lecture 2](https://algebraicjulia.github.io/Kittenlab.jl/lecture2.html)
+
+**Builds on:** [[Function]] (`𝔽Mor`) — run that note's Julia code first.
 ```julia
 # Kittenlab Lecture 2
 function is_injective(f::𝔽Mor)
   length(unique!(collect(f.dom))) == length(unique!([f(x) for x in f.dom]))
 end
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab
 using Catlab
 f = FinFunction([1, 2], 3)

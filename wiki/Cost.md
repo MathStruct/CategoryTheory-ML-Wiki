@@ -21,6 +21,9 @@ the non-negative reals together with $\infty$, ordered by $\geq$ (so $\infty \ge
 
 ````tabs
 tab: Julia
+**Docs:** [Vignette: monoidal preorders & SMCs](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/smc/)
+
+**Builds on:** [[Preorder]] (`Preorder`) — run that note's Julia code first.
 ```julia
 struct CostPre <: Preorder{Float64} end
 leq(::CostPre, x, y) = x >= y                   # reversed order; Inf is the bottom

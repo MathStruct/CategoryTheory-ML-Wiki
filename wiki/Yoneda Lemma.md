@@ -8,13 +8,15 @@ $$
 
 natural in both $X$ and $F$. Dually (contravariant Yoneda), $[\mathcal{C}^{\mathrm{op}}, \mathbf{Set}](\mathrm{Hom}(-, X), F) \cong F(X)$ for a [[Presheaf]] $F$.
 
-> Sources: Kittenlab Lecture 12 ("That's Yoneda, Babe"); DaoFP §3.3 ("Reasoning with Arrows"), §9.6 ("The Yoneda Lemma", "Yoneda lemma in programming", "The contravariant Yoneda lemma"), §9.10, §17.6 ("Ninja Yoneda"), §20.4 (enriched); 7 Sketches Exercise 1.66 ([[Yoneda Lemma for Preorders]]), Remark 1.82; DaoFP Preface: "the fundamental theorem of category theory".
+> Sources: Kittenlab Lecture 12 ("That's Yoneda, Babe"); DaoFP §3.3 ("Reasoning with Arrows"), §9.6 ("The Yoneda Lemma", "Yoneda lemma in programming", "The contravariant Yoneda lemma"), §9.10, §17.6 ("Ninja Yoneda"), §20.4 (enriched); 7 Sketches Exercise 1.66 ([[Yoneda Lemma for Preorders]]), Remark 1.82; DaoFP Preface: "the fundamental theorem of category theory"; CTfS §5.2.1.6 (Lemma 5.2.1.7: "each row in table $c$ induces its SIRS throughout the database")
 
 ## Intuition
 
 - "A vibe check for category theory": we say all the time that all that matters is the morphisms out of (or into) an object; the Yoneda lemma formalizes this (Kittenlab).
 - The trivial case: for a set $A$, $A \cong \mathrm{Hom}_{\mathbf{Set}}(1, A)$ — "$A^1 \cong A$". For [[Graph|graphs]]: the vertices of $G$ are the maps from the one-vertex graph $y_V$, $G(V) \cong \mathrm{Hom}(y_V, G)$, and the edges are maps from the one-edge graph, $G(E) \cong \mathrm{Hom}(y_E, G)$, because *naturality* forces where $\mathrm{src}, \mathrm{tgt}$ go once $\mathrm{id}_E$ is sent to an edge (Kittenlab).
 - DaoFP: $\mathrm{Hom}(a, -)$ is the "panoramic, very detailed view of $\mathcal{C}$ from the vantage point of $a$"; an arbitrary $F$ is another, lossy model; a natural transformation embeds one model in the other, and the set of all such is "fully determined by the set $F a$". "The proof starts with a single identity arrow and lets naturality propagate it across the whole category."
+
+- **Databases** (CTfS §5.2.1.6): for a schema $\mathcal C$ and an instance $I$, a row $r \in I(c)$ has a value in every foreign-key column leaving $c$, those values have values in their columns, and so on: the row "induces its schematically implied reference spread" through the database. The representable $\mathrm{Hom}(c, -)$ is that spread with *placeholder* values (see [[Representable Functor]]), and the Yoneda lemma says filling in the placeholders from $r$ is a bijection $\mathrm{Hom}(\mathrm{Hom}(c, -), I) \cong I(c)$.
 
 ## Proof (Kittenlab / DaoFP)
 
@@ -50,6 +52,7 @@ so $\alpha = (\alpha_X(\mathrm{id}_X))^*$: "where $f$ goes is wholly determined 
 
 ````tabs
 tab: Julia
+**Docs:** [Categories & functors](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Categories) · [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) · [ACSets API](https://algebraicjulia.github.io/ACSets.jl/stable/api/) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/) — Kittenlab [Lecture 12](https://algebraicjulia.github.io/Kittenlab.jl/lecture12.html)
 ```julia
 # Kittenlab Lecture 12 for graphs: elements of G(V) ↔ maps from the one-vertex graph
 using Catlab

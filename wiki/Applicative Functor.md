@@ -17,6 +17,7 @@ with laws: identity `pure id <*> v = v`, homomorphism `pure f <*> pure x = pure 
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
 ```julia
 # applicative structure on lists (cartesian) and the zip alternative
 pure(a) = [a]

@@ -2,7 +2,7 @@
 
 Given [[Preorder|preorders]] $(P, \leq)$ and $(Q, \leq)$, the **product preorder** on the product set $P \times Q$ has $(p, q) \leq (p', q')$ iff $p \leq p'$ and $q \leq q'$. This is a basic example of the [[Product Category|product of categories]].
 
-> Sources: 7 Sketches Example 1.56, Exercise 1.57; §2.4.3 (product $\mathcal{V}$-categories).
+> Sources: 7 Sketches Example 1.56, Exercise 1.57; §2.4.3 (product $\mathcal{V}$-categories); CTfS Example 4.5.1.2, Exercises 4.5.1.3–4.5.1.4
 
 **Example** ([[7S Chapter 1 Exercises#Exercise 1.57|7S Exercise 1.57]]): the product of $b \geq a \leq c$ with $1 \leq 2$ has six elements $(a,1) \leq (a,2), (b,1), (c,1) \leq (b,2), (c,2)$.
 
@@ -21,6 +21,9 @@ The product preorder is the [[Product]] of $P$ and $Q$ in the category $\mathbf{
 
 ````tabs
 tab: Julia
+**Docs:** [Vignette: preorders](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/preorders/)
+
+**Builds on:** [[Preorder]] (`Preorder`) — run that note's Julia code first.
 ```julia
 struct ProductPreorder{S,T,P<:Preorder{S},Q<:Preorder{T}} <: Preorder{Tuple{S,T}}
   p::P; q::Q

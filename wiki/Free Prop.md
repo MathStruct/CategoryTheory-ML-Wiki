@@ -21,6 +21,7 @@ A syntactic description: **$G$-generated prop expressions** are built inductivel
 
 ````tabs
 tab: Julia
+**Docs:** [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)
 ```julia
 # Catlab: a free symmetric monoidal category on a signature with one generating object = a free prop
 using Catlab

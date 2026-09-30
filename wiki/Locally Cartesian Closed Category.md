@@ -16,6 +16,7 @@ LCCCs are the categorical models of dependent type theory, the way CCCs model th
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits)
 ```julia
 using Catlab
 # FinSet is locally cartesian closed: pullbacks exist and slices FinSet/B are cartesian closed.

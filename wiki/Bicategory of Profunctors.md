@@ -14,8 +14,9 @@ An `Arrow` is a pre-arrow that is also a [[Tambara Module]].
 
 ````tabs
 tab: Julia
+**Docs:** [FinRelations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinRelations)
 ```julia
-using Catlab.CategoricalAlgebra.FinRelations
+using Catlab, Catlab.CategoricalAlgebra.FinRelations
 # Bool-profunctors between finite discrete categories are relations; composition is strict there
 R = FinRelation((x, y) -> x < y, 3, 3); S = FinRelation((x, y) -> x == y + 1, 3, 3)
 RS = compose(R, S)                              # relational composition = the coend over Bool

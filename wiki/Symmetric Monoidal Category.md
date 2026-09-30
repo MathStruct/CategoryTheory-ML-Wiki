@@ -12,6 +12,7 @@ A **symmetric monoidal category** is a [[Monoidal Category]] $(\mathcal{C}, \oti
 
 ````tabs
 tab: Julia
+**Docs:** [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/) · [Vignette: SMCs](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/smc/)
 ```julia
 using Catlab
 @present P(FreeSymmetricMonoidalCategory) begin (A, B)::Ob end

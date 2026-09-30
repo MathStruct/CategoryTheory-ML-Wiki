@@ -8,7 +8,7 @@ $$
 
 i.e. $(- \times a) \dashv (-)^a$ — the [[Currying|currying adjunction]]. A category with all exponentials (and finite products) is a [[Cartesian Closed Category]].
 
-> Sources: DaoFP §1.4 ("The Object of Arrows"), Chapter 6 ("Function Types": elimination rule, introduction rule, currying, modus ponens, functoriality), §9.4 ("Exponentials"), §10.1, §10.5; 7 Sketches Example 3.72 ($C^B$ in $\mathbf{Set}$, $|C^B| = |C|^{|B|}$), Exercise 3.73, §7.2.1; Definition 2.79 ([[Monoidal Closed Preorder|hom-elements]] are the preorder shadow).
+> Sources: DaoFP §1.4 ("The Object of Arrows"), Chapter 6 ("Function Types": elimination rule, introduction rule, currying, modus ponens, functoriality), §9.4 ("Exponentials"), §10.1, §10.5; 7 Sketches Example 3.72 ($C^B$ in $\mathbf{Set}$, $|C^B| = |C|^{|B|}$), Exercise 3.73, §7.2.1; Definition 2.79 ([[Monoidal Closed Preorder|hom-elements]] are the preorder shadow); CTfS Notation 2.7.2.1, Proposition 2.7.2.3, Exercises 2.7.2.2, 2.7.2.5, Proposition 2.7.3.1
 
 ## Examples and rules (DaoFP Chapter 6)
 
@@ -16,12 +16,14 @@ i.e. $(- \times a) \dashv (-)^a$ — the [[Currying|currying adjunction]]. A cat
 - **Elimination rule**: evaluation/`apply :: (a -> b, a) -> b`, *modus ponens*. **Introduction rule**: currying, `curry :: ((x, a) -> b) -> (x -> a -> b)`, from a two-argument function to a function returning a function. A function of $\Gamma \times a \to b$ is an expression in environment $\Gamma$ with a free variable of type $a$; the exponential is a *closure* capturing $\Gamma$ (DaoFP §10.1).
 - **Yoneda trick** (DaoFP §9.4): substituting $x := b^a$ and picking $h = \mathrm{id}$, the commuting condition gives $\varepsilon_{ab} = \alpha^{-1}(\mathrm{id}) =$ `uncurry id`, and the naturality square then yields $\varepsilon \circ (h \times \mathrm{id}) = f$. The unit of the adjunction is $\eta : e \to (e \times a)^a$, `curry id`.
 - **Functoriality**: $b^a$ is covariant in $b$ and contravariant in $a$ — a [[Profunctor]], `dimap f g h = g . h . f`; "the function object can be visualized as a lookup table keyed by $a$: to use a related key $a'$ you need a converter $a' \to a$". Sums and products revisited: $x^{a + b} \cong x^a \times x^b$, $(a \times b)^x \cong a^x \times b^x$, $(b^a)^x \cong b^{a \times x}$, $b^1 \cong b$, $b^0 \cong 1$.
+- **Counting** (CTfS Exercise 2.7.2.2): for finite sets $|B^A| = |B|^{|A|}$, including the edge cases $|B^\varnothing| = 1$ (the empty function) and $|\varnothing^A| = 0$ for $A \neq \varnothing$; so $0^0 = 1$. All the laws of exponents hold as isomorphisms of sets — see [[Arithmetic of Sets]].
 - In a [[Bicartesian Closed Category]] products distribute over sums, since $(- \times a)$ is a left adjoint ([[Right Adjoints Preserve Limits|left adjoints preserve colimits]]).
 - $b^a$ is the [[Representable Functor|representing object]] of $x \mapsto \mathcal{C}(x \times a, b)$; the "logarithm" intuition: $\mathcal{C}(1, x^a) \cong \mathcal{C}(a, x)$ (DaoFP §9.8). Internal homs make $\mathcal{C}$ self-[[Enriched Category|enriched]] (DaoFP §20.1). [[Defunctionalization]] approximates $b^a$ by a solution set of environments.
 - Generalization: [[Monoidal Closed Category]] ($[a, b]$ right adjoint to $- \otimes a$); [[Compact Closed Category]] (duals $a^*$ with $[a, b] \cong a^* \otimes b$).
 
 ````tabs
 tab: Julia
+**Docs:** [Theories (Catlab)](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)
 ```julia
 # Julia functions are values: the exponential object is the (abstract) function type
 curry(f) = x -> a -> f((x, a))
@@ -29,7 +31,9 @@ uncurry(h) = ((x, a),) -> h(x)(a)
 apply(fa) = fa[1](fa[2])                     # evaluation ε : b^a × a → b
 plus = ((x, a),) -> x + a
 p = curry(plus); p(3)(4)                     # 7  (7 Sketches Exercise 3.73: p(3) = "add three")
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab: FinSet is cartesian closed; the exponential of finite sets
 using Catlab
 # (not a built-in constructor in 0.16; |C^B| = |C|^|B|)

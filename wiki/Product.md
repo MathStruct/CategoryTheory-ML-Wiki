@@ -14,7 +14,7 @@ X & X \times Y \arrow[l, "p_X"] \arrow[r, "p_Y"'] & Y
 
 "$X \times Y$ is the best object-equipped-with-morphisms-to-$X$-and-$Y$: any other such object maps to it uniquely" — a **universal property**; dotted arrows denote the unique morphism.
 
-> Sources: 7 Sketches Definition 3.86, Examples 3.87, 3.89, 3.94, Exercises 3.88, 3.90, 3.91, 3.97; Kittenlab Lecture 13 ("Products and typed products"); DaoFP Chapter 5 ("Product Types", "Cartesian Category", "Tuple Arithmetic"), §9.4 ("Product as a universal span"), §10.2 ("The product adjunction"), §10.5.
+> Sources: 7 Sketches Definition 3.86, Examples 3.87, 3.89, 3.94, Exercises 3.88, 3.90, 3.91, 3.97; Kittenlab Lecture 13 ("Products and typed products"); DaoFP Chapter 5 ("Product Types", "Cartesian Category", "Tuple Arithmetic"), §9.4 ("Product as a universal span"), §10.2 ("The product adjunction"), §10.5; CTfS §2.4.1 (Definition 2.4.1.1, Lemma 2.4.1.10, Examples 2.4.1.2–2.4.1.18), Definition 4.5.1.8, Examples 4.5.1.2–4.5.1.17
 
 ## Examples
 
@@ -24,6 +24,14 @@ X & X \times Y \arrow[l, "p_X"] \arrow[r, "p_Y"'] & Y
 - [[Category of Categories|$\mathbf{Cat}$]]: the [[Product Category]] (Example 3.89); $\mathbf{Preord}$: the [[Product Preorder]].
 - Julia: `Tuple{A,B}`; Haskell: `(a, b)` with `fst`, `snd` and `(&&&)` (DaoFP: the **cartesian category** of types).
 - In a [[Slice Category]] $\mathcal{C}/T$: the [[Pullback]] $A \times_T B$ ("typed product", Kittenlab).
+
+## Examples from Category Theory for Scientists
+
+- **A grid of dots** (CTfS Example 2.4.1.2): $\underline 6 \times \{\clubsuit, \diamondsuit, \heartsuit, \spadesuit\}$ is a $6 \times 4$ grid, and the projections read off the column and the row. "Suppose each person in a classroom picks an element of $X$ and an element of $Y$ — isn't picking a column and a row the same as picking a point of the grid?" That is the universal property, which we "need to see as completely intuitive" (CTfS Example 2.4.1.11). Punnett squares in genetics are products of the parents' possible genotypes; a tensile test produces points of extension × force.
+- **Olog labels** (CTfS §2.4.1.17): the product of boxes $c$ and $d$ is "a pair $(x, y)$ where $x$ is $c$ and $y$ is $d$", with projections "yields, as $x$" and "yields, as $y$". A car owner has as primary car a car; pairing "is a person" with "owns, as primary, a car" gives a map into "a pair (person, car)", which "has as associated utility" a dollar value (CTfS Example 2.4.1.18).
+- **Equations** (CTfS Exercise 2.4.1.8): in $\mathbb Z$, the square $(a,b,c) \mapsto (ab, ac) \mapsto ab + ac$ vs. $(a,b,c) \mapsto (a+b, c) \mapsto (a+b)c$ does *not* commute (distributivity is $a(b+c)$, not $(a+b)c$); $x \mapsto (x, 1) \mapsto x \cdot 1$ is the identity but $x \mapsto (x,0) \mapsto x \cdot 0$ is not. The swap $X \times Y \to Y \times X$ is $\langle \pi_2, \pi_1 \rangle$, its own inverse ([[CTfS Chapter 2 Exercises#Exercise 2.4.1.15|CTfS Exercise 2.4.1.15]]); the graph of $f : \mathbb R \to \mathbb R$ is $\langle \mathrm{id}, f \rangle : \mathbb R \to \mathbb R^2$ ([[CTfS Chapter 4 Exercises#Exercise 4.5.1.15|CTfS Exercise 4.5.1.15]]).
+- **Preferences** (CTfS Exercise 4.5.1.3): the product of a partial order on songs and one on artworks orders pairs "componentwise" — a reasonable but cautious guess, as it never trades a better song for a worse painting. In $(\mathbb N, \mid)$ the product of $9$ and $12$ is $\gcd = 3$. Products need not exist (two rays through the origin have no meet) and need not be unique (all points of a circle can be products), but are always unique up to unique isomorphism (CTfS Examples 4.5.1.11–4.5.1.12).
+- **In $\mathbf{Cat}$**: $[1] \times [1]$ is the commutative square with 9 morphisms — "it is a minor miracle that the categorical product somehow knows that this square should commute" (CTfS Example 4.5.1.17).
 
 ## Three descriptions
 
@@ -40,14 +48,17 @@ X & X \times Y \arrow[l, "p_X"] \arrow[r, "p_Y"'] & Y
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits) — Kittenlab [Lecture 13](https://algebraicjulia.github.io/Kittenlab.jl/lecture13.html)
 ```julia
 # Kittenlab Lecture 13: products in skeletal FinSet by index arithmetic
 struct FinSet′; n::Int end
 product_set(A::FinSet′, B::FinSet′) = FinSet′(A.n * B.n)
 proj1(A, B) = k -> div(k - 1, B.n) + 1
 proj2(A, B) = k -> rem(k - 1, B.n) + 1
-pair(A, B) = (i, j) -> (i - 1) * B.n + j
-
+pair_index(A, B) = (i, j) -> (i - 1) * B.n + j
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab
 using Catlab
 P = product(FinSet(2), FinSet(3))
@@ -55,7 +66,7 @@ apex(P)                      # FinSet(6)
 π1, π2 = legs(P)             # projections
 f = FinFunction([1, 2, 1], 2); g = FinFunction([3, 3, 2], 3)
 h = pair(P, f, g)            # ⟨f, g⟩ : FinSet(3) → FinSet(6)
-compose(h, π1) == f && compose(h, π2) == g     # true
+force(compose(h, π1)) == f && force(compose(h, π2)) == g     # true
 ```
 tab: Lean
 ```lean

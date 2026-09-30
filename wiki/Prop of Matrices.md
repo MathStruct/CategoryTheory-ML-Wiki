@@ -20,6 +20,9 @@ $$
 
 ````tabs
 tab: Julia
+**Docs:** Kittenlab [Lecture 3](https://algebraicjulia.github.io/Kittenlab.jl/lecture3.html)
+
+**Builds on:** [[Category]] (`Category`), [[Rig]] (`Nat`, `Rig`) — run those notes' Julia code first.
 ```julia
 # Mat(R) over a rig, with composition = matrix product and monoidal product = direct sum
 matmul(R::Rig, M, N) = [reduce(R.plus, (R.times(M[i,k], N[k,j]) for k in axes(M,2)); init=R.zero)

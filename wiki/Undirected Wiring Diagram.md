@@ -11,6 +11,7 @@ An **undirected wiring diagram** (UWD) is a [[Wiring Diagram]] without input/out
 
 ````tabs
 tab: Julia
+**Docs:** [Relational programs / UWDs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/wiring_diagrams/#Catlab.WiringDiagrams.UndirectedWiringDiagrams) — Kittenlab [Lecture 15](https://algebraicjulia.github.io/Kittenlab.jl/lecture15.html)
 ```julia
 using Catlab, Catlab.WiringDiagrams, Catlab.Programs
 uwd = @relation (x, z) begin

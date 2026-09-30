@@ -23,6 +23,9 @@ A monoidal monotone $f : \mathcal{V} \to \mathcal{W}$ converts $\mathcal{V}$-cat
 
 ````tabs
 tab: Julia
+**Docs:** [Vignette: monoidal preorders & SMCs](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/smc/)
+
+**Builds on:** [[Bool (Monoidal Preorder)]] (`BoolPre`), [[Cost]] (`CostPre`), [[Monotone Map]] (`is_monotone`) — run those notes' Julia code first.
 ```julia
 # check the lax monoidal conditions on finite samples
 function is_monoidal_monotone(P, Q, f, ps)

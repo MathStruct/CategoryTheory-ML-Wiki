@@ -75,19 +75,27 @@ X \arrow[r, "f"'] & Y
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [ThCategory (GATlab)](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/#GATlab.Stdlib.StdTheories.ThCategory) · [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/) — Kittenlab [Lecture 3](https://algebraicjulia.github.io/Kittenlab.jl/lecture3.html), [Lecture 5](https://algebraicjulia.github.io/Kittenlab.jl/lecture5.html)
+Kittenlab's interface (a faithful copy of `src/Categories.jl` and `src/FinSets.jl`; runs on its own, and the other Kittenlab-style tabs of the vault build on it):
 ```julia
-# Kittenlab src/Categories.jl: the interface every category implements
+module Categories
+export Category, dom, codom, compose, id
 abstract type Category{Ob, Hom} end
-
-dom(c::Category{Ob,Hom}, f::Hom)::Ob where {Ob,Hom} = error("unimplemented")
-codom(c::Category{Ob,Hom}, f::Hom)::Ob where {Ob,Hom} = error("unimplemented")
-compose(c::Category{Ob,Hom}, f::Hom, g::Hom)::Hom where {Ob,Hom} = error("unimplemented")  # f then g
-id(c::Category{Ob,Hom}, x::Ob)::Hom where {Ob,Hom} = error("unimplemented")
+function dom(c::Category{Ob,Hom}, f::Hom)::Ob where {Ob,Hom}; error("unimplemented"); end
+function codom(c::Category{Ob,Hom}, f::Hom)::Ob where {Ob,Hom}; error("unimplemented"); end
+function compose(c::Category{Ob,Hom}, f::Hom, g::Hom)::Hom where {Ob,Hom}; error("unimplemented"); end  # f then g
+function id(c::Category{Ob,Hom}, x::Ob)::Hom where {Ob,Hom}; error("unimplemented"); end
 # Laws (not enforced):
 #   compose(c, f, compose(c, g, h)) == compose(c, compose(c, f, g), h)
 #   compose(c, f, id(c, codom(c, f))) == f == compose(c, id(c, dom(c, f)), f)
+end
+using .Categories
 
-# Kittenlab src/FinSets.jl: the category of finite sets and functions
+# the category of finite sets and functions
+struct FinFunction{S,T}
+  dom::AbstractSet{S}; codom::AbstractSet{T}; values::Dict{S,T}
+end
+(f::FinFunction{S})(x::S) where {S} = f.values[x]
 struct FinSetC <: Category{AbstractSet, FinFunction} end
 Categories.dom(::FinSetC, f::FinFunction) = f.dom
 Categories.codom(::FinSetC, f::FinFunction) = f.codom
@@ -97,7 +105,13 @@ function Categories.compose(::FinSetC, f::FinFunction{S,T}, g::FinFunction{T,R})
 end
 Categories.id(::FinSetC, X::AbstractSet{S}) where {S} = FinFunction{S,S}(X, X, Dict(x => x for x in X))
 
-# Catlab: the generalized algebraic theory of categories and a free category on generators
+let A = Set([:x, :y, :z]), B = Set([1, 3, 4])          # (a `let`, so notes building on this one can reuse the names)
+  f = FinFunction(A, B, Dict(:x => 3, :y => 1, :z => 1))
+  compose(FinSetC(), id(FinSetC(), A), f).values == f.values   # unitality: true
+end
+```
+Catlab (a separate session — Catlab exports its own `Category`, `compose`, `id`): the generalized algebraic theory of categories and a free category on generators.
+```julia
 using Catlab
 @present C(FreeCategory) begin
   (X, Y, Z)::Ob

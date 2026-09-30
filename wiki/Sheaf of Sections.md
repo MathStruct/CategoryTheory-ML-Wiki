@@ -18,6 +18,7 @@ assigns to $U \subseteq Y$ the set of *cross-sections* over $U$: one element of 
 
 ````tabs
 tab: Julia
+**Docs:** [Vignette: sheaves](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/sheaves/)
 ```julia
 X = ["a1","a2","b1","b2","b3","c1","e1","e2"]
 f = Dict(x => string(x[1]) for x in X)                  # a1 ↦ a, …

@@ -14,13 +14,17 @@ A' \arrow[r, "f'"'] & B' \arrow[r, "g'"'] & C'
 
 This removes the ambiguity of the corner symbol $\lrcorner$ in a rectangle made of two squares: when the right square is a pullback, "the left square is a pullback" and "the whole rectangle is a pullback" mean the same thing.
 
-> Sources: 7 Sketches §7.2.1, Proposition 7.3, Exercise 7.4 (proof), Exercises 7.7–7.8 (applications: pullback of an iso is an iso, monos are pullback-stable).
+> Sources: 7 Sketches §7.2.1, Proposition 7.3, Exercise 7.4 (proof), Exercises 7.7–7.8 (applications: pullback of an iso is an iso, monos are pullback-stable); CTfS Proposition 2.5.1.17 (proof via elements $A \times_B (B \times_C C') \cong A \times_C C'$)
 
 ## Proof ([[7S Chapter 7 Exercises#Exercise 7.4|7S Exercise 7.4]])
 
 ($\Rightarrow$) Suppose the left square is a pullback and let $(X, p : X \to C, q : X \to A')$ satisfy $q \mathbin{;} f' \mathbin{;} g' = p \mathbin{;} h_3$. The right pullback gives a unique $r : X \to B$ with $r \mathbin{;} h_2 = q \mathbin{;} f'$ and $r \mathbin{;} g = p$; then the left pullback gives a unique $r' : X \to A$ with $r' \mathbin{;} f = r$, $r' \mathbin{;} h_1 = q$. So $r'$ mediates for the rectangle, and any other mediator $r_0$ must have $r_0 \mathbin{;} f = r$ (uniqueness for the right square) and then $r_0 = r'$ (uniqueness for the left square).
 
 ($\Leftarrow$) Suppose the rectangle is a pullback and $(X, r : X \to B, q : X \to A')$ satisfies $r \mathbin{;} h_2 = q \mathbin{;} f'$. Put $p := r \mathbin{;} g$; then $p \mathbin{;} h_3 = q \mathbin{;} f' \mathbin{;} g'$, so the rectangle gives a unique $r' : X \to A$ with $r' \mathbin{;} f \mathbin{;} g = p$ and $r' \mathbin{;} h_1 = q$. Both $r' \mathbin{;} f$ and $r$ satisfy the two equations characterizing the mediator into the right pullback, so $r' \mathbin{;} f = r$. Uniqueness of $r'$ follows from uniqueness for the rectangle. $\blacksquare$
+
+## In ologs (Category Theory for Scientists)
+
+CTfS proves the set version by elements — $(a, b, (b, c, c')) \mapsto (a, c, c')$ is a bijection $A \times_B (B \times_C C') \cong A \times_C C'$ — and uses it to unfold definitions: if "a cellphone that has a bad battery" is the pullback of "a cellphone $\xrightarrow{\text{has}}$ a battery" along "a bad battery $\to$ a battery", and "a bad battery" is itself the pullback of "a battery $\xrightarrow{\text{remains charged for}}$ a duration" along "less than 1 hour $\to$ a duration", then "a cellphone that has a bad battery" *is* "a cellphone that has a battery which remains charged for less than one hour".
 
 ## Consequences
 
@@ -29,6 +33,7 @@ This removes the ambiguity of the corner symbol $\lrcorner$ in a rectangle made 
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits)
 ```julia
 using Catlab
 # pasting in FinSet: pulling back in two steps equals pulling back along the composite

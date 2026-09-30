@@ -7,7 +7,7 @@ Let $(P, \leq)$ be a [[Preorder]] and $A \subseteq P$. An element $p$ is a **joi
 
 We write $p = \bigvee A$ or $\bigvee_{a \in A} a$, and $a \vee b$ when $A = \{a, b\}$. Joins are the dual of [[Meet|meets]] (replace $\leq$ by $\geq$ everywhere), so all remarks there — uniqueness up to equivalence, possible non-existence, Proposition 1.91 ($A \subseteq B \Rightarrow \bigvee A \leq \bigvee B$) — dualize.
 
-> Sources: 7 Sketches §1.1 ("joining systems"), Definition 1.81, Examples 1.87–1.89, Exercises 1.7, 1.85, 1.90, 1.94; Definition 1.93.
+> Sources: 7 Sketches §1.1 ("joining systems"), Definition 1.81, Examples 1.87–1.89, Exercises 1.7, 1.85, 1.90, 1.94; Definition 1.93; CTfS §3.4.2 (Definition 3.4.2.1, Exercises 3.4.2.2–3.4.2.4), §3.4.4 (Exercises 3.4.4.3, 3.4.4.7, 3.4.4.10–3.4.4.11)
 
 ## Examples
 
@@ -15,6 +15,12 @@ We write $p = \bigvee A$ or $\bigvee_{a \in A} a$, and $a \vee b$ when $A = \{a,
 - [[Booleans]]: join is OR; $\mathsf{true} \vee \mathsf{false} = \mathsf{true}$, $\mathsf{false} \vee \mathsf{false} = \mathsf{false}$ ([[7S Chapter 1 Exercises#Exercise 1.7|7S Exercise 1.7]]).
 - [[Power Set]]: $A \vee B = A \cup B$. [[Total Order]]: supremum. [[Divisibility Order]]: $\mathrm{lcm}$.
 - $\{\frac{1}{n+1} \mid n \in \mathbb{N}\} \subseteq \mathbb{R}$ has join $1$; $\mathbb{N} \subseteq \mathbb{R}$ has none.
+
+## Joins in science (Category Theory for Scientists §3.4.4)
+
+- **Taxonomy**: in the tree of life ordered by "is a kind of", the join of two species is their most specific common taxon; meets of distinct species usually do not exist ([[CTfS Chapter 3 Exercises#Exercise 3.4.4.3|CTfS Exercise 3.4.4.3]], [[Tree of Life]]).
+- **Geography**: open regions of the earth ordered by inclusion have joins (unions) and binary meets (intersections). Assigning to each region the interval of temperatures recorded in it is a monotone map to intervals of $\mathbb R$ that preserves joins (the range over a union is the smallest interval containing both ranges) but not meets: the range over $U \cap V$ can be strictly smaller than the intersection of the two ranges ([[CTfS Chapter 3 Exercises#Exercise 3.4.4.11|CTfS Exercise 3.4.4.11]]).
+- **Security**: the sets $K(I)$ of people who need to know every piece of information in $I$ reverse inclusion ($I_1 \subseteq I_2 \Rightarrow K(I_2) \subseteq K(I_1)$) and are closed under intersection, so they have meets; joins of such sets need not be unions ([[CTfS Chapter 3 Exercises#Exercise 3.4.4.7|CTfS Exercise 3.4.4.7]]).
 
 ## Joins and observations
 
@@ -24,16 +30,19 @@ Categorically a join is a [[Colimit]] in the thin category: $a \vee b$ is the [[
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) · [Vignette: meets](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/meets/)
 ```julia
-function join(leq, xs, A)
+function join_in(leq, xs, A)
   ubs = [q for q in xs if all(leq(a, q) for a in A)]
   for p in ubs
     all(leq(p, q) for q in ubs) && return p
   end
   nothing
 end
-join((a,b) -> b % a == 0, 1:12, [4, 6])   # 12 (lcm)
-
+join_in((a,b) -> b % a == 0, 1:12, [4, 6])   # 12 (lcm)
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 using Catlab
 X = FinSet(3); U = Subobject(X, [1,2]); V = Subobject(X, [2,3])
 join(U, V)   # {1,2,3}

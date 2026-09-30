@@ -12,7 +12,7 @@ such that
 
 "If categories distill the essence of structure, then functors are mappings that preserve this structure" (DaoFP). Kittenlab: "category theory is all about studying the objects of a category by studying the morphisms between them; so the study of functors — the morphisms between categories — is critical."
 
-> Sources: 7 Sketches Definition 3.35, Examples 3.36, 3.38, 3.41, 3.42, Exercises 3.37, 3.39, 3.40, 3.43; Kittenlab Lecture 4 ("Functors"), 5, 6; DaoFP §8.2 ("Functors between categories"), §8.3 ("Functors in Programming"), §8.5; the enriched version is [[Enriched Functor]].
+> Sources: 7 Sketches Definition 3.35, Examples 3.36, 3.38, 3.41, 3.42, Exercises 3.37, 3.39, 3.40, 3.43; Kittenlab Lecture 4 ("Functors"), 5, 6; DaoFP §8.2 ("Functors between categories"), §8.3 ("Functors in Programming"), §8.5; the enriched version is [[Enriched Functor]]; CTfS §4.1.2 (Definition 4.1.2.1, Examples 4.1.2.2–4.1.2.35), Remark 4.1.2.23
 
 ```tikz
 \usepackage{tikz-cd}
@@ -34,6 +34,8 @@ b \arrow[r, maps to] & F(b)
 - [[Constant Functor]] $\Delta_c$; identity functor; [[Free Category|Free]] $: \mathbf{Grph} \to \mathbf{Cat}$; forgetful functors $U : \mathbf{Mon} \to \mathbf{Set}$ and free ones $F : \mathbf{Set} \to \mathbf{Mon}$ (Kittenlab Lecture 5/7; [[Free-Forgetful Adjunction]]); [[Preorder Reflection]]; [[Discrete Category|discrete]] and [[Codiscrete Category|codiscrete]] functors $\mathbf{Set} \to \mathbf{Preord}$; $\mathcal{P} : \mathbf{Set}^{\mathrm{op}} \to \mathbf{Pos}$ and $\mathcal{P} : \mathbf{Set} \to \mathbf{Pos}$ (Kittenlab Lecture 14); [[Data Migration Functor|data migration]] $\Delta_F, \Sigma_F, \Pi_F$.
 - In programming (DaoFP §8.3): [[Endofunctor|endofunctors]] `Maybe`, `List` (type constructors with `fmap`), [[Bifunctor|bifunctors]] `(,)`, `Either`, [[Contravariant Functor|contravariant functors]] `Predicate`, [[Profunctor|profunctors]] `(->)`; "you can think of a data type as a container of values" and `fmap` transforms the contents without changing the shape.
 
+**"A functor is like a conductor of mathematical truth"** (CTfS Introduction). Because functors preserve isomorphisms (CTfS Exercise 4.1.2.21), a theorem in a simple category transports along a functor into a harder one: counting vertices, arrows, loops or connected components are functors $\mathbf{Grph} \to \mathbf{Set}$, so graphs with different counts cannot be isomorphic (CTfS Example 4.1.2.22). More CTfS examples: $U : \mathbf{Mon} \to \mathbf{Set}$ and $\mathbf{Grp} \to \mathbf{Mon}$ (relaxing symmetry to "actions that need not be reversible"); drawing a preorder as a graph, $\mathbf{Preord} \to \mathbf{Grph}$, and reachability $\mathbf{Grph} \to \mathbf{Preord}$; $\mathrm{List} : \mathbf{Set} \to \mathbf{Mon}$ ($\mathrm{List}(f)$ applied to $[1,1,3,5,4,5,3,2,4,1]$ for $f = (a,c,b,a,c)$ is $[a,a,b,c,a,c,b,c,a,a]$); $\mathrm{Paths} : \mathbf{Grph} \to \mathbf{Grph}$; $\mathrm{Ob} : \mathbf{Cat} \to \mathbf{Set}$; points and open sets of a space; the fundamental groupoid $\Pi_1 : \mathbf{Top} \to \mathbf{Grpd}$; topological quantum field theories $\mathbf{Cob} \to \mathbf{Vect}$.
+
 ## Properties
 
 - A functor may merge objects and arrows (any category maps to the one-object category $\underline{\mathbf{1}}$) and need not be surjective (a functor from $\underline{\mathbf{1}}$ picks an object). Functors "produce simplified views" — models of $\mathcal{C}$ inside $\mathcal{D}$; a [[Natural Transformation]] compares two such models.
@@ -45,6 +47,9 @@ b \arrow[r, maps to] & F(b)
 
 ````tabs
 tab: Julia
+**Docs:** [FinCats](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinCats) · [Categories & functors](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Categories) · [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/) — Kittenlab [Lecture 4](https://algebraicjulia.github.io/Kittenlab.jl/lecture4.html), [Lecture 5](https://algebraicjulia.github.io/Kittenlab.jl/lecture5.html), [Lecture 6](https://algebraicjulia.github.io/Kittenlab.jl/lecture6.html)
+
+**Builds on:** [[Category]] (`Category`, `FinSetC`), [[Function]] (`Int𝔽Mor`), [[Prop of Matrices]] (`MatC`) — run those notes' Julia code first.
 ```julia
 # Kittenlab src/Functors.jl
 abstract type Functor{C<:Category, D<:Category} end
@@ -61,7 +66,9 @@ function hom_map(::FinToMat, f::Int𝔽Mor)
   for i in 1:f.dom.n; M[i, f(i)] = 1; end
   M
 end
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab: a functor between finitely presented categories, given by generator maps
 using Catlab
 @present SchDDS(FreeSchema) begin State::Ob; next::Hom(State, State) end

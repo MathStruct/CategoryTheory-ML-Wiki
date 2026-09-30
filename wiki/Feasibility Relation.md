@@ -12,8 +12,8 @@ If $\Phi(x, y) = \mathsf{true}$ we say **$x$ can be obtained given $y$**. Monoto
 
 | $\mathbf{Bool}$-enriched notion | order-theoretic notion |
 |---|---|
-| [[Enriched Category|$\mathbf{Bool}$-category]] | preorder |
-| [[Enriched Functor|$\mathbf{Bool}$-functor]] | monotone map |
+| [[Enriched Category\|$\mathbf{Bool}$-category]] | preorder |
+| [[Enriched Functor\|$\mathbf{Bool}$-functor]] | monotone map |
 | $\mathbf{Bool}$-profunctor | feasibility relation |
 
 ## Bridges (Example 4.11)
@@ -29,6 +29,7 @@ Think of the preorders as **cities** (Hasse diagrams: an arrow $A \to B$ is a wa
 
 ````tabs
 tab: Julia
+**Docs:** Kittenlab [Lecture 14](https://algebraicjulia.github.io/Kittenlab.jl/lecture14.html)
 ```julia
 # a feasibility relation between finite preorders as a Bool matrix, with the monotonicity check
 struct Feas

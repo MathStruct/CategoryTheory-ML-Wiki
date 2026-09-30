@@ -2,11 +2,12 @@
 
 An **isomorphism** in a [[Category]] is a morphism $f : A \to B$ such that there exists $g : B \to A$ with $f \mathbin{;} g = \mathrm{id}_A$ and $g \mathbin{;} f = \mathrm{id}_B$ (i.e. $g \circ f = \mathrm{id}_A$, $f \circ g = \mathrm{id}_B$). We call $f, g$ **inverses**, write $g = f^{-1}$, and say $A$ and $B$ are **isomorphic**, $A \cong B$. Isomorphic objects are "interchangeable": for any other object $c$, maps into/out of $A$ correspond bijectively to maps into/out of $B$.
 
-> Sources: 7 Sketches Definition 3.28, Examples 3.29, 3.34, Exercises 3.30–3.33; Kittenlab Lecture 2 (finite sets), 5; DaoFP Chapter 3 ("Isomorphisms", "Naturality", "Reasoning with Arrows"), §9.1; [[Isomorphism of Preorders]] and [[Bijection]] are special cases.
+> Sources: 7 Sketches Definition 3.28, Examples 3.29, 3.34, Exercises 3.30–3.33; Kittenlab Lecture 2 (finite sets), 5; DaoFP Chapter 3 ("Isomorphisms", "Naturality", "Reasoning with Arrows"), §9.1; [[Isomorphism of Preorders]] and [[Bijection]] are special cases; CTfS Definition 2.1.2.7, Application 2.1.2.9, Lemma 2.1.2.11, Exercises 2.1.2.10–2.1.2.12, Definition 4.1.1.12, Lemma 4.1.1.16
 
 ## Examples
 
 - In $\mathbf{Set}$, isomorphisms are [[Bijection|bijections]]: $\{a,b,c\} \cong \underline{3}$ via $a \mapsto 2, b \mapsto 1, c \mapsto 3$ (inverse $1 \mapsto b$, $2 \mapsto a$, $3 \mapsto c$); there are $3! = 6$ such isomorphisms ([[7S Chapter 3 Exercises#Exercise 3.30|7S Exercise 3.30]]). [[Cardinality]] is the isomorphism class (Cantor).
+- **Canonical vs. arbitrary isomorphisms** (CTfS Application 2.1.2.9, Exercise 2.1.2.12). The nucleotides of DNA $\{A, C, G, T\}$ and of RNA $\{A, C, G, U\}$ are isomorphic in $4! = 24$ ways, but only one is useful: *transcription* $A \mapsto A$, $C \mapsto C$, $G \mapsto G$, $T \mapsto U$. Two sets can be isomorphic without any choice of isomorphism being *canonical* ("the only reasonable one"). And there is no isomorphism from the $4^3 = 64$ RNA triplets to the 21 amino acids: translation is a function but cannot be inverted.
 - In a [[Preorder]], $a \cong b$ iff $a \leq b$ and $b \leq a$ ([[Equivalent Elements of a Preorder]]).
 - Every identity is an isomorphism, its own inverse ([[7S Chapter 3 Exercises#Exercise 3.31|7S Exercise 3.31]]).
 - A [[Monoid]] in which every morphism is an isomorphism is a [[Group]]: $\mathbb{N}$ is not a group ($s$ has no inverse), $\mathbb{Z}/2$ is ([[7S Chapter 3 Exercises#Exercise 3.32|7S Exercise 3.32]]).
@@ -25,13 +26,18 @@ An **isomorphism** in a [[Category]] is a morphism $f : A \to B$ such that there
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) — Kittenlab [Lecture 2](https://algebraicjulia.github.io/Kittenlab.jl/lecture2.html)
+
+**Builds on:** [[Finite Set]] (`Vec𝔽`), [[Function]] (`𝔽Mor`) — run those notes' Julia code first.
 ```julia
 # Kittenlab Lecture 2: an isomorphism of finite sets and its inverse
 B, B′ = Vec𝔽([1, 2, 3]), Vec𝔽([:a, :b, :c])
 f = 𝔽Mor(B, B′, Dict(1 => :a, 2 => :b, 3 => :c))
 g = 𝔽Mor(B′, B, Dict(:a => 1, :b => 2, :c => 3))
 # compose(f, g) == identity(B) and compose(g, f) == identity(B′)
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab
 using Catlab
 f = FinFunction([2, 1, 3], 3)

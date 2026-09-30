@@ -15,6 +15,7 @@ $$
 
 ````tabs
 tab: Julia
+**Docs:** [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)
 ```julia
 using Catlab
 # trace in the free compact closed category: loop the last output back via cap/cup

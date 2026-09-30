@@ -17,6 +17,7 @@ Compare mappings out to an arbitrary set $S$ (the Yoneda trick): $\mathbf{Set}(\
 
 ````tabs
 tab: Julia
+**Docs:** [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/)
 ```julia
 using Catlab
 # co-Yoneda for C-sets: every graph is a coend of representables weighted by its own elements —

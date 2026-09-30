@@ -12,6 +12,7 @@ A **subobject** of an object $Y$ in a [[Category]] is (an isomorphism class of) 
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/) · [Vignette: subgraphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/graphs/subgraphs/) — Kittenlab [Lecture 14](https://algebraicjulia.github.io/Kittenlab.jl/lecture14.html)
 ```julia
 using Catlab
 Y = FinSet(5)

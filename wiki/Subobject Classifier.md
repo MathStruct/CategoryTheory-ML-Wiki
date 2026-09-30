@@ -14,11 +14,12 @@ Y \arrow[r, "\ulcorner m \urcorner"'] & \Omega & & Y \arrow[r, "p"'] & \Omega
 
 Slogan: *subobjects of $Y$ are classified by predicates on $Y$*: $\mathrm{Sub}(Y) \cong \mathcal{E}(Y, \Omega)$, naturally in $Y$. Equivalently, $\Omega$ [[Representable Functor|represents]] the subobject functor.
 
-> Sources: 7 Sketches §7.2.2, Definition 7.12, Eq. (7.13)–(7.15), Exercises 7.16–7.17, §7.4.1 ("The subobject classifier $\Omega$ in a sheaf topos"), Eq. (7.50)–(7.51), Example 7.54; Kittenlab Lecture 14 (subsets as maps to Bool).
+> Sources: 7 Sketches §7.2.2, Definition 7.12, Eq. (7.13)–(7.15), Exercises 7.16–7.17, §7.4.1 ("The subobject classifier $\Omega$ in a sheaf topos"), Eq. (7.50)–(7.51), Example 7.54; Kittenlab Lecture 14 (subsets as maps to Bool); CTfS §2.7.4.8 (Definition 2.7.4.9, Proposition 2.7.4.10, Definition 2.7.4.11, Exercise 2.7.4.12, Corollary 2.7.5.8, Exercise 2.7.5.9), §5.2.1 (Set vs $\mathcal{C}$-Set dictionary)
 
 ## Examples
 
 - **$\mathbf{Set}$**: $\Omega = \mathbb{B} = \{\mathsf{true}, \mathsf{false}\}$ ([[Booleans]]), $\mathsf{true} : 1 \to \mathbb{B}$ picks $\mathsf{true}$. For $X \subseteq Y$, $\ulcorner m \urcorner(y) = \mathsf{true}$ iff $y \in X$; conversely $\{Y \mid p\} = \{y \in Y \mid p(y) = \mathsf{true}\}$ (Eq. 7.15). Compare [[Upper Sets Classified by Maps to Bool]] for preorders.
+- **In ologs** (CTfS Exercise 2.7.5.9): label $\Omega$ "a truth value", $\{\star\}$ "the truth value *True*", and a subobject $A \subseteq X$ pulled back along $f : X \to \Omega$ "an $X$ for which $f$ is True" — e.g. for $f$ = "is an even number", $A$ = "a natural number which is even". The complement of a subset has characteristic map $\neg \circ f$ (CTfS Exercise 2.7.4.12).
 - **Sheaves on a space** $\mathbf{Shv}(X, \mathrm{Op})$: $\Omega(U) := \{U' \in \mathrm{Op} \mid U' \subseteq U\}$ with restriction $U' \mapsto U' \cap V$ for $V \subseteq U$ (Eqs. 7.50–7.51). It is a [[Sheaf]]: a matching family $V_i \subseteq U_i$ glues to $V = \bigcup_i V_i$, since $V \cap U_j = \bigcup_i (V_i \cap U_j) = \bigcup_i (V_j \cap U_i) = V_j$. The map $\mathsf{true} : 1 \to \Omega$ sends the unique section over $U$ to $U$ itself. **Upshot: truth values are open sets** — "property $P$ is true on the open subset $U$". On the one-point space this recovers $\mathbb{B}$ ([[7S Chapter 7 Exercises#Exercise 7.52|7S Exercise 7.52]]).
 - **Graphs** ([[Topos of Graphs]]): $\Omega_{\mathbf{Grph}}$ has two vertices $0, V$ and five arrows; $\mathsf{true}$ sends the loop of the terminal graph to $(V, V; A)$.
 - **Presheaves** on $\mathcal{C}$: $\Omega(c)$ is the set of sieves on $c$ (found via the [[Yoneda Lemma]]).
@@ -29,6 +30,7 @@ The logical connectives are characteristic maps of specific subobjects of $\Omeg
 
 ````tabs
 tab: Julia
+**Docs:** [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/) — Kittenlab [Lecture 14](https://algebraicjulia.github.io/Kittenlab.jl/lecture14.html)
 ```julia
 using Catlab
 # Set: characteristic function of N ⊆ Z restricted to a finite window

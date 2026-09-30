@@ -10,6 +10,9 @@ Given [[Category|categories]] $\mathcal{C}$ and $\mathcal{D}$, their **product**
 
 ````tabs
 tab: Julia
+**Docs:** [ThCategory (GATlab)](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/#GATlab.Stdlib.StdTheories.ThCategory)
+
+**Builds on:** [[Category]] (`Category`) — run that note's Julia code first.
 ```julia
 struct ProductCat{C<:Category, D<:Category} <: Category{Tuple, Tuple}
   c::C; d::D

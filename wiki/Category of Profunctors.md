@@ -28,6 +28,9 @@ $U_P \mathbin{;} \Phi = \Phi = \Phi \mathbin{;} U_Q$. *Proof.* Skeletality lets 
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
+
+**Builds on:** [[Bool (Monoidal Preorder)]] (`BoolPre`), [[Enriched Category]] (`VCategory`), [[Profunctor]] (`VProfunctor`) — run those notes' Julia code first.
 ```julia
 # Feas: compose Bool-profunctors (feasibility matrices) by Bool matrix multiplication (Eq. 4.20)
 Φ = Bool[1 0 1 0 0; 1 0 1 0 1; 1 1 1 1 0; 1 1 1 1 1]      # N, E, W, S × a..e

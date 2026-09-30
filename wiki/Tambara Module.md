@@ -29,6 +29,7 @@ with $[\mathcal{C}^{\mathrm{op}} \times \mathcal{C}, \mathbf{Set}](\Phi P, Q) \c
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
 ```julia
 # a Tambara structure on the function profunctor (->): alpha f = (c, a) -> (c, f(a))
 alpha(f) = ((c, a),) -> (c, f(a))

@@ -18,16 +18,19 @@ G(V) \arrow[r, "\alpha_V"'] & H(V) & G(V) \arrow[r, "\alpha_V"'] & H(V)
 \end{document}
 ```
 
-> Sources: Kittenlab Lecture 6 ("Sneak peak: natural transformations"), 7; 7 Sketches §3.3.5, Example 3.63, Exercise 3.64.
+> Sources: Kittenlab Lecture 6 ("Sneak peak: natural transformations"), 7; 7 Sketches §3.3.5, Example 3.63, Exercise 3.64; CTfS Definition 3.3.3.1, Remark 3.3.3.2, Example 3.3.3.3, Exercises 3.3.3.5–3.3.3.6, 4.1.1.14–4.1.1.15, Example 4.3.1.12
 
 **Example 3.63/[[7S Chapter 3 Exercises#Exercise 3.64|7S Exercise 3.64]].** $G = 1 \xrightarrow{a} 2 \xrightarrow{b} 3$, $H = 4 \xrightarrow{c, d} 5 \circlearrowleft e$. The unique homomorphism with $\alpha_E(a) = d$ has $\alpha_E(b) = e$, $\alpha_V(1) = 4$, $\alpha_V(2) = \alpha_V(3) = 5$.
 
 **Example (Kittenlab).** A **three-colouring** of $G$ is a homomorphism into the triangle graph $K_3$: adjacent vertices get different colours because $K_3$ has no loops. Catlab's `homomorphisms` search solves such constraint problems.
 
+**"Arrows are bound to their vertices"** (CTfS Remark 3.3.3.2): one cannot send an arrow $1 \to 2$ to an arrow $1' \to 3'$ while sending $2 \mapsto 2'$. The two squares can equivalently be packaged as one square with $(\mathrm{src}, \mathrm{tgt}) : E \to V \times V$ and $\alpha_V \times \alpha_V$ ([[CTfS Chapter 3 Exercises#Exercise 3.3.3.6|CTfS Exercise 3.3.3.6]]). A homomorphism sends paths to paths of the *same length*; if $\alpha_V, \alpha_E$ are injective so is the induced map on paths, but surjectivity on vertices and arrows does not imply surjectivity on paths ([[CTfS Chapter 3 Exercises#Exercise 3.3.3.5|CTfS Exercise 3.3.3.5]]). A homomorphism is an isomorphism iff both components are bijections (CTfS Exercises 4.1.1.14–4.1.1.15).
+
 [[Category of Graphs|$\mathbf{Grph}$]] is the category of graphs and graph homomorphisms; its isomorphisms are relabelings; monos are subgraph inclusions.
 
 ````tabs
 tab: Julia
+**Docs:** [Categories & functors](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Categories) · [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) · [ACSets API](https://algebraicjulia.github.io/ACSets.jl/stable/api/) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/) · [Vignette: graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/graphs/graphs/) — Kittenlab [Lecture 6](https://algebraicjulia.github.io/Kittenlab.jl/lecture6.html)
 ```julia
 using Catlab
 G = @acset Graph begin V = 3; E = 2; src = [1, 2]; tgt = [2, 3] end

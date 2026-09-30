@@ -30,6 +30,7 @@ P\langle y, y \rangle \arrow[dr, "i_y"'] & & P\langle x, x \rangle \arrow[dl, "i
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits)
 ```julia
 using Catlab
 # coend of a Set-valued profunctor on a finite category = colimit-style quotient: for a

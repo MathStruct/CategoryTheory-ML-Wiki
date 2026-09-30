@@ -15,11 +15,12 @@ Let $\mathcal{C}$ have [[Pushout|pushouts]]. **$\mathrm{Csp}(\mathcal{C})$** has
 ## Uses
 
 - [[Undirected Wiring Diagram|Undirected wiring diagrams]]: a cospan $X \to A \leftarrow Y$ in $\mathbf{FinSet}$ drawn as boxes with ports joined through junctions $A$ (two styles of picture, Kittenlab Fig. "uwd"). [[Open Graph|Open graphs]]: a graph with input/output maps $I \to G(V) \leftarrow O$ — a cospan of finite sets with a decoration; composing them is gluing along shared vertices.
-- $\mathbf{Cosp}_{\mathcal{C}}$ is a [[Hypergraph Category]] (7 Sketches Theorem 6.x), the prototype: every object carries a [[Frobenius Monoid]] given by the cospans $X + X \to X \leftarrow X$ etc.; [[Decorated Cospan|decorated cospans]] and [[Structured Cospan|structured cospans]] add data (circuit components) on the apex. The [[Operad]] of cospans "designs" wiring diagrams (§6.5).
+- $\mathbf{Cosp}_{\mathcal{C}}$ is a [[Hypergraph Category]] (7 Sketches Example 6.61), the prototype: every object carries a [[Frobenius Monoid]] given by the cospans $X + X \to X \leftarrow X$ etc.; [[Decorated Cospan|decorated cospans]] and [[Structured Cospan|structured cospans]] add data (circuit components) on the apex. The [[Operad]] of cospans "designs" wiring diagrams (§6.5).
 - DaoFP: the set of cospans over $x$ is functorial in $x$, and $[\mathbf{2}, \mathcal{C}](D, \Delta_x) \cong \mathcal{C}(a + b, x)$ defines the sum. Dual: [[Span]].
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits) · [Free diagrams](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FreeDiagrams) — Kittenlab [Lecture 15](https://algebraicjulia.github.io/Kittenlab.jl/lecture15.html)
 ```julia
 using Catlab
 # cospans of finite sets; composition by pushout

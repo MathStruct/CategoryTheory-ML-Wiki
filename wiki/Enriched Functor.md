@@ -20,6 +20,9 @@ When $\mathcal{V}$ is a [[Monoidal Category]], a $\mathcal{V}$-functor maps obje
 
 ````tabs
 tab: Julia
+**Docs:** [Vignette: monoidal preorders & SMCs](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/smc/)
+
+**Builds on:** [[Enriched Category]] (`VCategory`) — run that note's Julia code first.
 ```julia
 # check a V-functor between finite V-categories given as an object map (Dict)
 function is_vfunctor(X::VCategory, Y::VCategory, F::Dict)

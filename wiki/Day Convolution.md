@@ -26,6 +26,7 @@ whose `Monoidal` instance is list concatenation (`DoneA x >*< fry = fmap (x,) fr
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
 ```julia
 # Day convolution of two "containers" (vectors) with a combining function: an existential triple
 struct Day; combine::Function; fa::Vector; gb::Vector; end

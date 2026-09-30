@@ -18,6 +18,7 @@ holds. In the topos of [[C-Set|database instances]] on a schema $\mathcal{C}$ th
 
 ````tabs
 tab: Julia
+**Docs:** [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/)
 ```julia
 using Catlab
 # Example 7.74 in the presheaf topos of graphs: f is epi iff surjective on every table (V and E)

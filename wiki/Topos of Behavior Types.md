@@ -18,6 +18,7 @@ A system of interacting components (sensor, controller, motor of Eq. 7.1) is a [
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
 ```julia
 # a behavior type sampled on basic opens: sections over o_[a,b] are functions on (a,b)
 struct Behavior; sections::Function; end         # sections(a, b) :: Vector of allowed functions

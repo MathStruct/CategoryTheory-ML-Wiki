@@ -24,13 +24,13 @@ A [[Symmetric Monoidal Preorder]] is exactly a symmetric monoidal category with 
 |---|---|---|---|
 | $\mathbf{Set}$ | $\times$ (cartesian product; $f \times g$ pointwise) | $\{1\}$ | Example 4.49; $\alpha : (s, (t, u)) \mapsto ((s, t), u)$; a [[Cartesian Category]] |
 | $\mathbf{Set}$, $\mathbf{FinSet}$ | $\sqcup$ / $+$ | $\varnothing$ | cocartesian (DaoFP §4.4: $0 + a \cong a$, commutativity, associativity, functoriality); the [[Prop]] $\mathbf{FinSet}$ |
-| any category with finite [[Product|products]] / [[Coproduct|coproducts]] | $\times$ / $+$ | $1$ / $0$ | DaoFP Chapters 4–5; "tuple arithmetic" |
+| any category with finite [[Product\|products]] / [[Coproduct\|coproducts]] | $\times$ / $+$ | $1$ / $0$ | DaoFP Chapters 4–5; "tuple arithmetic" |
 | $\mathbf{Vect}_k$ | $\otimes_k$ | $k$ | not cartesian: no diagonal $V \to V \otimes V$ — no copying (quantum) |
-| $[\mathcal{C}, \mathcal{C}]$ endofunctors | $\circ$ | $\mathrm{Id}$ | strict, *not* symmetric; its monoids are [[Monad|monads]] (DaoFP §14.7) |
+| $[\mathcal{C}, \mathcal{C}]$ endofunctors | $\circ$ | $\mathrm{Id}$ | strict, *not* symmetric; its monoids are [[Monad\|monads]] (DaoFP §14.7) |
 | $\mathbf{Cat}$ | $\times$ | $\underline{\mathbf{1}}$ | cartesian closed (DaoFP §10.1) |
-| [[Category of Profunctors|$\mathbf{Prof}_{\mathcal{V}}$]] / $\mathbf{Feas}$ | product of $\mathcal{V}$-categories | $\mathbf{1}$ | [[Compact Closed Category|compact closed]] (Theorem 4.63) |
-| [[Corelation|$\mathbf{Corel}$]], [[Cospan|$\mathbf{Cosp}_{\mathcal{C}}$]] | $\sqcup$ | $\varnothing$ | compact closed / [[Hypergraph Category|hypergraph]] (Chapter 6) |
-| [[Prop|Props]], $\mathbf{Mat}(R)$ | $+$ on $\mathbb{N}$ | $0$ | strict SMCs with $\mathrm{Ob} = \mathbb{N}$ (Chapter 5) |
+| [[Category of Profunctors\|$\mathbf{Prof}_{\mathcal{V}}$]] / $\mathbf{Feas}$ | product of $\mathcal{V}$-categories | $\mathbf{1}$ | [[Compact Closed Category\|compact closed]] (Theorem 4.63) |
+| [[Corelation\|$\mathbf{Corel}$]], [[Cospan\|$\mathbf{Cosp}_{\mathcal{C}}$]] | $\sqcup$ | $\varnothing$ | compact closed / [[Hypergraph Category\|hypergraph]] (Chapter 6) |
+| [[Prop\|Props]], $\mathbf{Mat}(R)$ | $+$ on $\mathbb{N}$ | $0$ | strict SMCs with $\mathrm{Ob} = \mathbb{N}$ (Chapter 5) |
 | $[\mathcal{C}, \mathbf{Set}]$ | [[Day Convolution]] | $\mathcal{C}(I, -)$ | DaoFP §17.7 |
 
 ## Wiring diagrams and interpretation
@@ -47,6 +47,7 @@ An SMC is "an algebraic structure with labelled boxes having multiple typed inpu
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/) · [Vignette: SMCs](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/smc/)
 ```julia
 # Catlab: the GAT of symmetric monoidal categories and free SMC expressions
 using Catlab

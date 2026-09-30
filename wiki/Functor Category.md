@@ -2,7 +2,7 @@
 
 For [[Category|categories]] $\mathcal{C}, \mathcal{D}$, the **functor category** $\mathcal{D}^{\mathcal{C}}$ (also $[\mathcal{C}, \mathcal{D}]$ or $\mathbf{Fun}(\mathcal{C}, \mathcal{D})$) has [[Functor|functors]] $F : \mathcal{C} \to \mathcal{D}$ as objects and [[Natural Transformation|natural transformations]] as morphisms; composition is vertical composition of natural transformations (componentwise) and identities are $(\mathrm{id}_F)_c = \mathrm{id}_{F(c)}$ ([[7S Chapter 3 Exercises#Exercise 3.55|7S Exercise 3.55]]).
 
-> Sources: 7 Sketches Definition 3.54, Examples 3.56, 3.57, Definition 3.60; Kittenlab Lecture 7 (`FunctorCat`), 8, 9, 12; DaoFP §9.3 ("Functor categories"), §9.7, §10.1, §10.4.
+> Sources: 7 Sketches Definition 3.54, Examples 3.56, 3.57, Definition 3.60; Kittenlab Lecture 7 (`FunctorCat`), 8, 9, 12; DaoFP §9.3 ("Functor categories"), §9.7, §10.1, §10.4; CTfS Proposition 4.3.2.2, Exercises 4.3.2.5–4.3.2.10, Example 4.5.3.22
 
 - "What is an arrow in one category could be an object in another": in $\mathbf{Cat}$ functors are arrows; in $[\mathcal{C}, \mathcal{D}]$ they are dots (DaoFP).
 - $\mathcal{C}\text{-}\mathbf{Inst} := \mathbf{Set}^{\mathcal{C}}$ is the category of [[C-Set|database instances]] (Definition 3.60); $\mathbf{Set}^{\underline{1}} \simeq \mathbf{Set}$; $\mathbf{Set}^{\mathsf{Gr}} = \mathbf{Grph}$ ([[Category of Graphs]]); $[\mathcal{C}^{\mathrm{op}}, \mathbf{Set}]$ is the category of [[Presheaf|presheaves]] and $[\mathcal{C}, \mathbf{Set}]$ of co-presheaves.
@@ -10,10 +10,14 @@ For [[Category|categories]] $\mathcal{C}, \mathcal{D}$, the **functor category**
 - $[\mathcal{J}, \mathcal{C}]$ is the category of [[Diagram|diagrams]] of shape $\mathcal{J}$; [[Limit|limits]] and [[Colimit|colimits]] are adjoints to $\Delta : \mathcal{C} \to [\mathcal{J}, \mathcal{C}]$; $[\mathbf{2}, \mathcal{C}] \cong \mathcal{C} \times \mathcal{C}$.
 - $[\mathcal{C}, \mathcal{D}]$ is the [[Exponential Object|internal hom]] of the [[Cartesian Closed Category|cartesian closed]] category [[Category of Categories|$\mathbf{Cat}$]], so functors can be curried (DaoFP §9.7, §10.1: $\mathbf{Cat}(\mathcal{C} \times \mathcal{D}, \mathcal{E}) \cong \mathbf{Cat}(\mathcal{C}, [\mathcal{D}, \mathcal{E}])$); this is how the [[Yoneda Embedding]] arises from the [[Hom Functor]].
 - Limits and colimits in $[\mathcal{C}, \mathcal{D}]$ are computed pointwise when $\mathcal{D}$ has them (products/coproducts/pushouts of graphs, Kittenlab). $[\mathcal{C}, \mathbf{Set}]$ is a [[Topos]].
+- **Small cases** (CTfS Exercises 4.3.2.5–4.3.2.9): $\mathrm{Fun}(\mathbf 1, \mathcal{C}) \cong \mathcal{C}$, $\mathrm{Fun}(\mathcal{C}, \mathbf 1) \cong \mathbf 1$ and $\mathrm{Fun}(\mathbf 0, \mathcal{C}) \cong \mathbf 1$ — the laws $\mathcal{C}^1 = \mathcal{C}$, $1^{\mathcal C} = 1$, $\mathcal{C}^0 = 1$ of [[Arithmetic of Sets]]; $\mathrm{Fun}([1], \mathcal{C})$ is the *arrow category* of $\mathcal{C}$, whose objects are morphisms and whose morphisms are commutative squares. **Natural transformations are functors too** (CTfS Example 4.5.3.22): $\alpha : F \Rightarrow G$ between $F, G : \mathcal{C} \to \mathcal{D}$ is the same as a functor $\mathcal{C} \times [1] \to \mathcal{D}$ out of the "$\mathcal{C}$-shaped prism", sending the front pane via $F$, the back pane via $G$, and the front-to-back edges to the components.
 - The set of natural transformations is an [[End]]: $[\mathcal{C}, \mathcal{D}](F, G) \cong \int_a \mathcal{D}(Fa, Ga)$ (DaoFP §17.3). The [[Yoneda Lemma]]: $[\mathcal{C}, \mathbf{Set}](\mathcal{C}(a, -), F) \cong F(a)$.
 
 ````tabs
 tab: Julia
+**Docs:** [Categories & functors](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Categories) — Kittenlab [Lecture 7](https://algebraicjulia.github.io/Kittenlab.jl/lecture7.html)
+
+**Builds on:** [[Category]] (`Category`), [[Functor]] (`Functor`), [[Natural Transformation]] (`NaturalTransformation`) — run those notes' Julia code first.
 ```julia
 # Kittenlab src/NaturalTransformations.jl
 struct FunctorCat{C<:Category, D<:Category} <: Category{Functor{C,D}, NaturalTransformation{C,D}}

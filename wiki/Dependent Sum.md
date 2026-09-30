@@ -21,6 +21,7 @@ $$
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) — Kittenlab [Lecture 13](https://algebraicjulia.github.io/Kittenlab.jl/lecture13.html)
 ```julia
 using Catlab
 # Σ_f on a bundle q : S → B along f : B → A is just post-composition

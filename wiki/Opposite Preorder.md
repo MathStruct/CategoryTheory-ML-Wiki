@@ -11,6 +11,9 @@ Given a [[Preorder]] $(P, \leq)$, the **opposite preorder** $(P, \leq^{\mathrm{o
 
 ````tabs
 tab: Julia
+**Docs:** [Vignette: preorders](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/preorders/)
+
+**Builds on:** [[Preorder]] (`Preorder`) — run that note's Julia code first.
 ```julia
 struct OppositePreorder{T,P<:Preorder{T}} <: Preorder{T}
   p::P

@@ -21,6 +21,7 @@ Hence $(\mathcal{C}, \times, 1)$ is a [[Symmetric Monoidal Category]]; a categor
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits) — Kittenlab [Lecture 13](https://algebraicjulia.github.io/Kittenlab.jl/lecture13.html)
 ```julia
 using Catlab
 A = FinSet(2); B = FinSet(3)

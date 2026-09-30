@@ -19,7 +19,7 @@ m \otimes m \arrow[dr, "\mu"'] & & m \otimes m \arrow[dl, "\mu"] & & m & \\
 \end{document}
 ```
 
-> Sources: DaoFP §5.3 ("Monoids"), §10.9 ("The category of monoids" $\mathbf{Mon}(\mathcal{C})$), §14.7 ("Monad as a monoid"), §17.7 ("Applicative functors as monoids"); 7 Sketches §5.4.2 ("Aside: monoid objects in a monoidal category", Definition 5.x, Exercises), §6.3.1 ([[Frobenius Monoid]]); Kittenlab Lecture 5 ([[Monoid|ordinary monoids]]).
+> Sources: DaoFP §5.3 ("Monoids"), §10.9 ("The category of monoids" $\mathbf{Mon}(\mathcal{C})$), §14.7 ("Monad as a monoid"), §17.7 ("Applicative functors as monoids"); 7 Sketches §5.4.2 ("Aside: monoid objects in a monoidal category", Definition 5.65, Exercises), §6.3.1 ([[Frobenius Monoid]]); Kittenlab Lecture 5 ([[Monoid|ordinary monoids]]).
 
 ## Examples
 
@@ -31,6 +31,7 @@ m \otimes m \arrow[dr, "\mu"'] & & m \otimes m \arrow[dl, "\mu"] & & m & \\
 
 ````tabs
 tab: Julia
+**Docs:** [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/) — Kittenlab [Lecture 5](https://algebraicjulia.github.io/Kittenlab.jl/lecture5.html)
 ```julia
 # Catlab: a monoid object presented in the free (symmetric) monoidal category
 using Catlab

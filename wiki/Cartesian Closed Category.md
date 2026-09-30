@@ -11,6 +11,7 @@ A **cartesian closed category** (CCC) is a [[Category]] with all finite [[Produc
 
 ````tabs
 tab: Julia
+**Docs:** [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)
 ```julia
 # Julia's types with tuples and functions form (approximately) a CCC: Tuple{A,B}, functions, Nothing/Union{}
 # Catlab: the GAT of cartesian closed categories

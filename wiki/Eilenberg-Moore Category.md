@@ -22,6 +22,7 @@ The [[Kleisli Category]] is the full subcategory of *free* algebras $(T a, \mu_a
 
 ````tabs
 tab: Julia
+**Docs:** Kittenlab [Lecture 5](https://algebraicjulia.github.io/Kittenlab.jl/lecture5.html)
 ```julia
 # monad algebras for the list monad are monoids: α : [m] -> m must satisfy the two laws
 α_sum(xs) = sum(xs; init=0)                       # (Int, +, 0)

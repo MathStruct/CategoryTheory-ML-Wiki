@@ -2,15 +2,19 @@
 
 Let $\mathcal{C}$ be a [[Category]]. Its **opposite** $\mathcal{C}^{\mathrm{op}}$ has the same objects, $\mathrm{Ob}(\mathcal{C}^{\mathrm{op}}) := \mathrm{Ob}(\mathcal{C})$, and hom-sets $\mathcal{C}^{\mathrm{op}}(c, d) := \mathcal{C}(d, c)$; identities are as in $\mathcal{C}$ and composition is reversed: $g^{\mathrm{op}} \circ f^{\mathrm{op}} = (f \circ g)^{\mathrm{op}}$. "Take any category you already have and reverse all its morphisms; the result is again a category."
 
-> Sources: 7 Sketches Example 3.27, Exercise 3.101, Definition 3.102; DaoFP §8.1 ("Opposite categories"), §5.2 ("Duality"); Kittenlab Lecture 13 ("Duals").
+> Sources: 7 Sketches Example 3.27, Exercise 3.101, Definition 3.102; DaoFP §8.1 ("Opposite categories"), §5.2 ("Duality"); Kittenlab Lecture 13 ("Duals"); CTfS Definition 4.6.1.1, Lemma 4.6.1.4, Example 4.6.1.6
 
 - A [[Functor]] $F : \mathcal{C} \to \mathcal{D}$ has an opposite $F^{\mathrm{op}} : \mathcal{C}^{\mathrm{op}} \to \mathcal{D}^{\mathrm{op}}$, the same on objects and $F^{\mathrm{op}}(f^{\mathrm{op}}) := F(f)^{\mathrm{op}}$ ([[7S Chapter 3 Exercises#Exercise 3.101|7S Exercise 3.101]]).
 - **Duality**: every categorical statement has a dual obtained by reversing arrows — [[Terminal Object|terminal]]/[[Initial Object|initial]], [[Product]]/[[Coproduct]], [[Limit]]/[[Colimit]] ("a cocone in $\mathcal{C}$ is a cone in $\mathcal{C}^{\mathrm{op}}$", Definition 3.102), [[Monomorphism|mono]]/[[Epimorphism|epi]], [[Monad]]/[[Comonad]], [[Algebra of an Endofunctor|algebra]]/[[Coalgebra of an Endofunctor|coalgebra]]. Kittenlab: "I could just swap the definition of domain and codomain and formally everything would look the same" — as long as you are clear about the convention.
 - Contravariant functors $\mathcal{C}^{\mathrm{op}} \to \mathcal{D}$ ([[Contravariant Functor]]), [[Presheaf|presheaves]] $\mathcal{C}^{\mathrm{op}} \to \mathbf{Set}$, and [[Profunctor|profunctors]] $\mathcal{C}^{\mathrm{op}} \times \mathcal{D} \to \mathbf{Set}$ (DaoFP: $\mathcal{C}^{\mathrm{op}} \times \mathcal{C}$ is one of the two most interesting [[Product Category|product categories]]).
+- **Simplicial sets** (CTfS Example 4.6.1.6): the opposite of the [[Simplex Category]] $\Delta$ indexes the functor category $\mathbf{sSet} = \mathrm{Fun}(\Delta^{\mathrm{op}}, \mathbf{Set})$ of simplicial sets, the combinatorial model of spaces through which category theory "pierces deeply into the realm of topology".
 - For preorders: the [[Opposite Preorder]]; for enriched categories: the [[Opposite Enriched Category]] (needs symmetry of $\mathcal{V}$).
 
 ````tabs
 tab: Julia
+**Docs:** [Categories & functors](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Categories) — Kittenlab [Lecture 13](https://algebraicjulia.github.io/Kittenlab.jl/lecture13.html)
+
+**Builds on:** [[Category]] (`Category`) — run that note's Julia code first.
 ```julia
 # Kittenlab-style: the opposite of any Category value
 struct OppositeCat{Ob,Hom,C<:Category{Ob,Hom}} <: Category{Ob,Hom}
@@ -20,7 +24,9 @@ Categories.dom(o::OppositeCat, f) = codom(o.c, f)
 Categories.codom(o::OppositeCat, f) = dom(o.c, f)
 Categories.compose(o::OppositeCat, f, g) = compose(o.c, g, f)    # reversed
 Categories.id(o::OppositeCat, x) = id(o.c, x)
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab: `op(C)` for a FinCat, and `op` on presentations/GAT expressions
 using Catlab
 ```

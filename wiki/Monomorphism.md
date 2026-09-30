@@ -8,18 +8,20 @@ $$
 
 Equivalently, post-composition $(f \circ -) : \mathcal{C}(c, a) \to \mathcal{C}(c, b)$ is injective for every $c$. To show $f$ is *not* mono, exhibit two different "shapes" in $a$ that $f$ maps to the same shape in $b$.
 
-> Sources: DaoFP §2.4 ("Monomorphisms"), Exercise 2.4.1; Kittenlab Lecture 14 (subobjects as injections); 7 Sketches §7.2 (subobjects), §1.4.2 (epi-mono factorization).
+> Sources: DaoFP §2.4 ("Monomorphisms"), Exercise 2.4.1; Kittenlab Lecture 14 (subobjects as injections); 7 Sketches §7.2 (subobjects), §1.4.2 (epi-mono factorization); CTfS Definition 2.7.5.3, Propositions 2.7.5.4–2.7.5.5, Corollary 2.7.5.8
 
 **Motivation (DaoFP).** `injectBool :: Bool -> Int` (`True ↦ 1`, `False ↦ 0`) doesn't discard information — it embeds a two-element shape in the integers; `even :: Int -> Bool` does discard (it abstracts). In $\mathbf{Set}$, [[Injection|injective]] means $f \circ x_1 = f \circ x_2 \Rightarrow x_1 = x_2$ for [[Global Element|global elements]] $x_i : 1 \to a$; since not every category has a terminal object, monomorphisms replace global elements by arbitrary shapes $c$.
 
 - In $\mathbf{Set}$, monos are exactly the injections. Any arrow *from* the [[Terminal Object]] is mono ([[DaoFP Chapter 2 Exercises#Exercise 2.4.1|DaoFP Exercise 2.4.1]]).
 - "In category theory objects are indivisible, so we can only talk about sub-objects using arrows": a mono $a \hookrightarrow b$ picks a [[Subobject]] of $b$ in the shape of $a$; in a [[Topos]] subobjects are classified by the [[Subobject Classifier]].
 - Mono + [[Epimorphism|epi]] does *not* imply [[Isomorphism]] in general (e.g. $\mathbb{Z} \hookrightarrow \mathbb{Q}$ in rings); it does in $\mathbf{Set}$ ([[Bijection]]). A [[Section and Retraction|section]] is always mono.
+- In $\mathbf{Set}$ a mono is injective by testing with $c = \{\star\}$; conversely an injective $f$ with $f h = f h'$ must have $h = h'$ pointwise (CTfS Proposition 2.7.5.4). Pulling back a mono along any map gives a mono (CTfS Proposition 2.7.5.5), which is what makes ologs like "a rib which is made by a cow" well-labelled ([[Injection]]).
 - Every function factors as an epi followed by a mono ([[Epi-Mono Factorization]]).
 - **Via pullbacks** (7 Sketches Definition 7.5): $f : A \to B$ is mono iff the square with $\mathrm{id}_A$ twice on top/left and $f$ twice on right/bottom is a [[Pullback]] — i.e. the kernel pair of $f$ is trivial. From this, $\mathbf{Set}$-monos are the injections ([[7S Chapter 7 Exercises#Exercise 7.6|7S Exercise 7.6]]), and monos are stable under pullback ([[7S Chapter 7 Exercises#Exercise 7.8|7S Exercise 7.8]], via the [[Pasting Lemma for Pullbacks]]). In a [[Topos]] every mono is the pullback of $\mathsf{true} : 1 \to \Omega$ along its characteristic map ([[Subobject Classifier]]).
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) — Kittenlab [Lecture 14](https://algebraicjulia.github.io/Kittenlab.jl/lecture14.html)
 ```julia
 using Catlab
 is_monic(FinFunction([1, 3], 3))      # true: injective

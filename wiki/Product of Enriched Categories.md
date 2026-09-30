@@ -19,6 +19,9 @@ where **symmetry** is used exactly to swap the middle two factors — which is w
 
 ````tabs
 tab: Julia
+**Docs:** [Vignette: monoidal preorders & SMCs](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/smc/)
+
+**Builds on:** [[Enriched Category]] (`VCategory`) — run that note's Julia code first.
 ```julia
 function vproduct(X::VCategory, Y::VCategory)
   V = X.base

@@ -37,6 +37,9 @@ For closed $\mathcal{V}$:
 
 ````tabs
 tab: Julia
+**Docs:** [Vignette: monoidal preorders & SMCs](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/smc/)
+
+**Builds on:** [[Bool (Monoidal Preorder)]] (`BoolPre`), [[Cost]] (`CostPre`) — run those notes' Julia code first.
 ```julia
 # closed structure computed from joins on a finite quantale: v ⊸ w = ⋁{a | a ⊗ v ≤ w}
 hom_from_joins(V, elems, v, w) = join(V, [a for a in elems if leq(V, otimes(V, a, v), w)])

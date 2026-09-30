@@ -1,14 +1,16 @@
 #definition #example #program
 
-A **finite set** (in Kittenlab's Julia-based foundations) is a *list of primitive things*, where a **primitive thing** is any possible value of a Julia variable. We write curly braces around the list: $\{1,2,3,4\}$ and $\{\mathbf a,\mathbf b,4,2,2,6\}$ are finite sets.
+A **finite set** is a [[Set]] $A$ that is in bijection with $\underline{n} = \{1, \dots, n\}$ for some $n \in \mathbb{N}$; that $n$ is its [[Cardinality]] $|A|$ (CTfS Definition 2.1.2.15). A function $\underline n \to A$ is the same as a *sequence* $(f(1), \dots, f(n))$ of elements of $A$ — e.g. $s : \underline 7 \to \mathbb N$, $s(i) = i^2$ is $(1, 4, 9, 16, 25, 36, 49)$ (CTfS Exercise 2.1.2.14).
 
-> Sources: Kittenlab Lecture 1–2; 7 Sketches §1.2.1 (ordinals $\underline{n}$); DaoFP §1.3.
+In Kittenlab's Julia-based foundations a finite set is concretely a *list of primitive things*, where a **primitive thing** is any possible value of a Julia variable. We write curly braces around the list: $\{1,2,3,4\}$ and $\{\mathbf a,\mathbf b,4,2,2,6\}$ are finite sets.
+
+> Sources: Kittenlab Lecture 1–2; 7 Sketches §1.2.1 (ordinals $\underline{n}$); DaoFP §1.3; CTfS §2.1.2 (Equation 2.6, Definition 2.1.2.15).
 
 The list may contain repetitions and the order is irrelevant *from the morphism's-eye view*: the sets $\{1,2,3,3\}$ and $\{3,2,1\}$ are not equal as Julia values, but they are [[Isomorphism|isomorphic]] — any [[Function]] out of one is a function out of the other. This is the first appearance of the principle that a representation on a computer is almost never *canonical*; see [[Isomorphism]].
 
 ## Cardinality
 
-The **cardinality** of a finite set is the number of unique elements listed in it. See [[Cardinality]] for the theorem that two finite sets are isomorphic iff they have the same cardinality, and the [[Pigeonhole Principle]].
+In Kittenlab's representation the cardinality is the number of *unique* elements listed. See [[Cardinality]] for the theorem that two finite sets are isomorphic iff they have the same cardinality, and the [[Pigeonhole Principle]].
 
 ## Skeleton: the ordinals
 
@@ -16,6 +18,7 @@ The **cardinality** of a finite set is the number of unique elements listed in i
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) — Kittenlab [Lecture 1](https://algebraicjulia.github.io/Kittenlab.jl/lecture1.html)
 ```julia
 # Kittenlab Lecture 1: two representations, trading completeness for performance
 abstract type 𝔽 end
@@ -36,7 +39,9 @@ Base.iterate(A::Int𝔽, k) = iterate(1:A.n, k)
 
 A = Vec𝔽([:carrots, :peas])
 B = Int𝔽(3)
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab: the skeletal representation
 using Catlab
 X = FinSet(3)          # {1,2,3}

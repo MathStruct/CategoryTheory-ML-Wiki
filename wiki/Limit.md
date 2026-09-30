@@ -4,7 +4,9 @@ Let $D : \mathcal{J} \to \mathcal{C}$ be a [[Diagram]]. The **limit** of $D$, wr
 
 Equivalently: an object $\mathrm{Lim}\,D$ with a natural isomorphism $[\mathcal{J}, \mathcal{C}](\Delta_x, D) \cong \mathcal{C}(x, \mathrm{Lim}\,D)$ — "for each cone with apex $x$ there is a unique map from $x$ into the limit" (DaoFP §9.5); i.e. $\mathrm{Lim}\,D$ [[Representable Functor|represents]] the presheaf of cones. When all limits of shape $\mathcal{J}$ exist, $\Delta \dashv \mathrm{Lim} : [\mathcal{J}, \mathcal{C}] \to \mathcal{C}$ ([[Adjunction]], DaoFP §10.4).
 
-> Sources: 7 Sketches §3.5 (Definitions 3.79, 3.86, 3.92, Examples 3.93–3.99, Theorem 3.95); DaoFP §9.5 ("Limits and Colimits", "Equalizers", "The existence of the terminal object"), §10.4, §10.7, §17.3 ("Limits as ends"), §19.3 ("Limits as Kan extensions"), §20.5 (weighted limits); Kittenlab Lecture 13 ("limits allow you to make tuple types and to filter").
+> Sources: 7 Sketches §3.5 (Definitions 3.79, 3.86, 3.92, Examples 3.93–3.99, Theorem 3.95); DaoFP §9.5 ("Limits and Colimits", "Equalizers", "The existence of the terminal object"), §10.4, §10.7, §17.3 ("Limits as ends"), §19.3 ("Limits as Kan extensions"), §20.5 (weighted limits); Kittenlab Lecture 13 ("limits allow you to make tuple types and to filter"); CTfS §2.5, §4.5.3 (Construction 4.5.3.15, Definition 4.5.3.18, Examples 4.5.3.16, 4.5.3.21–4.5.3.22), Remark 4.5.1.9
+
+**Category Theory for Scientists' packaging.** A cone over $D : \mathcal{J} \to \mathcal{C}$ is a diagram of the bigger shape $\mathcal{J}^{\triangleleft}$ (add a cone point, [[Cone Category]]) extending $D$; cones and cone morphisms form the slice $\mathcal{C}_{/D}$, and the limit is its terminal object. For products the cones are spans and the slogan is Spivak's "None shall map to $X$ and $Y$ except through me!" — "these are the aqueducts of category theory, and they work wonders". In CTfS Example 4.5.3.16 the category $\mathcal{C}$ has three spans over $X_1, X_2$ with apexes $B$, $C$, $D$ and a map $g : C \to D$ commuting with the legs; the category of spans is $\bullet \quad \bullet \xrightarrow{g} \bullet$, with terminal object $(D, d_1, d_2)$ — so $D = X_1 \times X_2$ although $B$ also maps to both. Pulling back along a point in $\mathbf{Cat}$, the "C-shaped prism" $[1] \times \mathcal{C}$ is a product of categories (CTfS Example 4.5.3.22).
 
 ## Special cases
 
@@ -14,7 +16,7 @@ Equivalently: an object $\mathrm{Lim}\,D$ with a natural isomorphism $[\mathcal{
 | two objects, no arrows | [[Product]] (Example 3.94) |
 | $\bullet \to \bullet \leftarrow \bullet$ | [[Pullback]] (Example 3.99) |
 | $\bullet \rightrightarrows \bullet$ | [[Equalizer]] (DaoFP) |
-| [[Walking Arrow]] $\bullet \to \bullet$ | the source object ([[DaoFP Chapter 9 Exercises#Exercise 9.5.1|DaoFP Exercise 9.5.1]]) |
+| [[Walking Arrow]] $\bullet \to \bullet$ | the source object ([[DaoFP Chapter 9 Exercises#Exercise 9.5.1\|DaoFP Exercise 9.5.1]]) |
 | a [[Preorder]] as $\mathcal{C}$ | [[Meet]] $\bigwedge$ of the diagram's objects |
 | $\mathcal{C} = \mathbf{Set}$, finite $\mathcal{J}$ | the tuple formula of [[Finite Limits in Set]] (Theorem 3.95); $\Pi_!(I) = \lim I$ ([[Data Migration Functor]]) |
 | $\mathcal{C} = \mathbf{Set}$, any $\mathcal{J}$ | the set of cones with apex $1$: $[\mathcal{J}, \mathbf{Set}](\Delta_1, D) \cong \mathbf{Set}(1, \mathrm{Lim}\,D)$ (DaoFP) |
@@ -29,6 +31,7 @@ Equivalently: an object $\mathrm{Lim}\,D$ with a natural isomorphism $[\mathcal{
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits) · [Free diagrams](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FreeDiagrams) — Kittenlab [Lecture 13](https://algebraicjulia.github.io/Kittenlab.jl/lecture13.html)
 ```julia
 using Catlab
 # limit of a diagram in FinSet: a cospan (pullback), computed by `limit`

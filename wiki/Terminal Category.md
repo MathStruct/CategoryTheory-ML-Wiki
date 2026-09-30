@@ -10,6 +10,7 @@ The **terminal category** $\mathbf{1}$ has one object $*$ and only the identity 
 
 ````tabs
 tab: Julia
+**Docs:** [ACSets API](https://algebraicjulia.github.io/ACSets.jl/stable/api/) · [ThCategory (GATlab)](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/#GATlab.Stdlib.StdTheories.ThCategory) · [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/) — Kittenlab [Lecture 9](https://algebraicjulia.github.io/Kittenlab.jl/lecture9.html)
 ```julia
 using Catlab
 @present One(FreeCategory) begin X::Ob end          # the terminal category: one object, no generating arrows

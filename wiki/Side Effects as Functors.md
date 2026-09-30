@@ -18,6 +18,7 @@ At this stage nothing is assumed of $f$ — not even functoriality; that comes w
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
 ```julia
 # the same encodings in Julia
 partial(x) = x == 0 ? nothing : Some(1 / x)              # Maybe

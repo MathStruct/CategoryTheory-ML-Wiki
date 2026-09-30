@@ -10,6 +10,7 @@ A **Petri net** is a [[C-Set]] on the schema $\mathsf{Petri}$ presented by the g
 
 ````tabs
 tab: Julia
+**Docs:** [ACSets API](https://algebraicjulia.github.io/ACSets.jl/stable/api/) · [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/) — Kittenlab [Lecture 6](https://algebraicjulia.github.io/Kittenlab.jl/lecture6.html)
 ```julia
 using Catlab
 @present SchPetri(FreeSchema) begin

@@ -16,6 +16,7 @@ i.e. $(- \wedge p) \dashv (p \Rightarrow -)$ is a [[Galois Connection]]. Negatio
 
 ````tabs
 tab: Julia
+**Docs:** [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/) · [Vignette: subgraphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/graphs/subgraphs/)
 ```julia
 using Catlab
 # Sub(G) of a C-set is a Heyting algebra: meet, join, top, bottom, implies, negate

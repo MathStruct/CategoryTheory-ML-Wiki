@@ -50,6 +50,7 @@ If $\mathcal{C}$ is compact closed then (1) $\mathcal{C}$ is [[Monoidal Closed C
 
 ````tabs
 tab: Julia
+**Docs:** [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)
 ```julia
 # Catlab: the GAT of compact closed categories, with duals, units (cups) and counits (caps)
 using Catlab

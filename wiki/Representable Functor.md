@@ -8,7 +8,7 @@ $$
 
 sending $y \mapsto \mathrm{Hom}(x, y)$ and $g : y \to z$ to post-composition $\mathrm{Hom}(x, g) = (g \circ -)$. A functor $F : \mathcal{C} \to \mathbf{Set}$ is **representable** if $F \cong \mathrm{Hom}(x, -)$ for some $x$, its **representing object** (or **representative**); dually for presheaves, $F \cong \mathrm{Hom}(-, x)$. "We say '$x$ is a representative for $F$' meaning we have picked a specific isomorphism."
 
-> Sources: Kittenlab Lecture 8 ("Representable Functors", "Representatives of functors"), 10 ("Representables revisited"), 11, 12; DaoFP §8.4, §9.8 ("Representable Functors", "The guessing game", "Representable functors in programming"), Exercises 9.8.1–9.8.5; 7 Sketches Exercise 1.66 (preorder case: [[Upper Set|$\uparrow p$]]).
+> Sources: Kittenlab Lecture 8 ("Representable Functors", "Representatives of functors"), 10 ("Representables revisited"), 11, 12; DaoFP §8.4, §9.8 ("Representable Functors", "The guessing game", "Representable functors in programming"), Exercises 9.8.1–9.8.5; 7 Sketches Exercise 1.66 (preorder case: [[Upper Set|$\uparrow p$]]); CTfS §5.2.1.3 (Definition 5.2.1.4, Example 5.2.1.5), Lemma 5.2.1.7, Exercise 4.3.3.6
 
 ## Examples of representables
 
@@ -23,6 +23,20 @@ sending $y \mapsto \mathrm{Hom}(x, y)$ and $g : y \to z$ to post-composition $\m
 - The singleton functor $c \mapsto \{c\}$ is representable iff $\mathcal{C}$ has an [[Initial Object]] ([[DaoFP Chapter 9 Exercises#Exercise 9.8.2|DaoFP Exercise 9.8.2]]); the constant $1$ functor is represented by the initial object, "the logarithm of 1" ([[DaoFP Chapter 9 Exercises#Exercise 9.8.4|DaoFP Exercise 9.8.4]]).
 - Non-example: on $(\mathbb{Q}_{\geq 0}, \leq)$, $F(x) = [2 \leq x^2]$ has no representative since $\sqrt 2 \notin \mathbb{Q}$; on $\mathbb{R}_{\geq 0}$ it does (Lecture 10). Lists are not representable ("no logarithm of a sum"), but a list functor is a sum of representables ([[DaoFP Chapter 9 Exercises#Exercise 9.8.5|DaoFP Exercise 9.8.5]]); infinite streams are represented by $\mathbb{N}$.
 
+## Representables in databases: the SIRS (Category Theory for Scientists)
+
+For a schema $\mathcal{C}$ and a table $c$, the instance $\mathrm{Hom}(c, -)$ is "as free as possible subject to having one row $\star$ in table $c$". CTfS gives the recipe (Example 5.2.1.5): write a new row $\star$ in table $c$; for every foreign key $f : c \to c'$ add a row "$f(\star)$" to $c'$; repeat for every blank cell. For the schema with arrows $f : A \to B$, $g_1, g_2 : B \to C$, $i : C \to D$, $h : B \to E$, the representable $\mathrm{Hom}(B, -)$ has
+
+| table | rows |
+|---|---|
+| $A$ | — |
+| $B$ | $\star$ (with $g_1 = g_1(\star)$, $g_2 = g_2(\star)$, $h = h(\star)$) |
+| $C$ | $g_1(\star)$, $g_2(\star)$ |
+| $D$ | $i(g_1(\star))$, $i(g_2(\star))$ |
+| $E$ | $h(\star)$ |
+
+Spivak calls this the *schematically implied reference spread* (SIRS) of $\star$; its rows are labelled nulls / Skolem variables, and indeed $\mathrm{Hom}(c, -) \cong \Sigma_c(\{\star\})$, the [[Data Migration Functor|left pushforward]] of a one-row table along $c : \mathbf 1 \to \mathcal{C}$. The [[Yoneda Lemma]] then says that every actual row $r \in I(c)$ of an instance $I$ determines a unique map of instances $\mathrm{Hom}(c, -) \to I$: the row's SIRS is filled in with actual data. In the table *element of a set* $\leftrightarrow$ *representable functor* of CTfS's Set/$\mathcal C$-Set dictionary ([[Category of Sets]]), representables play the role of points. For graphs, maps from the one-arrow graph to $X$ are the arrows of $X$ ([[CTfS Chapter 4 Exercises#Exercise 4.3.3.6|CTfS Exercise 4.3.3.6]]).
+
 ## Properties
 
 **Uniqueness.** Representing objects are unique up to isomorphism: $\mathrm{Hom}(c, -) \cong \mathrm{Hom}(c', -)$ implies $c \cong c'$ — a corollary of the [[Yoneda Lemma]] (Kittenlab Lecture 12). "This gives us a very powerful tool for constructing objects in a category: look for representatives of functors into $\mathbf{Set}$, and if they exist, they must be unique" — the basis of Kittenlab's treatment of universal properties ("composing objects" by first giving a *specification* $\mathcal{C} \to \mathbf{Set}$, Lecture 11). DaoFP: "the representing object $a$ is like a logarithm of the functor" — $x \times x \cong x^2$ is represented by $2 = 1 + 1$, and $\mathcal{C}(1, x^a) \cong \mathcal{C}(a, x)$ in a closed category. Representables are "dense" among presheaves: every presheaf is a [[Colimit]] of representables (DaoFP §9.8, §17).
@@ -33,6 +47,9 @@ sending $y \mapsto \mathrm{Hom}(x, y)$ and $g : y \to z$ to post-composition $\m
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits) · [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/) — Kittenlab [Lecture 8](https://algebraicjulia.github.io/Kittenlab.jl/lecture8.html), [Lecture 12](https://algebraicjulia.github.io/Kittenlab.jl/lecture12.html)
+
+**Builds on:** [[Category]] (`FinFunction`) — run that note's Julia code first.
 ```julia
 # Kittenlab Lecture 8: Hom(X,-) × Hom(Y,-) ≅ Hom(X+Y,-) in FinSet
 struct Left{T}; val::T end
@@ -45,7 +62,9 @@ copair(f::FinFunction{X,Z}, g::FinFunction{Y,Z}) where {X,Y,Z} =            # Ho
     Dict(vcat([Left(x) => f(x) for x in f.dom], [Right(y) => g(y) for y in g.dom])))
 unpack(xs, ys, h) = (FinFunction(xs, h.codom, Dict(x => h(Left(x)) for x in xs)),      # inverse
                      FinFunction(ys, h.codom, Dict(y => h(Right(y)) for y in ys)))
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab: representable C-sets and the Yoneda bijection
 using Catlab
 yV = representable(Graph, :V)         # one vertex

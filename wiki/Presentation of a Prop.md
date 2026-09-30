@@ -8,11 +8,12 @@ A **presentation** $(G, s, t, E)$ for a [[Prop]] consists of a signature $(G, s,
 
 **Examples.**
 - [[Prop of Matrices|$\mathbf{Mat}(R)$]] is presented by the signal-flow generators $G_R$ and the equations of Theorem 5.60 ([[Graphical Linear Algebra]]) — a *sound and complete* graphical calculus for matrices.
-- "The theory of monoids": generators $\mu : 2 \to 1$, $\eta : 0 \to 1$ with associativity and unit equations; its models in $\mathcal{C}$ are [[Monoid Object|monoid objects]] (Remark 5.74). Adding $\sigma \mathbin{;} \mu = \mu$ gives commutative monoids; the mirror images give comonoids; both with the Frobenius law give the theory of [[Frobenius Monoid|special commutative Frobenius monoids]], presenting $\mathbf{Cospan}_{\mathbf{FinSet}}$ (7 Sketches Theorem 6.x); further equations give bialgebras and [[Hopf Algebra|Hopf algebras]].
+- "The theory of monoids": generators $\mu : 2 \to 1$, $\eta : 0 \to 1$ with associativity and unit equations; its models in $\mathcal{C}$ are [[Monoid Object|monoid objects]] (Remark 5.74). Adding $\sigma \mathbin{;} \mu = \mu$ gives commutative monoids; the mirror images give comonoids; both with the Frobenius law give the theory of [[Frobenius Monoid|special commutative Frobenius monoids]], presenting $\mathbf{Cospan}_{\mathbf{FinSet}}$ (7 Sketches Theorem 6.58); further equations give bialgebras and [[Hopf Algebra|Hopf algebras]].
 - Lawvere's **algebraic theories** and Catlab's generalized algebraic theories (`@theory`) generalize this "syntax + equations, semantics = functors" pattern ([[Functorial Semantics]]).
 
 ````tabs
 tab: Julia
+**Docs:** [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)
 ```julia
 # Catlab: a presentation with equations — the theory of commutative monoids as a prop
 using Catlab

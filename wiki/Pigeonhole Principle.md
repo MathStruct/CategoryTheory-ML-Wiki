@@ -10,6 +10,9 @@
 
 ````tabs
 tab: Julia
+**Docs:** Kittenlab [Lecture 2](https://algebraicjulia.github.io/Kittenlab.jl/lecture2.html)
+
+**Builds on:** [[Function]] (`𝔽Mor`) — run that note's Julia code first.
 ```julia
 # Kittenlab Lecture 2: find the collision
 function pigeonhole(f::𝔽Mor)

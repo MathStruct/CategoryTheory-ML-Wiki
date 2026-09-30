@@ -23,11 +23,13 @@ The family is $T(0) = 1$, $T(1) = a$, $T(2) = a \times a$, ...; its total space 
 
 - **Substitution / base change** along $f : A \to B$: the [[Pullback]] $f^* E \to A$ replants the fiber over $y$ onto every $x$ with $f(x) = y$; on families, $T(y) \mapsto T(f(x))$. This is the [[Base Change Functor]] $f^* : \mathcal{C}/B \to \mathcal{C}/A$.
 - Its left adjoint is the [[Dependent Sum]] $\Sigma_f$ (existential quantification), its right adjoint the [[Dependent Product]] $\Pi_f$ (universal quantification): $\Sigma_f \dashv f^* \dashv \Pi_f$. A category where all slices are cartesian closed — a [[Locally Cartesian Closed Category]] — has all three, and is the model of dependent type theory, just as a [[Cartesian Closed Category]] models the simply typed lambda calculus.
+- **Indexed sets vs. sets over a base** (CTfS §2.7.6, [[CTfS Chapter 2 Exercises#Exercise 2.7.6.14|CTfS Exercise 2.7.6.14]]): an $A$-indexed set $(S_a)_{a \in A}$ — e.g. people $P_c$ and seats $S_c$ in each classroom $c$, with maps required to respect the classroom — is the same as a set over $A$, $\coprod_a S_a \to A$, via fibers one way and disjoint union the other. This is the two pictures above in $\mathbf{Set}$ ([[Indexed Set]], [[Category of Elements]]).
 - Environments: with dependent types the type being added to the context $\Gamma$ may depend on values already in $\Gamma$, so contexts are iterated dependent sums rather than plain products.
 - Type families with no `Functor` instance are functors from a [[Discrete Category]] (footnote 1). Dependent elimination for $\mathbb{N}$ is the induction principle ([[Natural Numbers Object]]).
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits) — Kittenlab [Lecture 13](https://algebraicjulia.github.io/Kittenlab.jl/lecture13.html)
 ```julia
 using Catlab
 # a type family over a finite base as a fibration p : E → B; fibers are preimages

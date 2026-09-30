@@ -7,12 +7,15 @@ instance Monoid w => Monad (Writer w) where
   return a = Writer (a, mempty)
 ```
 
-> Sources: DaoFP §14.1, §14.4 ("Logging"), §15.3 ("M-sets and the writer monad"); §16 (the dual costate/[[Comonad]]).
+> Sources: DaoFP §14.1, §14.4 ("Logging"), §15.3 ("M-sets and the writer monad"); §16 (the dual costate/[[Comonad]]); CTfS §3.1.2 (monoid actions), Slogan 4.2.1.2
+
+$M$-sets are CTfS's [[Monoid Action|monoid actions]] — e.g. a [[Finite State Machine]] is a $\mathrm{List}(\Sigma)$-set.
 
 **From an adjunction** ([[Monads from Adjunctions]]). An **$M$-set** is a set $S$ with a left action $a : M \times S \to S$ of a monoid $M$, $a_1 = \mathrm{id}$, $a_{m_1} \circ a_{m_2} = a_{m_1 \cdot m_2}$; $M$-sets and equivariant maps ($f \circ a_m = b_m \circ f$) form $\mathbf{MSet}$. The forgetful $U : \mathbf{MSet} \to \mathbf{Set}$ has left adjoint $F S = S \times M$ with free action $\phi_n(x, m) = (x, n \cdot m)$: an equivariant $f : F S \to (R, b)$ is determined by its values on $(x, 1)$, namely $f(x, m) = b_m(u x)$, giving $\mathbf{MSet}(F S, Q) \cong \mathbf{Set}(S, U Q)$. Unit $\eta_S(x) = (x, 1)$ is `return`; counit $\varepsilon_Q(x, m) = a_m x$; and $\mu = U \varepsilon F$ is $((x, m), n) \mapsto (x, n \cdot m)$ — `join (Writer (Writer (x, m), n)) = Writer (x, mappend n m)`.
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
 ```julia
 # Writer over the String monoid: values paired with logs
 ret(a) = (a, "")

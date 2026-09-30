@@ -26,6 +26,9 @@ For a [[Weighted Graph]] $G$ with matrix $M_G$ (unit on the diagonal, weight on 
 
 ````tabs
 tab: Julia
+**Docs:** [FinRelations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinRelations) — Kittenlab [Lecture 14](https://algebraicjulia.github.io/Kittenlab.jl/lecture14.html)
+
+**Builds on:** [[Bool (Monoidal Preorder)]] (`BoolPre`), [[Cost]] (`CostPre`) — run those notes' Julia code first.
 ```julia
 # generic quantale matrix multiplication
 function qmul(V, M, N)
@@ -34,14 +37,16 @@ end
 qid(V, n) = [i == j ? munit(V) : join(V, []) for i in 1:n, j in 1:n]
 
 # Example 2.102 in Bool
-join(::BoolPre, xs) = any(xs; init=false)
+join(::BoolPre, xs) = reduce(|, xs; init = false)
 M = Bool[0 0; 0 1; 1 1]; N = Bool[1 1 0; 1 0 1]
 qmul(BoolPre(), M, N)         # [0 0 0; 1 0 1; 1 1 1]
 
 # Cost: shortest paths by powers
 MY = [0.0 4 3; 3 0 Inf; Inf 4 0]
 qmul(CostPre(), MY, MY)       # [0 4 3; 3 0 6; 7 4 0] = d_Y
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab: Bool-matrices are FinRelations, composed by `compose`
 using Catlab.CategoricalAlgebra.FinRelations
 ```

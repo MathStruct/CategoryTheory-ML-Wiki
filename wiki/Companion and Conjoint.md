@@ -17,6 +17,7 @@ In the $\mathbf{Bool}$ case a [[Monotone Map]] is "a bunch of arrows, one from e
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
 ```julia
 # companion and conjoint of a monotone map F between finite preorders (as Bool matrices)
 companion(F, P, Q, leqQ) = Bool[leqQ(F(p), q) for p in P, q in Q]      # F̂(p, q) = [F p ≤ q]

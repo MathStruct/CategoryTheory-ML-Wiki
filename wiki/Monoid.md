@@ -8,7 +8,7 @@ $$
 
 for all $m, n, p \in M$. It is **commutative** if also $m \ast n = n \ast m$.
 
-> Sources: 7 Sketches Example 2.6, §5.4.2 (monoid objects), Exercise 2.8; Kittenlab Lecture 5, 7; DaoFP §5.3 ("Monoids"), §10.9 ("The category of monoids", "Free monoid"), §14.7 ("Monad as a monoid"), §18.1 (Cayley's theorem, Tannakian reconstruction).
+> Sources: 7 Sketches Example 2.6, §5.4.2 (monoid objects), Exercise 2.8; Kittenlab Lecture 5, 7; DaoFP §5.3 ("Monoids"), §10.9 ("The category of monoids", "Free monoid"), §14.7 ("Monad as a monoid"), §18.1 (Cayley's theorem, Tannakian reconstruction); CTfS §3.1 (Definition 3.1.1.1, Examples 3.1.1.3–3.1.1.22, §3.1.4 monoid homomorphisms: Examples 3.1.4.2–3.1.4.4, Proposition 3.1.4.5, Application 3.1.4.3, Exercises 3.1.4.6–3.1.4.7), Slogan 4.2.1.2
 
 ## Examples
 
@@ -18,6 +18,14 @@ for all $m, n, p \in M$. It is **commutative** if also $m \ast n = n \ast m$.
 - Subsets of $A$ under $\cap$ (unit $A$) or $\cup$ (unit $\varnothing$).
 - Endomorphisms $\mathrm{Hom}(x, x)$ of any object of a [[Category]] under composition.
 - Any commutative monoid $M$ gives a [[Symmetric Monoidal Preorder]] $(\mathrm{Disc}_M, =, e, \ast)$ on the [[Discrete Preorder]] ([[7S Chapter 2 Exercises#Exercise 2.8|7S Exercise 2.8]]).
+
+## Monoids as agents acting (Category Theory for Scientists §3.1)
+
+"A common way to interpret phenomena we see around us is to say that agents are acting on objects": a monoid is a set of actions together with a formula saying how a sequence of actions is itself an action; a [[Group]] additionally lets every action be undone. The actions themselves act on a set of states — a [[Monoid Action]], e.g. a [[Finite State Machine]]. Monoids given by generators and relations (buttons that can be pressed, a keyboard with a backspace key, a 32-character buffer, a clock) are [[Presentation of a Monoid|presented monoids]].
+
+- **Smallest examples** ([[CTfS Chapter 3 Exercises#Exercise 3.1.1.7|CTfS Exercise 3.1.1.7]]): the trivial monoid $\{e\}$ is the smallest (the empty set has no unit); every monoid with $\leq 2$ elements is commutative, and the smallest non-commutative one has 3 elements, e.g. $\{e, a, b\}$ with $xy = y$ for $x, y \in \{a, b\}$. $3 \times 3$ matrices under multiplication are the linear-algebra example of non-commutativity.
+- **Homomorphisms** (CTfS §3.1.4): the inclusion $(\mathbb N, 0, +) \to (\mathbb Z, 0, +)$ and $n \mapsto 5n$; the homomorphisms $\mathbb N \to \mathbb Z$ are exactly $n \mapsto mn$, $m \in \mathbb Z$ (not $5n - 1$ or $n^2$); the only homomorphism $\mathbb Z \to \mathbb N$ is $0$ (CTfS Proposition 3.1.4.5); $x \mapsto e^x$ is a homomorphism $(\mathbb R_{\geq 0}, 0, +) \to (\mathbb R_{> 0}, 1, \ast)$, while $(\mathbb R_{\geq 0}, +) \to (\mathbb N, +)$ and $(\mathbb R_{> 0}, \ast) \to (\mathbb R_{\geq 0}, +)$ admit only the trivial one ([[CTfS Chapter 3 Exercises#Exercise 3.1.4.7|CTfS Exercise 3.1.4.7]]). Every pair of monoids has the *trivial* homomorphism $M \to \mathbf 1 \to M'$, since the trivial monoid is both initial and terminal in $\mathbf{Mon}$.
+- **Biology** (CTfS Application 3.1.4.3): lists of RNA triplets map homomorphically to lists of nucleotides and, by translation, to polypeptides; but there is no homomorphism from all nucleotide lists to polypeptides — a list of two nucleotides codes for nothing — so one restricts to the submonoid of lists whose length is a multiple of three.
 
 ## Monoids are one-object categories (Kittenlab Lecture 5)
 
@@ -37,6 +45,7 @@ A monoid is a **monoid object** in $(\mathbf{Set}, \times, 1)$: maps $\mu : M \t
 
 ````tabs
 tab: Julia
+**Docs:** [ThCategory (GATlab)](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/#GATlab.Stdlib.StdTheories.ThCategory) · [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/) — Kittenlab [Lecture 5](https://algebraicjulia.github.io/Kittenlab.jl/lecture5.html), [Lecture 7](https://algebraicjulia.github.io/Kittenlab.jl/lecture7.html)
 ```julia
 # Kittenlab Lecture 5
 abstract type Monoid{T} end
@@ -51,7 +60,9 @@ function mul(m::ConcatMonoid{T}, xs::Vector{T}, ys::Vector{T}) where {T}
   [xs; ys]
 end
 ident(::ConcatMonoid{T}) where {T} = T[]
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab: a monoid is a one-object category; the free monoid on generators a, b
 using Catlab
 @present M(FreeCategory) begin

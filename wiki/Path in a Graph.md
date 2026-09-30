@@ -2,18 +2,20 @@
 
 If $G$ is a [[Graph]], a **path** in $G$ is a list $e_1, \dots, e_n$ of arrows such that $t(e_i) = s(e_{i+1})$ for $i = 1, \dots, n-1$. The path goes from $s(e_1)$ to $t(e_n)$. Sequences of length $1$ are single arrows; sequences of length $0$ start and end at the same vertex $v$ without traversing any arrow.
 
-> Sources: 7 Sketches Definition 1.36, Example 1.37, §3.2.1; Kittenlab Lecture 6, 8, 10.
+> Sources: 7 Sketches Definition 1.36, Example 1.37, §3.2.1; Kittenlab Lecture 6, 8, 10; CTfS Definition 3.3.2.1, Example 3.3.2.2, Exercises 3.3.2.3–3.3.2.4, 3.3.3.5
 
 **Proposition (Kittenlab).** A path $e_1,\dots,e_n$ from $a$ to $b$ and a path $e'_1,\dots,e'_m$ from $b$ to $c$ concatenate to a path $e_1,\dots,e_n,e'_1,\dots,e'_m$ from $a$ to $c$. Hence there is a category $\mathrm{Path}(G)$ — the [[Free Category]] on $G$ — with objects the vertices, morphisms the paths, composition concatenation, and identities the empty paths.
 
 **Example (Kittenlab).** In the Romania road map, `Arad -> Sibiu -> Fagaras -> Bucharest` is a path.
 
+- **Counting** (CTfS Exercise 3.3.2.3): the graph $1 \xrightarrow{f} 2 \xrightarrow{g} 3$ has six paths — three of length 0, $f$, $g$ and $fg$. Paths of a graph do not form a monoid (no single identity; not all pairs concatenate), which is the point of passing to a category ([[Free Category]]). A [[Graph Homomorphism]] maps paths to paths of the same length.
 - The set of length-$n$ paths in a graph $G$ is $\mathrm{Hom}(P_n, G)$ where $P_n$ is the path graph — a [[Representable Functor]] on $\mathbf{Set}^{\mathsf{Gr}}$ (Lecture 8); Catlab's homomorphism search computes these.
 - For an acyclic $G$, all paths between all pairs of vertices can be computed by dynamic programming (Lecture 10), which is computing the representables $y(a)$ of $\mathrm{Path}(G)$.
 - Path equations impose relations on paths: [[Presentation of a Category|presenting categories via path equations]].
 
 ````tabs
 tab: Julia
+**Docs:** [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/) — Kittenlab [Lecture 6](https://algebraicjulia.github.io/Kittenlab.jl/lecture6.html), [Lecture 10](https://algebraicjulia.github.io/Kittenlab.jl/lecture10.html)
 ```julia
 # Kittenlab Lecture 10: all paths in a DAG, as a matrix of sets of edge-lists
 using Catlab

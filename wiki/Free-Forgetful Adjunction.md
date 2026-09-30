@@ -2,11 +2,13 @@
 
 A **forgetful functor** $U$ "forgets" structure: its action on hom-sets is not surjective, because arrows in the source must preserve structure that is absent in the target (typically $\mathbf{Set}$, "the epitome of structurelessness"; $U(m)$ is the *underlying set*). A **free functor** is a left adjoint $F \dashv U$: $\mathbf{Mon}(FX, m) \cong \mathbf{Set}(X, Um)$. "The picture of an adjunction is not symmetric; nowhere is this better illustrated than in free/forgetful adjunctions."
 
-> Sources: DaoFP §10.9 ("Free/Forgetful Adjunctions", "The category of monoids", "Free monoid", "Free monoid in programming"), Exercises 10.9.1–10.9.2, §15.3; 7 Sketches Example 3.74; Kittenlab Lecture 5 (the functors $F : \mathbf{Set} \to \mathbf{Mon}$, $U : \mathbf{Mon} \to \mathbf{Set}$), Lecture 7 (the unit $\eta_X : X \to UFX$).
+> Sources: DaoFP §10.9 ("Free/Forgetful Adjunctions", "The category of monoids", "Free monoid", "Free monoid in programming"), Exercises 10.9.1–10.9.2, §15.3; 7 Sketches Example 3.74; Kittenlab Lecture 5 (the functors $F : \mathbf{Set} \to \mathbf{Mon}$, $U : \mathbf{Mon} \to \mathbf{Set}$), Lecture 7 (the unit $\eta_X : X \to UFX$); CTfS §5.1.1 (Proposition 5.1.1.2, Exercise 5.1.1.3, Example 5.1.1.4)
 
 ## The free monoid (DaoFP)
 
 To match every function $f : X \to Um$ with a monoid homomorphism $g : FX \to m$, $FX$ must be *much larger* than $X$: start with the **generators** $X$ (where $g = f$), add a fresh unit $e$ (mapped to the unit of $m$ — a generator cannot serve, that would constrain $f$), add all products of generators as new elements (with $g(a \cdot b) = g(a) \cdot g(b)$), and only simplify by the monoid laws. The result: $FX = X^*$, **strings over the alphabet $X$**, unit the empty string, multiplication concatenation — automatically associative and unital ([[Free Monoid]]). Free functors "generate structure freely — with no additional constraints — and lazily: instead of performing operations they just record them", creating a domain-specific program executed later by an interpreter (`foldMap`). Unit: $x \mapsto [x]$; counit: fold/evaluate a list of elements of $m$ ([[DaoFP Chapter 10 Exercises#Exercise 10.9.1|DaoFP Exercise 10.9.1]]).
+
+**Babies and adults** (CTfS §5.1.1). Sets are like babies' repeatable noises — "simple objects full of unconnected dots"; monoids are like adults' words, which combine and mean something. The free functor gives every noise a slot in our lexicon without knowing how it combines ("I wonder what she means by *Ronnon*"); the forgetful functor hears words as mere sounds. Concretely, for $X = \{a, b, c\}$ and $f : X \to (\mathbb N, 1, \ast)$ with $f(a) = 7$, $f(b) = f(c) = 2$, the induced homomorphism sends the word $[b, b, a, c]$ to $2 \cdot 2 \cdot 7 \cdot 2 = 56$ ([[CTfS Chapter 5 Exercises#Exercise 5.1.1.3|CTfS Exercise 5.1.1.3]]). The asymmetry is real: the free functor is *not* also a right adjoint ([[Adjunction]]).
 
 ## Other examples (7 Sketches Example 3.74)
 
@@ -16,6 +18,7 @@ The [[Monad]] $UF$ of the free monoid adjunction is the [[List Monad]] (DaoFP §
 
 ````tabs
 tab: Julia
+**Docs:** Kittenlab [Lecture 5](https://algebraicjulia.github.io/Kittenlab.jl/lecture5.html)
 ```julia
 # the free monoid on a set of generators as vectors; the universal property via foldMap
 free_monoid_hom(f, mul, e) = xs -> foldl((acc, x) -> mul(acc, f(x)), xs; init = e)

@@ -24,6 +24,7 @@ A **directed port graph** is a [[C-Set]] on the schema $\mathsf{DPG}$ with objec
 
 ````tabs
 tab: Julia
+**Docs:** [Wiring diagrams](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/wiring_diagrams/#Catlab.WiringDiagrams.DirectedWiringDiagrams) — Kittenlab [Lecture 6](https://algebraicjulia.github.io/Kittenlab.jl/lecture6.html)
 ```julia
 using Catlab, Catlab.WiringDiagrams
 # Example 5.14 as a Catlab directed wiring diagram: boxes a (1→3), b (3→3), c (2→1), outer (2, 3)

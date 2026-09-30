@@ -29,6 +29,7 @@ split (n : ns) = NodeF n left right where (left, right) = partition (<= n) ns
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
 ```julia
 # a coalgebra for TreeF x = LeafF | NodeF Int x x, with a list as seed
 abstract type TreeF{X} end

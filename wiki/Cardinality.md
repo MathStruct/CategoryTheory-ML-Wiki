@@ -1,8 +1,10 @@
 #definition #theorem #proof #program
 
-The **cardinality** of a [[Finite Set]] is the number of unique elements listed in it.
+A set $A$ has **cardinality** $n \in \mathbb{N}$, written $|A| = n$, if there is an [[Isomorphism|isomorphism]] (a [[Bijection]]) $A \cong \underline{n} = \{1, \dots, n\}$; $A$ is **finite** if it has cardinality $n$ for some $n$, and infinite otherwise (CTfS Definition 2.1.2.15). Kittenlab, which represents a finite set by a list, phrases this as "the number of unique elements listed".
 
-> Source: Kittenlab Lecture 2.
+> Sources: Kittenlab Lecture 2; CTfS Definition 2.1.2.15, Lemma 2.1.2.17, §2.7.3 ("the natural numbers are literally the isomorphism classes of finite sets"), Exercises 2.1.2.5, 2.1.2.10, 2.1.2.16.
+
+**Counting is building an isomorphism.** To count the cows in a field one points at a cow and says "1", at another and says "2", and so on: this builds a bijection between the herd and $\underline{n}$. So the natural numbers *are* the isomorphism classes of finite sets, and arithmetic mirrors set operations: $|A \sqcup B| = |A| + |B|$, $|A \times B| = |A| \cdot |B|$, $|B^A| = |B|^{|A|}$ — including $0^0 = 1$, since there is exactly one function $\varnothing \to \varnothing$ ([[Arithmetic of Sets]], [[CTfS Chapter 2 Exercises#Exercise 2.7.3.2|CTfS Exercise 2.7.3.2]]). E.g. $|\mathbf{Set}(\underline 5, \underline 2)| = 32$, $|\mathbf{Set}(\underline 2, \underline 5)| = 25$, and an $n$-element set has $n!$ automorphisms ([[CTfS Chapter 2 Exercises#Exercise 2.1.2.10|CTfS Exercise 2.1.2.10]]).
 
 **Theorem.** If two finite sets have the same cardinality, then they are [[Isomorphism|isomorphic]].
 
@@ -12,6 +14,9 @@ Conversely an isomorphism preserves cardinality, so *cardinality is a complete i
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) — Kittenlab [Lecture 2](https://algebraicjulia.github.io/Kittenlab.jl/lecture2.html)
+
+**Builds on:** [[Finite Set]] (`Int𝔽`, `Vec𝔽`, `𝔽`), [[Function]] (`𝔽Mor`) — run those notes' Julia code first.
 ```julia
 # Kittenlab Lecture 2: constructive proof
 function find_isomorphism(A::𝔽, B::𝔽)
@@ -21,7 +26,9 @@ function find_isomorphism(A::𝔽, B::𝔽)
   𝔽Mor(A, B, Dict(A_vec[i] => B_vec[i] for i in 1:n))
 end
 find_isomorphism(Vec𝔽([:c, :b, :a, :b]), Int𝔽(3)).vals
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab
 using Catlab
 length(FinSet(5))   # 5

@@ -16,6 +16,9 @@ DaoFP: the new morphisms across the collage are **heteromorphisms**, going only 
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
+
+**Builds on:** [[Cost]] (`CostPre`), [[Enriched Category]] (`VCategory`), [[Profunctor]] (`VProfunctor`) — run those notes' Julia code first.
 ```julia
 # collage of a V-profunctor between finite V-categories: block matrix [X Φ; 0 Y]
 function collage(P::VProfunctor)

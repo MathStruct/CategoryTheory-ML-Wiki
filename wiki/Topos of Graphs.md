@@ -16,6 +16,7 @@ The lattice $\mathrm{Sub}(G)$ is a [[Heyting Algebra]] but not Boolean: the nega
 
 ````tabs
 tab: Julia
+**Docs:** [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits) · [Categories & functors](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Categories) · [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/) · [Vignette: subgraphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/graphs/subgraphs/) — Kittenlab [Lecture 6](https://algebraicjulia.github.io/Kittenlab.jl/lecture6.html)
 ```julia
 using Catlab
 Ω, subs = subobject_classifier(Graph)

@@ -14,14 +14,16 @@ e \arrow[rr, "f"] \arrow[dr, "p"'] & & e' \arrow[dl, "p'"] \\
 
 It "describes how $c$ is seen from the perspective of its category: the totality of arrows pointing at $c$", turning individual arrows into objects. Dually the **coslice** $c/\mathcal{C}$ (**under-category**) has objects $(a, i : c \to a)$.
 
-> Sources: DaoFP §8.1 ("Slice categories", "Coslice categories"), §10.6 ([[Comma Category]] generalizes slices); Kittenlab Lecture 13 ("Typed objects": $\mathbf{FinSet}/T$).
+> Sources: DaoFP §8.1 ("Slice categories", "Coslice categories"), §10.6 ([[Comma Category]] generalizes slices); Kittenlab Lecture 13 ("Typed objects": $\mathbf{FinSet}/T$); CTfS §2.7.6.6 (Definition 2.7.6.7, Exercises 2.7.6.8–2.7.6.9), Remark 4.5.3.23, Definition 4.5.3.18
 
 - **Typed sets** (Kittenlab): for a set $T$ of types, a $T$-typed set is $(A, t : A \to T)$ and morphisms preserve types — exactly $\mathbf{Set}/T$. Typed [[Graph|graphs]] and typed [[Petri Net|Petri nets]] (e.g. RegNets) live in slices of $\mathbf{Grph}$ and $\mathbf{Petri}$. [[Product|Products]] in $\mathcal{C}/T$ are [[Pullback|pullbacks]] over $T$ (the "typed product").
+- **Relative sets** (CTfS Definition 2.7.6.7): a *set over $B$* is a set with a naming function to $B$, and maps must respect the names — e.g. two documents as sets of word occurrences over the set $B$ of English words. This is $\mathbf{Set}/B$ (CTfS Remark 4.5.3.23); $\mathbf{Set}/\{\star\} \cong \mathbf{Set}$, and there is exactly one set over $\varnothing$ (CTfS Exercise 2.7.6.9). Sets over $B$ are equivalent to $B$-indexed families of sets ([[Indexed Set]]). CTfS also uses "slice" for the category of cones over a whole diagram $X : \mathcal I \to \mathcal C$, of which the limit is the terminal object ([[Limit]]).
 - If $\mathcal{C}$ has a [[Terminal Object]] $1$, the coslice $1/\mathcal{C}$ has as objects all [[Global Element|global elements]] of all objects; a morphism $f : a \to b$ maps elements of $a$ to elements of $b$ — this "justifies our intuition of types as sets of values" (DaoFP).
 - $\mathcal{C}/c$ is the [[Comma Category]] $\mathrm{Id}_{\mathcal{C}} \downarrow c$; the [[Category of Elements]] of a presheaf is a slice of the presheaf category; [[Dependent Type|fibrations]] and [[Dependent Type|dependent types]] are families in $\mathcal{C}/c$ (DaoFP Ch. 11: "type families as fibrations", base change $f^* : \mathcal{C}/c \to \mathcal{C}/c'$ by pullback, with adjoints $\Sigma_f \dashv f^* \dashv \Pi_f$).
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) — Kittenlab [Lecture 13](https://algebraicjulia.github.io/Kittenlab.jl/lecture13.html)
 ```julia
 # Kittenlab Lecture 13: a T-typed finite set is a FinFunction into T; morphisms commute over T
 using Catlab

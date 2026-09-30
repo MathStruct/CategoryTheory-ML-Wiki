@@ -15,6 +15,7 @@ Signals can be *added* and *amplified*, and amplification distributes over addit
 
 ````tabs
 tab: Julia
+**Docs:** [Theories (Catlab)](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)
 ```julia
 # a rig as a Julia struct of operations; the tropical rig and the Booleans
 struct Rig{T}; zero::T; plus::Function; one::T; times::Function; end

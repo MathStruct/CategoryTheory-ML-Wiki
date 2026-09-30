@@ -18,8 +18,9 @@ $$
 \end{document}
 ```
 
-> Sources: DaoFP §7.2 ("Lists", "Elimination Rule"), §7.3 ("Functoriality": `map`, `badMap`), §12.4 ("Lists as initial algebras"), §15.3 ("Free monoid and the list monad"), Exercises 7.2.1–7.2.3; Kittenlab Lecture 5 (`ConcatMonoid`); 7 Sketches §5.2.4 (free monoid).
+> Sources: DaoFP §7.2 ("Lists", "Elimination Rule"), §7.3 ("Functoriality": `map`, `badMap`), §12.4 ("Lists as initial algebras"), §15.3 ("Free monoid and the list monad"), Exercises 7.2.1–7.2.3; Kittenlab Lecture 5 (`ConcatMonoid`); 7 Sketches §5.2.4 (free monoid); CTfS Definition 3.1.1.10, Example 3.1.1.11
 
+- **Lists as functions** (CTfS Definition 3.1.1.10): a list in $X$ is a pair $(n, f)$ with $n \in \mathbb N$ its length and $f : \underline n \to X$ its entries; concatenation $(n, f) \mathbin{+\!\!+} (n', f') = (n + n', f \mathbin{+\!\!+} f')$ uses $f$ on $1..n$ and $f'(i - n)$ after — so $[a,b,c] \mathbin{+\!\!+} [p,a,a,a,p] = [a,b,c,p,a,a,a,p]$ and $[\,]$ is the unit.
 - **Functoriality** (§7.3): for $f : a \to b$, `map f` is the fold with $\mathit{init} = \mathsf{Nil}_b$ and $\mathit{step} = \mathsf{Cons}_b \circ (f \times \mathrm{id})$. The alternative $\mathit{step} = \mathsf{snd}$ (`badMap`, which drops all elements) type-checks but fails the functor law `map id = id` — see [[Functor]].
 - $L_a$ is the [[Free Monoid]] on $a$ and the [[Initial Algebra]] of $F(x) = 1 + a \times x$; `foldr` is the catamorphism. $L_1 \cong N$ ([[Natural Numbers Object]], [[DaoFP Chapter 7 Exercises#Exercise 7.2.1|DaoFP Exercise 7.2.1]]).
 - Not every mapping out of a list is a fold, but every *Haskell* function `[a] -> c` written by pattern matching on `[]` and `(:)` is ([[DaoFP Chapter 7 Exercises#Exercise 7.2.2|DaoFP Exercise 7.2.2]], [[DaoFP Chapter 7 Exercises#Exercise 7.2.3|DaoFP Exercise 7.2.3]]).
@@ -27,6 +28,7 @@ $$
 
 ````tabs
 tab: Julia
+**Docs:** Kittenlab [Lecture 5](https://algebraicjulia.github.io/Kittenlab.jl/lecture5.html)
 ```julia
 # foldr as the list recursor
 recList(init, step) = as -> isempty(as) ? init : step(as[1], recList(init, step)(as[2:end]))

@@ -22,6 +22,7 @@ Take $A = (\bullet\circ)(\ast)$ and $B = (\bullet)(\circ\ast)$. Then $\Phi(A) = 
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Vignette: partitions](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/partitions/)
 ```julia
 # the five systems as partitions of {•,∘,∗} = {1,2,3}, given by surjections; Φ = "1 ~ 3"
 using Catlab

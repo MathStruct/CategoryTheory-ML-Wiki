@@ -40,12 +40,15 @@ Any profunctor $\Phi : \mathcal{X} \nrightarrow \mathcal{Y}$ glues its two categ
 
 ## Further
 
-- $\mathbf{Prof}_{\mathcal{V}}$ is a [[Compact Closed Category]] with $\mathcal{X}^* = \mathcal{X}^{\mathrm{op}}$ (Theorem 4.63): profunctors are exactly what is needed to interpret feedback [[Wiring Diagram|wiring diagrams]] in [[Co-design]]. The Kittenlab preamble writes $\mathbb{P}\mathrm{rof}$ with $\pto$.
+- $\mathbf{Prof}_{\mathcal{V}}$ is a [[Compact Closed Category]] with $\mathcal{X}^* = \mathcal{X}^{\mathrm{op}}$ (Theorem 4.63): profunctors are exactly what is needed to interpret feedback [[Wiring Diagram|wiring diagrams]] in [[Co-design]]. Kittenlab's notes write $\mathbb{P}\mathrm{rof}$ and a barred arrow for profunctors, as here with $\nrightarrow$.
 - [[Kan Extension|Kan extensions]] and [[Day Convolution]] are computed by (co)ends of profunctors; [[Tambara Module|Tambara modules]] are profunctors with extra structure that classify [[Lens|optics]] (DaoFP Ch. 18).
 - 7 Sketches §4.6: profunctors generalize binary relations; a "delightful exposition" of profunctors, equipments, companions and conjoints is [Shu08; Shu10].
 
 ````tabs
 tab: Julia
+**Docs:** Kittenlab [Lecture 14](https://algebraicjulia.github.io/Kittenlab.jl/lecture14.html)
+
+**Builds on:** [[Cost]] (`CostPre`), [[Enriched Category]] (`VCategory`), [[Matrix Multiplication in a Quantale]] (`qmul`), [[Weighted Graph]] (`distances`) — run those notes' Julia code first.
 ```julia
 # a V-profunctor between finite V-categories as a matrix; composition by quantale matrix multiplication
 struct VProfunctor{T}

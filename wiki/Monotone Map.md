@@ -2,7 +2,7 @@
 
 A **monotone map** between [[Preorder|preorders]] $(A, \leq_A)$ and $(B, \leq_B)$ is a [[Function]] $f : A \to B$ such that for all $x, y \in A$, if $x \leq_A y$ then $f(x) \leq_B f(y)$. Kittenlab calls these **order-preserving maps**. Monotone maps are the structure-preserving maps for preorders: 7 Sketches thinks of them as *observations* of one system by another.
 
-> Sources: 7 Sketches Definition 1.59, Examples 1.60–1.64, 1.68, Propositions 1.70, 1.78, Exercises 1.67, 1.71, 1.77; Kittenlab Lecture 5, 7; DaoFP §20.1.
+> Sources: 7 Sketches Definition 1.59, Examples 1.60–1.64, 1.68, Propositions 1.70, 1.78, Exercises 1.67, 1.71, 1.77; Kittenlab Lecture 5, 7; DaoFP §20.1; CTfS Definition 3.4.3.1, Example 3.4.3.2, Application 3.4.3.3, Exercises 3.4.3.4, 3.4.4.11, 4.1.1.8
 
 ## Examples
 
@@ -14,6 +14,8 @@ A **monotone map** between [[Preorder|preorders]] $(A, \leq_A)$ and $(B, \leq_B)
 - Every function out of a [[Discrete Preorder]] is monotone ([[7S Chapter 1 Exercises#Exercise 1.67|7S Exercise 1.67]]).
 - Monotone maps $P \to \mathbb{B}$ are the same as [[Upper Set|upper sets]] ([[Upper Sets Classified by Maps to Bool]]).
 - The connectivity observation $\Phi : \mathrm{Prt}(\{\bullet,\circ,\ast\}) \to \mathbb{B}$ ([[7S Chapter 1 Exercises#Exercise 1.77|7S Exercise 1.77]]) — monotone but with a [[Generative Effect]].
+
+**Scientific hypotheses as monotone maps** (CTfS Application 3.4.3.3). "A team is only as strong as its weakest member" — is a material only as strong as its weakest constituent? Order materials by constituency ($m \leq_C m'$ if $m$ is an ingredient of $m'$) and by strength ($m \leq_S m'$ if $m'$ is stronger). The hypothesis is precisely that the identity is a monotone map $(M, \leq_C) \to (M, \leq_S^{\mathrm{op}})$. Other CTfS examples: taking images $\mathcal P(X) \to \mathcal P(Y)$ and preimages $\mathcal P(Y) \to \mathcal P(X)$ along a function (CTfS Example 3.4.3.2, Exercise 3.4.3.4); assigning to each region of the earth its range of recorded temperatures ([[Join]]). Counting: there are $\binom{m+n+1}{m+1}$ monotone maps $[m] \to [n]$ between the linear orders $\{0 < \dots < m\}$ and $\{0 < \dots < n\}$ — e.g. 4 maps $[0] \to [3]$, one map $[3] \to [0]$ and 20 maps $[2] \to [3]$ ([[CTfS Chapter 4 Exercises#Exercise 4.1.1.8|CTfS Exercise 4.1.1.8]], [[Simplex Category]]).
 
 ## Monotone maps are functors (Kittenlab Lecture 5)
 
@@ -38,6 +40,9 @@ A monotone map may or may not preserve [[Meet|meets]] and [[Join|joins]] ([[Pres
 
 ````tabs
 tab: Julia
+**Docs:** [Vignette: preorders](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/preorders/) — Kittenlab [Lecture 5](https://algebraicjulia.github.io/Kittenlab.jl/lecture5.html)
+
+**Builds on:** [[Bool (Monoidal Preorder)]] (`BoolPre`), [[Natural Numbers]] (`UsualOrder`) — run those notes' Julia code first.
 ```julia
 # check monotonicity on finite preorders (Kittenlab-style `leq`)
 is_monotone(pA, pB, f, xs) = all(!leq(pA, x, y) || leq(pB, f(x), f(y)) for x in xs, y in xs)

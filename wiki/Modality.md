@@ -21,6 +21,7 @@ In [[Temporal Logic|temporal logic]] on the [[Topos of Behavior Types]], $@_t(q)
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
 ```julia
 # modalities on the finite Heyting algebra of opens of a small space: check (a)–(c) by brute force
 Op = [BitSet(), BitSet([1]), BitSet([1, 2])]                   # Sierpiński opens

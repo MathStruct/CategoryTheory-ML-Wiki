@@ -24,6 +24,7 @@ The chapter's moral: props with presentations turn diagram manipulation into rig
 
 ````tabs
 tab: Julia
+**Docs:** [Theories (Catlab)](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)
 ```julia
 # behaviours: a signal flow graph as a linear relation; kernel and image via reversed icons (Exercise 5.84)
 using LinearAlgebra

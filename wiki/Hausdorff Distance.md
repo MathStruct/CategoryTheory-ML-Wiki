@@ -20,6 +20,7 @@ For $\mathcal{V} = \mathbf{Bool}$ this asks "can I get into $V$ from every $u \i
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
 ```julia
 # Lawvere-Hausdorff distance between index sets U, V of a finite metric matrix D
 hausdorff(D, U, V) = maximum(minimum(D[u, v] for v in V) for u in U)

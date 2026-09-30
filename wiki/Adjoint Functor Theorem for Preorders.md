@@ -22,16 +22,17 @@ $$
 f(g(q_0)) = \bigwedge\{q \mid g(q_0) \leq g(q)\} \leq \bigwedge\{q_0\} = q_0. \qquad\blacksquare
 $$
 
-**DaoFP's view (§10.8).** In a preorder a right adjoint $g$ to $f$ must satisfy $f(p) = \bigwedge\{q \mid p \leq g(q)\}$ — the *limit of the comma category* $p \downarrow g$. Freyd's theorem says that for general categories the same formula works provided $\mathcal{C}$ is complete, $g$ preserves limits, and a *solution set condition* holds guaranteeing the limit is over a *small* diagram; in a preorder with all meets the condition is automatic. Applied to [[Continuation|defunctionalization]]: DaoFP uses the theorem to explain why arbitrary functions can be replaced by a "solution set" of data.
+**DaoFP's view (§10.8).** In a preorder a left adjoint $f$ to $g$ must satisfy $f(p) = \bigwedge\{q \mid p \leq g(q)\}$ — the *limit of the comma category* $p \downarrow g$. Freyd's theorem says that for general categories the same formula works provided $\mathcal{C}$ is complete, $g$ preserves limits, and a *solution set condition* holds guaranteeing the limit is over a *small* diagram; in a preorder with all meets the condition is automatic. Applied to [[Defunctionalization]]: DaoFP uses the theorem to explain why arbitrary functions can be replaced by a "solution set" of data.
 
 The theorem explains the slogan: a monotone map *does not have [[Generative Effect|generative effects]]* iff it is a left adjoint.
 
 ````tabs
 tab: Lean
 ```lean
--- Mathlib: a meet-preserving map out of a complete lattice is a right adjoint
-#check @GaloisConnection.of_iInf   -- hmm: see `OrderIso`/`sInf` based constructions
-#check @sInf_le                    -- the ingredients of (1.116)
+-- Mathlib: complete lattices, Galois connections and the ingredients of (1.116)
+#check @GaloisConnection
+#check @GaloisConnection.u_sInf     -- right adjoints preserve all meets
+#check @sInf_le                     -- used to show f(g q₀) ≤ q₀
 -- The candidate left adjoint (1.116):
 def leftAdjCandidate {P Q : Type} [Preorder P] [CompleteLattice Q] (g : Q → P) (p : P) : Q :=
   sInf {q | p ≤ g q}

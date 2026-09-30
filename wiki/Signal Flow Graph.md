@@ -28,6 +28,9 @@ Reversing the icons ($g^{\mathrm{op}} : n \to m$ for $g : m \to n$) and interpre
 
 ````tabs
 tab: Julia
+**Docs:** [Theories (Catlab)](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)
+
+**Builds on:** [[Rig]] (`Nat`) — run that note's Julia code first.
 ```julia
 # evaluate a simplified signal flow graph as a matrix via the semantics functor S (Theorem 5.53)
 copyM(R)    = reshape([R.one, R.one], 1, 2)          # 1 → 2

@@ -24,6 +24,7 @@ Let $\mathrm{fix}_j := \{p \in P \mid j(p) \cong p\}$, a sub-preorder of $P$; no
 
 ````tabs
 tab: Julia
+**Docs:** [Vignette: preorders](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/preorders/)
 ```julia
 # a closure operator on the power set of {1..n}: closing a set under a relation R (reachability)
 function closure(R::BitMatrix, U::BitVector)

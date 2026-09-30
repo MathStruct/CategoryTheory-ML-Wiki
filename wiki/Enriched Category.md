@@ -18,11 +18,11 @@ $\mathcal{V}$ is the **base of enrichment**; $\mathcal{X}$ is **enriched in** $\
 
 | base $\mathcal{V}$ | $\mathcal{V}$-category | hom-object $\mathcal{X}(x,y)$ |
 |---|---|---|
-| [[Bool (Monoidal Preorder)|$\mathbf{Bool}$]] | [[Preorder]] ([[Preorders are Bool-Categories]]) | is $x \leq y$? |
+| [[Bool (Monoidal Preorder)\|$\mathbf{Bool}$]] | [[Preorder]] ([[Preorders are Bool-Categories]]) | is $x \leq y$? |
 | [[Cost]] | [[Lawvere Metric Space]] | distance $d(x, y) \in [0, \infty]$ |
-| $\mathbf{NMY}$ | points with a no/maybe/yes answer to "can I get from $x$ to $y$?" | [[7S Chapter 2 Exercises#Exercise 2.61|7S Exercise 2.61]] |
-| $(\mathcal{P}(M), \subseteq, M, \cap)$ | modes of transport that get you from $x$ to $y$ | [[7S Chapter 2 Exercises#Exercise 2.62|7S Exercise 2.62]] |
-| $(\mathbb{N} \cup \{\infty\}, \leq, \infty, \min)$ | weight limits on routes | [[7S Chapter 2 Exercises#Exercise 2.63|7S Exercise 2.63]] |
+| $\mathbf{NMY}$ | points with a no/maybe/yes answer to "can I get from $x$ to $y$?" | [[7S Chapter 2 Exercises#Exercise 2.61\|7S Exercise 2.61]] |
+| $(\mathcal{P}(M), \subseteq, M, \cap)$ | modes of transport that get you from $x$ to $y$ | [[7S Chapter 2 Exercises#Exercise 2.62\|7S Exercise 2.62]] |
+| $(\mathbb{N} \cup \{\infty\}, \leq, \infty, \min)$ | weight limits on routes | [[7S Chapter 2 Exercises#Exercise 2.63\|7S Exercise 2.63]] |
 | $(\mathbf{Set}, \times, 1)$ | ordinary (locally small) [[Category]] | the hom-*set* |
 | $(\mathbf{Cat}, \times, \mathbf{1})$ | a (strict) [[2-Category]] | the hom-category (DaoFP §20.1) |
 | any closed $\mathcal{V}$ | $\mathcal{V}$ itself (self-enrichment, Remark 2.89) | $v \multimap w$ |
@@ -52,6 +52,9 @@ DaoFP's motivations: category theory "reluctantly draws upon set theory" through
 
 ````tabs
 tab: Julia
+**Docs:** [Vignette: monoidal preorders & SMCs](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/smc/)
+
+**Builds on:** [[Bool (Monoidal Preorder)]] (`BoolPre`), [[Preorder]] (`Preorder`) — run those notes' Julia code first.
 ```julia
 # a V-category with finitely many objects as a matrix of hom-objects over a monoidal preorder V
 struct VCategory{T, V<:Preorder{T}}

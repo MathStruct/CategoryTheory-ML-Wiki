@@ -14,6 +14,7 @@ Two [[Finite Set|finite sets]] are isomorphic iff they have the same [[Cardinali
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) — Kittenlab [Lecture 2](https://algebraicjulia.github.io/Kittenlab.jl/lecture2.html)
 ```julia
 using Catlab
 f = FinFunction([2, 3, 1], 3)

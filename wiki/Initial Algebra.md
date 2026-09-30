@@ -32,6 +32,9 @@ data Fix f where In :: f (Fix f) -> Fix f     -- In is ι; out (In x) = x is ι�
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
+
+**Builds on:** [[Algebra of an Endofunctor]] (`PlusF`, `ValF`) — run that note's Julia code first.
 ```julia
 # Fix and cata for a functor given by fmap; ExprF as in [[Algebra of an Endofunctor]]
 struct Fix; unfix; end                             # In :: f (Fix f) -> Fix f

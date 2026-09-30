@@ -29,6 +29,7 @@ written $f_* : \mathcal{C}/B \to \mathcal{C}/A$. The fiber of $\Pi_f E$ over $x 
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets)
 ```julia
 using Catlab
 # sections of a finite bundle p : E → B = one element from each fiber (Π_{x:B} p⁻¹(x))

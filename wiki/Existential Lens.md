@@ -15,13 +15,14 @@ a *type-changing* [[Lens]]: replacing the focus $a$ by $b$ turns the whole $s$ i
 
 > Sources: DaoFP §17.9 ("Existential Lens": "Existential lens in Haskell", "Existential lens in category theory", "Type-changing lens in Haskell", "Lens composition", "Category of lenses"), §17.10 ("Lenses and Fibrations"), Exercise 17.9.1; §18 ([[Tambara Module|Tambara modules]] give the practical representation).
 
-- `get = snd . l`, `set s b = r (fst (l s), b)`: mediating between the producer `l` and consumer `r` of the residue never exposes `c` (`getResidue` does not type-check). The backward pass answers "what change to the input produces a given change of the focus" — the viewpoint used for lenses in neural networks / [[Open Graph|open learners]].
+- `get = snd . l`, `set s b = r (fst (l s), b)`: mediating between the producer `l` and consumer `r` of the residue never exposes `c` (`getResidue` does not type-check). The backward pass answers "what change to the input produces a given change of the focus" — the viewpoint used for lenses in machine learning (backpropagation as a lens).
 - `prodLens = LensE id id :: LensE (c, a) (c, b) a b` focuses on the second component of a pair.
 - **Composition** takes the product of residues: `compLens (LensE l2 r2) (LensE l1 r1) = LensE (assoc' . bimap id l2 . l1) (r1 . bimap id r2 . assoc)`; e.g. `compLens prodLens prodLens` on `("Outer", (True, 42))` gets `42` and can set it to `'z'`. Lenses form the category $\mathbf{Lens}$ with objects pairs $\langle s, t\rangle$ — but the coend formula for composition is too clumsy in practice, which motivates profunctor optics.
 - **Fibrational view** (§17.10): `get` is a projection $p : E \to B$ of a bundle and `set` a *transport* $q : E \times B \to E$ to a new fiber; the lens laws become the *transport law* $p \circ q = \pi_2$, the *identity law* $q \circ (\mathrm{id} \times p) \circ \delta = \mathrm{id}$ and the *composition law* $q \circ (q \times \mathrm{id}) = q \circ (\mathrm{id} \times \varepsilon \times \mathrm{id})$, written with the comonoid $(\delta, \varepsilon)$ of $E$ so as to generalize to monoidal categories. Type-changing lenses transport between a family of bundles fibered over a category of focus types.
 
 ````tabs
 tab: Julia
+**Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)
 ```julia
 # an existential lens as a forward/backward pair; composition takes the product of residues
 struct LensE; l::Function; r::Function; end          # l : s -> (c, a),  r : (c, b) -> t

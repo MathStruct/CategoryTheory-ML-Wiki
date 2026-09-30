@@ -8,10 +8,15 @@ It is the unit for [[Function Composition]]: $\mathrm{id}_X \mathbin{;} F = F = 
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) — Kittenlab [Lecture 2](https://algebraicjulia.github.io/Kittenlab.jl/lecture2.html)
+
+**Builds on:** [[Finite Set]] (`𝔽`), [[Function]] (`𝔽Mor`) — run those notes' Julia code first.
 ```julia
 # Kittenlab Lecture 2
 identity(A::𝔽) = 𝔽Mor(A, A, Dict(a => a for a in A))
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab
 using Catlab
 id(FinSet(3))       # FinFunction([1,2,3], 3)

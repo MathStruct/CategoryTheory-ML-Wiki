@@ -20,13 +20,14 @@ the multiplication being the double whiskering of the counit ($\mu : R L R L \to
 | [[State Monad]] | currying $(- \times s) \dashv (-)^s$ | `\a s -> (a, s)` | application `uncurry runState` | `fmap counit` |
 | [[Writer Monad]] | free $M$-set $F \dashv U$, $\mathbf{Set} \rightleftarrows \mathbf{MSet}$ | `x ↦ (x, 1)` | `(x, m) ↦ a_m x` | `((x,m),n) ↦ (x, n·m)` |
 | [[Maybe Monad]] | pointed objects $F \dashv U$, $\mathcal{C} \rightleftarrows 1/\mathcal{C}$ | `Just` | `[id, p]` | collapse `Just (Just a)` |
-| [[Continuation Monad]] | $\mathbf{Set}(-, Z) : \mathbf{Set}^{\mathrm{op}} \rightleftarrows \mathbf{Set}$ | `\a k -> k a` | evaluation | |
+| [[Continuation Monad]] | $\mathbf{Set}(-, Z) : \mathbf{Set}^{\mathrm{op}} \rightleftarrows \mathbf{Set}$ | `\a k -> k a` | evaluation | `\mm k -> mm (\m -> m k)` |
 | closure operator | [[Galois Connection]] $f \dashv g$ | $p \leq g f p$ | $f g q \leq q$ | idempotence |
 
 Most of these adjunctions leave the category of Haskell types (into $\mathbf{Mon}$, $\mathbf{MSet}$, $\mathbf{Set}^{\mathrm{op}}$) even though the round trip is an endofunctor, which is why they cannot be written directly in Haskell. Composable adjunctions give [[Monad Transformer|monad transformers]].
 
 ````tabs
 tab: Julia
+**Docs:** Kittenlab [Lecture 7](https://algebraicjulia.github.io/Kittenlab.jl/lecture7.html)
 ```julia
 using Catlab
 # the free-monoid adjunction as a round trip on FinSets: T X = lists over X (Kittenlab lecture 7)

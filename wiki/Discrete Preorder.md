@@ -2,10 +2,11 @@
 
 Every [[Set]] $X$ can be considered as a **discrete preorder** $(X, =)$: the only order relations are $x \leq x$; if $x \neq y$ neither $x \leq y$ nor $y \leq x$ holds. Its [[Hasse Diagram]] is a collection of points. It is already a [[Partial Order]].
 
-> Sources: 7 Sketches Example 1.32, Exercises 1.41, 1.44, 1.55, 1.67, 1.73; Kittenlab Lecture 5.
+> Sources: 7 Sketches Example 1.32, Exercises 1.41, 1.44, 1.55, 1.67, 1.73; Kittenlab Lecture 5; CTfS Example 3.4.3.5, Exercises 3.4.3.6–3.4.3.7, Example 5.1.1.5
 
 - Two elements are comparable iff they are equal ([[7S Chapter 1 Exercises#Exercise 1.44|7S Exercise 1.44]]).
 - Every function out of a discrete preorder is [[Monotone Map|monotone]] ([[7S Chapter 1 Exercises#Exercise 1.67|7S Exercise 1.67]]); thus $\mathrm{Disc} : \mathbf{Set} \to \mathbf{Preord}$ is a [[Functor]], left adjoint to the underlying-set functor (Kittenlab Lecture 5 lists it alongside the [[Codiscrete Preorder]] functor).
+- Dually (CTfS Exercise 3.4.3.6), a monotone map *into* a discrete preorder is a function that is constant on each connected component of the domain; monotone maps into the [[Codiscrete Preorder|indiscrete]] preorder are arbitrary functions, and monotone maps *out of* it land in a clique. "The smallest preorder structure that can be put on $S$" is the discrete one, "the largest" the indiscrete one, and they are the left and right adjoints of the underlying-set functor (CTfS Example 5.1.1.5).
 - The [[Upper Set|upper sets]] of a discrete preorder form the whole [[Power Set]] ([[7S Chapter 1 Exercises#Exercise 1.55|7S Exercise 1.55]]).
 - A skeletal [[Dagger Preorder]] is discrete, hence "can be identified with" a set ([[7S Chapter 1 Exercises#Exercise 1.73|7S Exercise 1.73]], Remark 1.74).
 - As a category, a discrete preorder is a [[Discrete Category]].

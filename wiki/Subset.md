@@ -17,6 +17,7 @@ The subsets of $X$ form the [[Power Set]] $\mathcal{P}(X)$, a [[Partial Order|po
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) — Kittenlab [Lecture 5](https://algebraicjulia.github.io/Kittenlab.jl/lecture5.html), [Lecture 14](https://algebraicjulia.github.io/Kittenlab.jl/lecture14.html)
 ```julia
 # Kittenlab Lecture 14: subsets of {1,…,n} as bit vectors (characteristic functions)
 const FinSubset = BitVector
@@ -26,7 +27,9 @@ A .&& B                               # intersection {3}
 
 # Kittenlab Lecture 5: subset-of test for finite sets
 subsetof(U, A) = all(x ∈ A for x in U)
-
+```
+Catlab version (run in a fresh Julia session — Catlab exports its own `compose`, `id`, `FinFunction`, …):
+```julia
 # Catlab: subobjects of a FinSet
 using Catlab
 X = FinSet(3)

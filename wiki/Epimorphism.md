@@ -8,11 +8,12 @@ $$
 
 Equivalently, pre-composition $(- \circ f) : \mathcal{C}(b, c) \to \mathcal{C}(a, c)$ is injective for every $c$. To show $f$ is *not* epi, find $c$ and two different $g_1, g_2$ that agree after precomposing with $f$.
 
-> Sources: DaoFP §2.5 ("Epimorphisms"), Exercise 2.5.1; 7 Sketches §1.4.2; Kittenlab Lecture 2.
+> Sources: DaoFP §2.5 ("Epimorphisms"), Exercise 2.5.1; 7 Sketches §1.4.2; Kittenlab Lecture 2; CTfS Definition 2.7.5.3, Proposition 2.7.5.4, Exercise 2.7.5.6
 
 **Intuition (DaoFP).** Mappings *out* of an object define its properties: think of elements of a finite target $c$ as colours painting $b$. If $f$ is not epi, its image may cover only the part of $b$ painted alike by $g_1$ and $g_2$, so the two agree on $a$ although they differ on $b$. "Of course, in an actual category there is no peeking inside objects."
 
 - In $\mathbf{Set}$ epis are exactly the [[Surjection|surjections]] (`even :: Int -> Bool` covers all of `Bool`). Any arrow *to* the [[Terminal Object]] is epi ([[DaoFP Chapter 2 Exercises#Exercise 2.5.1|DaoFP Exercise 2.5.1]]).
+- **Proof that epi ⇒ surjective in $\mathbf{Set}$** (CTfS Proposition 2.7.5.4) uses the [[Subobject Classifier]] $\Omega = \{\mathit{True}, \mathit{False}\}$ as the "test object": if $y_0 \in Y$ were missed by $f$, the characteristic functions of $\{y_0\}$ and of $\varnothing$ would be two different maps $Y \to \Omega$ that agree after precomposing with $f$. Pushouts preserve epimorphisms, dually to pullbacks preserving monos ([[CTfS Chapter 2 Exercises#Exercise 2.7.5.6|CTfS Exercise 2.7.5.6]]).
 - Epi is dual to [[Monomorphism]]: an epi in $\mathcal{C}$ is a mono in $\mathcal{C}^{\mathrm{op}}$. A [[Section and Retraction|retraction]] is always epi.
 - Surjections out of $A$ = [[Partition|partitions]] of $A$; the [[Epi-Mono Factorization]] $A \twoheadrightarrow \mathrm{im}(f) \hookrightarrow B$ underlies [[Pushforward and Pullback of Partitions]].
 - Epi + mono need not be iso (DaoFP; e.g. dense inclusions in $\mathbf{Top}$).
@@ -20,6 +21,7 @@ Equivalently, pre-composition $(- \circ f) : \mathcal{C}(b, c) \to \mathcal{C}(a
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) — Kittenlab [Lecture 2](https://algebraicjulia.github.io/Kittenlab.jl/lecture2.html)
 ```julia
 using Catlab
 is_epic(FinFunction([1, 2, 2], 2))    # true: surjective

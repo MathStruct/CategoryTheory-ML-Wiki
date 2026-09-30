@@ -9,6 +9,7 @@ A **dagger category** is a [[Category]] with an involutive, identity-on-objects 
 
 ````tabs
 tab: Julia
+**Docs:** [FinRelations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinRelations)
 ```julia
 using Catlab.CategoricalAlgebra.FinRelations
 R = FinRelation((x, y) -> x < y, 3, 3)

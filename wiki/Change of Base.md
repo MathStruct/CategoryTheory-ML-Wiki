@@ -15,6 +15,9 @@ Change of base is a functor $\mathcal{V}\text{-}\mathbf{Cat} \to \mathcal{W}\tex
 
 ````tabs
 tab: Julia
+**Docs:** [Vignette: monoidal preorders & SMCs](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/smc/)
+
+**Builds on:** [[Bool (Monoidal Preorder)]] (`BoolPre`), [[Cost]] (`CostPre`), [[Enriched Category]] (`VCategory`) — run those notes' Julia code first.
 ```julia
 change_of_base(f, W, X::VCategory) = VCategory(W, X.objects, map(f, X.hom))
 

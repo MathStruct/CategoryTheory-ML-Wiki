@@ -10,7 +10,7 @@ We denote the partition by $\{A_p\}_{p \in P}$, call $P$ the set of **part label
 
 Two partitions $\{A_p\}_{p\in P}$ and $\{A'_{p'}\}_{p' \in P'}$ are considered *the same* if for each $p \in P$ there is $p' \in P'$ with $A_p = A'_{p'}$ (only the labels changed; cf. [[7S Chapter 1 Exercises#Exercise 1.16|7S Exercise 1.16]]).
 
-> Sources: 7 Sketches Definition 1.14, Examples 1.26, 1.49, 1.52; Section 1.1 (systems as partitions).
+> Sources: 7 Sketches Definition 1.14, Examples 1.26, 1.49, 1.52; Section 1.1 (systems as partitions); CTfS Example 2.6.1.4, Exercise 2.6.1.5
 
 ## Partitions as surjections (Example 1.26)
 
@@ -28,6 +28,7 @@ Any function $g : S \to T$ induces a [[Galois Connection]] $g_! \dashv g^*$ betw
 
 ````tabs
 tab: Julia
+**Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) · [Vignette: partitions](https://algebraicjulia.github.io/Catlab.jl/v0.16/generated/sketches/partitions/) — Kittenlab [Lecture 9](https://algebraicjulia.github.io/Kittenlab.jl/lecture9.html)
 ```julia
 # A partition of {1,…,n} as a surjection {1,…,n} → {1,…,k}; parts are preimages
 using Catlab
