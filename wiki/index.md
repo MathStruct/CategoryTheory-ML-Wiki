@@ -3,7 +3,7 @@ title: Category Theory Wiki
 ---
 #index
 
-A wiki of category theory with one note per concept: about 310 concept notes, 460 exercises with worked solutions, and runnable code for every idea. It is built from four sources:
+A wiki of category theory with one note per concept: about 335 concept notes, 460 exercises with worked solutions, and runnable code for every idea. It is built from four sources:
 
 - **7 Sketches**: Fong & Spivak, *An Invitation to Applied Category Theory: Seven Sketches in Compositionality*.
 - **CTfS**: Spivak, *Category Theory for Scientists* ([arXiv:1302.6946](https://arxiv.org/abs/1302.6946)). It provides most of the worked examples from science and everyday life: ologs, databases, state machines, Markov chains, sheaves of measurements.
@@ -11,6 +11,8 @@ A wiki of category theory with one note per concept: about 310 concept notes, 46
 - **Kittenlab**: Owen Lynch's *Kittenlab.jl* lectures.
 
 On top of these, a growing layer of **research papers** on category theory for machine learning — categorical deep learning, Markov categories, Bayesian lenses, statistical and open games — each with its own note in [[Papers]] and concept notes citing their numbered definitions. It is the categorical background of [Lenticulum.jl](https://mathstruct.org/Lenticulum.jl/dev/vault/).
+
+A second research layer covers category theory for **compilers and databases** — syntax with binding, categorical semantics of types and effects, logical relations and institutions, e-graphs and graph rewriting, conjunctive queries, Datalog and incremental computation — with its own papers in [[Papers]]. It is the categorical background of [Sophia](https://mathstruct.org/Sophia/).
 
 **What a note contains**
 

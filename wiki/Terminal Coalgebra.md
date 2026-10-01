@@ -24,6 +24,10 @@ Functors without leaves are fine for coalgebras: `data StreamF a x = StreamF a x
 - **Nu**: uncurrying `ana` gives the *existential* type `data Nu f = Nu (exists a. (a -> f a, a))` — a seed plus its unfolding; clients know only that such an `a` exists and can only keep applying `fmap`-lifted `coa`. Existentials are [[Coend|coends]]; compare `Mu f = forall a. Algebra f a -> a` ([[End|end]]).
 - **Limit of the $\omega^{\mathrm{op}}$-chain**: $1 \xleftarrow{!} F 1 \xleftarrow{F !} F^2 1 \leftarrow \cdots$; for $F_a x = a \times x$ the stages are streams of length $n$, and the limit glues the approximations into the infinite stream. The proof dualizes the colimit construction of $\mu F$.
 
+## In compilers and databases
+
+Two states have the same image in the terminal coalgebra exactly when they are bisimilar ([[Bisimulation]]); partition refinement computes this on finite systems, which is how cyclic term graphs are hashed or minimised.
+
 ````tabs
 tab: Julia
 **Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)

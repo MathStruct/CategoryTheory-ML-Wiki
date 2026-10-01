@@ -26,10 +26,11 @@ add3 = curry(+)(3); add3(4)     # 7
 ```
 tab: Lean
 ```lean
+import Mathlib
 #check @Function.curry     -- (α × β → γ) → α → β → γ
 #check @Function.uncurry
 #check Equiv.curry         -- (α × β → γ) ≃ (α → β → γ)
-#check CategoryTheory.CartesianClosed.curry   -- in any CCC
+#check @CategoryTheory.MonoidalClosed.curry   -- in any (cartesian) monoidal closed category
 ```
 tab: Haskell
 ```haskell

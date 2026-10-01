@@ -24,6 +24,10 @@ satisfying seven axioms [CDC.1–7]: $D$ is additive; $D[f]$ is additive in the 
 
 A CDC axiomatises forward-mode differentiation. The reverse mode needed for backpropagation — $R[f] : A \times B \to A$, $R[f](a, \bar b) = J_f(a)^\top \bar b$ — is *more* structure: every [[Reverse Derivative Category]] is a CDC (Cockett et al., Theorem 16), and a CDC is a reverse derivative category **exactly when its linear maps carry a (contextual) dagger** that transposes them (Theorem 42). The dagger is the transpose $J^\top$; forward mode has no way to produce it.
 
+## In compilers and databases
+
+[[Change Action|Change actions]] generalise the derivative to exact, not necessarily linear, update maps; every (generalised) cartesian differential category gives a change action model, and the same derivative explains semi-naïve evaluation of Datalog.
+
 ````tabs
 tab: Julia
 **Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)

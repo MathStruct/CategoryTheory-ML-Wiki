@@ -28,6 +28,10 @@ $$
 
 "Everything follows from the definition of adjoint functors"; complex migrations are built from $\Delta, \Sigma, \Pi$ — "in practice essentially all useful migrations". The word *pullback* here is not the [[Pullback|limit]] of a cospan, though via the [[Category of Elements]] and discrete opfibrations it is a pullback in $\mathbf{Cat}$ (Remark 3.100).
 
+## In compilers and databases
+
+With an algebraic type side — attributes in an algebra of a [[Lawvere Theory]], labelled nulls created by $\Sigma_F$ — the same three functors are the semantics of the CQL query language ([[Algebraic Database]]).
+
 ````tabs
 tab: Julia
 **Docs:** [FinCats](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinCats) · [Data migration](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FunctorialDataMigrations) · [ACSets API](https://algebraicjulia.github.io/ACSets.jl/stable/api/) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/) · [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)

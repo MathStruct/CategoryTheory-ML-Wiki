@@ -29,6 +29,10 @@ A **$\mathcal{C}$-set** (7 Sketches: a **$\mathcal{C}$-instance**; Kittenlab: an
 - [[Data Migration Functor|Data migration]]: a functor $F : \mathcal{C} \to \mathcal{D}$ between schemas induces $\Delta_F$ (pullback/precomposition) with adjoints $\Sigma_F \dashv \Delta_F \dashv \Pi_F$.
 - Functors out of a [[Free Category|path category]] are stored as one set per vertex and one function per edge (Kittenlab), which is exactly what Catlab's `@acset_type` generates: a struct of tables with integer foreign keys. "Because a $\mathcal{C}$-set is a functor, all the constraints are ensured by the rules of functors" (7 Sketches).
 
+## In compilers and databases
+
+Adding attributes with fixed values (labels, numbers) gives [[Attributed C-Set|attributed C-sets]], the data structure of Catlab and a natural model for graph databases of code; adding an algebraic type side gives [[Algebraic Database|algebraic databases]]. C-sets form adhesive categories, so [[Double-Pushout Rewriting]] works on all of them uniformly.
+
 ````tabs
 tab: Julia
 **Docs:** [FinCats](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinCats) · [Categories & functors](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Categories) · [ACSets API](https://algebraicjulia.github.io/ACSets.jl/stable/api/) · [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/) — Kittenlab [Lecture 6](https://algebraicjulia.github.io/Kittenlab.jl/lecture6.html), [Lecture 8](https://algebraicjulia.github.io/Kittenlab.jl/lecture8.html), [Lecture 12](https://algebraicjulia.github.io/Kittenlab.jl/lecture12.html)

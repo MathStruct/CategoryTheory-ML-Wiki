@@ -14,6 +14,10 @@ LCCCs are the categorical models of dependent type theory, the way CCCs model th
 - Examples: $\mathbf{Set}$, $\mathbf{FinSet}$, every elementary [[Topos]] (presheaf categories, [[C-Set|C-sets]], sheaves). Non-examples: $\mathbf{Cat}$, $\mathbf{Top}$ (pullback does not preserve colimits there).
 - In an LCCC, $f^*$ preserves colimits and exponentials (it is a left adjoint) — which is what makes substitution well behaved in type theory.
 
+## In compilers and databases
+
+The dependently typed analogue of the [[Curry-Howard-Lambek Correspondence]] is phrased with [[Category with Families|categories with families]]: democratic cwfs with $\Sigma$, $\Pi$ and extensional identity types correspond to LCCCs, and equality in the free LCCC is undecidable — the reason dependent type checkers keep extensional equality propositional.
+
 ````tabs
 tab: Julia
 **Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits)
@@ -30,8 +34,9 @@ import Mathlib
 open CategoryTheory
 #check @CategoryTheory.Over.pullback        -- base change on slices
 #check @CategoryTheory.Over.mapPullbackAdj   -- Σ_f ⊣ f^*
--- Mathlib's `Type` is locally cartesian closed; slices `Over B` are cartesian closed
-example (B : Type) : CartesianClosed (Over B) := inferInstance
+-- local cartesian closedness: pullback along every f has a right adjoint Π_f (f is exponentiable)
+#check @CategoryTheory.ExponentiableMorphism
+#check @CategoryTheory.ExponentiableMorphism.pushforward
 ```
 tab: Haskell
 ```haskell

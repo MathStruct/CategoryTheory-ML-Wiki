@@ -13,6 +13,10 @@ An **undirected wiring diagram** (UWD) is a [[Wiring Diagram]] without input/out
 
 A factor graph — factors as boxes, variables as junctions — is an undirected wiring diagram, and evaluating it in an algebra of relations (or of unnormalised densities) is `oapply`. Collapsing a subgraph into a single factor whose ports are its boundary variables is operadic composition. What the relational algebra lacks, and probabilistic factor-graph libraries add, is a notion of *belief* at each junction and of *messages* between boxes; see [[Hypergraph Category]] and the [Lenticulum.jl vault](https://mathstruct.org/Lenticulum.jl/dev/vault/Factor-Graphs/Factor-Graphs).
 
+## In compilers and databases
+
+A query written with `@relation` is a [[Conjunctive Query]]; Chandra–Merlin containment is a homomorphism between the diagrams' canonical databases, and the equational theory of such diagrams is that of a [[Cartesian Bicategory]].
+
 ````tabs
 tab: Julia
 **Docs:** [Relational programs / UWDs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/wiring_diagrams/#Catlab.WiringDiagrams.UndirectedWiringDiagrams) — Kittenlab [Lecture 15](https://algebraicjulia.github.io/Kittenlab.jl/lecture15.html)

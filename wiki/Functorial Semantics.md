@@ -14,3 +14,7 @@
 - [[Prop of Matrices|$\mathbf{Mat}(R)$]] itself has semantics $U : \mathbf{Mat}(R) \to \mathbf{Set}$, $n \mapsto R^n$ ([[7S Chapter 5 Exercises#Exercise 5.69|7S Exercise 5.69]]); behaviours $B : \mathbf{SFG}^+_R \to \mathbf{Rel}_R$ interpret feedback ([[Graphical Linear Algebra]]).
 
 The [[Free Prop|universal property of free]] and [[Presentation of a Prop|presented]] structures is what makes defining such functors easy: specify the images of the generators and check the equations.
+
+## In compilers and databases
+
+The algebraic case is spelled out in [[Lawvere Theory]]; the database case in [[Algebraic Database]] and [[Provenance Semiring]] (one query, many semirings); the logical case — translation between whole logics — in [[Institution]].

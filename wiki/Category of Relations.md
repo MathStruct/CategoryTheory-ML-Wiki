@@ -18,6 +18,10 @@ and the identity on $X$ is $1_X = \{(x, x)\}$ (Kittenlab Lecture 14, 7 Sketches 
 - **Relations vs. graphs** (CTfS Exercises 3.3.3.10–3.3.3.12): a relation $R \subseteq S \times S$ is a graph with vertices $S$ and arrows $R$ (source and target the two projections); a graph gives a relation by taking the image of $(\mathrm{src}, \mathrm{tgt}) : A \to V \times V$. Relation → graph → relation is the identity, graph → relation → graph collapses parallel arrows. E.g. $\leq$ on $\{0,1,2,3\}$ draws a tetrahedron with a loop at every vertex, while "$|n - m| \leq 1$" is not transitive and "$n = 5m$" is not reflexive — neither is a preorder.
 - Kittenlab's behavioural view: a relation is a *joint constraint*; a mathematical model "selects a subset of a universum of possibilities" (Willems).
 
+## In compilers and databases
+
+$\mathbf{Rel}$ is the archetypal [[Cartesian Bicategory]]: its order is query containment and program refinement, its maps (left adjoints) are the functions, and its internal logic is regular logic, the logic of [[Conjunctive Query|conjunctive queries]].
+
 ````tabs
 tab: Julia
 **Docs:** [FinRelations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinRelations) — Kittenlab [Lecture 14](https://algebraicjulia.github.io/Kittenlab.jl/lecture14.html), [Lecture 15](https://algebraicjulia.github.io/Kittenlab.jl/lecture15.html)

@@ -33,6 +33,10 @@ Let $\mathsf{D}$ be the category $\bullet \leftarrow \bullet \to \bullet$. The p
 - Pushing forward a [[Partition]] along a function (7 Sketches §1.4.2).
 - Any finite colimit is built from coproducts and pushouts / coequalizers (7 Sketches §6.2.4). Dual: [[Pullback]].
 
+## In compilers and databases
+
+Graph rewriting is two pushouts: a pushout complement deletes the matched pattern and an ordinary pushout glues in the replacement ([[Double-Pushout Rewriting]]).
+
 ````tabs
 tab: Julia
 **Docs:** [FinSets](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.FinSets) · [Limits & colimits](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.Limits) · [C-set morphisms](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/categorical_algebra/#Catlab.CategoricalAlgebra.CSets) · [ACSets API](https://algebraicjulia.github.io/ACSets.jl/stable/api/) · [Graphs](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/graphs/) — Kittenlab [Lecture 9](https://algebraicjulia.github.io/Kittenlab.jl/lecture9.html)

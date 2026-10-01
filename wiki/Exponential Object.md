@@ -40,12 +40,15 @@ using Catlab
 ```
 tab: Lean
 ```lean
-#check CategoryTheory.exp                  -- exp A : C ⥤ C, A ⟹ B (notation) in a cartesian closed category
-#check CategoryTheory.exp.adjunction       -- (prod.functor.obj A) ⊣ (exp A)
-#check CategoryTheory.CartesianClosed.curry
-#check CategoryTheory.CartesianClosed.uncurry
-#check CategoryTheory.exp.ev               -- evaluation A ⨯ (A ⟹ B) ⟶ B
-example : CategoryTheory.CartesianClosed (Type u) := inferInstance
+import Mathlib
+open CategoryTheory
+universe u
+#check @ihom                  -- ihom A : C ⥤ C, the exponential A ⟹ (−), notation A ⟹ B
+#check @ihom.adjunction       -- tensorLeft A ⊣ ihom A  (here A ⊗ − is A × −)
+#check @MonoidalClosed.curry
+#check @MonoidalClosed.uncurry
+#check @ihom.ev               -- evaluation A ⊗ (A ⟹ B) ⟶ B
+example : MonoidalClosed (Type u) := inferInstance
 ```
 tab: Haskell
 ```haskell

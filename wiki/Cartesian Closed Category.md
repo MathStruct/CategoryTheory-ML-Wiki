@@ -9,6 +9,10 @@ A **cartesian closed category** (CCC) is a [[Category]] with all finite [[Produc
 - In a CCC, $(- \times a)$ is a left adjoint so it preserves colimits: $(b + c) \times a \cong b \times a + c \times a$ and $0 \times a \cong 0$ ([[Right Adjoints Preserve Limits]]). Every CCC is self-[[Enriched Category|enriched]] via internal homs, and every endofunctor of a CCC that is enriched is [[Functorial Strength|strong]].
 - A CCC is a special [[Monoidal Closed Category]] (with $\otimes = \times$, $I = 1$); [[Compact Closed Category|compact closed categories]] are a different specialization, appropriate for linear/quantum resources rather than copyable data ([[Discard and Copy Axioms]]).
 
+## In compilers and databases
+
+Lambek's half of the [[Curry-Howard-Lambek Correspondence]]: the simply typed λ-calculus is the internal language of CCCs, so any λ-term can be compiled to point-free CCC combinators and run in any CCC (Elliott's *compiling to categories*).
+
 ````tabs
 tab: Julia
 **Docs:** [Theories & presentations](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)
@@ -24,10 +28,15 @@ curry(CCC[:A], CCC[:B], CCC[:f])     # a morphism A → hom(B, A) in the free CC
 ```
 tab: Lean
 ```lean
-#check CategoryTheory.CartesianClosed     -- class: HasFiniteProducts + Exponentiable for every object
-example : CategoryTheory.CartesianClosed (Type u) := inferInstance
-#check CategoryTheory.ChosenFiniteProducts
-#check CategoryTheory.Closed              -- monoidal closed structure on an object
+import Mathlib
+open CategoryTheory
+universe u
+-- Mathlib phrases a CCC as a cartesian monoidal category that is monoidal closed
+-- (the older `CartesianClosed` class is deprecated).
+#check CategoryTheory.CartesianMonoidalCategory   -- chosen finite products
+#check CategoryTheory.MonoidalClosed              -- every object exponentiable
+#check CategoryTheory.Closed                      -- closed structure on one object
+example : MonoidalClosed (Type u) := inferInstance
 ```
 tab: Haskell
 ```haskell

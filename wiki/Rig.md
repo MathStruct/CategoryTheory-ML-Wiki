@@ -26,6 +26,10 @@ Replace $(+, \times)$ by the operations of any commutative semiring and the same
 
 The first two are the ends of a **temperature**: $-T \log \sum_i e^{-E_i/T} \to \min_i E_i$ as $T \to 0$, so min-sum is the zero-temperature limit of sum-product (the log-semiring deforms into the tropical one). Energy-based models live at $T = 0$, probabilistic ones at $T = 1$; mixing factors from both in one graph silently adds incommensurable quantities unless the semiring is tracked — a job for a [[Graded Monad|grade]] or type index. Semiring-valued matrices compose like [[Matrix Multiplication in a Quantale|quantale-valued matrices]], and $\mathbf{Mat}(R)$ is a [[Hypergraph Category]] for any commutative semiring $R$ (Fritz, Example 8.2).
 
+## In compilers and databases
+
+Annotating database tuples with elements of a commutative semiring turns relational algebra into [[Provenance Semiring|$K$-relations]]: $\mathbb B$ gives set semantics, $\mathbb N$ bag semantics, the tropical semiring costs, and the free semiring $\mathbb N[X]$ provenance. Recursive queries over a semiring converge iff it is stable ([[Least Fixed Point]]).
+
 ````tabs
 tab: Julia
 **Docs:** [Theories (Catlab)](https://algebraicjulia.github.io/Catlab.jl/v0.16/apis/theories/)

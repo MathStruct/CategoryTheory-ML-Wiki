@@ -42,6 +42,10 @@ $\mathbf{Lens}(\mathcal C)$ is symmetric monoidal, $(A, A') \otimes (B, B') = (A
 
 Adding a parameter wire gives [[Parametric Lens|parametric lenses]], $\mathbf{Para}(\mathbf{Lens}(\mathcal C))$.
 
+## In compilers and databases
+
+The view-update problem of databases is a lens problem: a query is `get`, translating view edits back is `put`, and the well-behavedness laws are GetPut and PutGet ([[Relational Lens]]).
+
 ````tabs
 tab: Julia
 **Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)

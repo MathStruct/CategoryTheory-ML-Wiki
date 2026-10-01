@@ -30,6 +30,10 @@ data Fix f where In :: f (Fix f) -> Fix f     -- In is ι; out (In x) = x is ι�
 - **Colimit of the $\omega$-chain**: $F 0$ is the type of *leaves* (`Maybe Void` has only `Nothing`), $F^n 0$ the trees of depth $\leq n$. The chain $0 \xrightarrow{¡} F 0 \xrightarrow{F ¡} F^2 0 \to \cdots$ has colimit $i = \mathrm{Colim}\, \Gamma$, and if $F$ preserves colimits of $\omega$-chains (true in $\mathbf{Set}$) then $F i \cong \mathrm{Colim}(F \Gamma) \cong i$: the cocone triangles identify the duplicate copies of a tree in $F^3 0$ and $F^4 0$. The catamorphism to $(a, \alpha)$ is induced by the cocone $f_0 = ¡$, $f_{n+1} = \alpha \circ F f_n$. This needs leaves: if $F 0 \cong 0$ the chain stays at $0$ and $\mu F = 0$ (e.g. the identity or stream functor, [[DaoFP Chapter 13 Exercises#Exercise 13.2.3|DaoFP Exercise 13.2.3]]).
 - Dual: [[Terminal Coalgebra]] $\nu F$, the greatest fixed point; there is a canonical $\rho : \mu F \to \nu F$.
 
+## In compilers and databases
+
+An abstract syntax tree is an element of the initial algebra of a [[Polynomial Functor]]; a compiler written as a fold out of it is an algebra homomorphism, which is the structure of Morris' correctness square ([[Compiler Correctness]]). Binders need the initial algebra to be taken in presheaves or nominal sets instead of $\mathbf{Set}$ ([[Abstract Syntax with Binding]]), and a Merkle hash of a tree is the fold for a hashing algebra.
+
 ````tabs
 tab: Julia
 **Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)

@@ -47,8 +47,9 @@ import Mathlib
 -- Π types are primitive in Lean: (x : B) → T x
 example : (n : ℕ) → Fin (n + 1) := fun n => ⟨0, Nat.succ_pos n⟩   -- a section
 #check @CategoryTheory.Over.pullback
--- in `Type`, Π_f is the dependent function type over each fiber; Mathlib's slices Over B are cartesian closed:
-example (B : Type) : CategoryTheory.CartesianClosed (CategoryTheory.Over B) := inferInstance
+-- Π_f is the right adjoint of pullback along f; Mathlib calls f exponentiable when it exists:
+#check @CategoryTheory.ExponentiableMorphism
+#check @CategoryTheory.ExponentiableMorphism.pushforward   -- Π_f : Over I ⥤ Over J
 ```
 tab: Haskell
 ```haskell

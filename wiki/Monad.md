@@ -48,6 +48,10 @@ CTfS reads a monad as a *modelling decision about hidden context*: "monads can f
 
 A [[Graded Monad]] indexes computations by a monoid of effects (costs, privacy budgets, error bounds). The probability monads — [[Giry Monad]], [[Distribution Monad]] — are commutative and affine, which is what makes their Kleisli categories [[Markov Category|Markov categories]].
 
+## In compilers and databases
+
+Plotkin and Power showed that many monads of effects are *presented* by operations and equations — a [[Lawvere Theory]] — and handlers are models of that theory ([[Algebraic Effects and Handlers]]). Collection monads are the semantics of query languages ([[Monad Comprehension]]).
+
 ````tabs
 tab: Julia
 **Docs:** Kittenlab [Lecture 7](https://algebraicjulia.github.io/Kittenlab.jl/lecture7.html)

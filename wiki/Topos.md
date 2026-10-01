@@ -46,8 +46,8 @@ tab: Lean
 import Mathlib
 open CategoryTheory
 -- Mathlib has the ingredients of an elementary topos (no single `Topos` class yet):
-#check @CategoryTheory.HasClassifier        -- subobject classifier
-#check @CategoryTheory.CartesianClosed
+#check @CategoryTheory.HasSubobjectClassifier   -- subobject classifier
+#check @CategoryTheory.MonoidalClosed           -- exponentials (with cartesian monoidal structure)
 #check @CategoryTheory.Limits.HasFiniteLimits
 -- and Grothendieck toposes as sheaf categories:
 #check @CategoryTheory.Sheaf                -- Sheaf J A for a Grothendieck topology J

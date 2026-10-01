@@ -13,6 +13,10 @@ For a [[Monad]] $(T, \eta, \mu)$ on $\mathcal{C}$, the **Kleisli category** $\ma
 
 If $T$ is a commutative (symmetric monoidal) monad whose value on the unit is trivial ($T1 \cong 1$, **affine**), then $\mathrm{Kl}(T)$ is a [[Markov Category]] (Fritz, Proposition 3.1, Corollary 3.2): the [[Giry Monad]] gives $\mathbf{Stoch}$, the [[Distribution Monad]] finite-support kernels, the non-empty power set possibilistic ones. Without affineness (s-finite or sub-probability kernels) one only gets a [[Copy-Discard Category]].
 
+## In compilers and databases
+
+For a non-commutative strong monad the Kleisli category is only *premonoidal*: running two effects in different orders gives different results. The pure maps sit inside it as a monoidal subcategory of central maps — a [[Freyd Category]] — which is the semantics of call-by-value languages and of effect tokens in graph IRs.
+
 ````tabs
 tab: Julia
 **Docs:** plain Julia — Catlab has no dedicated API for this; related: [Catlab v0.16 docs](https://algebraicjulia.github.io/Catlab.jl/v0.16/) · [GATlab standard library](https://algebraicjulia.github.io/GATlab.jl/stable/stdlib/)

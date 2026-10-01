@@ -1,6 +1,6 @@
 #index
 
-One note per arXiv paper cited in this wiki: bibliographic data checked against the arXiv listing, a summary, the numbered definitions and results the concept notes cite, and links back to those notes. These papers are the bridge from the textbook material to category theory for machine learning — in particular to [Lenticulum.jl](https://mathstruct.org/Lenticulum.jl/dev/vault/). Index: [[Map of Content]].
+One note per arXiv paper cited in this wiki: bibliographic data checked against the arXiv listing, a summary, the numbered definitions and results the concept notes cite, and links back to those notes. These papers are the bridge from the textbook material to two research directions: category theory for machine learning — the background of [Lenticulum.jl](https://mathstruct.org/Lenticulum.jl/dev/vault/) — and category theory for compilers and databases — the background of [Sophia](https://mathstruct.org/Sophia/). Index: [[Map of Content]].
 
 ## Categorical deep learning
 
@@ -51,3 +51,39 @@ One note per arXiv paper cited in this wiki: bibliographic data checked against 
 - [[Structured Cospans]] — Baez & Courser (2019), arXiv:1911.04630
 - [[A Category for Unifying Gaussian Probability and Nondeterminism]] — Stein & Samuelson (2022), arXiv:2204.14024
 - [[Graphical Quadratic Algebra]] — Stein et al. (2024), arXiv:2403.02284
+
+## Syntax, binding and identity (compilers and databases)
+
+- [[Polynomial Functors and Polynomial Monads]] — Gambino & Kock (2009), arXiv:0906.4931
+- [[A Type and Scope Safe Universe of Syntaxes with Binding]] — Allais et al. (2020), arXiv:2001.11001
+- [[Hashing Modulo Alpha-Equivalence]] — Maziarz et al. (2021), arXiv:2105.02856
+- [[Polynomial Functors - A Mathematical Theory of Interaction]] — Niu & Spivak (2023), arXiv:2312.00990
+
+## Semantics of programming languages
+
+- [[Handling Algebraic Effects]] — Plotkin & Pretnar (2013), arXiv:1312.1399
+- [[Natural Models of Homotopy Type Theory]] — Awodey (2014), arXiv:1406.3219
+- [[Categories with Families - Unityped, Simply Typed, and Dependently Typed]] — Castellan, Clairambault & Dybjer (2019), arXiv:1904.00827
+- [[Logical Relations as Types - Proof-Relevant Parametricity for Program Modules]] — Sterling & Harper (2020), arXiv:2010.08599
+- [[Promonads and String Diagrams for Effectful Categories]] — Román (2022), arXiv:2205.07664
+
+## Rewriting and equality saturation
+
+- [[Rewriting Modulo Symmetric Monoidal Structure]] — Bonchi et al. (2016), arXiv:1602.06771
+- [[egg - Fast and Extensible Equality Saturation]] — Willsey et al. (2020), arXiv:2004.03082
+- [[Relational E-Matching]] — Zhang et al. (2021), arXiv:2108.02290
+- [[Computational Category-Theoretic Rewriting]] — Brown et al. (2021), arXiv:2111.03784
+- [[Better Together - Unifying Datalog and Equality Saturation]] — Zhang et al. (2023), arXiv:2304.04332
+- [[Semantic Foundations of Equality Saturation]] — Suciu, Wang & Zhang (2025), arXiv:2501.02413
+
+## Databases, queries and incremental computation
+
+- [[A Theory of Changes for Higher-Order Languages]] — Cai et al. (2013), arXiv:1312.0658
+- [[Algebraic Data Integration]] — Schultz & Wisnesky (2015), arXiv:1503.03571
+- [[Algebraic Databases]] — Schultz et al. (2016), arXiv:1602.03501
+- [[Graphical Conjunctive Queries]] — Bonchi, Seeber & Sobociński (2018), arXiv:1804.07626
+- [[Fixing Incremental Computation - Derivatives of Fixpoints, and the Recursive Semantics of Datalog]] — Alvarez-Picallo et al. (2018), arXiv:1811.06069
+- [[Change Actions - Models of Generalised Differentiation]] — Alvarez-Picallo & Ong (2019), arXiv:1902.05465
+- [[Regular and Relational Categories - Revisiting Cartesian Bicategories I]] — Fong & Spivak (2019), arXiv:1909.00069
+- [[Convergence of Datalog over (Pre-) Semirings]] — Abo Khamis et al. (2021), arXiv:2105.14435
+- [[Categorical Data Structures for Technical Computing]] — Patterson, Lynch & Fairbanks (2021), arXiv:2106.04703

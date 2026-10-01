@@ -70,12 +70,23 @@ The research literature on categorical deep learning, categorical probability an
 
 This track is the categorical background of [Lenticulum.jl](https://mathstruct.org/Lenticulum.jl/dev/vault/), whose theory vault links back to these notes.
 
+### Track F — Category theory for compilers and databases (arXiv papers; the road to Sophia)
+The categorical side of programming-language semantics, rewriting and databases: what a program *is*, when two programs are *the same*, and how a compiler and a query engine can be the same machine. Every note cites numbered definitions from the papers in [[Papers]]. Prerequisites: Stages 2–4 and Tracks B–C ([[Initial Algebra]], [[Monad]], [[Kleisli Category]], [[C-Set]], [[Data Migration Functor]], [[Dependent Type]], [[Locally Cartesian Closed Category]]).
+1. *Syntax and identity*: [[Polynomial Functor]] → [[Abstract Syntax with Binding]] → [[Congruence]] → [[Bisimulation]].
+2. *Semantics*: [[Curry-Howard-Lambek Correspondence]] → [[Lawvere Theory]] → [[Category with Families]]; effects: [[Algebraic Effects and Handlers]] → [[Freyd Category]] → [[Call-by-Push-Value]]; resources: [[Linear-Non-Linear Adjunction]].
+3. *Equivalence and translation*: [[Contextual Equivalence]] → [[Logical Relations]] → [[Compiler Correctness]] → [[Institution]].
+4. *Rewriting*: [[E-Graph]] (equality saturation) and [[Double-Pushout Rewriting]] (graph rewriting).
+5. *Databases and queries*: [[Attributed C-Set]] → [[Algebraic Database]] → [[Conjunctive Query]] → [[Cartesian Bicategory]] → [[Least Fixed Point]] (Datalog) → [[Provenance Semiring]] → [[Change Action]] (incremental computation); and [[Relational Lens]], [[Monad Comprehension]].
+
+This track is the categorical background of [Sophia](https://mathstruct.org/Sophia/), a content-addressed graph database of code whose design notes link back to these notes.
+
 ## Three ways in, depending on who you are
 
 - **Coming from programming (Haskell/Julia)**: read [[Category]], [[Functor]], [[Natural Transformation]], then jump to Track B and use the Haskell tabs; come back to Stage 3 when you meet [[Adjunction]] in [[Monads from Adjunctions]].
 - **Coming from mathematics**: Stages 1–4 in order, then Track A; the Lean tabs give the Mathlib names to formalize what you read.
 - **Coming from the sciences** (CTfS's intended reader): Stage 0, then [[Database Schema]], [[C-Set]], [[Data Migration Functor]], [[Sheaf]] and [[Markov Chain]] — the examples are ologs, experiments and databases rather than proofs.
 - **Coming from machine learning research**: Stage 2 quickly, then Track E; the [[Papers]] index lists what to read in the original.
+- **Coming from compilers, programming languages or databases**: Stage 2, Track B, then Track F; the Julia tabs there run against Catlab and AlgebraicRewriting.jl, the Lean tabs against current Mathlib.
 - **Wanting to compute**: install Catlab 0.16 as described in [[Catlab]] and work through the Julia tabs of [[C-Set]], [[Data Migration Functor]], [[Colimit]], [[Undirected Wiring Diagram]] and [[Decorated Cospan]] — Kittenlab's material is concentrated there.
 
 ## Cross-cutting themes to watch for

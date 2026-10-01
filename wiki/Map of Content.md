@@ -41,6 +41,9 @@ New here? Read [[Start Here]] first. This is the map of content for this vault, 
 ## Category theory for machine learning (arXiv papers)
 [[Bicategory]], [[Lax Functor]], [[Grothendieck Construction]], [[Actegory]], [[Double Category]], [[Graded Monad]], [[Para Construction]], [[Optic]], [[Parametric Lens]], [[Cartesian Differential Category]], [[Reverse Derivative Category]], [[Gradient-Based Learning with Parametric Lenses]], [[Backprop as Functor]], [[Open Game]], [[Copy-Discard Category]], [[Markov Category]], [[Giry Monad]], [[Almost-Sure Equality]], [[Conditionals and Disintegration]], [[Bayesian Inversion]], [[Conditional Independence]], [[Partial Markov Category]], [[Gaussian Relations]], [[Open Model]], [[Bayesian Lens]], [[Variational Free Energy]], [[Statistical Game]]
 
+## Category theory for compilers and databases (arXiv papers)
+*Syntax and identity*: [[Polynomial Functor]], [[Abstract Syntax with Binding]], [[Bisimulation]], [[Congruence]] · *Semantics*: [[Curry-Howard-Lambek Correspondence]], [[Lawvere Theory]], [[Category with Families]], [[Algebraic Effects and Handlers]], [[Freyd Category]], [[Call-by-Push-Value]], [[Linear-Non-Linear Adjunction]] · *Equivalence and translation*: [[Contextual Equivalence]], [[Logical Relations]], [[Institution]], [[Compiler Correctness]] · *Rewriting*: [[E-Graph]], [[Double-Pushout Rewriting]] · *Databases and queries*: [[Attributed C-Set]], [[Algebraic Database]], [[Conjunctive Query]], [[Cartesian Bicategory]], [[Least Fixed Point]], [[Provenance Semiring]], [[Change Action]], [[Relational Lens]], [[Monad Comprehension]]
+
 **Papers**: [[Papers]] — one note per arXiv paper, grouped by topic.
 
 ## Exercises from 7 Sketches
